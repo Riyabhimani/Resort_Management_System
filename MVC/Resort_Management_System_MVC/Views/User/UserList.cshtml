@@ -1,0 +1,63 @@
+﻿@model List<UserModel>
+@{
+	ViewData["Title"] = "User List";
+}
+
+<a asp-controller="User" asp-action="UserAddEdit" class="btn btn-sm btn-danger">
+	Add User
+</a>
+
+<span class="text-danger">@TempData["ErrorMessage"]</span>
+<span class="text-danger">@TempData["SuccessMessage"]</span>
+
+<div class="container mt-4">
+	<div class="d=flext justify-content-between align-items-center mb-3">
+		<h2 class="mb-0">User List</h2>
+		@* Redirection Button *@
+	</div>
+
+	<table class="table table-bordered table-striped table-hover">
+		<thead class="table-dark">
+			<tr>
+				<th>UserId</th>
+				<th>UserName</th>
+				<th>Password</th>
+				<th>Role</th>
+				<th>Created</th>
+				<th>Modified</th>
+				<th>IsActive</th>
+				<th>Action</th>
+			</tr>
+		</thead>
+
+		<tbody>
+			@if (Model != null && Model.Any())
+			{
+				foreach (var item in Model)
+				{
+					<tr>
+						<td>@item.UserId</td>
+						<td>@item.UserName</td>
+						<td>@item.Password</td>
+						<td>@item.Role</td>
+						<td>@item.Created.ToString("yyyy-mm-dd")</td>
+						<td>@item.Modified?.ToString("yyyy-mm-dd")</td>
+						<td>@item.IsActive</td>
+						<td>
+							<a asp-controller="User" asp-action="UserDelete" asp-route-id="@item.UserId" class="btn btn-sm btn-danger"
+							   onclick="return confirm('Are you sure want to delete this User?');">
+								Delete
+							</a>
+							<a asp-controller="User" asp-action="UserAddEdit" asp-route-id="@item.UserId" class="btn btn-sm btn-danger"
+							   onclick="return confirm('Are you sure want to edit this User?');">
+								Edit
+							</a>
+						</td>
+					</tr>
+				}
+			}
+		</tbody>
+
+	</table>
+
+</div>

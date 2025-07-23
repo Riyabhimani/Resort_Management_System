@@ -1,0 +1,59 @@
+﻿@model List<ServiceModel>
+@{
+	ViewData["Title"] = "Service List";
+}
+
+<span class="text-danger">@TempData["ErrorMessage"]</span>
+<span class="text-danger">@TempData["SuccessMessage"]</span>
+
+<div class="container mt-4">
+	<div class="d=flext justify-content-between align-items-center mb-3">
+		<h2 class="mb-0">Service List</h2>
+		@* Redirection Button *@
+	</div>
+
+	<table class="table table-bordered table-striped table-hover">
+		<thead class="table-dark">
+			<tr>
+				<th>ServiceId</th>
+				<th>ServiceName</th>
+				<th>Description</th>
+				<th>ServiceCost</th>
+				<th>ServiceStartTime</th>
+				<th>ServiceEndTime</th>
+				<th>IsActive</th>
+				<th>Created</th>
+				<th>Modified</th>
+				<th>Action</th>
+			</tr>
+		</thead>
+
+		<tbody>
+			@if (Model != null && Model.Any())
+			{
+				foreach (var item in Model)
+				{
+					<tr>
+						<td>@item.ServiceId</td>
+						<td>@item.ServiceName</td>
+						<td>@item.Description</td>
+						<td>@item.ServiceCost</td>
+						<td>@item.ServiceStartTime</td>
+						<td>@item.ServiceEndTime</td>
+						<td>@item.IsActive</td>
+						<td>@item.Created.ToString("yyyy-mm-dd")</td>
+						<td>@item.Modified?.ToString("yyyy-mm-dd")</td>
+						<td>
+							<a asp-controller="Service" asp-action="ServiceDelete" asp-route-id="@item.ServiceId" class="btn btn-sm btn-danger"
+							   onclick="return confirm('Are you sure want to delete this Service?');">
+								Delete
+							</a>
+						</td>
+					</tr>
+				}
+			}
+		</tbody>
+
+	</table>
+
+</div>

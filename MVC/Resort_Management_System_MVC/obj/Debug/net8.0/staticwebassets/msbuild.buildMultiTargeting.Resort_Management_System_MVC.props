@@ -1,0 +1,3 @@
+﻿<Project>
+  <Import Project="..\build\Resort_Management_System_MVC.props" />
+</Project>

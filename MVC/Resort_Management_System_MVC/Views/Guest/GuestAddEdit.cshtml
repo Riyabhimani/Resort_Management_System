@@ -1,0 +1,57 @@
+﻿@model GuestModel
+
+@{
+    ViewData["Title"] = Model.GuestId == 0 ? "Add Guest" : "Edit Guest";
+}
+
+<div class="container mt-4">
+    <h2>@ViewData["Title"]</h2>
+
+    <form asp-action="GuestAddEdit" method="post">
+        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+
+         <input type="hidden" asp-for="GuestId" /> 
+         <input type="hidden" asp-for="Created" /> 
+
+        @*<div class="mb-3">
+            <label asp-for="GuestId" class="form-label"></label>
+            <select asp-for="GuestId" class="form-select" asp-items="@(new SelectList(Model.GuestList, "GuestId", "FullName"))">
+                <option value="">-- Select Guest --</option>
+            </select>
+            <span asp-validation-for="GuestId" class="text-danger"></span>
+        </div>*@
+
+        <div class="mb-3">
+            <label asp-for="FullName" class="form-label"></label>
+            <input asp-for="FullName" class="form-control" />
+            <span asp-validation-for="FullName" class="text-danger"></span>
+        </div>
+
+        <div class="mb-3">
+            <label asp-for="Email" class="form-label"></label>
+            <input asp-for="Email" class="form-control" />
+            <span asp-validation-for="Email" class="text-danger"></span>
+        </div>
+
+        <div class="mb-3">
+            <label asp-for="ContactNumber" class="form-label"></label>
+            <input asp-for="ContactNumber" class="form-control" />
+            <span asp-validation-for="ContactNumber" class="text-danger"></span>
+        </div>
+
+        <div class="mb-3">
+            <label asp-for="Address" class="form-label"></label>
+            <input asp-for="Address" class="form-control" />
+            <span asp-validation-for="Address" class="text-danger"></span>
+        </div>
+
+        <div class="mb-3">
+            <label asp-for="Idproof" class="form-label"></label>
+            <input asp-for="Idproof" class="form-control" />
+            <span asp-validation-for="Idproof" class="text-danger"></span>
+        </div>
+
+        <button type="submit" class="btn btn-primary" asp-controller="Guest" asp-action="GuestAddEdit">@((Model.GuestId == 0) ? "Add" : "Update")</button>
+        <a class="btn btn-secondary" asp-controller="Guest" asp-action="GuestList">Back</a>
+    </form>
+</div>
