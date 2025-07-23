@@ -1,0 +1,103 @@
+﻿using Microsoft.AspNetCore.Mvc;
+using Resort_Management_System_MVC.Models;
+using Newtonsoft.Json;
+using System.Reflection.Metadata.Ecma335;
+using System.Text;
+
+namespace Resort_Management_System_MVC.Controllers
+{
+    public class GuestController : Controller
+    {
+        private readonly HttpClient client;
+
+
+        public GuestController(IHttpClientFactory httpClientFactory)
+        {
+            client = httpClientFactory.CreateClient();
+            client.BaseAddress = new Uri("http://localhost:5159/api/Guest");
+        }
+
+        public async Task<IActionResult> GuestList()
+        {
+            var response = await client.GetAsync("Guest");
+            var json = await response.Content.ReadAsStringAsync();
+            var list = JsonConvert.DeserializeObject<List<GuestModel>>(json);
+            return View(list);
+        }
+        public async Task<IActionResult> GuestDelete(int id)
+        {
+
+            try
+            {
+                await client.DeleteAsync($"Guest/{id}");
+                TempData["SuccessMessage"] = "Guest deleted successfully.";
+                return RedirectToAction("GuestList");
+            }
+
+            catch (Exception ex)
+            {
+                TempData["ErrorMessage"] = "An error occurred while deleting the Guest: " + ex.Message;
+                return RedirectToAction("GuestList");
+            }
+        }
+
+
+        public async Task<IActionResult> GuestAddEdit(int? id)
+        {
+            try
+            {
+                GuestModel guest = new GuestModel();
+
+                if (id != null)
+                {
+                    var response = await client.GetAsync($"Guest/{id}");
+                    if (!response.IsSuccessStatusCode)
+                    {
+                        TempData["Error"] = "Guest not found.";
+                        return RedirectToAction("GuestList");
+                    }
+
+                    var json = await response.Content.ReadAsStringAsync();
+                    guest = JsonConvert.DeserializeObject<GuestModel>(json);
+                }
+               
+                return View(guest);
+            }
+            catch (Exception ex)
+            {
+                TempData["Error"] = "Unable to load form.";
+                return RedirectToAction("Index");
+            }
+        }
+
+        [HttpPost]
+        public async Task<IActionResult> GuestAddEdit(GuestModel guest)
+        {
+            if (!ModelState.IsValid)
+                return View("GuestList");
+
+            try
+            {
+                var content = new StringContent(JsonConvert.SerializeObject(guest), Encoding.UTF8, "application/json");
+
+                if (guest.GuestId == 0)
+                {
+                    var response = await client.PostAsync("Guest", content);
+                    response.EnsureSuccessStatusCode();
+                }
+                else
+                {
+                    var response = await client.PutAsync($"Guest/{guest.GuestId}", content);
+                    response.EnsureSuccessStatusCode();
+                }
+
+                return RedirectToAction("GuestList");
+            }
+            catch (Exception ex)
+            {
+                TempData["Error"] = "Unable to save guest.";
+                return View("GuestList");
+            }
+        }
+    }
+}
