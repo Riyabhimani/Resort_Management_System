@@ -26,7 +26,7 @@ namespace Resort_Management_System_MVC.Models
 
         [Display(Name = "Created Date")]
         [DataType(DataType.DateTime)]
-        public DateTime Created { get; set; } 
+        public DateTime Created { get; set; }
 
 
         [Display(Name = "Modified Date")]

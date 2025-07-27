@@ -3,12 +3,18 @@
 	ViewData["Title"] = "User List";
 }
 
-<a asp-controller="User" asp-action="UserAddEdit" class="btn btn-sm btn-danger">
+<a asp-action="UserAddEdit" asp-controller="User" class="btn btn-primary mb-3" onclick="return confirm('Are you sure you want to add a User?');">
 	Add User
 </a>
 
-<span class="text-danger">@TempData["ErrorMessage"]</span>
-<span class="text-danger">@TempData["SuccessMessage"]</span>
+@if (TempData["SuccessMessage"] != null)
+{
+	<div class="alert alert-success">@TempData["SuccessMessage"]</div>
+}
+@if (TempData["ErrorMessage"] != null)
+{
+	<div class="alert alert-danger">@TempData["ErrorMessage"]</div>
+}
 
 <div class="container mt-4">
 	<div class="d=flext justify-content-between align-items-center mb-3">
@@ -40,15 +46,15 @@
 						<td>@item.UserName</td>
 						<td>@item.Password</td>
 						<td>@item.Role</td>
-						<td>@item.Created.ToString("yyyy-mm-dd")</td>
-						<td>@item.Modified?.ToString("yyyy-mm-dd")</td>
+						<td>@item.Created.ToString("yyyy-MM-dd")</td>
+						<td>@item.Modified?.ToString("yyyy-MM-dd")</td>
 						<td>@item.IsActive</td>
 						<td>
 							<a asp-controller="User" asp-action="UserDelete" asp-route-id="@item.UserId" class="btn btn-sm btn-danger"
 							   onclick="return confirm('Are you sure want to delete this User?');">
 								Delete
 							</a>
-							<a asp-controller="User" asp-action="UserAddEdit" asp-route-id="@item.UserId" class="btn btn-sm btn-danger"
+							<a asp-controller="User" asp-action="UserAddEdit" asp-route-id="@item.UserId" class="btn btn-sm btn-success"
 							   onclick="return confirm('Are you sure want to edit this User?');">
 								Edit
 							</a>

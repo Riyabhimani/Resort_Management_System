@@ -7,11 +7,11 @@
 <div class="container mt-4">
     <h2>@ViewData["Title"]</h2>
 
-    <form asp-action="GuestAddEdit" method="post">
+    <form asp-action="UserAddEdit" method="post">
         @Html.ValidationSummary(true, "", new { @class = "text-danger" })
 
-         <input type="hidden" asp-for="UserId" /> 
-         <input type="hidden" asp-for="Created" /> 
+        <input type="hidden" asp-for="UserId" />
+        <input type="hidden" asp-for="Created" />
 
         <div class="mb-3">
             <label asp-for="UserName" class="form-label"></label>
@@ -31,11 +31,12 @@
             <span asp-validation-for="Role" class="text-danger"></span>
         </div>
 
-        <div class="mb-3">
-            <label asp-for="IsActive" class="form-label"></label>
-            <input asp-for="IsActive" class="form-control" />
+        <div class="mb-3 form-check">
+            <input asp-for="IsActive" class="form-check-input" type="checkbox" />
+            <label asp-for="IsActive" class="form-check-label"></label>
             <span asp-validation-for="IsActive" class="text-danger"></span>
         </div>
+
 
         <button type="submit" class="btn btn-primary" asp-controller="User" asp-action="UserAddEdit">@((Model.UserId == 0) ? "Add" : "Update")</button>
         <a class="btn btn-secondary" asp-controller="User" asp-action="UserList">Back</a>

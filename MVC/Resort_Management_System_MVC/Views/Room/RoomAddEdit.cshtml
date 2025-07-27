@@ -1,0 +1,55 @@
+﻿@model RoomModel
+
+@{
+    ViewData["Title"] = Model.RoomId == 0 ? "Add Room" : "Edit Room";
+}
+
+<div class="container mt-4">
+    <h2>@ViewData["Title"]</h2>
+
+    <form asp-action="RoomAddEdit" method="post">
+        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+
+        <input type="hidden" asp-for="RoomId" />
+        <input type="hidden" asp-for="Created" />
+
+        <div class="mb-3">
+            <label asp-for="RoomNumber" class="form-label"></label>
+            <input asp-for="RoomNumber" class="form-control" />
+            <span asp-validation-for="RoomNumber" class="text-danger"></span>
+        </div>
+
+        <div class="mb-3">
+            <label asp-for="RoomType" class="form-label"></label>
+            <input asp-for="RoomType" class="form-control" />
+            <span asp-validation-for="RoomType" class="text-danger"></span>
+        </div>
+
+        <div class="mb-3">
+            <label asp-for="Description" class="form-label"></label>
+            <textarea asp-for="Description" class="form-control"></textarea>
+            <span asp-validation-for="Description" class="text-danger"></span>
+        </div>
+
+        <div class="mb-3">
+            <label asp-for="PricePerDay" class="form-label"></label>
+            <input asp-for="PricePerDay" class="form-control" />
+            <span asp-validation-for="PricePerDay" class="text-danger"></span>
+        </div>
+
+        <div class="mb-3">
+            <label asp-for="RoomStatus" class="form-label"></label>
+            <input asp-for="RoomStatus" class="form-control" />
+            <span asp-validation-for="RoomStatus" class="text-danger"></span>
+        </div>
+
+        <div class="mb-3 form-check">
+            <input asp-for="IsActive" class="form-check-input" />
+            <label asp-for="IsActive" class="form-check-label"></label>
+            <span asp-validation-for="IsActive" class="text-danger"></span>
+        </div>
+
+        <button type="submit" class="btn btn-primary">@((Model.RoomId == 0) ? "Add" : "Update")</button>
+        <a class="btn btn-secondary" asp-controller="Room" asp-action="RoomList">Back</a>
+    </form>
+</div>

@@ -3,7 +3,7 @@
 	ViewData["Title"] = "Guest List";
 }
 
-<a asp-controller="Guest" asp-action="GuestAddEdit" class="btn btn-sm btn-danger">
+<a asp-action="GuestAddEdit" asp-controller="Guest" class="btn btn-primary mb-3" onclick="return confirm('Are you sure you want to add a Guest?');">
 	Add Guest
 </a>
 
@@ -12,15 +12,11 @@
 
 @if (TempData["SuccessMessage"] != null)
 {
-	<div class="alert alert-success">
-		@TempData["SuccessMessage"]
-	</div>
+	<div class="alert alert-success">@TempData["SuccessMessage"]</div>
 }
 @if (TempData["ErrorMessage"] != null)
 {
-	<div class="alert alert-danger">
-		@TempData["ErrorMessage"]
-	</div>
+	<div class="alert alert-danger">@TempData["ErrorMessage"]</div>
 }
 
 <div class="container mt-4">
@@ -59,7 +55,7 @@
 						<td>@item.Created.ToString("yyyy-mm-dd")</td>
 						<td>@item.Modified?.ToString("yyyy-mm-dd")</td>
 						<td >
-							<a asp-controller="Guest" asp-action="GuestAddEdit" asp-route-id="@item.GuestId" class="btn btn-sm btn-danger"
+							<a asp-controller="Guest" asp-action="GuestAddEdit" asp-route-id="@item.GuestId" class="btn btn-sm btn-success"
 							   onclick="return confirm('Are you sure want to Edit this Guest?');">
 								Edit
 							</a>

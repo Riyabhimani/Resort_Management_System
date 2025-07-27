@@ -3149,6 +3149,27 @@
             "type": "string",
             "format": "date-time",
             "nullable": true
+          },
+          "guestServices": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/GuestService"
+            },
+            "nullable": true
+          },
+          "payments": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Payment"
+            },
+            "nullable": true
+          },
+          "reservations": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Reservation"
+            },
+            "nullable": true
           }
         },
         "additionalProperties": false
@@ -3168,10 +3189,6 @@
             "type": "integer",
             "format": "int32"
           },
-          "guestId": {
-            "type": "integer",
-            "format": "int32"
-          },
           "quantity": {
             "type": "integer",
             "format": "int32"
@@ -3179,6 +3196,10 @@
           "dateRequested": {
             "type": "string",
             "format": "date-time"
+          },
+          "guestId": {
+            "type": "integer",
+            "format": "int32"
           },
           "created": {
             "type": "string",
@@ -3188,6 +3209,15 @@
             "type": "string",
             "format": "date-time",
             "nullable": true
+          },
+          "guest": {
+            "$ref": "#/components/schemas/Guest"
+          },
+          "reservation": {
+            "$ref": "#/components/schemas/Reservation"
+          },
+          "service": {
+            "$ref": "#/components/schemas/Service"
           }
         },
         "additionalProperties": false
@@ -3320,6 +3350,13 @@
             "type": "string",
             "format": "date-time",
             "nullable": true
+          },
+          "reservations": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Reservation"
+            },
+            "nullable": true
           }
         },
         "additionalProperties": false
@@ -3361,6 +3398,13 @@
           "modified": {
             "type": "string",
             "format": "date-time",
+            "nullable": true
+          },
+          "guestServices": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/GuestService"
+            },
             "nullable": true
           }
         },

@@ -1,0 +1,74 @@
+﻿@model List<Resort_Management_System_MVC.Models.ReservationModel>
+
+@{
+    ViewData["Title"] = "Reservation List";
+}
+
+<a asp-action="ReservationAddEdit" asp-controller="Reservation" class="btn btn-primary mb-3" onclick="return confirm('Are you sure you want to add a Reservation?');">
+    Add Reservation
+</a>
+
+@if (TempData["SuccessMessage"] != null)
+{
+    <div class="alert alert-success">
+        @TempData["SuccessMessage"]
+    </div>
+}
+@if (TempData["ErrorMessage"] != null)
+{
+    <div class="alert alert-danger">
+        @TempData["ErrorMessage"]
+    </div>
+}
+
+<h2 class="mt-3">Reservation List</h2>
+
+<table class="table table-bordered table-striped mt-3">
+    <thead class="table-dark">
+        <tr>
+            <th>Reservation ID</th>
+            <th>Guest ID</th>
+            <th>Room ID</th>
+            <th>Check-In</th>
+            <th>Check-Out</th>
+            <th>Booking Date</th>
+            <th>Total Amount</th>
+            <th>Status</th>
+            <th>Actions</th>
+        </tr>
+    </thead>
+    <tbody>
+        @if (Model != null && Model.Any())
+        {
+            foreach (var item in Model)
+            {
+                <tr>
+                    <td>@item.ReservationId</td>
+                    <td>@item.GuestId</td>
+                    <td>@item.RoomId</td>
+                    <td>@item.CheckInDate.ToString("yyyy-MM-dd")</td>
+                    <td>@item.CheckOutDate.ToString("yyyy-MM-dd")</td>
+                    <td>@item.BookingDate.ToString("yyyy-MM-dd")</td>
+                    <td>@item.TotalAmount.ToString("C")</td>
+                    <td>@item.ReservationStatus</td>
+                    <td>
+                        <a asp-controller="Reservation" asp-action="ReservationDelete" asp-route-id="@item.ReservationId" class="btn btn-sm btn-danger"
+                           onclick="return confirm('Are you sure want to delete this Reservation?');">
+                            Delete
+                        </a>
+                        <a asp-controller="Reservation" asp-action="ReservationAddEdit" asp-route-id="@item.ReservationId" class="btn btn-sm btn-success"
+                           onclick="return confirm('Are you sure want to Edit this Reservation?');">
+                            Edit
+                        </a>
+                    </td>
+                </tr>
+            }
+        }
+        else
+        {
+            <tr>
+                <td colspan="9" class="text-center">No reservations found.</td>
+            </tr>
+        }
+    </tbody>
+</table>

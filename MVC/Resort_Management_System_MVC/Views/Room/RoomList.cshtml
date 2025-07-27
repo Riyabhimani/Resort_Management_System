@@ -3,8 +3,18 @@
 	ViewData["Title"] = "Room List";
 }
 
-<span class="text-danger">@TempData["ErrorMessage"]</span>
-<span class="text-danger">@TempData["SuccessMessage"]</span>
+<a asp-action="RoomAddEdit" asp-controller="Room" class="btn btn-primary mb-3" onclick="return confirm('Are you sure you want to add a Room?');">
+	Add Room
+</a>
+
+@if (TempData["SuccessMessage"] != null)
+{
+	<div class="alert alert-success">@TempData["SuccessMessage"]</div>
+}
+@if (TempData["ErrorMessage"] != null)
+{
+	<div class="alert alert-danger">@TempData["ErrorMessage"]</div>
+}
 
 <div class="container mt-4">
 	<div class="d=flext justify-content-between align-items-center mb-3">
@@ -47,6 +57,10 @@
 							<a asp-controller="Room" asp-action="RoomDelete" asp-route-id="@item.RoomId" class="btn btn-sm btn-danger"
 							   onclick="return confirm('Are you sure want to delete this Room?');">
 								Delete
+							</a>
+							<a asp-controller="Room" asp-action="RoomAddEdit" asp-route-id="@item.RoomId" class="btn btn-sm btn-success"
+							   onclick="return confirm('Are you sure want to edit this Room?');">
+								Edit
 							</a>
 						</td>
 					</tr>

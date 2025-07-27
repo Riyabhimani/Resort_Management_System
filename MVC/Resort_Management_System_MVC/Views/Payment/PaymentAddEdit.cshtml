@@ -1,0 +1,83 @@
+﻿@model PaymentModel
+
+@{
+    ViewData["Title"] = Model.PaymentId == 0 ? "Add Payment" : "Edit Payment";
+}
+
+<div class="container mt-4">
+    <h2>@ViewData["Title"]</h2>
+
+    <form asp-action="PaymentAddEdit" method="post">
+        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+        <input type="hidden" asp-for="PaymentId" />
+        <input type="hidden" asp-for="Created" />
+
+        <div class="mb-3">
+            <label asp-for="ReservationId" class="form-label"></label>
+            <select asp-for="ReservationId" class="form-select" asp-items="ViewBag.ReservationList">
+                <option value="">-- Select Reservation --</option>
+            </select>
+            <span asp-validation-for="ReservationId" class="text-danger"></span>
+        </div>
+
+        <div class="mb-3">
+            <label asp-for="GuestId" class="form-label"></label>
+            <select asp-for="GuestId" class="form-select" asp-items="ViewBag.GuestList">
+                <option value="">-- Select Guest --</option>
+            </select>
+            <span asp-validation-for="GuestId" class="text-danger"></span>
+        </div>
+
+        <div class="mb-3">
+            <label asp-for="PaymentDate" class="form-label"></label>
+            <input asp-for="PaymentDate" class="form-control" type="date" />
+            <span asp-validation-for="PaymentDate" class="text-danger"></span>
+        </div>
+
+        <div class="mb-3">
+            <label asp-for="AmountPaid" class="form-label"></label>
+            <input asp-for="AmountPaid" class="form-control" placeholder="Enter amount (e.g. 500.00)" />
+            <span asp-validation-for="AmountPaid" class="text-danger"></span>
+        </div>
+
+        <div class="mb-3">
+            <label asp-for="PaymentMethod" class="form-label"></label>
+            <input asp-for="PaymentMethod" class="form-control" placeholder="e.g. Cash, Card, UPI" />
+            <span asp-validation-for="PaymentMethod" class="text-danger"></span>
+        </div>
+
+        <div class="mb-3">
+            <label asp-for="PaymentStatus" class="form-label"></label>
+            <select asp-for="PaymentStatus" class="form-select">
+                <option value="">-- Select Status --</option>
+                <option value="Pending" selected="@("Pending" == Model.PaymentStatus)">Pending</option>
+                <option value="Completed" selected="@("Completed" == Model.PaymentStatus)">Completed</option>
+                <option value="Failed" selected="@("Failed" == Model.PaymentStatus)">Failed</option>
+            </select>
+            <span asp-validation-for="PaymentStatus" class="text-danger"></span>
+        </div>
+
+        <button type="submit" class="btn btn-primary">@((Model.PaymentId == 0) ? "Add" : "Update")</button>
+        <a asp-action="PaymentList" class="btn btn-secondary">Back to List</a>
+    </form>
+</div>
+
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+    <script>
+        function loadGuests(reservationId) {
+            fetch(`/Payment/GetGuests?reservationId=${reservationId}`)
+                .then(response => response.json())
+                .then(data => {
+                    const guestDropdown = document.getElementById('GuestId');
+                    guestDropdown.innerHTML = '<option value="">-- Select Guest --</option>';
+                    data.forEach(state => {
+                        const option = document.createElement('option');
+                        option.value = state.GuestId;
+                        option.text = state.FullName;
+                        guestDropdown.appendChild(option);
+                    });
+                });
+        }
+    </script>
+}

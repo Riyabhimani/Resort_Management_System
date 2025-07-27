@@ -86,7 +86,7 @@ namespace Resort_Management_System_API.Controllers
             existingUser.UserName = user.UserName;
             existingUser.Password = user.Password;
             existingUser.Role = user.Role;
-            existingUser.Created = user.Created;
+            //existingUser.Created = user.Created;
             existingUser.Modified = user.Modified;
             existingUser.IsActive = user.IsActive;
 

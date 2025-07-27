@@ -35,7 +35,7 @@ namespace Resort_Management_System_MVC.Controllers
                     var response = await client.GetAsync($"User/{id}");
                     if (!response.IsSuccessStatusCode)
                     {
-                        TempData["Error"] = "User not found.";
+                        TempData["ErrorMessage"] = "User not found.";
                         return RedirectToAction("UserList");
                     }
 
@@ -47,7 +47,7 @@ namespace Resort_Management_System_MVC.Controllers
             }
             catch (Exception ex)
             {
-                TempData["Error"] = "Unable to load form.";
+                TempData["ErrorMessage"] = "Unable to load form.";
                 return RedirectToAction("Index");
             }
         }
@@ -56,7 +56,7 @@ namespace Resort_Management_System_MVC.Controllers
         public async Task<IActionResult> UserAddEdit(UserModel user)
         {
             if (!ModelState.IsValid)
-                return View("UserList");
+                return View(user);
 
             try
             {
@@ -77,26 +77,25 @@ namespace Resort_Management_System_MVC.Controllers
             }
             catch (Exception ex)
             {
-                TempData["Error"] = "Unable to save user.";
+                TempData["ErrorMessage"] = "Unable to save user.";
                 return View("UserList");
             }
         }
 
         public async Task<IActionResult> UserDelete(int id)
         {
+            var response = await client.DeleteAsync($"User/{id}");
 
-            try
+            if (response.IsSuccessStatusCode)
             {
-                await client.DeleteAsync($"User/{id}");
                 TempData["SuccessMessage"] = "User deleted successfully.";
-                return RedirectToAction("UserList");
+            }
+            else
+            {
+                TempData["ErrorMessage"] = $"Failed to delete user. Status: {response.StatusCode}";
             }
 
-            catch (Exception ex)
-            {
-                TempData["ErrorMessage"] = "An error occurred while deleting the User: " + ex.Message;
-                return RedirectToAction("UserList");
-            }
+            return RedirectToAction("UserList");
         }
 
     }

@@ -26,19 +26,18 @@ namespace Resort_Management_System_MVC.Controllers
         }
         public async Task<IActionResult> GuestDelete(int id)
         {
+            var response = await client.DeleteAsync($"Guest/{id}");
 
-            try
+            if (response.IsSuccessStatusCode)
             {
-                await client.DeleteAsync($"Guest/{id}");
                 TempData["SuccessMessage"] = "Guest deleted successfully.";
-                return RedirectToAction("GuestList");
+            }
+            else
+            {
+                TempData["ErrorMessage"] = $"Failed to delete guest. Status: {response.StatusCode}";
             }
 
-            catch (Exception ex)
-            {
-                TempData["ErrorMessage"] = "An error occurred while deleting the Guest: " + ex.Message;
-                return RedirectToAction("GuestList");
-            }
+            return RedirectToAction("GuestList");
         }
 
 

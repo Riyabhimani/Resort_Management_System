@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Text.Json.Serialization;
 
 namespace Resort_Management_System_API.Models;
 
@@ -24,6 +23,5 @@ public partial class Room
 
     public DateTime? Modified { get; set; }
 
-    [JsonIgnore]
-    public virtual ICollection<Reservation>? Reservations { get; set; } = new List<Reservation>();
+    public virtual ICollection<Reservation> Reservations { get; set; } = new List<Reservation>();
 }
