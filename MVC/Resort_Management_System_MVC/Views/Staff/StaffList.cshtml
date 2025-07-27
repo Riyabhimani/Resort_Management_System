@@ -1,0 +1,79 @@
+﻿@model List<StaffModel>
+
+@{
+	ViewData["Title"] = "Staff List";
+}
+
+<a asp-action="StaffAddEdit" asp-controller="Staff" class="btn btn-primary mb-3" onclick="return confirm('Are you sure you want to add a Staff?');">
+	Add Staff
+</a>
+
+@if (TempData["SuccessMessage"] != null)
+{
+	<div class="alert alert-success">@TempData["SuccessMessage"]</div>
+}
+@if (TempData["ErrorMessage"] != null)
+{
+	<div class="alert alert-danger">@TempData["ErrorMessage"]</div>
+}
+
+<div class="container mt-4">
+	<div class="d-flex justify-content-between align-items-center mb-3">
+		<h2 class="mb-0">Staff List</h2>
+	</div>
+
+	<table class="table table-bordered table-striped table-hover">
+		<thead class="table-dark">
+			<tr>
+				<th>StaffId</th>
+				<th>FullName</th>
+				<th>Role</th>
+				<th>Email</th>
+				<th>ContactNumber</th>
+				<th>JoiningDate</th>
+				<th>Salary</th>
+				<th>IsActive</th>
+				<th>Created</th>
+				<th>Modified</th>
+				<th>Action</th>
+			</tr>
+		</thead>
+
+		<tbody>
+			@if (Model != null && Model.Any())
+			{
+				foreach (var item in Model)
+				{
+					<tr>
+						<td>@item.StaffId</td>
+						<td>@item.FullName</td>
+						<td>@item.Role</td>
+						<td>@item.Email</td>
+						<td>@item.ContactNumber</td>
+						<td>@item.JoiningDate.ToString("yyyy-MM-dd")</td>
+						<td>@item.Salary</td>
+						<td>@item.IsActive</td>
+						<td>@item.Created.ToString("yyyy-MM-dd")</td>
+						<td>@item.Modified?.ToString("yyyy-MM-dd")</td>
+						<td>
+							<a asp-controller="Staff" asp-action="StaffAddEdit" asp-route-id="@item.StaffId" class="btn btn-sm btn-success"
+							   onclick="return confirm('Are you sure you want to edit this Staff?');">
+								Edit
+							</a>
+							<a asp-controller="Staff" asp-action="StaffDelete" asp-route-id="@item.StaffId" class="btn btn-sm btn-danger"
+							   onclick="return confirm('Are you sure you want to delete this Staff?');">
+								Delete
+							</a>
+						</td>
+					</tr>
+				}
+			}
+			else
+			{
+				<tr>
+					<td colspan="11" class="text-center text-muted">No staff records found.</td>
+				</tr>
+			}
+		</tbody>
+	</table>
+</div>

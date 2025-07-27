@@ -65,7 +65,7 @@ namespace Resort_Management_System_MVC.Controllers
             catch (Exception ex)
             {
                 TempData["Error"] = "Unable to load form.";
-                return RedirectToAction("Index");
+                return RedirectToAction("GuestList");
             }
         }
 
