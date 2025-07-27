@@ -93,7 +93,7 @@ namespace Resort_Management_System_API.Controllers
             existingBooking.RoomType = booking.RoomType;
             existingBooking.AdvancePayment = booking.AdvancePayment;
             existingBooking.Created = booking.Created;
-            existingBooking.Modified = booking.Modified;
+            existingBooking.Modified = DateTime.Now;
 
             context.Bookings.Update(existingBooking);
             context.SaveChanges();

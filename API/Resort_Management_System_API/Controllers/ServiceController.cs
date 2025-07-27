@@ -90,7 +90,7 @@ namespace Resort_Management_System_API.Controllers
             existingService.ServiceEndTime = service.ServiceEndTime;
             existingService.IsActive = service.IsActive;
             existingService.Created = service.Created;
-            existingService.Modified = service.Modified;
+            existingService.Modified = DateTime.Now;
 
 
             context.Services.Update(existingService);

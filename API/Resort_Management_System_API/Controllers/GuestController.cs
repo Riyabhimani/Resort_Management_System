@@ -90,7 +90,7 @@ namespace Resort_Management_System_API.Controllers
             existingGuest.Address = guest.Address;
             existingGuest.Idproof = guest.Idproof;
             existingGuest.Created = guest.Created;
-            existingGuest.Modified = guest.Modified;
+            existingGuest.Modified = DateTime.Now;
 
             context.Guests.Update(existingGuest);
             context.SaveChanges();

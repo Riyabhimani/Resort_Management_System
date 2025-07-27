@@ -89,7 +89,7 @@ namespace Resort_Management_System_API.Controllers
             existingPayment.PaymentMethod = payment.PaymentMethod;
             existingPayment.PaymentStatus = payment.PaymentStatus;
             existingPayment.Created = payment.Created;
-            existingPayment.Modified = payment.Modified;
+            existingPayment.Modified = DateTime.Now;
 
             context.Payments.Update(existingPayment);
             context.SaveChanges();

@@ -88,7 +88,7 @@ namespace Resort_Management_System_API.Controllers
             existingGuestServices.DateRequested = guestservice.DateRequested;
             existingGuestServices.GuestId = guestservice.GuestId;
             existingGuestServices.Created = guestservice.Created;
-            existingGuestServices.Modified = guestservice.Modified;
+            existingGuestServices.Modified = DateTime.Now;
 
             context.GuestServices.Update(existingGuestServices);
             context.SaveChanges();

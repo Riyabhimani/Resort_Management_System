@@ -90,7 +90,7 @@ namespace Resort_Management_System_API.Controllers
             existingReservation.TotalAmount = reservation.TotalAmount;
             existingReservation.ReservationStatus = reservation.ReservationStatus;
             existingReservation.Created = reservation.Created;
-            existingReservation.Modified = reservation.Modified;
+            existingReservation.Modified = DateTime.Now;
 
             context.Reservations.Update(existingReservation);
             context.SaveChanges();

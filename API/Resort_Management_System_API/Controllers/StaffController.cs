@@ -91,7 +91,7 @@ namespace Resort_Management_System_API.Controllers
             existingStaff.Salary = staff.Salary;
             existingStaff.IsActive = staff.IsActive;
             existingStaff.Created = staff.Created;
-            existingStaff.Modified = staff.Modified;
+            existingStaff.Modified = DateTime.Now;
 
 
             context.Staff.Update(existingStaff);

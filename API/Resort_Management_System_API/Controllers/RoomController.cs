@@ -89,7 +89,7 @@ namespace Resort_Management_System_API.Controllers
             existingRoom.RoomStatus = room.RoomStatus;
             existingRoom.IsActive = room.IsActive;
             existingRoom.Created = room.Created;
-            existingRoom.Modified = room.Modified;
+            existingRoom.Modified = DateTime.Now;
 
             context.Rooms.Update(existingRoom);
             context.SaveChanges();
