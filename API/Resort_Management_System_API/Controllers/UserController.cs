@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Http;
+﻿using FluentValidation;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using Newtonsoft.Json;
@@ -13,9 +14,12 @@ namespace Resort_Management_System_API.Controllers
 
         #region Configuration Fields 
         private readonly ResortManagementContext context;
-        public UserController(ResortManagementContext context)
+        private readonly IValidator<User> _validator;
+
+        public UserController(ResortManagementContext context, IValidator<User> validator)
         {
             this.context = context;
+            _validator = validator;
         }
         #endregion
 
@@ -33,14 +37,13 @@ namespace Resort_Management_System_API.Controllers
 
         #region GetUserById 
         [HttpGet("{id}")]
-        public IActionResult GetUserById(int id)
+        public async Task<ActionResult<User>> GetUserById(int id)
         {
-            var user = context.Users.Find(id);
+            var user = await context.Users.FindAsync(id);
             if (user == null)
-            {
                 return NotFound();
-            }
-            return Ok(user);
+
+            return user;
         }
         #endregion
 
@@ -62,11 +65,23 @@ namespace Resort_Management_System_API.Controllers
 
         #region InsertUser
         [HttpPost]
-        public IActionResult InsertUser(User user)
+        public async Task<IActionResult> InsertUser([FromBody] User user)
         {
+            var validationResult = await _validator.ValidateAsync(user);
+
+            if (!validationResult.IsValid)
+            {
+                return BadRequest(validationResult.Errors.Select(e => new
+                {
+                    Property = e.PropertyName,
+                    Error = e.ErrorMessage
+                }));
+            }
+
             context.Users.Add(user);
-            context.SaveChanges();
-            return NoContent();
+            await context.SaveChangesAsync();
+
+            return CreatedAtAction(nameof(GetAllUsers), new { id = user.UserId }, user);
         }
         #endregion
 

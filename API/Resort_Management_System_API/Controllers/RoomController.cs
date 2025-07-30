@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Http;
+﻿using FluentValidation;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using Newtonsoft.Json;
@@ -11,11 +12,16 @@ namespace Resort_Management_System_API.Controllers
     public class RoomController : ControllerBase
     {
         #region Configuration Fields 
+
         private readonly ResortManagementContext context;
-        public RoomController(ResortManagementContext context)
+        private readonly IValidator<Room> _validator;
+
+        public RoomController(ResortManagementContext context, IValidator<Room> validator)
         {
             this.context = context;
+            _validator = validator;
         }
+
         #endregion
 
         #region GetAllRooms
@@ -32,14 +38,13 @@ namespace Resort_Management_System_API.Controllers
 
         #region GetRoomById 
         [HttpGet("{id}")]
-        public IActionResult GetRoomById(int id)
+        public async Task<ActionResult<Room>> GetRoomById(int id)
         {
-            var room = context.Rooms.Find(id);
+            var room = await context.Rooms.FindAsync(id);
             if (room == null)
-            {
                 return NotFound();
-            }
-            return Ok(room);
+
+            return room;
         }
         #endregion
 
@@ -61,11 +66,23 @@ namespace Resort_Management_System_API.Controllers
 
         #region InsertRoom
         [HttpPost]
-        public IActionResult InsertRoom(Room room)
+        public async Task<IActionResult> InsertRoom([FromBody] Room room)
         {
+            var validationResult = await _validator.ValidateAsync(room);
+
+            if (!validationResult.IsValid)
+            {
+                return BadRequest(validationResult.Errors.Select(e => new
+                {
+                    Property = e.PropertyName,
+                    Error = e.ErrorMessage
+                }));
+            }
+
             context.Rooms.Add(room);
-            context.SaveChanges();
-            return NoContent();
+            await context.SaveChangesAsync();
+
+            return CreatedAtAction(nameof(GetAllRooms), new { id = room.RoomId }, room);
         }
         #endregion
 

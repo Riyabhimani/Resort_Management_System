@@ -1,5 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Text.Json.Serialization;
+using Microsoft.AspNetCore.Mvc.ModelBinding.Validation;
 
 namespace Resort_Management_System_API.Models;
 
@@ -21,9 +23,15 @@ public partial class GuestService
 
     public DateTime? Modified { get; set; }
 
+    [JsonIgnore]
+    [ValidateNever]
     public virtual Guest Guest { get; set; } = null!;
 
+    [JsonIgnore]
+    [ValidateNever]
     public virtual Reservation Reservation { get; set; } = null!;
 
+    [JsonIgnore]
+    [ValidateNever]
     public virtual Service Service { get; set; } = null!;
 }

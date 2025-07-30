@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Http;
+﻿using FluentValidation;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using Newtonsoft.Json;
@@ -12,9 +13,12 @@ namespace Resort_Management_System_API.Controllers
     {
         #region Configuration Fields 
         private readonly ResortManagementContext context;
-        public ReservationController(ResortManagementContext context)
+        private readonly IValidator<Reservation> _validator;
+
+        public ReservationController(ResortManagementContext context, IValidator<Reservation> validator)
         {
             this.context = context;
+            _validator = validator;
         }
         #endregion
 
@@ -32,14 +36,13 @@ namespace Resort_Management_System_API.Controllers
 
         #region GetReservationById 
         [HttpGet("{id}")]
-        public IActionResult GetReservationById(int id)
+        public async Task<ActionResult<Reservation>> GetReservationById(int id)
         {
-            var reservation = context.Reservations.Find(id);
+            var reservation = await context.Reservations.FindAsync(id);
             if (reservation == null)
-            {
                 return NotFound();
-            }
-            return Ok(reservation);
+
+            return reservation;
         }
         #endregion
 
@@ -61,11 +64,23 @@ namespace Resort_Management_System_API.Controllers
 
         #region InsertReservation
         [HttpPost]
-        public IActionResult InsertReservation(Reservation reservation)
+        public async Task<IActionResult> InsertReservation([FromBody] Reservation reservation)
         {
+            var validationResult = await _validator.ValidateAsync(reservation);
+
+            if (!validationResult.IsValid)
+            {
+                return BadRequest(validationResult.Errors.Select(e => new
+                {
+                    Property = e.PropertyName,
+                    Error = e.ErrorMessage
+                }));
+            }
+
             context.Reservations.Add(reservation);
-            context.SaveChanges();
-            return NoContent();
+            await context.SaveChangesAsync();
+
+            return CreatedAtAction(nameof(GetAllReservations), new { id = reservation.ReservationId }, reservation);
         }
         #endregion
 

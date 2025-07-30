@@ -39,7 +39,17 @@
         "IsRequired": true
       }
     ],
-    "ReturnTypes": []
+    "ReturnTypes": [
+      {
+        "Type": "Resort_Management_System_API.Models.Booking",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
   },
   {
     "ContainingType": "Resort_Management_System_API.Controllers.BookingController",
@@ -246,7 +256,17 @@
         "IsRequired": true
       }
     ],
-    "ReturnTypes": []
+    "ReturnTypes": [
+      {
+        "Type": "Resort_Management_System_API.Models.Guest",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
   },
   {
     "ContainingType": "Resort_Management_System_API.Controllers.GuestController",
@@ -280,6 +300,22 @@
       {
         "Name": "guest",
         "Type": "Resort_Management_System_API.Models.Guest",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Resort_Management_System_API.Controllers.GuestController",
+    "Method": "GetGuestsByReservationStatus",
+    "RelativePath": "api/Guest/by-reservation-status/{status}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "status",
+        "Type": "System.String",
         "IsRequired": true
       }
     ],
@@ -422,7 +458,7 @@
     "Order": 0,
     "Parameters": [
       {
-        "Name": "guestservice",
+        "Name": "guestService",
         "Type": "Resort_Management_System_API.Models.GuestService",
         "IsRequired": true
       }
@@ -443,7 +479,17 @@
         "IsRequired": true
       }
     ],
-    "ReturnTypes": []
+    "ReturnTypes": [
+      {
+        "Type": "Resort_Management_System_API.Models.GuestService",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
   },
   {
     "ContainingType": "Resort_Management_System_API.Controllers.GuestServicesController",
@@ -655,7 +701,17 @@
         "IsRequired": true
       }
     ],
-    "ReturnTypes": []
+    "ReturnTypes": [
+      {
+        "Type": "Resort_Management_System_API.Models.Payment",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
   },
   {
     "ContainingType": "Resort_Management_System_API.Controllers.PaymentController",
@@ -712,6 +768,22 @@
   },
   {
     "ContainingType": "Resort_Management_System_API.Controllers.PaymentController",
+    "Method": "GetGuestsByReservationStatus",
+    "RelativePath": "api/Payment/dropdown/guests/by-status",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "status",
+        "Type": "System.String",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Resort_Management_System_API.Controllers.PaymentController",
     "Method": "PaymentsDropdown",
     "RelativePath": "api/Payment/dropdown/payments",
     "HttpMethod": "GET",
@@ -729,6 +801,16 @@
         "StatusCode": 200
       }
     ]
+  },
+  {
+    "ContainingType": "Resort_Management_System_API.Controllers.PaymentController",
+    "Method": "ReservationsDropdown",
+    "RelativePath": "api/Payment/dropdown/reservations",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
   },
   {
     "ContainingType": "Resort_Management_System_API.Controllers.PaymentController",
@@ -862,7 +944,17 @@
         "IsRequired": true
       }
     ],
-    "ReturnTypes": []
+    "ReturnTypes": [
+      {
+        "Type": "Resort_Management_System_API.Models.Reservation",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
   },
   {
     "ContainingType": "Resort_Management_System_API.Controllers.ReservationController",
@@ -1069,7 +1161,17 @@
         "IsRequired": true
       }
     ],
-    "ReturnTypes": []
+    "ReturnTypes": [
+      {
+        "Type": "Resort_Management_System_API.Models.Room",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
   },
   {
     "ContainingType": "Resort_Management_System_API.Controllers.RoomController",
@@ -1276,7 +1378,17 @@
         "IsRequired": true
       }
     ],
-    "ReturnTypes": []
+    "ReturnTypes": [
+      {
+        "Type": "Resort_Management_System_API.Models.Service",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
   },
   {
     "ContainingType": "Resort_Management_System_API.Controllers.ServiceController",
@@ -1473,7 +1585,17 @@
         "IsRequired": true
       }
     ],
-    "ReturnTypes": []
+    "ReturnTypes": [
+      {
+        "Type": "Resort_Management_System_API.Models.Staff",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
   },
   {
     "ContainingType": "Resort_Management_System_API.Controllers.StaffController",
@@ -1675,7 +1797,17 @@
         "IsRequired": true
       }
     ],
-    "ReturnTypes": []
+    "ReturnTypes": [
+      {
+        "Type": "Resort_Management_System_API.Models.User",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
   },
   {
     "ContainingType": "Resort_Management_System_API.Controllers.UserController",

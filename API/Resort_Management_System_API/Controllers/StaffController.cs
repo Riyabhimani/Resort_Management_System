@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Http;
+﻿using FluentValidation;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using Newtonsoft.Json;
@@ -13,9 +14,12 @@ namespace Resort_Management_System_API.Controllers
 
         #region Configuration Fields 
         private readonly ResortManagementContext context;
-        public StaffController(ResortManagementContext context)
+        private readonly IValidator<Staff> _validator;
+
+        public StaffController(ResortManagementContext context, IValidator<Staff> validator)
         {
             this.context = context;
+            _validator = validator;
         }
         #endregion
 
@@ -33,14 +37,13 @@ namespace Resort_Management_System_API.Controllers
 
         #region GetStaffById 
         [HttpGet("{id}")]
-        public IActionResult GetStaffById(int id)
+        public async Task<ActionResult<Staff>> GetStaffById(int id)
         {
-            var staff = context.Staff.Find(id);
+            var staff = await context.Staff.FindAsync(id);
             if (staff == null)
-            {
                 return NotFound();
-            }
-            return Ok(staff);
+
+            return staff;
         }
         #endregion
 
@@ -62,11 +65,23 @@ namespace Resort_Management_System_API.Controllers
 
         #region InsertStaff
         [HttpPost]
-        public IActionResult InsertStaff(Staff staff)
+        public async Task<IActionResult> InsertStaff([FromBody] Staff staff)
         {
+            var validationResult = await _validator.ValidateAsync(staff);
+
+            if (!validationResult.IsValid)
+            {
+                return BadRequest(validationResult.Errors.Select(e => new
+                {
+                    Property = e.PropertyName,
+                    Error = e.ErrorMessage
+                }));
+            }
+
             context.Staff.Add(staff);
-            context.SaveChanges();
-            return NoContent();
+            await context.SaveChangesAsync();
+
+            return CreatedAtAction(nameof(GetAllStaffs), new { id = staff.StaffId }, staff);
         }
         #endregion
 

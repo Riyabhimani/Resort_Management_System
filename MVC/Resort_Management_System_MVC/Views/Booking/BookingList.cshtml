@@ -1,4 +1,5 @@
-﻿@model List<BookingModel>
+﻿Booking List
+@model List<BookingModel>
 @{
     ViewData["Title"] = "Booking List";
 }
@@ -55,7 +56,7 @@
                         <td>@item.Address</td>
                         <td>@item.IdProof</td>
                         <td>@item.NumberOfPersons</td>
-                        <td>@item.NumberOfRooms</td>
+                        <td>@item.NumberOfRoom</td>
                         <td>@item.BookingDate.ToString("yyyy-MM-dd")</td>
                         <td>@item.RoomType</td>
                         <td>@item.AdvancePayment</td>

@@ -12,17 +12,18 @@
         <input type="hidden" asp-for="PaymentId" />
         <input type="hidden" asp-for="Created" />
 
-        <div class="mb-3">
-            <label asp-for="ReservationId" class="form-label"></label>
-            <select asp-for="ReservationId" class="form-select" asp-items="ViewBag.ReservationList">
-                <option value="">-- Select Reservation --</option>
+        <div class="form-group mb-3">
+            <label asp-for="ReservationId"></label>
+            <select asp-for="ReservationId" class="form-control" asp-items="ViewBag.Reservations">
+                <option value="" selected">-- Select Reservation Status (Confirmed/Pending) --</option>
             </select>
             <span asp-validation-for="ReservationId" class="text-danger"></span>
         </div>
 
+
         <div class="mb-3">
             <label asp-for="GuestId" class="form-label"></label>
-            <select asp-for="GuestId" class="form-select" asp-items="ViewBag.GuestList">
+            <select asp-for="GuestId" class="form-control" asp-items="@(ViewBag.Guests as SelectList)">
                 <option value="">-- Select Guest --</option>
             </select>
             <span asp-validation-for="GuestId" class="text-danger"></span>
@@ -62,22 +63,96 @@
     </form>
 </div>
 
+
 @section Scripts {
     <partial name="_ValidationScriptsPartial" />
     <script>
-        function loadGuests(reservationId) {
+        function LoadGuests(reservationId) {
             fetch(`/Payment/GetGuests?reservationId=${reservationId}`)
                 .then(response => response.json())
                 .then(data => {
                     const guestDropdown = document.getElementById('GuestId');
-                    guestDropdown.innerHTML = '<option value="">-- Select Guest --</option>';
-                    data.forEach(state => {
+                    guestDropdown.innerHTML = '<option value="">-- Select guest --</option>';
+                    data.forEach(guest => {
                         const option = document.createElement('option');
-                        option.value = state.GuestId;
-                        option.text = state.FullName;
+                        option.value = guest.guestID;
+                        option.text = guest.FullName;
                         guestDropdown.appendChild(option);
                     });
                 });
         }
     </script>
-}
+
+
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+@*@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+    <script>
+        $(document).ready(function () {
+            // Function to load guests based on selected reservation
+            function loadGuestsForReservation(reservationId) {
+                const guestDropdown = $('#GuestId');
+                guestDropdown.html('<option value="">Loading Guests...</option>'); // Show loading state
+
+                if (reservationId) {
+                    $.getJSON(`/Payment/GetGuests?reservationId=${reservationId}`)
+                        .done(function (data) {
+                            let options = '<option value="">-- Select Guest --</option>';
+                            $.each(data, function (index, guest) {
+                                options += `<option value="${guest.guestId}">${guest.fullName}</option>`;
+                            });
+                            guestDropdown.html(options);
+
+                            // If editing, and a GuestId is already set in the model, select it
+                            if ('@Model.GuestId' && '@Model.ReservationId' === reservationId.toString()) {
+                                guestDropdown.val('@Model.GuestId');
+                            }
+                        })
+                        .fail(function (jqXHR, textStatus, errorThrown) {
+                            console.error("Error fetching guests:", textStatus, errorThrown);
+                            guestDropdown.html('<option value="">-- Error loading guests --</option>');
+                        });
+                } else {
+                    guestDropdown.html('<option value="">-- Select Guest --</option>');
+                }
+            }
+
+            // Event listener for ReservationId dropdown change
+            $('#ReservationId').change(function () {
+                var selectedReservationId = $(this).val();
+                loadGuestsForReservation(selectedReservationId);
+            });
+
+            // Initial load of guests if editing an existing payment with a pre-selected ReservationId
+            // This ensures the Guest dropdown is populated correctly when the page loads for editing.
+            var initialReservationId = $('#ReservationId').val();
+            if (initialReservationId) {
+                loadGuestsForReservation(initialReservationId);
+            }
+        });
+    </script>
+}*@

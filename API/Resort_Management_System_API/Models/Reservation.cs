@@ -32,9 +32,11 @@ public partial class Reservation
     public virtual Guest Guest { get; set; } = null!;
 
     [JsonIgnore]
+    [ValidateNever]
     public virtual ICollection<GuestService> GuestServices { get; set; } = new List<GuestService>();
 
     [JsonIgnore]
+    [ValidateNever]
     public virtual ICollection<Payment> Payments { get; set; } = new List<Payment>();
 
     [JsonIgnore]

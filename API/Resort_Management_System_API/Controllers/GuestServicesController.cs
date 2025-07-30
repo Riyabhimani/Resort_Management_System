@@ -3,6 +3,7 @@ using Microsoft.AspNetCore.Mvc;
 using Resort_Management_System_API.Models;
 using Newtonsoft.Json;
 using Microsoft.EntityFrameworkCore;
+using FluentValidation;
 
 namespace Resort_Management_System_API.Controllers
 {
@@ -12,9 +13,12 @@ namespace Resort_Management_System_API.Controllers
     {
         #region Configuration Fields 
         private readonly ResortManagementContext context;
-        public GuestServicesController(ResortManagementContext context)
+        private readonly IValidator<GuestService> _validator;
+
+        public GuestServicesController(ResortManagementContext context, IValidator<GuestService> validator)
         {
             this.context = context;
+            _validator = validator;
         }
         #endregion
 
@@ -32,14 +36,13 @@ namespace Resort_Management_System_API.Controllers
 
         #region GetGuestServiceById 
         [HttpGet("{id}")]
-        public IActionResult GetGuestServiceById(int id)
+        public async Task<ActionResult<GuestService>> GetGuestServiceById(int id)
         {
-            var guestservice = context.GuestServices.Find(id);
-            if (guestservice == null)
-            {
+            var guestService = await context.GuestServices.FindAsync(id);
+            if (guestService == null)
                 return NotFound();
-            }
-            return Ok(guestservice);
+
+            return guestService;
         }
         #endregion
 
@@ -61,12 +64,25 @@ namespace Resort_Management_System_API.Controllers
 
         #region InsertGuestService
         [HttpPost]
-        public IActionResult InsertGuestService(GuestService guestservice)
+        public async Task<IActionResult> InsertGuestService([FromBody] GuestService guestService)
         {
-            context.GuestServices.Add(guestservice);
-            context.SaveChanges();
-            return NoContent();
+            var validationResult = await _validator.ValidateAsync(guestService);
+
+            if (!validationResult.IsValid)
+            {
+                return BadRequest(validationResult.Errors.Select(e => new
+                {
+                    Property = e.PropertyName,
+                    Error = e.ErrorMessage
+                }));
+            }
+
+            context.GuestServices.Add(guestService);
+            await context.SaveChangesAsync();
+
+            return CreatedAtAction(nameof(GetGuestServices), new { id = guestService.GuestServiceId }, guestService);
         }
+
         #endregion
 
         #region UpdateGuestService

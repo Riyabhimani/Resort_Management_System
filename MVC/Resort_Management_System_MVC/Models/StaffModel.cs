@@ -1,5 +1,5 @@
-﻿using System;
-using System.ComponentModel.DataAnnotations;
+﻿using System.ComponentModel.DataAnnotations;
+
 
 namespace Resort_Management_System_MVC.Models
 {
@@ -34,17 +34,17 @@ namespace Resort_Management_System_MVC.Models
         [Required(ErrorMessage = "Salary is required")]
         [Range(0, 1000000, ErrorMessage = "Salary must be between 0 and 10,00,000")]
         [DataType(DataType.Currency)]
-        public decimal Salary { get; set; }
+        public string Salary { get; set; }
 
         [Required]
         [Display(Name = "Is Active?")]
         public bool IsActive { get; set; }
 
         [Required]
-        [DataType(DataType.DateTime)]
+        //[DataType(DataType.DateTime)]
         public DateTime Created { get; set; }
 
-        [DataType(DataType.DateTime)]
+        //[DataType(DataType.DateTime)]
         public DateTime? Modified { get; set; }
     }
 }

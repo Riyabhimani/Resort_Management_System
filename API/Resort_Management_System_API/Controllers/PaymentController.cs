@@ -3,6 +3,7 @@ using Microsoft.AspNetCore.Mvc;
 using Resort_Management_System_API.Models;
 using Newtonsoft.Json;
 using Microsoft.EntityFrameworkCore;
+using FluentValidation;
 
 namespace Resort_Management_System_API.Controllers
 {
@@ -12,9 +13,12 @@ namespace Resort_Management_System_API.Controllers
     {
         #region Configuration Fields 
         private readonly ResortManagementContext context;
-        public PaymentController(ResortManagementContext context)
+        private readonly IValidator<Payment> _validator;
+
+        public PaymentController(ResortManagementContext context, IValidator<Payment> validator)
         {
             this.context = context;
+            _validator = validator;
         }
         #endregion
 
@@ -32,14 +36,13 @@ namespace Resort_Management_System_API.Controllers
 
         #region GetPaymentById 
         [HttpGet("{id}")]
-        public IActionResult GetPaymentById(int id)
+        public async Task<ActionResult<Payment>> GetPaymentById(int id)
         {
-            var payment = context.Payments.Find(id);
+            var payment = await context.Payments.FindAsync(id);
             if (payment == null)
-            {
                 return NotFound();
-            }
-            return Ok(payment);
+
+            return payment;
         }
         #endregion
 
@@ -61,12 +64,25 @@ namespace Resort_Management_System_API.Controllers
 
         #region InsertPayment
         [HttpPost]
-        public IActionResult InsertPayment(Payment payment)
+        public async Task<IActionResult> InsertPayment([FromBody] Payment payment)
         {
+            var validationResult = await _validator.ValidateAsync(payment);
+
+            if (!validationResult.IsValid)
+            {
+                return BadRequest(validationResult.Errors.Select(e => new
+                {
+                    Property = e.PropertyName,
+                    Error = e.ErrorMessage
+                }));
+            }
+
             context.Payments.Add(payment);
-            context.SaveChanges();
-            return NoContent();
+            await context.SaveChangesAsync();
+
+            return CreatedAtAction(nameof(GetAllPayments), new { id = payment.PaymentId }, payment);
         }
+
         #endregion
 
         #region UpdatePayment
@@ -180,7 +196,7 @@ namespace Resort_Management_System_API.Controllers
 
         #region SearchPayment
         [HttpGet("filter")]
-        public async Task<ActionResult<IEnumerable<Payment>>> SearchPayment([FromQuery] int? paymentId , int? guestId, int? reservationId)
+        public async Task<ActionResult<IEnumerable<Payment>>> SearchPayment([FromQuery] int? paymentId, int? guestId, int? reservationId)
         {
             var query = context.Payments.AsQueryable();
 
@@ -208,5 +224,60 @@ namespace Resort_Management_System_API.Controllers
         }
         #endregion
 
+
+        // ✅ GET: All reservations for dropdown
+        [HttpGet("dropdown/reservations")]
+        public async Task<ActionResult> ReservationsDropdown()
+        {
+            try
+            {
+                var reservations = await context.Reservations
+                    .Select(r => new { r.ReservationStatus })
+                    .Distinct()
+                    .ToListAsync();
+
+                return Ok(reservations);
+            }
+            catch (Exception ex)
+            {
+                return StatusCode(500, $"Error retrieving reservations: {ex.Message}");
+            }
+        }
+
+
+
+        #region GET: Guests by ReservationStatus (Cascade Dropdown)
+        [HttpGet("dropdown/guests/by-status/")]
+        public async Task<IActionResult> GetGuestsByReservationStatus([FromQuery] string status)
+        {
+            if (string.IsNullOrWhiteSpace(status))
+            {
+                return BadRequest("Reservation status is required (Confirmed or Pending).");
+            }
+
+            if (status != "Confirmed" && status != "Pending")
+            {
+                return BadRequest("Only 'Confirmed' or 'Pending' status is allowed.");
+            }
+
+            var guests = await (from g in context.Guests
+                                join r in context.Reservations
+                                on g.GuestId equals r.GuestId
+                                where r.ReservationStatus == status
+                                select new
+                                {
+                                    g.GuestId,
+                                    g.FullName,
+                                    r.ReservationStatus
+                                })
+                                .Distinct()
+                                .ToListAsync();
+
+            return Ok(guests);
+        }
+        #endregion
+
     }
 }
+
+

@@ -1,9 +1,15 @@
-﻿@model Resort_Management_System_MVC.Models.StaffModel
+﻿Staff Add Edit
+@model Resort_Management_System_MVC.Models.StaffModel
 
 @{
     ViewData["Title"] = Model.StaffId == 0 ? "Add Staff" : "Edit Staff";
 }
 
+
+@if (TempData["Error"] != null)
+{
+    <div class="alert alert-danger">@TempData["Error"]</div>
+}
 <div class="container mt-4">
     <h2>@ViewData["Title"]</h2>
 

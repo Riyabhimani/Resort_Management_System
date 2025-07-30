@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Http;
+﻿using FluentValidation;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using Newtonsoft.Json;
@@ -13,10 +14,14 @@ namespace Resort_Management_System_API.Controllers
 
         #region Configuration Fields 
         private readonly ResortManagementContext context;
-        public ServiceController(ResortManagementContext context)
+        private readonly IValidator<Service> _validator;
+
+        public ServiceController(ResortManagementContext context, IValidator<Service> validator)
         {
             this.context = context;
+            _validator = validator;
         }
+
         #endregion
 
         #region GetAllServices
@@ -33,14 +38,13 @@ namespace Resort_Management_System_API.Controllers
 
         #region GetServiceById 
         [HttpGet("{id}")]
-        public IActionResult GetServiceById(int id)
+        public async Task<ActionResult<Service>> GetServiceById(int id)
         {
-            var service = context.Services.Find(id);
+            var service = await context.Services.FindAsync(id);
             if (service == null)
-            {
                 return NotFound();
-            }
-            return Ok(service);
+
+            return service;
         }
         #endregion
 
@@ -62,11 +66,23 @@ namespace Resort_Management_System_API.Controllers
 
         #region InsertService
         [HttpPost]
-        public IActionResult InsertService(Service service)
+        public async Task<IActionResult> InsertService([FromBody] Service service)
         {
+            var validationResult = await _validator.ValidateAsync(service);
+
+            if (!validationResult.IsValid)
+            {
+                return BadRequest(validationResult.Errors.Select(e => new
+                {
+                    Property = e.PropertyName,
+                    Error = e.ErrorMessage
+                }));
+            }
+
             context.Services.Add(service);
-            context.SaveChanges();
-            return NoContent();
+            await context.SaveChangesAsync();
+
+            return CreatedAtAction(nameof(GetAllServices), new { id = service.ServiceId }, service);
         }
         #endregion
 

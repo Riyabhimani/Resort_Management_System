@@ -4,6 +4,8 @@ using Microsoft.AspNetCore.Mvc;
 using Resort_Management_System_API.Models;
 using Newtonsoft.Json;
 using Microsoft.EntityFrameworkCore;
+using FluentValidation;
+using System.Diagnostics.Metrics;
 
 namespace Resort_Management_System_API.Controllers
 {
@@ -13,11 +15,21 @@ namespace Resort_Management_System_API.Controllers
     {
 
         #region Configuration Fields 
+        //private readonly ResortManagementContext context;
+        //public GuestController(ResortManagementContext context)
+        //{
+        //    this.context = context;
+        //}
+
         private readonly ResortManagementContext context;
-        public GuestController(ResortManagementContext context)
+        private readonly IValidator<Guest> _validator;
+
+        public GuestController(ResortManagementContext context, IValidator<Guest> validator)
         {
             this.context = context;
+            _validator = validator;
         }
+
         #endregion
 
         #region GetAllGuests
@@ -34,15 +46,25 @@ namespace Resort_Management_System_API.Controllers
 
         #region GetGuestById 
         [HttpGet("{id}")]
-        public IActionResult GetGuestById(int id)
+        //public IActionResult GetGuestById(int id)
+        //{
+        //    var guest = context.Guests.Find(id);
+        //    if (guest == null)
+        //    {
+        //        return NotFound();
+        //    }
+        //    return Ok(guest);
+
+        public async Task<ActionResult<Guest>> GetGuestById(int id)
         {
-            var guest = context.Guests.Find(id);
+            var guest = await context.Guests.FindAsync(id);
             if (guest == null)
-            {
                 return NotFound();
-            }
-            return Ok(guest);
+
+            return guest;
         }
+
+
         #endregion
 
         #region DeleteGuestById 
@@ -63,12 +85,32 @@ namespace Resort_Management_System_API.Controllers
 
         #region InsertGuest 
         [HttpPost]
-        public IActionResult InsertGuest(Guest guest)
+        //public IActionResult InsertGuest(Guest guest)
+        //{
+        //    context.Guests.Add(guest);
+        //    context.SaveChanges();
+        //    return NoContent();
+        //}
+
+        public async Task<IActionResult> InsertGuest([FromBody] Guest guest)
         {
+            var validationResult = await _validator.ValidateAsync(guest);
+
+            if (!validationResult.IsValid)
+            {
+                return BadRequest(validationResult.Errors.Select(e => new
+                {
+                    Property = e.PropertyName,
+                    Error = e.ErrorMessage
+                }));
+            }
+
             context.Guests.Add(guest);
-            context.SaveChanges();
-            return NoContent();
+            await context.SaveChangesAsync();
+
+            return CreatedAtAction(nameof(GetGuests), new { id = guest.GuestId}, guest);
         }
+
         #endregion
 
         #region UpdateGuest
@@ -202,6 +244,21 @@ namespace Resort_Management_System_API.Controllers
                 .ToListAsync();
         }
         #endregion
+
+        [HttpGet("by-reservation-status/{status}")]
+        public async Task<IActionResult> GetGuestsByReservationStatus(string status)
+        {
+            var guests = await (from r in context.Reservations
+                                join g in context.Guests on r.GuestId equals g.GuestId
+                                where r.ReservationStatus == status
+                                select new
+                                {
+                                    g.GuestId,
+                                    g.FullName
+                                }).Distinct().ToListAsync();
+
+            return Ok(guests);
+        }
 
     }
 }

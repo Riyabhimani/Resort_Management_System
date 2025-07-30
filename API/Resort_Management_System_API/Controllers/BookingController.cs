@@ -1,8 +1,9 @@
-﻿using Microsoft.AspNetCore.Http;
-using Microsoft.AspNetCore.Mvc;
-using Microsoft.EntityFrameworkCore;
+﻿using Microsoft.AspNetCore.Mvc;
 using Newtonsoft.Json;
 using Resort_Management_System_API.Models;
+using Microsoft.AspNetCore.Http;
+using Microsoft.EntityFrameworkCore;
+using FluentValidation;
 
 namespace Resort_Management_System_API.Controllers
 {
@@ -13,9 +14,12 @@ namespace Resort_Management_System_API.Controllers
 
         #region Configuration Fields 
         private readonly ResortManagementContext context;
-        public BookingController(ResortManagementContext context)
+        private readonly IValidator<Booking> _validator;
+
+        public BookingController(ResortManagementContext context, IValidator<Booking> validator)
         {
             this.context = context;
+            _validator = validator;
         }
         #endregion
 
@@ -33,14 +37,13 @@ namespace Resort_Management_System_API.Controllers
 
         #region GetBookingById 
         [HttpGet("{id}")]
-        public IActionResult GetBookingById(int id)
+        public async Task<ActionResult<Booking>> GetBookingById(int id)
         {
-            var booking = context.Bookings.Find(id);
+            var booking = await context.Bookings.FindAsync(id);
             if (booking == null)
-            {
                 return NotFound();
-            }
-            return Ok(booking);
+
+            return booking;
         }
         #endregion
 
@@ -62,11 +65,23 @@ namespace Resort_Management_System_API.Controllers
 
         #region InsertBooking
         [HttpPost]
-        public IActionResult InsertBooking(Booking booking)
+        public async Task<IActionResult> InsertBooking([FromBody] Booking booking)
         {
+            var validationResult = await _validator.ValidateAsync(booking);
+
+            if (!validationResult.IsValid)
+            {
+                return BadRequest(validationResult.Errors.Select(e => new
+                {
+                    Property = e.PropertyName,
+                    Error = e.ErrorMessage
+                }));
+            }
+
             context.Bookings.Add(booking);
-            context.SaveChanges();
-            return NoContent();
+            await context.SaveChangesAsync();
+
+            return CreatedAtAction(nameof(GetAllBookings), new { id = booking.BookingId }, booking);
         }
         #endregion
 
@@ -83,7 +98,8 @@ namespace Resort_Management_System_API.Controllers
             {
                 return NotFound();
             }
-            existingBooking.FullName = booking.Email;
+            existingBooking.FullName = booking.FullName;
+            existingBooking.Email = booking.Email;
             existingBooking.ContactNumber = booking.ContactNumber;
             existingBooking.Address = booking.Address;
             existingBooking.Idproof = booking.Idproof;

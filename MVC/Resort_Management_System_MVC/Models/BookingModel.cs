@@ -1,11 +1,14 @@
-﻿using System;
+﻿using Newtonsoft.Json;
 using System.ComponentModel.DataAnnotations;
+
+using System;
 
 namespace Resort_Management_System_MVC.Models
 {
     public class BookingModel
     {
         [Key]
+        [JsonProperty("bookingId")]
         public int BookingId { get; set; }
 
         [Required(ErrorMessage = "Full Name is required")]
@@ -38,7 +41,7 @@ namespace Resort_Management_System_MVC.Models
         [Required(ErrorMessage = "Number of Rooms is required")]
         [Range(1, 20, ErrorMessage = "Must book at least 1 room")]
         [Display(Name = "Number of Rooms")]
-        public int NumberOfRooms { get; set; }
+        public int NumberOfRoom { get; set; }
 
         [Required(ErrorMessage = "Booking Date is required")]
         [DataType(DataType.Date)]
@@ -56,10 +59,10 @@ namespace Resort_Management_System_MVC.Models
         public string AdvancePayment { get; set; }
 
         [Required]
-        [DataType(DataType.DateTime)]
+        //[DataType(DataType.DateTime)]
         public DateTime Created { get; set; }
 
-        [DataType(DataType.DateTime)]
+        //[DataType(DataType.DateTime)]
         public DateTime? Modified { get; set; }
     }
 }

@@ -1,9 +1,14 @@
-﻿@model Resort_Management_System_MVC.Models.BookingModel
+﻿Booking Add Edit
+@model Resort_Management_System_MVC.Models.BookingModel
 
 @{
     ViewData["Title"] = Model.BookingId == 0 ? "Add Booking" : "Edit Booking";
 }
 
+@if (TempData["Error"] != null)
+{
+    <div class="alert alert-danger">@TempData["Error"]</div>
+}
 <div class="container mt-4">
     <h2>@ViewData["Title"]</h2>
 
@@ -50,9 +55,9 @@
         </div>
 
         <div class="mb-3">
-            <label asp-for="NumberOfRooms" class="form-label"></label>
-            <input asp-for="NumberOfRooms" class="form-control" type="number" min="1" />
-            <span asp-validation-for="NumberOfRooms" class="text-danger"></span>
+            <label asp-for="NumberOfRoom" class="form-label"></label>
+            <input asp-for="NumberOfRoom" class="form-control" type="number" min="1" />
+            <span asp-validation-for="NumberOfRoom" class="text-danger"></span>
         </div>
 
         <div class="mb-3">
