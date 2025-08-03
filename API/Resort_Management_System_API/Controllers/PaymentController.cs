@@ -24,7 +24,7 @@ namespace Resort_Management_System_API.Controllers
 
         #region GetAllPayments
         [HttpGet]
-        public IActionResult GetAllPayments()
+        public IActionResult GetAllPayments()   
         {
             if (context == null)
                 return StatusCode(500, "Database context is null.");

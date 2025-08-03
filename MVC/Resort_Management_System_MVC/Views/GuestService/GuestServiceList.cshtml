@@ -3,6 +3,15 @@
 	ViewData["Title"] = "GuestService List";
 }
 
+@{
+	var reservations = ViewBag.Reservations as List<Resort_Management_System_MVC.Models.ReservationModel> ?? new();
+}
+
+<a asp-action="GuestServiceAddEdit" asp-controller="GuestService" class="btn btn-primary mb-3">
+	Add GuestService
+</a>
+
+
 <span class="text-danger">@TempData["ErrorMessage"]</span>
 <span class="text-danger">@TempData["SuccessMessage"]</span>
 
@@ -45,6 +54,10 @@
 							<a asp-controller="GuestService" asp-action="GuestServiceDelete" asp-route-id="@item.GuestServiceId" class="btn btn-sm btn-danger"
 							   onclick="return confirm('Are you sure want to delete this Guest Service?');">
 								Delete
+							</a>
+							<a asp-controller="GuestService" asp-action="GuestServiceAddEdit" asp-route-id="@item.GuestServiceId" class="btn btn-sm btn-success"
+							   onclick="return confirm('Are you sure want to edit this GuestService Detail?');">
+								Edit
 							</a>
 						</td>
 					</tr>

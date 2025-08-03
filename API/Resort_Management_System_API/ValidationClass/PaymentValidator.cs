@@ -27,7 +27,7 @@ namespace Resort_Management_System_MVC.ValidationClass
 
             RuleFor(p => p.PaymentStatus)
                 .NotNull().WithMessage("Payment status is required.")
-                .Must(status => status == "Paid" || status == "Pending" || status == "Failed")
+                .Must(status => status == "Completed" || status == "Pending" || status == "Failed")
                 .WithMessage("Payment status must be either Paid, Pending, or Failed.");
 
             RuleFor(p => p.Created)

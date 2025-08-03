@@ -24,13 +24,12 @@ namespace Resort_Management_System_MVC.Controllers
             return View(list);
         }
 
-        [HttpGet("Payment/AddEdit/{id?}")]
+        [HttpGet]
         public async Task<IActionResult> PaymentAddEdit(int? id)
         {
             try
             {
                 PaymentModel payment = new PaymentModel();
-                await LoadReservations();
 
                 if (id != null)
                 {
@@ -43,13 +42,9 @@ namespace Resort_Management_System_MVC.Controllers
 
                     var json = await response.Content.ReadAsStringAsync();
                     payment = JsonConvert.DeserializeObject<PaymentModel>(json);
-                    await LoadGuests(payment.ReservationId, payment.GuestId);
-                }
-                else
-                {
-                    ViewBag.Guests = new SelectList(new List<GuestModel>(), "GuestId", "FullName");
                 }
 
+                await LoadGuests(payment.GuestId);
                 return View(payment);
             }
             catch (Exception ex)
@@ -59,13 +54,29 @@ namespace Resort_Management_System_MVC.Controllers
             }
         }
 
-        [HttpPost("Payment/AddEdit")]
+
+        [HttpPost]
         public async Task<IActionResult> PaymentAddEdit(PaymentModel model)
         {
+            // Fetch and set ReservationId based on selected GuestId
+            var guestResponse = await client.GetAsync("Reservation");
+            if (guestResponse.IsSuccessStatusCode)
+            {
+                var reservationJson = await guestResponse.Content.ReadAsStringAsync();
+                var reservations = JsonConvert.DeserializeObject<List<ReservationModel>>(reservationJson);
+
+                var confirmedReservation = reservations
+                    .FirstOrDefault(r => r.GuestId == model.GuestId && r.ReservationStatus == "Confirmed");
+
+                if (confirmedReservation != null)
+                    model.ReservationId = confirmedReservation.ReservationId;
+                else
+                    ModelState.AddModelError("GuestId", "Selected guest does not have a confirmed reservation.");
+            }
+
             if (!ModelState.IsValid)
             {
-                await LoadReservations(model.ReservationId);
-                await LoadGuests(model.ReservationId, model.GuestId);
+                await LoadGuests(model.GuestId);
                 return View(model);
             }
 
@@ -89,8 +100,7 @@ namespace Resort_Management_System_MVC.Controllers
                 {
                     var error = await response.Content.ReadAsStringAsync();
                     TempData["ErrorMessage"] = $"API call failed: {response.StatusCode} - {error}";
-                    await LoadReservations(model.ReservationId);
-                    await LoadGuests(model.ReservationId, model.GuestId);
+                    await LoadGuests(model.GuestId);
                     return View(model);
                 }
 
@@ -100,11 +110,11 @@ namespace Resort_Management_System_MVC.Controllers
             catch (Exception ex)
             {
                 TempData["ErrorMessage"] = $"Unable to save Payment: {ex.Message}";
-                await LoadReservations(model.ReservationId);
-                await LoadGuests(model.ReservationId, model.GuestId);
+                await LoadGuests(model.GuestId);
                 return View(model);
             }
         }
+
 
         //private async Task LoadReservations(int? selectedReservationId = null)
         //{
@@ -115,25 +125,58 @@ namespace Resort_Management_System_MVC.Controllers
 
         private async Task LoadReservations(int? selectedReservationId = null)
         {
-            var response = await client.GetStringAsync("Payment/dropdown/reservations");
-            var reservations = JsonConvert.DeserializeObject<List<ReservationDropdownModel>>(response);
+            var response = await client.GetStringAsync("Reservation");
+            var reservations = JsonConvert.DeserializeObject<List<ReservationModel>>(response);
 
-            // Optional: remove duplicates (if API side isn't enough)
-            var distinctReservations = reservations
-                .GroupBy(r => new { r.ReservationId, r.ReservationStatus })
-                .Select(g => g.First())
+            // Filter only confirmed
+            var confirmedReservations = reservations
+                .Where(r => r.ReservationStatus == "Confirmed")
+                .Select(r => new { r.ReservationId, r.ReservationStatus })
                 .ToList();
 
-            ViewBag.Reservations = new SelectList(distinctReservations, "ReservationId", "ReservationStatus", selectedReservationId);
+            ViewBag.Reservations = new SelectList(confirmedReservations, "ReservationId", "ReservationStatus", selectedReservationId);
         }
 
 
-        private async Task LoadGuests(int reservationId, int? selectedGuestId = null)
+
+        private async Task LoadGuests(int? selectedGuestId = null)
         {
-            var response = await client.GetStringAsync($"Payment/dropdown/guest/{reservationId}");
-            var guests = JsonConvert.DeserializeObject<List<GuestModel>>(response);
-            ViewBag.Guests = new SelectList(guests, "GuestId", "FullName", selectedGuestId);
+            var reservationResponse = await client.GetAsync("Reservation");
+            if (!reservationResponse.IsSuccessStatusCode)
+            {
+                ViewBag.Guests = new SelectList(new List<GuestModel>(), "GuestId", "FullName");
+                return;
+            }
+
+            var reservationJson = await reservationResponse.Content.ReadAsStringAsync();
+            var reservations = JsonConvert.DeserializeObject<List<ReservationModel>>(reservationJson);
+
+            var confirmedGuestIds = reservations
+                .Where(r => r.ReservationStatus == "Confirmed")
+                .Select(r => r.GuestId)
+                .Distinct()
+                .ToList();
+
+            var guestResponse = await client.GetAsync("Guest");
+            if (!guestResponse.IsSuccessStatusCode)
+            {
+                ViewBag.Guests = new SelectList(new List<GuestModel>(), "GuestId", "FullName");
+                return;
+            }
+
+            var guestJson = await guestResponse.Content.ReadAsStringAsync();
+            var guests = JsonConvert.DeserializeObject<List<GuestModel>>(guestJson);
+
+            var filteredGuests = guests
+                .Where(g => confirmedGuestIds.Contains(g.GuestId))
+                .ToList();
+
+            ViewBag.Guests = new SelectList(filteredGuests, "GuestId", "FullName", selectedGuestId);
         }
+
+
+
+
 
         public async Task<JsonResult> GetGuestsByReservation(int reservationId)
         {
@@ -141,6 +184,8 @@ namespace Resort_Management_System_MVC.Controllers
             var guests = JsonConvert.DeserializeObject<List<GuestModel>>(response);
             return Json(guests);
         }
+
+
 
         public async Task<IActionResult> PaymentDelete(int id)
         {
