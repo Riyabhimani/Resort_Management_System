@@ -1,4 +1,5 @@
 ﻿using FluentValidation;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
@@ -9,6 +10,7 @@ namespace Resort_Management_System_API.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
+    [Authorize(Roles = "Admin,Guest")]
     public class UserController : ControllerBase
     {
 
@@ -24,6 +26,7 @@ namespace Resort_Management_System_API.Controllers
         #endregion
 
         #region GetAllUsers
+        [Authorize(Roles = "Admin")]
         [HttpGet]
         public IActionResult GetAllUsers()
         {
@@ -215,6 +218,21 @@ namespace Resort_Management_System_API.Controllers
                 .ToListAsync();
         }
         #endregion
+
+        // Allow anonymous access (overrides controller-level authorize)
+        [AllowAnonymous]
+        [HttpGet("public-info")]
+        public IActionResult PublicInfo()
+        {
+            return Ok(new { message = "This is public info, no login required." });
+        }
+
+        // This will require any authenticated user (no role restriction)
+        [HttpGet("profile")]
+        public IActionResult Profile()
+        {
+            return Ok(new { message = "Welcome Authenticated User!" });
+        }
 
     }
 }

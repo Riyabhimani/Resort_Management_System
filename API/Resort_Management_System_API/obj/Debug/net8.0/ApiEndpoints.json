@@ -662,6 +662,22 @@
     ]
   },
   {
+    "ContainingType": "Resort_Management_System_API.Controllers.LoginController",
+    "Method": "Login",
+    "RelativePath": "api/Login/login",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "loginUser",
+        "Type": "Resort_Management_System_API.Models.Login",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
     "ContainingType": "Resort_Management_System_API.Controllers.PaymentController",
     "Method": "GetAllPayments",
     "RelativePath": "api/Payment",
@@ -1917,6 +1933,26 @@
         "StatusCode": 200
       }
     ]
+  },
+  {
+    "ContainingType": "Resort_Management_System_API.Controllers.UserController",
+    "Method": "Profile",
+    "RelativePath": "api/User/profile",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Resort_Management_System_API.Controllers.UserController",
+    "Method": "PublicInfo",
+    "RelativePath": "api/User/public-info",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
   },
   {
     "ContainingType": "Resort_Management_System_API.Controllers.UserController",
