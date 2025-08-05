@@ -449,3 +449,6 @@ E:\SEMESTER-5\Advanced .Net\Resort_Management_System_GitDesktop\Resort_Managemen
 E:\SEMESTER-5\Advanced .Net\Resort_Management_System_GitDesktop\Resort_Management_System\API\Resort_Management_System_API\obj\Debug\net8.0\ref\Resort_Management_System_API.dll
 E:\SEMESTER-5\Advanced .Net\Resort_Management_System_GitDesktop\Resort_Management_System\API\Resort_Management_System_API\bin\Debug\net8.0\FluentValidation.dll
 E:\SEMESTER-5\Advanced .Net\Resort_Management_System_GitDesktop\Resort_Management_System\API\Resort_Management_System_API\bin\Debug\net8.0\FluentValidation.DependencyInjectionExtensions.dll
+D:\Resort_Management_System\API\Resort_Management_System_API\bin\Debug\net8.0\FluentValidation.dll
+D:\Resort_Management_System\API\Resort_Management_System_API\bin\Debug\net8.0\FluentValidation.DependencyInjectionExtensions.dll
+D:\Resort_Management_System\API\Resort_Management_System_API\bin\Debug\net8.0\Microsoft.AspNetCore.Authentication.JwtBearer.dll
