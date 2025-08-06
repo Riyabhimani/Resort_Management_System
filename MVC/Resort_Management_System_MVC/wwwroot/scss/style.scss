@@ -1790,9 +1790,11 @@ img {
 .palatin-tabs-content {
     position: relative;
     z-index: 1;
+
     .nav-tabs {
         border-bottom: none;
         margin-bottom: 30px;
+
         .nav-link {
             background-color: $white-color;
             border: 2px solid $pri-color;
@@ -1802,28 +1804,34 @@ img {
             color: $text-color;
             margin: 0 2px;
             border-radius: 0;
+
             @media #{$breakpoint-lg} {
                 padding: 0 15px;
             }
+
             @media #{$breakpoint-xs} {
                 padding: 0 15px;
                 font-size: 12px;
                 margin-bottom: 15px;
             }
+
             @media #{$breakpoint-xs-landscape} {
                 padding: 0 15px;
             }
+
             &.active {
                 background-color: $pri-color;
                 color: $white-color;
             }
         }
     }
+
     .palatin-tab-text {
         p {
             margin-bottom: 0;
         }
     }
+
     .tab-content {
         h6 {
             font-size: 18px;

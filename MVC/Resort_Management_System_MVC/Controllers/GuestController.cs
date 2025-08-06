@@ -30,7 +30,7 @@ namespace Resort_Management_System_MVC.Controllers
 
             if (response.IsSuccessStatusCode)
             {
-                TempData["SuccessMessage"] = "Guest deleted successfully.";
+                TempData["SuccessMessage"] = "Guest deleted successfully!";
             }
             else
             {
