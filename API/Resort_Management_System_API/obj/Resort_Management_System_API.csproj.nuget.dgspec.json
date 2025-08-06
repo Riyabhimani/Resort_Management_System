@@ -1,23 +1,23 @@
 {
   "format": 1,
   "restore": {
-    "E:\\SEMESTER-5\\Advanced .Net\\Resort_Management_System_GitDesktop\\Resort_Management_System\\API\\Resort_Management_System_API\\Resort_Management_System_API.csproj": {}
+    "D:\\Resort_Management_System\\API\\Resort_Management_System_API\\Resort_Management_System_API.csproj": {}
   },
   "projects": {
-    "E:\\SEMESTER-5\\Advanced .Net\\Resort_Management_System_GitDesktop\\Resort_Management_System\\API\\Resort_Management_System_API\\Resort_Management_System_API.csproj": {
+    "D:\\Resort_Management_System\\API\\Resort_Management_System_API\\Resort_Management_System_API.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "E:\\SEMESTER-5\\Advanced .Net\\Resort_Management_System_GitDesktop\\Resort_Management_System\\API\\Resort_Management_System_API\\Resort_Management_System_API.csproj",
+        "projectUniqueName": "D:\\Resort_Management_System\\API\\Resort_Management_System_API\\Resort_Management_System_API.csproj",
         "projectName": "Resort_Management_System_API",
-        "projectPath": "E:\\SEMESTER-5\\Advanced .Net\\Resort_Management_System_GitDesktop\\Resort_Management_System\\API\\Resort_Management_System_API\\Resort_Management_System_API.csproj",
-        "packagesPath": "C:\\Users\\darsh\\.nuget\\packages\\",
-        "outputPath": "E:\\SEMESTER-5\\Advanced .Net\\Resort_Management_System_GitDesktop\\Resort_Management_System\\API\\Resort_Management_System_API\\obj\\",
+        "projectPath": "D:\\Resort_Management_System\\API\\Resort_Management_System_API\\Resort_Management_System_API.csproj",
+        "packagesPath": "C:\\Users\\DELL\\.nuget\\packages\\",
+        "outputPath": "D:\\Resort_Management_System\\API\\Resort_Management_System_API\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
         ],
         "configFilePaths": [
-          "C:\\Users\\darsh\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\DELL\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
@@ -42,7 +42,7 @@
         "restoreAuditProperties": {
           "enableAudit": "true",
           "auditLevel": "low",
-          "auditMode": "all"
+          "auditMode": "direct"
         },
         "SdkAnalysisLevel": "9.0.100"
       },
@@ -50,9 +50,9 @@
         "net8.0": {
           "targetAlias": "net8.0",
           "dependencies": {
-            "FluentValidation": {
+            "FluentValidation.AspNetCore": {
               "target": "Package",
-              "version": "[12.0.0, )"
+              "version": "[11.3.1, )"
             },
             "FluentValidation.DependencyInjectionExtensions": {
               "target": "Package",
@@ -118,7 +118,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.100/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.101/PortableRuntimeIdentifierGraph.json"
         }
       }
     }
