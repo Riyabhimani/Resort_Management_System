@@ -267,7 +267,7 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet" />
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
 </head>
-<body>
+<body style="padding-top: 150px;">
     <!-- Preloader -->
     <div class="preloader d-flex align-items-center justify-content-center">
         <div class="cssload-container">
@@ -303,13 +303,17 @@
                                         <ul class="dropdown">
                                             <li>
                                             @* <a href="@Url.Content("~/index.html")">Home</a> *@
-                                             <a class="nav-link text-dark" asp-controller="Guest" asp-action="GuestList"> 
-                                            Guest 
-                                            </a> 
+                                                 <a class="nav-link text-dark" asp-controller="Guest" asp-action="GuestList"> 
+                                                Guests
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <a class="nav-link text-dark" asp-controller="Room" asp-action="RoomList">
+                                                    Rooms
+                                                </a>
                                             </li>
                                             <li><a href="@Url.Content("~/about-us.html")">About Us</a></li>
                                             <li><a href="@Url.Content("~/services.html")">Services</a></li>
-                                            <li><a href="@Url.Content("~/rooms.html")">Rooms</a></li>
                                             <li><a href="@Url.Content("~/blog.html")">News</a></li>
                                             <li><a href="@Url.Content("~/contact.html")">Contact</a></li>
                                             <li><a href="@Url.Content("~/elements.html")">Elements</a></li>

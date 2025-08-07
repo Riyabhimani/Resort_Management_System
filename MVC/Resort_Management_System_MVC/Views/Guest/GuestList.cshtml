@@ -6,12 +6,17 @@
 <div class="resort-page-container">
 	<div class="guest-card shadow">
 		<div class="d-flex justify-content-between align-items-center mb-4">
-			<h3 class="text-dark m-0">Guest List</h3>
-			<a asp-action="GuestAddEdit" asp-controller="Guest" class="btn resort-btn d-flex align-items-center gap-2"
-			   onclick="return confirm('Add Guest?');">
-				<i class="bi bi-person-plus-fill" style="font-size: 20px; color: #ffcc00;"></i>
-				<span>Add Guest</span>
-			</a>
+			<h3 class="m-0" style="color:#cb8670">Guest List</h3>
+
+			<div class="text-end mb-3">
+				<a asp-action="GuestAddEdit" asp-controller="Guest" class="btn resort-btn"
+				   onclick="return confirm('Add Guest?');">
+					<i class="bi bi-person-plus-fill" style="font-size: 20px; color: #cb8670;"></i>
+					<span>Add Guest</span>
+				</a>
+			</div>
+
+
 		</div>
 
 		@if (TempData["SuccessMessage"] != null)
@@ -123,16 +128,15 @@
 	</script>
 }
 
-}
 
 @section Styles {
 	<style>
 		:root {
-			--pri-color: #ff8000;
+			--pri-color: #cb8670;
 		}
 
 		.resort-page-container {
-			padding-top: 80px; /* Try 80px–120px depending on nav height */
+			padding-top: 140px; /* Try 80px–120px depending on nav height */
 			padding-bottom: 60px;
 			background-color: #ffffff;
 			min-height: calc(100vh - 160px);
@@ -177,7 +181,7 @@
 			}
 
 		.resort-btn {
-			background-color: var(--pri-color);
+			background-color: var(--pri-color); 
 			color: white;
 			padding: 10px 20px;
 			border: none;
@@ -187,12 +191,12 @@
 		}
 
 			.resort-btn:hover {
-				background-color: #e67300;
-				color: black;
-			}
+				background-color: #cb8670;
+				color: black; 
+			 } 
 
 		.table thead {
-			background-color: #6c757d !important; /* Bootstrap's gray */
+			background-color: #6c757d !important; /* Bootstrap's gray
 			color: #ffcc99 !important; /* light orange text */
 		}
 
