@@ -1,0 +1,12 @@
+﻿using Microsoft.AspNetCore.Mvc;
+
+namespace Resort_Management_System_MVC.Controllers
+{
+    public class ContactController : Controller
+    {
+        public IActionResult Contact()
+        {
+            return View();
+        }
+    }
+}

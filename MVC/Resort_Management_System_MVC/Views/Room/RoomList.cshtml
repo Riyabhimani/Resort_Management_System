@@ -3,15 +3,19 @@
 	ViewData["Title"] = "Room List";
 }
 
+@{
+	Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
 <div class="resort-page-container">
 	<div class="guest-card shadow">
 		<div class="d-flex justify-content-between align-items-center mb-4">
-			<h3 class="m-0" style="color:#ffa64d">Room List</h3>
+			<h3 class="m-0" style="color:#cb8670"><b>Room List</b></h3>
 
 			<div class="text-end mb-3">
 				<a asp-action="RoomAddEdit" asp-controller="Room" class="btn resort-btn"
 				   onclick="return confirm('Add Room?');">
-					<i class="bi bi-person-plus-fill" style="font-size: 20px; color: #ffcc00;"></i>
+					<i class="bi bi-person-plus-fill" style="font-size: 20px; color: #cb8670;"></i>
 					<span>Add Room</span>
 				</a>
 			</div>
@@ -135,11 +139,11 @@
 @section Styles {
 	<style>
 		:root {
-			--pri-color: #ff8000;
+			--pri-color: #cb8670;
 		}
 
 		.resort-page-container {
-			padding-top: 140px; /* Try 80px–120px depending on nav height */
+			padding-top: 40px; /* Try 80px–120px depending on nav height */
 			padding-bottom: 60px;
 			background-color: #ffffff;
 			min-height: calc(100vh - 160px);
@@ -194,7 +198,7 @@
 		}
 
 			.resort-btn:hover {
-				background-color: #e67300;
+				background-color: #cb8670;
 				color: black;
 			}
 

@@ -4,7 +4,7 @@
     ViewData["Title"] = Model.UserId == 0 ? "Add User" : "Edit User";
 }
 
-<div class="container mt-4">
+<div class="user-form-container mt-4">
     <h2>@ViewData["Title"]</h2>
 
     <form asp-action="UserAddEdit" method="post">
@@ -38,7 +38,111 @@
         </div>
 
 
-        <button type="submit" class="btn btn-primary" asp-controller="User" asp-action="UserAddEdit">@((Model.UserId == 0) ? "Add" : "Update")</button>
-        <a class="btn btn-secondary" asp-controller="User" asp-action="UserList">Back</a>
+        <button type="submit" class="btn btn-primary" asp-controller="User" asp-action="UserAddEdit"> <i class="bi bi-check-circle-fill me-2"></i>@((Model.UserId == 0) ? "Add" : "Update")</button>
+        <a class="btn btn-secondary" asp-controller="User" asp-action="UserList"><i class="bi bi-arrow-left me-2"></i>Back</a>
     </form>
 </div>
+
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+}
+<style>
+    :root {
+        --pri-color: #cb8670;
+        --form-bg: #fffaf5;
+        --border-radius: 16px;
+    }
+
+    .user-form-container {
+        max-width: 800px;
+        margin: 100px auto 60px auto; /* top margin adjusted to 100px */
+        background-color: var(--form-bg);
+        padding: 40px;
+        border-radius: var(--border-radius);
+        box-shadow: 0 0 25px rgba(0, 0, 0, 0.08);
+    }
+
+    h2 {
+        color: #cb8670;
+        margin-bottom: 30px;
+        font-weight: 600;
+    }
+
+    label {
+        font-weight: 500;
+        color: #444;
+    }
+
+    .form-control {
+        border-radius: 10px;
+        padding: 10px 15px;
+        border: 1px solid #ccc;
+        transition: border-color 0.3s ease, box-shadow 0.3s ease;
+    }
+
+        .form-control:focus {
+            border-color: var(--pri-color);
+            box-shadow: 0 0 0 0.2rem rgba(255, 128, 0, 0.25);
+        }
+
+    .text-danger {
+        font-size: 0.875rem;
+    }
+
+    button[type="submit"],
+    .btn-secondary {
+        padding: 12px 28px;
+        border-radius: 12px;
+        font-weight: 600;
+        font-size: 16px;
+        border: none;
+        letter-spacing: 0.5px;
+        position: relative;
+        overflow: hidden;
+        backdrop-filter: blur(10px);
+        transition: all 0.3s ease;
+    }
+
+    button[type="submit"] {
+        background: #cb8670;
+        color: white;
+        box-shadow: 0 6px 20px #cb8670;
+    }
+
+        button[type="submit"]:hover {
+            transform: translateY(-2px);
+            background: #cb8670;
+            box-shadow: 0 8px 20px #cb8670;
+        }
+
+    .btn-secondary {
+        background: rgba(200, 200, 200, 0.4);
+        color: black;
+        box-shadow: 0 6px 18px rgba(0, 0, 0, 0.08);
+    }
+
+        .btn-secondary:hover {
+            background: rgba(180, 180, 180, 0.6);
+            transform: translateY(-2px);
+            color: black;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+        }
+
+        button[type="submit"]::before,
+        .btn-secondary::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: -75%;
+            width: 200%;
+            height: 100%;
+            background: linear-gradient(120deg, rgba(255,255,255,0.2) 0%, rgba(255,255,255,0) 60%);
+            transform: skewX(-25deg);
+            transition: all 0.5s ease;
+        }
+
+        button[type="submit"]:hover::before,
+        .btn-secondary:hover::before {
+            left: 100%;
+        }
+</style>

@@ -24,14 +24,44 @@ namespace Resort_Management_System_API.Controllers
 
         #region GetAllGuestServices
         [HttpGet]
-        public IActionResult GetGuestServices()
-        {
-            if (context == null)
-                return StatusCode(500, "Database context is null.");
+        //public IActionResult GetGuestServices()
+        //{
+        //    if (context == null)
+        //        return StatusCode(500, "Database context is null.");
 
-            var guestsevices = context.GuestServices.ToList();
-            return Ok(guestsevices);
+        //    var guestsevices = context.GuestServices.ToList();
+        //    return Ok(guestsevices);
+        //}
+
+        public async Task<ActionResult> GetGuestServices()
+        {
+            try
+            {
+                var guestservices = await context.GuestServices
+                    .Include(g => g.Guest)
+                    .Include(g => g.Reservation)
+                    .Include(g => g.Service)
+                    .Select(g => new
+                    {
+                        g.GuestServiceId,
+                        ReservationId = g.Reservation.ReservationId,
+                        ServiceName = g.Service.ServiceName,
+                        FullName = g.Guest.FullName,
+                        g.Quantity,
+                        g.DateRequested,
+                        g.Created,
+                        g.Modified
+                    })
+                    .ToListAsync();
+
+                return Ok(guestservices);
+            }
+            catch (Exception ex)
+            {
+                return StatusCode(500, $"Error retrieving guest services: {ex.Message}");
+            }
         }
+
         #endregion
 
         #region GetGuestServiceById 

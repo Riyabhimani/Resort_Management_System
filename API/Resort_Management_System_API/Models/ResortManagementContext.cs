@@ -33,6 +33,8 @@ public partial class ResortManagementContext : DbContext
 
     public virtual DbSet<User> Users { get; set; }
 
+    public virtual DbSet<Login> Login { get; set; }
+
     protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
 #warning To protect potentially sensitive information in your connection string, you should move it out of source code. You can avoid scaffolding the connection string by using the Name= syntax to read it from configuration - see https://go.microsoft.com/fwlink/?linkid=2131148. For more guidance on storing connection strings, see https://go.microsoft.com/fwlink/?LinkId=723263.
         => optionsBuilder.UseSqlServer("Server=RIYABHIMANI\\SQLEXPRESS03;Database=Resort_Management;Trusted_Connection=True;TrustServerCertificate=True;");
@@ -264,6 +266,18 @@ public partial class ResortManagementContext : DbContext
             entity.Property(e => e.UserName)
                 .HasMaxLength(100)
                 .IsUnicode(false);
+        });
+
+        modelBuilder.Entity<Login>(entity =>
+        {
+            entity.Property(e => e.UserName)
+                .HasMaxLength(200)
+                .IsUnicode(false);
+            entity.Property(e => e.Password)
+                .HasMaxLength(20)
+                .IsUnicode(false);
+            entity.Property(e => e.Role)
+            .HasMaxLength(20);
         });
 
         OnModelCreatingPartial(modelBuilder);

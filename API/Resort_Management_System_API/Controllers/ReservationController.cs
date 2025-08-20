@@ -24,14 +24,45 @@ namespace Resort_Management_System_API.Controllers
 
         #region GetAllReservations
         [HttpGet]
-        public IActionResult GetAllReservations()
-        {
-            if (context == null)
-                return StatusCode(500, "Database context is null.");
+        //public IActionResult GetAllReservations()
+        //{
+        //    if (context == null)
+        //        return StatusCode(500, "Database context is null.");
 
-            var reservations = context.Reservations.ToList();
-            return Ok(reservations);
+        //    var reservations = context.Reservations.ToList();
+        //    return Ok(reservations);
+        //}
+
+        public async Task<ActionResult> GetAllReservations()
+        {
+            try
+            {
+                var reservations = await context.Reservations
+                    .Include(r => r.Guest)
+                    .Include(r => r.Room)
+                    .Select(r => new
+                    {
+                        r.ReservationId,
+                        FullName = r.Guest.FullName,
+                        RoomNumber = r.Room.RoomNumber,
+                        r.CheckInDate,
+                        r.CheckOutDate,
+                        r.BookingDate,
+                        r.TotalAmount,
+                        r.ReservationStatus,
+                        r.Created,
+                        r.Modified
+                    })
+                    .ToListAsync();
+
+                return Ok(reservations);
+            }
+            catch (Exception ex)
+            {
+                return StatusCode(500, $"Error retrieving reservations: {ex.Message}");
+            }
         }
+
         #endregion
 
         #region GetReservationById 

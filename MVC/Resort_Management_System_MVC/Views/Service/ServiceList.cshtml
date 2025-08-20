@@ -3,77 +3,214 @@
 	ViewData["Title"] = "Service List";
 }
 
-<a asp-action="ServiceAddEdit" asp-controller="Service" class="btn btn-primary mb-3" onclick="return confirm('Are you sure you want to add a Guest?');">
-	Add Service
-</a>
-
-
-@if (TempData["SuccessMessage"] != null)
-{
-	<div class="alert alert-success">
-		@TempData["SuccessMessage"]
-	</div>
-}
-@if (TempData["ErrorMessage"] != null)
-{
-	<div class="alert alert-danger">
-		@TempData["ErrorMessage"]
-	</div>
+@{
+	Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
 
-<div class="container mt-4">
-	<div class="d=flext justify-content-between align-items-center mb-3">
-		<h2 class="mb-0">Service List</h2>
-		@* Redirection Button *@
-	</div>
+<div class="resort-page-container">
+	<div class="guest-card shadow">
+		<div class="d-flex justify-content-between align-items-center mb-4">
+			<h3 class="m-0" style="color:#cb8670"><b>Service List</b></h3>
 
-	<table class="table table-bordered table-striped table-hover">
-		<thead class="table-dark">
-			<tr>
-				<th>ServiceId</th>
-				<th>ServiceName</th>
-				<th>Description</th>
-				<th>ServiceCost</th>
-				<th>ServiceStartTime</th>
-				<th>ServiceEndTime</th>
-				<th>IsActive</th>
-				<th>Created</th>
-				<th>Modified</th>
-				<th>Action</th>
-			</tr>
-		</thead>
+			<div class="text-end mb-3">
+				<a asp-action="ServiceAddEdit" asp-controller="Service" class="btn resort-btn"
+				   onclick="return confirm('Add Service?');">
+					<i class="bi bi-person-plus-fill" style="font-size: 20px; color: #cb8670;"></i>
+					<span>Add Service</span>
+				</a>
+			</div>
 
-		<tbody>
-			@if (Model != null && Model.Any())
-			{
-				foreach (var item in Model)
-				{
+
+		</div>
+
+		@if (TempData["SuccessMessage"] != null)
+		{
+			<div class="alert alert-success">@TempData["SuccessMessage"]</div>
+		}
+		@if (TempData["ErrorMessage"] != null)
+		{
+			<div class="alert alert-danger">@TempData["ErrorMessage"]</div>
+		}
+
+		<div class="scroll-box">
+			<table class="table table-bordered align-middle mb-0 bg-white">
+				<thead class="text-center bg-secondary text-warning">
 					<tr>
-						<td>@item.ServiceId</td>
-						<td>@item.ServiceName</td>
-						<td>@item.Description</td>
-						<td>@item.ServiceCost</td>
-						<td>@item.ServiceStartTime</td>
-						<td>@item.ServiceEndTime</td>
-						<td>@item.IsActive</td>
-						<td>@item.Created.ToString("yyyy-mm-dd")</td>
-						<td>@item.Modified?.ToString("yyyy-mm-dd")</td>
-						<td>
-							<a asp-controller="Service" asp-action="ServiceDelete" asp-route-id="@item.ServiceId" class="btn btn-sm btn-danger"
-							   onclick="return confirm('Are you sure want to delete this Service?');">
-								Delete
-							</a>
-							<a asp-controller="Service" asp-action="ServiceAddEdit" asp-route-id="@item.ServiceId" class="btn btn-sm btn-success"
-							   onclick="return confirm('Are you sure want to Edit this Service?');">
-								Edit
-							</a>
-						</td>
+						<th>ServiceId</th>
+						<th>ServiceName</th>
+						<th>Description</th>
+						<th>ServiceCost</th>
+						<th>ServiceStartTime</th>
+						<th>ServiceEndTime</th>
+						<th>IsActive</th>
+						<th>Created</th>
+						<th>Modified</th>
+						<th>Action</th>
+
 					</tr>
-				}
-			}
-		</tbody>
+				</thead>
+				<tbody class="text-center">
+					@if (Model != null && Model.Any())
+					{
+						foreach (var item in Model)
+						{
+							<tr>
+								<td>@item.ServiceId</td>
+								<td>@item.ServiceName</td>
+								<td>@item.Description</td>
+								<td>@item.ServiceCost</td>
+								<td>@item.ServiceStartTime</td>
+								<td>@item.ServiceEndTime</td>
+								<td>@item.IsActive</td>
+								<td>@item.Created.ToString("yyyy-mm-dd")</td>
+								<td>@item.Modified?.ToString("yyyy-mm-dd")</td>
 
-	</table>
-
+								<td>
+									<div class="d-flex justify-content-center gap-2">
+										<a asp-action="ServiceAddEdit" asp-controller="Service" asp-route-id="@item.ServiceId"
+										   class="btn btn-sm btn-outline-success d-flex align-items-center justify-content-center">
+											<i class="bi bi-pencil-square text-success" style="font-size: 18px;"></i>
+										</a>
+										<a asp-action="ServiceDelete"
+										   asp-controller="Service"
+										   asp-route-id="@item.ServiceId"
+										   class="btn btn-sm btn-outline-danger d-flex align-items-center justify-content-center sweet-delete">
+											<i class="bi bi-trash-fill text-danger" style="font-size: 18px;"></i>
+										</a>
+									</div>
+								</td>
+							</tr>
+						}
+					}
+					else
+					{
+						<tr><td colspan="9" class="text-muted">No Service Found</td></tr>
+					}
+				</tbody>
+			</table>
+		</div>
+	</div>
 </div>
+
+@section Scripts {
+	<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+	<script>
+		document.addEventListener("DOMContentLoaded", function () {
+			// Handle delete confirmation
+			const deleteLinks = document.querySelectorAll(".sweet-delete");
+
+			deleteLinks.forEach(link => {
+				link.addEventListener("click", function (e) {
+					e.preventDefault(); // prevent default redirect
+					const url = this.getAttribute("href");
+
+					Swal.fire({
+						title: "Are you sure?",
+						text: "This service will be deleted permanently.",
+						icon: "warning",
+						showCancelButton: true,
+						confirmButtonColor: "#d33",
+						cancelButtonColor: "#6c757d",
+						confirmButtonText: "Yes, delete it!"
+					}).then((result) => {
+						if (result.isConfirmed) {
+							window.location.href = url;
+						}
+					});
+				});
+			});
+
+			// ✅ Show success alert if TempData is present
+		@if (TempData["SuccessMessage"] != null)
+		{
+			<text>
+						Swal.fire({
+							icon: 'success',
+							title: 'Deleted!',
+							text: '@TempData["SuccessMessage"]',
+							confirmButtonColor: '#28a745'
+						});
+			</text>
+		}
+		});
+	</script>
+}
+
+
+@section Styles {
+	<style>
+		:root {
+			--pri-color: #cb8670;
+		}
+
+		.resort-page-container {
+			padding-top: 40px; /* Try 80px–120px depending on nav height */
+			padding-bottom: 60px;
+			background-color: #ffffff;
+			min-height: calc(100vh - 160px);
+			display: flex;
+			justify-content: center;
+		}
+
+		.btn-success i.bi-pencil-square {
+			color: white; /* or #28a745 for bright green */
+		}
+
+		.btn-danger i.bi-trash-fill {
+			color: white; /* or #dc3545 for red */
+		}
+
+		.guest-card {
+			width: 100%;
+			max-width: 1400px; /* wider box */
+			background: #fffaf5;
+			color: black;
+			padding: 35px;
+			border-radius: 18px;
+			box-shadow: 0 0 25px rgba(0, 0, 0, 0.08);
+		}
+
+		.scroll-box {
+			max-height: 500px;
+			overflow-y: auto;
+			border-radius: 10px;
+		}
+
+			.scroll-box table {
+				width: 100%;
+			}
+
+			.scroll-box thead th {
+				position: sticky;
+				top: 0;
+				background-color: #6c757d;
+				color: #ffcc99;
+				z-index: 1;
+			}
+
+		.resort-btn {
+			background-color: var(--pri-color);
+			color: white;
+			padding: 10px 20px;
+			border: none;
+			border-radius: 30px;
+			font-weight: 500;
+			transition: 0.3s;
+		}
+
+			.resort-btn:hover {
+				background-color: #cb8670;
+				color: black;
+			}
+
+		.table thead {
+			background-color: #6c757d !important; /* Bootstrap's gray
+					color: #ffcc99 !important; /* light orange text */
+		}
+
+		.table tbody tr:hover {
+			background-color: #fff3e6;
+		}
+	</style>
+}

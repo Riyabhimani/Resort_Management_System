@@ -4,7 +4,12 @@
     ViewData["Title"] = Model.GuestId == 0 ? "Add Guest" : "Edit Guest";
 }
 
-<div class="container mt-4">
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+<div class="guest-form-container mt-4">
     <h2>@ViewData["Title"]</h2>
 
     <form asp-action="GuestAddEdit" method="post"> 
@@ -66,7 +71,7 @@
         --border-radius: 16px;
     }
 
-    .container {
+    .guest-form-container {
         max-width: 800px;
         margin: 100px auto 60px auto; /* top margin adjusted to 100px */
         background-color: var(--form-bg);
@@ -74,9 +79,6 @@
         border-radius: var(--border-radius);
         box-shadow: 0 0 25px rgba(0, 0, 0, 0.08);
     }
-
-
-
 
     h2 {
         color: #cb8670;

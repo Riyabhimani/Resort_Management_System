@@ -18,5 +18,9 @@
 
         public DateTime? Modified { get; set; }
 
+        public string? FullName { get; set; }
+
+        public string? ServiceName { get; set; }
+
     }
 }

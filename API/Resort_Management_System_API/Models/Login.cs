@@ -1,5 +1,8 @@
-﻿namespace Resort_Management_System_API.Models
-{
+﻿namespace Resort_Management_System_API.Models;
+using Microsoft.EntityFrameworkCore;
+
+
+    [Keyless]
     public class Login
     {
         public string UserName { get; set; } = string.Empty;
@@ -8,4 +11,4 @@
        
         public string Password { get; set; } = string.Empty;
     }
-}
+

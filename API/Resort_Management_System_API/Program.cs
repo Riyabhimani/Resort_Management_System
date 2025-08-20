@@ -12,23 +12,27 @@ using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.IdentityModel.Tokens;
 using System.Text;
 using Microsoft.OpenApi.Models;
+using FluentValidation.AspNetCore;
 
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddControllers();
 
+builder.Services.AddFluentValidationAutoValidation();
+builder.Services.AddValidatorsFromAssembly(typeof(Program).Assembly);
+
 // Register all validators from this assembly
-builder.Services.AddValidatorsFromAssembly(Assembly.GetExecutingAssembly());
-builder.Services.AddScoped<IValidator<Guest>, GuestValidator>();
-builder.Services.AddScoped<IValidator<User>, UserValidator>();
-builder.Services.AddScoped<IValidator<GuestService>, GuestServicesValidator>();
-builder.Services.AddScoped<IValidator<Payment>, PaymentValidator>();
-builder.Services.AddScoped<IValidator<Reservation>, ReservationValidator>();
-builder.Services.AddScoped<IValidator<Room>, RoomValidator>();
-builder.Services.AddScoped<IValidator<Service>, ServiceValidator>();
-builder.Services.AddScoped<IValidator<Staff>, StaffValidator>();
-builder.Services.AddScoped<IValidator<Booking>, BookingValidator>();
+//builder.Services.AddValidatorsFromAssembly(Assembly.GetExecutingAssembly());
+//builder.Services.AddScoped<IValidator<Guest>, GuestValidator>();
+//builder.Services.AddScoped<IValidator<User>, UserValidator>();
+//builder.Services.AddScoped<IValidator<GuestService>, GuestServicesValidator>();
+//builder.Services.AddScoped<IValidator<Payment>, PaymentValidator>();
+//builder.Services.AddScoped<IValidator<Reservation>, ReservationValidator>();
+//builder.Services.AddScoped<IValidator<Room>, RoomValidator>();
+//builder.Services.AddScoped<IValidator<Service>, ServiceValidator>();
+//builder.Services.AddScoped<IValidator<Staff>, StaffValidator>();
+//builder.Services.AddScoped<IValidator<Booking>, BookingValidator>();
 
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();

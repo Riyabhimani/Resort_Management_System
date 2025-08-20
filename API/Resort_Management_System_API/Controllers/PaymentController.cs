@@ -24,13 +24,42 @@ namespace Resort_Management_System_API.Controllers
 
         #region GetAllPayments
         [HttpGet]
-        public IActionResult GetAllPayments()   
-        {
-            if (context == null)
-                return StatusCode(500, "Database context is null.");
+        //public IActionResult GetAllPayments()   
+        //{
+        //    if (context == null)
+        //        return StatusCode(500, "Database context is null.");
 
-            var payments = context.Payments.ToList();
-            return Ok(payments);
+        //    var payments = context.Payments.ToList();
+        //    return Ok(payments);
+        //}
+
+        public async Task<ActionResult> GetAllPayments()
+        {
+            try
+            {
+                var payments = await context.Payments
+                    .Include(p => p.Guest)
+                    .Include(p => p.Reservation)
+                    .Select(p => new
+                    {
+                        p.PaymentId,
+                        FullName = p.Guest.FullName,
+                        ReservationId = p.Reservation.ReservationId,
+                        p.PaymentDate,
+                        p.AmountPaid,
+                        p.PaymentMethod,
+                        p.PaymentStatus,
+                        p.Created,
+                        p.Modified
+                    })
+                    .ToListAsync();
+
+                return Ok(payments);
+            }
+            catch (Exception ex)
+            {
+                return StatusCode(500, $"Error retrieving payments: {ex.Message}");
+            }
         }
         #endregion
 

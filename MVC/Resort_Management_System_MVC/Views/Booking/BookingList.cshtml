@@ -1,86 +1,223 @@
-﻿Booking List
-@model List<BookingModel>
+﻿@model List<BookingModel>
 @{
-    ViewData["Title"] = "Booking List";
+	ViewData["Title"] = "Booking List";
 }
 
-<a asp-action="BookingAddEdit" asp-controller="Booking" class="btn btn-primary mb-3"
-   onclick="return confirm('Are you sure you want to add a Booking Detail?');">
-    Add Booking
-</a>
-
-@if (TempData["SuccessMessage"] != null)
-{
-    <div class="alert alert-success">@TempData["SuccessMessage"]</div>
-}
-@if (TempData["ErrorMessage"] != null)
-{
-    <div class="alert alert-danger">@TempData["ErrorMessage"]</div>
+@{
+	Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<div class="container mt-4">
-    <div class="d-flex justify-content-between align-items-center mb-3">
-        <h2 class="mb-0">Booking List</h2>
-    </div>
 
-    <table class="table table-bordered table-striped table-hover">
-        <thead class="table-dark">
-            <tr>
-                <th>BookingId</th>
-                <th>FullName</th>
-                <th>Email</th>
-                <th>ContactNumber</th>
-                <th>Address</th>
-                <th>IdProof</th>
-                <th>No. of Persons</th>
-                <th>No. of Rooms</th>
-                <th>BookingDate</th>
-                <th>RoomType</th>
-                <th>AdvancePayment</th>
-                <th>Created</th>
-                <th>Modified</th>
-                <th>Action</th>
-            </tr>
-        </thead>
+<div class="resort-page-container">
+	<div class="guest-card shadow">
+		<div class="d-flex justify-content-between align-items-center mb-4">
+			<h3 class="m-0" style="color:#cb8670"><b>Booking List</b></h3>
 
-        <tbody>
-            @if (Model != null && Model.Any())
-            {
-                foreach (var item in Model)
-                {
-                    <tr>
-                        <td>@item.BookingId</td>
-                        <td>@item.FullName</td>
-                        <td>@item.Email</td>
-                        <td>@item.ContactNumber</td>
-                        <td>@item.Address</td>
-                        <td>@item.IdProof</td>
-                        <td>@item.NumberOfPersons</td>
-                        <td>@item.NumberOfRoom</td>
-                        <td>@item.BookingDate.ToString("yyyy-MM-dd")</td>
-                        <td>@item.RoomType</td>
-                        <td>@item.AdvancePayment</td>
-                        <td>@item.Created.ToString("yyyy-MM-dd")</td>
-                        <td>@item.Modified?.ToString("yyyy-MM-dd")</td>
-                        <td>
-                            <a asp-controller="Booking" asp-action="BookingAddEdit" asp-route-id="@item.BookingId"
-                               class="btn btn-sm btn-success" onclick="return confirm('Are you sure you want to edit this Booking Detail?');">
-                                Edit
-                            </a>
-                            <a asp-controller="Booking" asp-action="BookingDelete" asp-route-id="@item.BookingId"
-                               class="btn btn-sm btn-danger" onclick="return confirm('Are you sure you want to delete this Booking Detail?');">
-                                Delete
-                            </a>
-                        </td>
-                    </tr>
-                }
-            }
-            else
-            {
-                <tr>
-                    <td colspan="14" class="text-center text-muted">No booking records found.</td>
-                </tr>
-            }
-        </tbody>
-    </table>
+			<div class="text-end mb-3">
+				<a asp-action="BookingAddEdit" asp-controller="Booking" class="btn resort-btn"
+				   onclick="return confirm('Add Booking?');">
+					<i class="bi bi-person-plus-fill" style="font-size: 20px; color: #cb8670;"></i>
+					<span>Add Booking</span>
+				</a>
+			</div>
+
+
+		</div>
+
+		@if (TempData["SuccessMessage"] != null)
+		{
+			<div class="alert alert-success">@TempData["SuccessMessage"]</div>
+		}
+		@if (TempData["ErrorMessage"] != null)
+		{
+			<div class="alert alert-danger">@TempData["ErrorMessage"]</div>
+		}
+
+		<div class="scroll-box">
+			<table class="table table-bordered align-middle mb-0 bg-white">
+				<thead class="text-center bg-secondary text-warning">
+					<tr>
+						<th>BookingId</th>
+						<th>FullName</th>
+						<th>Email</th>
+						<th>ContactNumber</th>
+						<th>Address</th>
+						<th>IdProof</th>
+						<th>No. of Persons</th>
+						<th>No. of Rooms</th>
+						<th>BookingDate</th>
+						<th>RoomType</th>
+						<th>AdvancePayment</th>
+						<th>Created</th>
+						<th>Modified</th>
+						<th>Action</th>
+
+					</tr>
+				</thead>
+				<tbody class="text-center">
+					@if (Model != null && Model.Any())
+					{
+						foreach (var item in Model)
+						{
+							<tr>
+								<td>@item.BookingId</td>
+								<td>@item.FullName</td>
+								<td>@item.Email</td>
+								<td>@item.ContactNumber</td>
+								<td>@item.Address</td>
+								<td>@item.IdProof</td>
+								<td>@item.NumberOfPersons</td>
+								<td>@item.NumberOfRoom</td>
+								<td>@item.BookingDate.ToString("yyyy-MM-dd")</td>
+								<td>@item.RoomType</td>
+								<td>@item.AdvancePayment</td>
+								<td>@item.Created.ToString("yyyy-MM-dd")</td>
+								<td>@item.Modified?.ToString("yyyy-MM-dd")</td>
+								<td>
+									<div class="d-flex justify-content-center gap-2">
+										<a asp-action="BookingAddEdit" asp-controller="Booking" asp-route-id="@item.BookingId"
+										   class="btn btn-sm btn-outline-success d-flex align-items-center justify-content-center">
+											<i class="bi bi-pencil-square text-success" style="font-size: 18px;"></i>
+										</a>
+										<a asp-action="BookingDelete"
+										   asp-controller="Booking"
+										   asp-route-id="@item.BookingId"
+										   class="btn btn-sm btn-outline-danger d-flex align-items-center justify-content-center sweet-delete">
+											<i class="bi bi-trash-fill text-danger" style="font-size: 18px;"></i>
+										</a>
+									</div>
+								</td>
+							</tr>
+						}
+					}
+					else
+					{
+						<tr><td colspan="9" class="text-muted">No Booking Found</td></tr>
+					}
+				</tbody>
+			</table>
+		</div>
+	</div>
 </div>
+
+@section Scripts {
+	<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+	<script>
+		document.addEventListener("DOMContentLoaded", function () {
+			// Handle delete confirmation
+			const deleteLinks = document.querySelectorAll(".sweet-delete");
+
+			deleteLinks.forEach(link => {
+				link.addEventListener("click", function (e) {
+					e.preventDefault(); // prevent default redirect
+					const url = this.getAttribute("href");
+
+					Swal.fire({
+						title: "Are you sure?",
+						text: "This booking will be deleted permanently.",
+						icon: "warning",
+						showCancelButton: true,
+						confirmButtonColor: "#d33",
+						cancelButtonColor: "#6c757d",
+						confirmButtonText: "Yes, delete it!"
+					}).then((result) => {
+						if (result.isConfirmed) {
+							window.location.href = url;
+						}
+					});
+				});
+			});
+
+			// ✅ Show success alert if TempData is present
+		@if (TempData["SuccessMessage"] != null)
+		{
+			<text>
+						Swal.fire({
+							icon: 'success',
+							title: 'Deleted!',
+							text: '@TempData["SuccessMessage"]',
+							confirmButtonColor: '#28a745'
+						});
+			</text>
+		}
+		});
+	</script>
+}
+
+
+@section Styles {
+	<style>
+		:root {
+			--pri-color: #cb8670;
+		}
+
+		.resort-page-container {
+			padding-top: 40px; /* Try 80px–120px depending on nav height */
+			padding-bottom: 60px;
+			background-color: #ffffff;
+			min-height: calc(100vh - 160px);
+			display: flex;
+			justify-content: center;
+		}
+
+		.btn-success i.bi-pencil-square {
+			color: white; /* or #28a745 for bright green */
+		}
+
+		.btn-danger i.bi-trash-fill {
+			color: white; /* or #dc3545 for red */
+		}
+
+		.guest-card {
+			width: 100%;
+			max-width: 1400px; /* wider box */
+			background: #fffaf5;
+			color: black;
+			padding: 35px;
+			border-radius: 18px;
+			box-shadow: 0 0 25px rgba(0, 0, 0, 0.08);
+		}
+
+		.scroll-box {
+			max-height: 500px;
+			overflow-y: auto;
+			border-radius: 10px;
+		}
+
+			.scroll-box table {
+				width: 100%;
+			}
+
+			.scroll-box thead th {
+				position: sticky;
+				top: 0;
+				background-color: #6c757d;
+				color: #ffcc99;
+				z-index: 1;
+			}
+
+		.resort-btn {
+			background-color: var(--pri-color);
+			color: white;
+			padding: 10px 20px;
+			border: none;
+			border-radius: 30px;
+			font-weight: 500;
+			transition: 0.3s;
+		}
+
+			.resort-btn:hover {
+				background-color: #cb8670;
+				color: black;
+			}
+
+		.table thead {
+			background-color: #6c757d !important; /* Bootstrap's gray
+					color: #ffcc99 !important; /* light orange text */
+		}
+
+		.table tbody tr:hover {
+			background-color: #fff3e6;
+		}
+	</style>
+}

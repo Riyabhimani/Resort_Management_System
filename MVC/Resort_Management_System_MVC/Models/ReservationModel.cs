@@ -48,5 +48,9 @@ namespace Resort_Management_System_MVC.Models
 
         [Display(Name = "Modified Date")]
         public DateTime? Modified { get; set; }
+
+        public int? RoomNumber { get; set; }
+
+        public string? FullName { get; set; }
     }
 }

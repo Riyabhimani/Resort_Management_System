@@ -20,7 +20,7 @@ namespace Resort_Management_System_MVC.ValidationClass
 
             RuleFor(u => u.Role)
                 .NotNull().WithMessage("Role is required.")
-                .Must(role => role == "Admin" || role == "Receptionist" || role == "Manager")
+                .Must(role => role == "Admin" || role == "Receptionist" || role == "Manager" || role == "User" || role == "Guest" || role == "Visiter" || role == "Staff")
                 .WithMessage("Role must be either Admin, Receptionist, or Manager.");
 
             RuleFor(u => u.Created)
