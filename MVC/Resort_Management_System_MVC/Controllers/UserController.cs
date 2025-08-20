@@ -9,6 +9,26 @@ namespace Resort_Management_System_MVC.Controllers
     {
 
         private readonly HttpClient client;
+        private readonly IHttpContextAccessor _httpContextAccessor;
+
+        // ✅ Constructor injection for HttpClient and IHttpContextAccessor
+        public UserController(IHttpClientFactory httpClientFactory, IHttpContextAccessor httpContextAccessor)
+        {
+            client = httpClientFactory.CreateClient();
+            client.BaseAddress = new Uri("https://localhost:5159/api/");
+            _httpContextAccessor = httpContextAccessor;
+        }
+
+        // ✅ Adds JWT token from session to request headers
+        private void AddJwtToken()
+        {
+            var token = _httpContextAccessor.HttpContext.Session.GetString("JWTToken");
+            if (!string.IsNullOrEmpty(token))
+            {
+                client.DefaultRequestHeaders.Authorization =
+                    new System.Net.Http.Headers.AuthenticationHeaderValue("Bearer", token);
+            }
+        }
 
         public UserController(IHttpClientFactory httpClientFactory)
         {
@@ -16,18 +36,47 @@ namespace Resort_Management_System_MVC.Controllers
             client.BaseAddress = new Uri("http://localhost:5159/api/User");
         }
 
+        //public async Task<IActionResult> UserList()
+        //{
+        //    var response = await client.GetAsync("User");
+        //    var json = await response.Content.ReadAsStringAsync();
+        //    var list = JsonConvert.DeserializeObject<List<UserModel>>(json);
+        //    return View(list);
+        //}
+
         public async Task<IActionResult> UserList()
         {
-            var response = await client.GetAsync("User");
-            var json = await response.Content.ReadAsStringAsync();
-            var list = JsonConvert.DeserializeObject<List<UserModel>>(json);
-            return View(list);
+            try
+            {
+                AddJwtToken(); // 🔑 Add token before calling API
+
+                var response = await client.GetAsync("User");
+
+                // 🔒 Redirect to login if unauthorized
+                if (response.StatusCode == System.Net.HttpStatusCode.Unauthorized)
+                {
+                    return RedirectToAction("Login", "Login");
+                }
+
+                // ✅ Deserialize response into user list
+                response.EnsureSuccessStatusCode();
+                var json = await response.Content.ReadAsStringAsync();
+                var list = JsonConvert.DeserializeObject<List<UserModel>>(json);
+
+                return View(list);
+            }
+            catch
+            {
+                TempData["Error"] = "Unable to load users.";
+                return View(new List<UserModel>());
+            }
         }
 
         public async Task<IActionResult> UserAddEdit(int? id)
         {
             try
             {
+                AddJwtToken();
                 UserModel user = new UserModel();
 
                 if (id != null)
@@ -60,6 +109,7 @@ namespace Resort_Management_System_MVC.Controllers
 
             try
             {
+                AddJwtToken();
                 var content = new StringContent(JsonConvert.SerializeObject(user), Encoding.UTF8, "application/json");
 
                 if (user.UserId == 0)
@@ -84,6 +134,7 @@ namespace Resort_Management_System_MVC.Controllers
 
         public async Task<IActionResult> UserDelete(int id)
         {
+            AddJwtToken();
             var response = await client.DeleteAsync($"User/{id}");
 
             if (response.IsSuccessStatusCode)
