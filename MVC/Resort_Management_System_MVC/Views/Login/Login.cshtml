@@ -1,412 +1,379 @@
-﻿<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Login - The Palatin Hotel & Resort</title>
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
+﻿@{
+    ViewBag.Title = "Login";
+}
+
+<!-- Bootstrap Icons -->
+<link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css" rel="stylesheet">
+
+<style>
+    body {
+        background: linear-gradient(135deg, #fdfdfd, #f3f3f3);
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
+
+    .login-card {
+        background: #ffffff;
+        border-radius: 20px;
+        padding: 45px 35px;
+        box-shadow: 0 8px 25px rgba(0, 0, 0, 0.08);
+        width: 420px;
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+        .login-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 12px 28px rgba(0, 0, 0, 0.12);
         }
 
-        body {
-            font-family: 'Georgia', 'Times New Roman', serif;
-            background: linear-gradient(135deg, #cb8670 0%, #ffcc99 100%);
-            min-height: 100vh;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            position: relative;
-            overflow: hidden;
+    .login-header {
+        text-align: center;
+        margin-bottom: 30px;
+    }
+
+        .login-header h2 {
+            font-weight: 700;
+            color: lightsalmon;
+            margin-bottom: 5px;
         }
 
-            body::before {
-                content: '';
-                position: absolute;
-                top: 0;
-                left: 0;
-                right: 0;
-                bottom: 0;
-                background-image: radial-gradient(circle at 25% 25%, rgba(255, 204, 153, 0.1) 0%, transparent 50%), radial-gradient(circle at 75% 75%, rgba(203, 134, 112, 0.1) 0%, transparent 50%);
-                animation: float 20s ease-in-out infinite;
-            }
-
-        @keyframes float {
-            0%, 100%
-
-        {
-            transform: translateY(0px) rotate(0deg);
+        .login-header p {
+            color: #777;
+            font-size: 14px;
         }
 
-        33% {
-            transform: translateY(-20px) rotate(1deg);
+    .form-label {
+        font-weight: 600;
+        color: #444;
+    }
+
+    .input-group-text {
+        background: #f9f9f9;
+        border-radius: 12px 0 0 12px;
+        border: 1px solid #ccc;
+        border-right: none;
+        color: lightsalmon;
+    }
+
+    .form-control, .role-select {
+        border-radius: 0 12px 12px 0;
+        padding: 12px;
+        border: 1px solid #ccc;
+        transition: all 0.3s ease;
+    }
+
+        .form-control:focus, .role-select:focus {
+            border-color: lightsalmon;
+            box-shadow: 0 0 8px rgba(255, 127, 80, 0.4);
+            outline: none;
+            background-color: #fff;
         }
 
-        66% {
-            transform: translateY(10px) rotate(-1deg);
+    .role-select {
+        background-color: #fff;
+        color: slategray;
+    }
+
+        .role-select option {
+            background-color: #fff;
+            color: #444;
         }
 
+    .login-btn {
+        background: lightsalmon;
+        border: none;
+        border-radius: 12px;
+        padding: 12px;
+        font-weight: 600;
+        color: #fff;
+        transition: all 0.4s ease;
+    }
+
+        .login-btn:hover {
+            background: linear-gradient(45deg, lightsalmon, #ff9966);
+            transform: scale(1.02);
         }
 
-        .login-container {
-            background: rgba(255, 255, 255, 0.95);
-            backdrop-filter: blur(10px);
+    .auth-links {
+        text-align: center;
+        margin-top: 20px;
+    }
+
+        .auth-links a {
+            display: inline-block;
+            font-size: 14px;
+            color: #666;
+            text-decoration: none;
+            margin: 5px 8px;
+            font-weight: 500;
+            padding: 6px 12px;
             border-radius: 20px;
-            box-shadow: 0 25px 50px rgba(0, 0, 0, 0.15), 0 0 0 1px rgba(255, 255, 255, 0.2);
-            padding: 3rem 2.5rem;
-            width: 100%;
-            max-width: 420px;
-            position: relative;
-            animation: slideUp 0.8s ease-out;
-        }
-
-        @keyframes slideUp {
-            from
-
-        {
-            opacity: 0;
-            transform: translateY(30px);
-        }
-
-        to {
-            opacity: 1;
-            transform: translateY(0);
-        }
-
-        }
-
-        .logo-section {
-            text-align: center;
-            margin-bottom: 2.5rem;
-        }
-
-        .logo {
-            font-size: 2.2rem;
-            font-weight: 300;
-            color: #cb8670;
-            letter-spacing: 3px;
-            margin-bottom: 0.5rem;
-            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
-        }
-
-        .tagline {
-            color: #6c757d;
-            font-size: 0.95rem;
-            font-style: italic;
-            letter-spacing: 1px;
-        }
-
-        .form-group {
-            margin-bottom: 1.8rem;
-            position: relative;
-        }
-
-            .form-group label {
-                display: block;
-                margin-bottom: 0.5rem;
-                color: #6c757d;
-                font-size: 0.9rem;
-                font-weight: 500;
-                letter-spacing: 0.5px;
-            }
-
-            .form-group input {
-                width: 100%;
-                padding: 1rem 1.2rem;
-                border: 2px solid #e9ecef;
-                border-radius: 12px;
-                font-size: 1rem;
-                transition: all 0.3s ease;
-                background: rgba(255, 255, 255, 0.8);
-            }
-
-                .form-group input:focus {
-                    outline: none;
-                    border-color: #cb8670;
-                    background: white;
-                    transform: translateY(-2px);
-                    box-shadow: 0 8px 25px rgba(203, 134, 112, 0.15);
-                }
-
-                .form-group input::placeholder {
-                    color: #adb5bd;
-                }
-
-        .forgot-password {
-            text-align: right;
-            margin-bottom: 2rem;
-        }
-
-            .forgot-password a {
-                color: #6c757d;
-                text-decoration: none;
-                font-size: 0.9rem;
-                transition: color 0.3s ease;
-            }
-
-                .forgot-password a:hover {
-                    color: #cb8670;
-                }
-
-        .login-btn {
-            width: 100%;
-            background: linear-gradient(45deg, #cb8670, #ffcc99);
-            color: white;
-            border: none;
-            padding: 1.1rem;
-            border-radius: 12px;
-            font-size: 1.1rem;
-            font-weight: 600;
-            letter-spacing: 1px;
-            cursor: pointer;
             transition: all 0.3s ease;
-            position: relative;
-            overflow: hidden;
         }
 
-            .login-btn::before {
-                content: '';
-                position: absolute;
-                top: 0;
-                left: -100%;
-                width: 100%;
-                height: 100%;
-                background: linear-gradient(45deg, transparent, rgba(255, 255, 255, 0.2), transparent);
-                transition: left 0.5s ease;
+            .auth-links a i {
+                margin-right: 6px;
+                color: lightsalmon;
             }
 
-            .login-btn:hover {
-                transform: translateY(-2px);
-                box-shadow: 0 15px 35px rgba(203, 134, 112, 0.4);
+            .auth-links a:hover {
+                background: rgba(255, 160, 122, 0.12);
+                color: lightsalmon;
             }
 
-                .login-btn:hover::before {
-                    left: 100%;
-                }
+    .alert-danger {
+        font-size: 14px;
+        padding: 10px;
+    }
+</style>
 
-            .login-btn:active {
-                transform: translateY(0);
-            }
-
-        .divider {
-            text-align: center;
-            margin: 2rem 0;
-            position: relative;
-        }
-
-            .divider::before {
-                content: '';
-                position: absolute;
-                top: 50%;
-                left: 0;
-                right: 0;
-                height: 1px;
-                background: #dee2e6;
-            }
-
-            .divider span {
-                background: rgba(255, 255, 255, 0.95);
-                color: #6c757d;
-                padding: 0 1rem;
-                font-size: 0.9rem;
-            }
-
-        .register-link {
-            text-align: center;
-            margin-top: 1.5rem;
-        }
-
-            .register-link p {
-                color: #6c757d;
-                font-size: 0.95rem;
-            }
-
-            .register-link a {
-                color: #cb8670;
-                text-decoration: none;
-                font-weight: 600;
-                transition: all 0.3s ease;
-            }
-
-                .register-link a:hover {
-                    color: #a67258;
-                    text-decoration: underline;
-                }
-
-        .floating-elements {
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            pointer-events: none;
-            overflow: hidden;
-        }
-
-        .floating-circle {
-            position: absolute;
-            border-radius: 50%;
-            background: rgba(255, 204, 153, 0.1);
-            animation: floatCircle 15s ease-in-out infinite;
-        }
-
-            .floating-circle:nth-child(1) {
-                width: 80px;
-                height: 80px;
-                top: 20%;
-                left: 10%;
-                animation-delay: 0s;
-            }
-
-            .floating-circle:nth-child(2) {
-                width: 120px;
-                height: 120px;
-                top: 60%;
-                right: 15%;
-                animation-delay: 5s;
-                background: rgba(203, 134, 112, 0.1);
-            }
-
-            .floating-circle:nth-child(3) {
-                width: 60px;
-                height: 60px;
-                bottom: 20%;
-                left: 20%;
-                animation-delay: 10s;
-            }
-
-        @keyframes floatCircle {
-            0%, 100%
-
-        {
-            transform: translateY(0px) translateX(0px) scale(1);
-        }
-
-        33% {
-            transform: translateY(-30px) translateX(20px) scale(1.1);
-        }
-
-        66% {
-            transform: translateY(20px) translateX(-15px) scale(0.9);
-        }
-
-        }
-
-        @media (max-width: 480px) {
-            .login-container
-
-        {
-            margin: 1rem;
-            padding: 2rem 1.5rem;
-        }
-
-        .logo {
-            font-size: 1.8rem;
-        }
-
-        }
-    </style>
-</head>
-<body>
-    <div class="floating-elements">
-        <div class="floating-circle"></div>
-        <div class="floating-circle"></div>
-        <div class="floating-circle"></div>
-    </div>
-
-    <div class="login-container">
-        <div class="logo-section">
-            <h1 class="logo">THE PALATIN</h1>
-            <p class="tagline">Hotel & Resort</p>
+<div class="d-flex justify-content-center align-items-center vh-100">
+    <div class="login-card">
+        <div class="login-header">
+            <h2>Welcome Back</h2>
+            <p>Please login to access your account</p>
         </div>
 
-        <form id="loginForm">
-            <div class="form-group">
-                <label for="email">Email Address</label>
-                <input type="email" id="email" name="email" placeholder="Enter your email" required>
+        <form method="post" onsubmit="showLoading()">
+            <div class="mb-3">
+                <label class="form-label">Username</label>
+                <div class="input-group">
+                    <span class="input-group-text"><i class="bi bi-person"></i></span>
+                    <input type="text" name="UserName" class="form-control" placeholder="Enter username" required />
+                </div>
             </div>
 
-            <div class="form-group">
-                <label for="password">Password</label>
-                <input type="password" id="password" name="password" placeholder="Enter your password" required>
+            <div class="mb-3">
+                <label class="form-label">Password</label>
+                <div class="input-group">
+                    <span class="input-group-text"><i class="bi bi-lock"></i></span>
+                    <input type="password" id="Password" name="Password" class="form-control" placeholder="Enter password" required />
+                </div>
             </div>
 
-            <div class="forgot-password">
-                <a href="#" onclick="showForgotPassword()">Forgot your password?</a>
+            <div class="mb-3">
+                <label class="form-label">Role</label>
+                <div class="input-group">
+                    <span class="input-group-text"><i class="bi bi-people"></i></span>
+                    <select class="form-control role-select" name="Role" required>
+                        <option value="" disabled selected>Select role</option>
+                        <option value="Admin">Admin</option>
+                        <option value="Manager">Manager</option>
+                        <option value="User">User</option>
+                    </select>
+                </div>
             </div>
 
-            <button type="submit" class="login-btn">
-                SIGN IN
+            <button type="submit" id="loginBtn" class="btn login-btn w-100 mb-3">
+                <span id="btnText">Login</span>
             </button>
         </form>
 
-        <div class="divider">
-            <span>or</span>
-        </div>
+        @if (ViewBag.Error != null)
+        {
+            <div class="alert alert-danger mt-2 rounded-3 text-center">
+                @ViewBag.Error
+            </div>
+        }
 
-        <div class="register-link">
-            <p>Don't have an account? <a href="#" onclick="showRegister()">Create Account</a></p>
+        <div class="auth-links">
+            <a href="#"><i class="bi bi-key"></i>Forgot password?</a>
+            <a href="#"><i class="bi bi-pencil-square"></i>Register now</a>
         </div>
     </div>
+</div>
 
-    <script>
-        // Form submission
-        document.getElementById('loginForm').addEventListener('submit', function(e) {
-            e.preventDefault();
+<script>
+    function showLoading() {
+        const btn = document.getElementById("loginBtn");
+        const text = document.getElementById("btnText");
+        text.innerHTML = '<span class="spinner-border spinner-border-sm me-2"></span> Logging in...';
+        btn.disabled = true;
+    }
+</script>
 
-            const email = document.getElementById('email').value;
-            const password = document.getElementById('password').value;
 
-            if (email && password) {
-                // Add loading state
-                const btn = document.querySelector('.login-btn');
-                btn.innerHTML = 'SIGNING IN...';
-                btn.disabled = true;
+@*
+@{
+    ViewBag.Title = "Register";
+}
 
-                // Simulate login process
-                setTimeout(() => {
-                    alert('Login successful! Welcome to The Palatin.');
-                    btn.innerHTML = 'SIGN IN';
-                    btn.disabled = false;
-                }, 1500);
+<!-- Bootstrap Icons -->
+<link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css" rel="stylesheet">
+
+<style>
+    body {
+        background: linear-gradient(135deg, #f9f9f9, #f0f0f0);
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
+
+    .register-card {
+        background: #ffffff;
+        border-radius: 20px;
+        padding: 45px 35px;
+        box-shadow: 0 8px 25px rgba(0, 0, 0, 0.08);
+        width: 450px;
+        transition: transform 0.3s ease;
+    }
+
+        .register-card:hover {
+            transform: translateY(-5px);
+        }
+
+    .register-header {
+        text-align: center;
+        margin-bottom: 30px;
+    }
+
+        .register-header h2 {
+            font-weight: 700;
+            color: lightsalmon;
+        }
+
+        .register-header p {
+            color: #777;
+            font-size: 14px;
+        }
+
+    .form-label {
+        font-weight: 600;
+        color: #444;
+    }
+
+    .input-group-text {
+        background: #f9f9f9;
+        border-radius: 12px 0 0 12px;
+        border: 1px solid #ccc;
+        border-right: none;
+        color: lightsalmon;
+    }
+
+    .form-control {
+        border-radius: 0 12px 12px 0;
+        padding: 12px;
+        border: 1px solid #ccc;
+        transition: all 0.3s ease;
+    }
+
+        .form-control:focus {
+            border-color: lightsalmon;
+            box-shadow: 0 0 8px rgba(255, 127, 80, 0.4);
+        }
+
+    .register-btn {
+        background: lightsalmon;
+        border: none;
+        border-radius: 12px;
+        padding: 12px;
+        font-weight: 600;
+        color: #fff;
+        transition: all 0.4s ease;
+    }
+
+        .register-btn:hover {
+            background: linear-gradient(45deg, lightsalmon, #ff9966);
+            transform: scale(1.02);
+        }
+
+    .auth-links {
+        text-align: center;
+        margin-top: 20px;
+    }
+
+        .auth-links a {
+            display: inline-block;
+            font-size: 14px;
+            color: #666;
+            text-decoration: none;
+            margin: 5px 8px;
+            font-weight: 500;
+            padding: 6px 12px;
+            border-radius: 20px;
+            transition: all 0.3s ease;
+        }
+
+            .auth-links a i {
+                margin-right: 6px;
+                color: lightsalmon;
             }
-        });
 
-        // Input focus animations
-        document.querySelectorAll('input').forEach(input => {
-            input.addEventListener('focus', function() {
-                this.parentElement.style.transform = 'translateY(-2px)';
-            });
+            .auth-links a:hover {
+                background: rgba(255, 160, 122, 0.1);
+                color: lightsalmon;
+            }
+</style>
 
-            input.addEventListener('blur', function() {
-                this.parentElement.style.transform = 'translateY(0)';
-            });
-        });
+<div class="d-flex justify-content-center align-items-center vh-100">
+    <div class="register-card">
+        <div class="register-header">
+            <h2>Create Account</h2>
+            <p>Fill in the details to get started</p>
+        </div>
 
-        // Placeholder functions for demo
-        function showForgotPassword() {
-            alert('Forgot Password functionality would be implemented here.');
+        <form method="post" onsubmit="showLoading()">
+            <div class="mb-3">
+                <label class="form-label">Full Name</label>
+                <div class="input-group">
+                    <span class="input-group-text"><i class="bi bi-person"></i></span>
+                    <input type="text" name="FullName" class="form-control" placeholder="Enter full name" required />
+                </div>
+            </div>
+
+            <div class="mb-3">
+                <label class="form-label">Email</label>
+                <div class="input-group">
+                    <span class="input-group-text"><i class="bi bi-envelope"></i></span>
+                    <input type="email" name="Email" class="form-control" placeholder="Enter email address" required />
+                </div>
+            </div>
+
+            <div class="mb-3">
+                <label class="form-label">Username</label>
+                <div class="input-group">
+                    <span class="input-group-text"><i class="bi bi-person-badge"></i></span>
+                    <input type="text" name="UserName" class="form-control" placeholder="Choose a username" required />
+                </div>
+            </div>
+
+            <div class="mb-3">
+                <label class="form-label">Password</label>
+                <div class="input-group">
+                    <span class="input-group-text"><i class="bi bi-lock"></i></span>
+                    <input type="password" name="Password" class="form-control" placeholder="Create a password" required />
+                </div>
+            </div>
+
+            <div class="mb-3">
+                <label class="form-label">Confirm Password</label>
+                <div class="input-group">
+                    <span class="input-group-text"><i class="bi bi-shield-lock"></i></span>
+                    <input type="password" name="ConfirmPassword" class="form-control" placeholder="Re-enter password" required />
+                </div>
+            </div>
+
+            <button type="submit" id="registerBtn" class="btn register-btn w-100 mb-3">
+                <span id="btnText">Register</span>
+            </button>
+        </form>
+
+        @if (ViewBag.Error != null)
+        {
+            <div class="alert alert-danger mt-2 rounded-3 text-center">
+                @ViewBag.Error
+            </div>
         }
 
-        function showRegister() {
-            alert('Registration page would be loaded here.');
-        }
+        <!-- Back to Login link -->
+        <div class="auth-links">
+            <a href="/Login"><i class="bi bi-box-arrow-in-right"></i>Already have an account? Login</a>
+        </div>
+    </div>
+</div>
 
-        // Add subtle parallax effect on mouse move
-        document.addEventListener('mousemove', function(e) {
-            const circles = document.querySelectorAll('.floating-circle');
-            const mouseX = e.clientX / window.innerWidth;
-            const mouseY = e.clientY / window.innerHeight;
-
-            circles.forEach((circle, index) => {
-                const speed = (index + 1) * 0.5;
-                const x = (mouseX - 0.5) * speed * 20;
-                const y = (mouseY - 0.5) * speed * 20;
-                circle.style.transform = `translate(${x}px, ${y}px)`;
-            });
-        });
-    </script>
-</body>
-</html>
+<script>
+    function showLoading() {
+        const btn = document.getElementById("registerBtn");
+        const text = document.getElementById("btnText");
+        text.innerHTML = '<span class="spinner-border spinner-border-sm me-2"></span> Registering...';
+        btn.disabled = true;
+    }
+</script>*@

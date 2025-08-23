@@ -114,7 +114,7 @@
 
 					Swal.fire({
 						title: "Are you sure?",
-						text: "This booking will be deleted permanently.",
+						text: "This guest will be deleted permanently.",
 						icon: "warning",
 						showCancelButton: true,
 						confirmButtonColor: "#d33",
@@ -137,6 +137,19 @@
 							title: 'Deleted!',
 							text: '@TempData["SuccessMessage"]',
 							confirmButtonColor: '#28a745'
+						});
+			</text>
+		}
+
+			// ✅ Show success alert for Add / Edit / Delete
+		@if (TempData["SuccessMessage"] != null)
+		{
+			<text>
+						Swal.fire({
+							icon: 'success',
+							title: '🎉Success!',
+							text: '@TempData["SuccessMessage"]',
+								confirmButtonColor: '#28a745'
 						});
 			</text>
 		}

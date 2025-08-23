@@ -258,20 +258,19 @@ namespace Resort_Management_System_API.Controllers
         [HttpGet("dropdown/reservations")]
         public async Task<ActionResult> ReservationsDropdown()
         {
-            try
-            {
-                var reservations = await context.Reservations
-                    .Select(r => new { r.ReservationStatus })
-                    .Distinct()
-                    .ToListAsync();
+            var reservations = await context.Reservations
+                .Where(r => r.ReservationStatus == "Confirmed")
+                .Select(r => new
+                {
+                    r.ReservationId,
+                    r.GuestId,
+                    r.ReservationStatus
+                })
+                .ToListAsync();
 
-                return Ok(reservations);
-            }
-            catch (Exception ex)
-            {
-                return StatusCode(500, $"Error retrieving reservations: {ex.Message}");
-            }
+            return Ok(reservations);
         }
+
 
 
 
@@ -284,9 +283,9 @@ namespace Resort_Management_System_API.Controllers
                 return BadRequest("Reservation status is required (Confirmed or Pending).");
             }
 
-            if (status != "Confirmed" && status != "Pending")
+            if (status != "Confirmed")
             {
-                return BadRequest("Only 'Confirmed' or 'Pending' status is allowed.");
+                return BadRequest("Only 'Confirmed' status is allowed.");
             }
 
             var guests = await (from g in context.Guests
@@ -308,5 +307,3 @@ namespace Resort_Management_System_API.Controllers
 
     }
 }
-
-

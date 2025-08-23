@@ -52,7 +52,7 @@ namespace Resort_Management_System_MVC.Controllers
                     var response = await client.GetAsync($"Guest/{id}");
                     if (!response.IsSuccessStatusCode)
                     {
-                        TempData["Error"] = "Guest not found.";
+                        TempData["ErrorMessage"] = "Guest not found.";
                         return RedirectToAction("GuestList");
                     }
 
@@ -69,6 +69,36 @@ namespace Resort_Management_System_MVC.Controllers
             }
         }
 
+        //[HttpPost]
+        //public async Task<IActionResult> GuestAddEdit(GuestModel guest)
+        //{
+        //    if (!ModelState.IsValid)
+        //        return View("GuestList");
+
+        //    try
+        //    {
+        //        var content = new StringContent(JsonConvert.SerializeObject(guest), Encoding.UTF8, "application/json");
+
+        //        if (guest.GuestId == 0)
+        //        {
+        //            var response = await client.PostAsync("Guest", content);
+        //            response.EnsureSuccessStatusCode();
+        //        }
+        //        else
+        //        {
+        //            var response = await client.PutAsync($"Guest/{guest.GuestId}", content);
+        //            response.EnsureSuccessStatusCode();
+        //        }
+
+        //        return RedirectToAction("GuestList");
+        //    }
+        //    catch (Exception ex)
+        //    {
+        //        TempData["Error"] = "Unable to save guest.";
+        //        return View("GuestList");
+        //    }
+        //}
+
         [HttpPost]
         public async Task<IActionResult> GuestAddEdit(GuestModel guest)
         {
@@ -81,22 +111,31 @@ namespace Resort_Management_System_MVC.Controllers
 
                 if (guest.GuestId == 0)
                 {
+                    // ADD
                     var response = await client.PostAsync("Guest", content);
                     response.EnsureSuccessStatusCode();
+
+                    // ✅ SweetAlert Add Message
+                    TempData["SuccessMessage"] = "Guest added successfully!";
                 }
                 else
                 {
+                    // UPDATE
                     var response = await client.PutAsync($"Guest/{guest.GuestId}", content);
                     response.EnsureSuccessStatusCode();
+
+                    // ✅ SweetAlert Edit Message
+                    TempData["SuccessMessage"] = "Guest updated successfully!";
                 }
 
                 return RedirectToAction("GuestList");
             }
             catch (Exception ex)
             {
-                TempData["Error"] = "Unable to save guest.";
+                TempData["ErrorMessage"] = "Unable to save guest.";
                 return View("GuestList");
             }
         }
+
     }
 }

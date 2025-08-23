@@ -19,7 +19,7 @@
         </div>
 
         <div class="mb-3">
-            <label asp-for="GuestId" class="form-label"></label>
+            <label asp-for="GuestId" class="form-label">Guest Name</label>
             <select asp-for="GuestId" class="form-control" asp-items="ViewBag.Guests">
                 <option value="">-- Select Guest --</option>
             </select>
@@ -37,7 +37,7 @@
 
         <div class="mb-3">
             <label asp-for="Quantity" class="form-label"></label>
-            <input asp-for="Quantity" class="form-control"/>
+            <input asp-for="Quantity" class="form-control" />
             <span asp-validation-for="Quantity" class="text-danger"></span>
         </div>
 

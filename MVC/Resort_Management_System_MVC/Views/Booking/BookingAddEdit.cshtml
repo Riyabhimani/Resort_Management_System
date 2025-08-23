@@ -1,5 +1,4 @@
-﻿Booking Add Edit
-@model Resort_Management_System_MVC.Models.BookingModel
+﻿@model Resort_Management_System_MVC.Models.BookingModel
 
 @{
     ViewData["Title"] = Model.BookingId == 0 ? "Add Booking" : "Edit Booking";
@@ -84,15 +83,10 @@
 
         <div class="mb-3">
             <label asp-for="AdvancePayment" class="form-label"></label>
-            <input asp-for="AdvancePayment" class="form-control" type="number" step="0.01" />
+            <input asp-for="AdvancePayment" class="form-control" type="text" />
             <span asp-validation-for="AdvancePayment" class="text-danger"></span>
         </div>
 
-        <div class="mb-3">
-            <label asp-for="Modified" class="form-label"></label>
-            <input asp-for="Modified" class="form-control" type="datetime-local" />
-            <span asp-validation-for="Modified" class="text-danger"></span>
-        </div>
 
         <button type="submit" class="btn btn-primary" asp-controller="Booking" asp-action="BookingAddEdit"> <i class="bi bi-check-circle-fill me-2"></i>@((Model.BookingId == 0) ? "Add" : "Update")</button>
         <a class="btn btn-secondary" asp-controller="Booking" asp-action="BookingList"><i class="bi bi-arrow-left me-2"></i>Back</a>

@@ -1,3 +1,11 @@
 ﻿@{
-    Layout = "_Layout";
+    if (Context.Session.GetString("UserRole") == "User")
+    {
+        Layout = "~/Views/Shared/UserLayout.cshtml";
+    }
+    else
+    {
+        Layout = "~/Views/Shared/_Layout.cshtml"; // default admin layout
+    }
 }
+

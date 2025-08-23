@@ -42,7 +42,7 @@ namespace Resort_Management_System_API.Controllers
             return Ok(new
             {
                 token,
-                user = new { user.UserId, user.UserName, user.Role }
+                user = new { user.UserId, user.UserName}
             });
         }
         #endregion

@@ -129,6 +129,19 @@
 					});
 				</text>
 			}
+
+			// ✅ Show success alert for Add / Edit / Delete
+			@if (TempData["SuccessMessage"] != null)
+			{
+				<text>
+					Swal.fire({
+						icon: 'success',
+						title: 'Success!',
+						text: '@TempData["SuccessMessage"]',
+							confirmButtonColor: '#28a745'
+					});
+				</text>
+			}
 		});
 	</script>
 }
