@@ -205,13 +205,13 @@ namespace Resort_Management_System_API.Controllers
             var query = context.Bookings.AsQueryable();
 
             if (!string.IsNullOrEmpty(fullName))
-                query = query.Where(b => b.FullName == fullName);
+                query = query.Where(b => b.FullName.Contains(fullName));
 
             if (numberOfRoom.HasValue)
-                query = query.Where(b => b.NumberOfRoom == numberOfRoom);
+                query = query.Where(b => b.NumberOfRoom == numberOfRoom.Value);
 
             if (!string.IsNullOrEmpty(roomType))
-                query = query.Where(b => b.RoomType == roomType);
+                query = query.Where(b => b.RoomType.Contains(roomType));
 
             return await query.ToListAsync();
         }

@@ -219,5 +219,68 @@ namespace Resort_Management_System_MVC.Controllers
 
             return RedirectToAction("PaymentList");
         }
+
+        //Get top 10 payment
+        public async Task<IActionResult> Top10Payments()
+        {
+            try
+            {
+                var response = await client.GetAsync("Payment/Top10");
+                if (!response.IsSuccessStatusCode)
+                {
+                    TempData["ErrorMessage"] = $"API Error: {response.StatusCode}";
+                    return RedirectToAction("PaymentList");
+                }
+
+                var json = await response.Content.ReadAsStringAsync();
+                var payments = JsonConvert.DeserializeObject<List<PaymentModel>>(json);
+
+                if (payments == null || !payments.Any())
+                {
+                    TempData["ErrorMessage"] = "No payments found.";
+                    return View("PaymentList", new List<PaymentModel>());
+                }
+
+                return View("PaymentList", payments);
+            }
+            catch (Exception ex)
+            {
+                TempData["ErrorMessage"] = $"Error loading Top 10 Payments: {ex.Message}";
+                return RedirectToAction("PaymentList");
+            }
+        }
+
+        //Search payment
+        public async Task<IActionResult> SearchPayment(int? paymentId, string? fullName, int? reservationId)
+        {
+            // Build query properly (avoid null params in URL)
+            var queryParams = new List<string>();
+
+            if (paymentId.HasValue)
+                queryParams.Add($"paymentId={paymentId}");
+
+            if (!string.IsNullOrWhiteSpace(fullName))
+                queryParams.Add($"fullName={Uri.EscapeDataString(fullName)}");
+
+            if (reservationId.HasValue)
+                queryParams.Add($"reservationId={reservationId}");
+
+            var url = "Payment/filter";
+            if (queryParams.Any())
+                url += "?" + string.Join("&", queryParams);
+
+            var payments = await client.GetFromJsonAsync<List<PaymentModel>>(url);
+
+            if (payments == null || !payments.Any())
+            {
+                TempData["ErrorMessage"] = "⚠ No payments found.";
+                return View("PaymentList", new List<PaymentModel>());
+            }
+
+            return View("PaymentList", payments);
+        }
+
+
+
     }
 }

@@ -67,10 +67,6 @@ wwwroot\js\bootstrap\bootstrap.min.js
 wwwroot\js\bootstrap\popper.min.js
 wwwroot\js\jquery\jquery-2.2.4.min.js
 wwwroot\js\plugins\plugins.js
-wwwroot\scss\_fonts.scss
-wwwroot\scss\_mixin.scss
-wwwroot\scss\_responsive.scss
-wwwroot\scss\_theme_color.scss
-wwwroot\scss\style.scss
+wwwroot\scss\style.css
 wwwroot\style.css
 wwwroot\style.css.map

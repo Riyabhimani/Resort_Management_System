@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations.Schema;
 using System.Text.Json.Serialization;
 using Microsoft.AspNetCore.Mvc.ModelBinding.Validation;
 
@@ -11,13 +12,13 @@ public partial class GuestService
 
     public int ReservationId { get; set; }
 
-    public int ServiceId { get; set; }
+    public int? ServiceId { get; set; }
 
     public int Quantity { get; set; }
 
     public DateTime DateRequested { get; set; }
 
-    public int GuestId { get; set; }
+    public int? GuestId { get; set; }
 
     public DateTime Created { get; set; }
 

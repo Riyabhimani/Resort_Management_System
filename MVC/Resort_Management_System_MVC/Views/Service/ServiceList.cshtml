@@ -13,12 +13,31 @@
 		<div class="d-flex justify-content-between align-items-center mb-4">
 			<h3 class="m-0" style="color:#cb8670"><b>Service List</b></h3>
 
-			<div class="text-end mb-3">
+			<div class="d-flex justify-content-between align-items-center mb-4">
+
 				<a asp-action="ServiceAddEdit" asp-controller="Service" class="btn resort-btn"
-				   onclick="return confirm('Add Service?');">
+				   onclick="return confirm('Add Service Details?');">
 					<i class="bi bi-person-plus-fill" style="font-size: 20px; color: #cb8670;"></i>
 					<span>Add Service</span>
 				</a>
+
+				<!-- ✅ Search / Filters -->
+				<form asp-action="SearchService" method="get" class="d-flex align-items-center gap-2">
+					<input type="text" name="ServiceName" placeholder="Search By Name"
+						   class="form-control form-control-sm" style="width: 250px;" />
+
+					<button type="submit" class="btn btn-primary btn-sm">
+						<i class="bi bi-search me-1"></i> Search Service
+					</button>
+
+					<a asp-action="Top10Services" asp-controller="Service" class="btn btn-success btn-sm">
+						<i class="bi bi-list-ol me-1"></i> Top 10 Service
+					</a>
+
+					<a asp-action="ServiceList" asp-controller="Service" class="btn btn-secondary btn-sm">
+						<i class="bi bi-arrow-clockwise me-1"></i>Back to Full List
+					</a>
+				</form>
 			</div>
 
 

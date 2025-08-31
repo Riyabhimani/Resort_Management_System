@@ -29,8 +29,19 @@
     <None Include="wwwroot\.sass-cache\b687762b7660b1f71ae40e600add14c590cfdbc7\_variables.scssc" />
   </ItemGroup>
 
-  <ItemGroup>
-    <PackageReference Include="Newtonsoft.Json" Version="13.0.3" />
-  </ItemGroup>
+<!--
+	<ItemGroup>
+        <PackageReference Include="LibSassBuilder" Version="3.0.0" />
+        <PackageReference Include="Newtonsoft.Json" Version="13.0.3" />
+    </ItemGroup>
+-->
+	<ItemGroup>
+		<SassFile Include="wwwroot/scss/**/*.scss" />
+	</ItemGroup>
+	
+	<ItemGroup>
+		<PackageReference Include="DartSassBuilder" Version="1.1.0" />
+		<PackageReference Include="Newtonsoft.Json" Version="13.0.3" />
+	</ItemGroup>
 
 </Project>

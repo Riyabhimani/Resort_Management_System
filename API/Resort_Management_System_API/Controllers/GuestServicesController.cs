@@ -247,13 +247,34 @@ namespace Resort_Management_System_API.Controllers
 
         #region GuestServicesDropdown
         // Get all GuestSerbices (for dropdown)
+        //[HttpGet("dropdown/guestServices")]
+        //public async Task<ActionResult<IEnumerable<object>>> GuestServicesDropdown()
+        //{
+        //    return await context.GuestServices
+        //        .Select(g => new { g.GuestServiceId, g.GuestId })
+        //        .ToListAsync();
+        //}
+
         [HttpGet("dropdown/guestServices")]
-        public async Task<ActionResult<IEnumerable<object>>> GuestServicesDropdown()
+        public async Task<ActionResult<IEnumerable<object>>> GuestServicesDropdown([FromQuery] string? status)
         {
-            return await context.GuestServices
-                .Select(g => new { g.GuestServiceId, g.GuestId })
+            var query = context.Reservations
+                .Include(r => r.Guest)
+                .Where(r => status == null || r.ReservationStatus == status);
+
+            var result = await query
+                .Select(r => new
+                {
+                    r.Guest.GuestId,
+                    r.Guest.FullName
+                })
+                .Distinct()
                 .ToListAsync();
+
+            return Ok(result);
         }
+
+
         #endregion
 
     }

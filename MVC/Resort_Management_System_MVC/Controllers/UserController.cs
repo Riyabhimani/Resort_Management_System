@@ -324,5 +324,35 @@ namespace Resort_Management_System_MVC.Controllers
         {
             return View(); // Show a view saying "You don't have permission"
         }
+
+        //Get Top 10 User
+        public async Task<IActionResult> Top10Users()
+        {
+            var response = await client.GetAsync("User/Top10");
+            if (!response.IsSuccessStatusCode)
+            {
+                TempData["ErrorMessage"] = "Unable to fetch top 10 Users.";
+                return RedirectToAction("UserList");
+            }
+            var json = await response.Content.ReadAsStringAsync();
+            var list = JsonConvert.DeserializeObject<List<UserModel>>(json);
+
+            return View("UserList", list); // reuse same view
+        }
+
+        //Search User
+        public async Task<IActionResult> SearchUser(string userName)
+        {
+            var response = await client.GetAsync($"Guest/filter?userName={userName}");
+            if (!response.IsSuccessStatusCode)
+            {
+                TempData["ErrorMessage"] = "User search failed.";
+                return RedirectToAction("UserList");
+            }
+
+            var json = await response.Content.ReadAsStringAsync();
+            var list = JsonConvert.DeserializeObject<List<UserModel>>(json);
+            return View("UserList", list); // reuse same view
+        }
     }
 }

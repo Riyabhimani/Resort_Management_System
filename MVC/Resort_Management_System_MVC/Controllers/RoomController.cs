@@ -98,7 +98,44 @@ namespace Resort_Management_System_MVC.Controllers
             }
         }
 
+        //Get Top 10 Rooms
+        public async Task<IActionResult> Top10Rooms()
+        {
+            var response = await client.GetAsync("Room/Top10");
+            if (!response.IsSuccessStatusCode)
+            {
+                TempData["ErrorMessage"] = "Unable to fetch top 10 room details.";
+                return RedirectToAction("RoomList");
+            }
+            var json = await response.Content.ReadAsStringAsync();
+            var list = JsonConvert.DeserializeObject<List<RoomModel>>(json);
+
+            return View("RoomList", list); // reuse same view
+        }
 
 
+        //Search Rooms
+        [HttpGet]
+        public async Task<IActionResult> SearchRoom(string? roomType, string? roomNumber, string? roomStatus)
+        {
+            var queryParams = new List<string>();
+            if (!string.IsNullOrEmpty(roomType)) queryParams.Add($"roomType={Uri.EscapeDataString(roomType)}");
+            if (!string.IsNullOrEmpty(roomNumber)) queryParams.Add($"roomNumber={Uri.EscapeDataString(roomNumber)}");
+            if (!string.IsNullOrEmpty(roomStatus)) queryParams.Add($"roomStatus={Uri.EscapeDataString(roomStatus)}");
+
+            var url = "Room/filter";
+            if (queryParams.Any())
+                url += "?" + string.Join("&", queryParams);
+
+            var rooms = await client.GetFromJsonAsync<List<RoomModel>>(url);
+
+            if (rooms == null || !rooms.Any())
+            {
+                TempData["ErrorMessage"] = "⚠ No rooms found.";
+                return View("RoomList", new List<RoomModel>());
+            }
+
+            return View("RoomList", rooms);
+        }
     }
 }

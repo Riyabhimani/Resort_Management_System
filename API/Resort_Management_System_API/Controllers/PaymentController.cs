@@ -225,15 +225,15 @@ namespace Resort_Management_System_API.Controllers
 
         #region SearchPayment
         [HttpGet("filter")]
-        public async Task<ActionResult<IEnumerable<Payment>>> SearchPayment([FromQuery] int? paymentId, int? guestId, int? reservationId)
+        public async Task<ActionResult<IEnumerable<Payment>>> SearchPayment([FromQuery] int? paymentId, string? fullName, int? reservationId)
         {
             var query = context.Payments.AsQueryable();
 
             if (paymentId.HasValue)
                 query = query.Where(p => p.PaymentId == paymentId);
 
-            if (guestId.HasValue)
-                query = query.Where(p => p.GuestId == guestId);
+            if (!string.IsNullOrEmpty(fullName))
+                query = query.Where(p => p.Guest.FullName.Contains(fullName));
 
             if (reservationId.HasValue)
                 query = query.Where(p => p.ReservationId == reservationId);

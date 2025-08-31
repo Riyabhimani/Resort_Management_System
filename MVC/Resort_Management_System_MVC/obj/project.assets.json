@@ -2,6 +2,13 @@
   "version": 3,
   "targets": {
     "net8.0": {
+      "DartSassBuilder/1.1.0": {
+        "type": "package",
+        "build": {
+          "build/DartSassBuilder.props": {},
+          "build/DartSassBuilder.targets": {}
+        }
+      },
       "Newtonsoft.Json/13.0.3": {
         "type": "package",
         "compile": {
@@ -18,6 +25,69 @@
     }
   },
   "libraries": {
+    "DartSassBuilder/1.1.0": {
+      "sha512": "3UKGIRom67Ka/49osw4gBoCGSL3kdEjJ6yFL1rBPkQICMe9LqNoF64xpVnVYo4nA4zfpB20fHF0oJYWPKUJbAQ==",
+      "type": "package",
+      "path": "dartsassbuilder/1.1.0",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        ".vs/DartSassBuilder/project-colors.json",
+        ".vs/DartSassBuilder/v17/.futdcache.v1",
+        ".vs/DartSassBuilder/v17/.vs/DartSassBuilder/project-colors.json",
+        ".vs/DartSassBuilder/v17/.vs/DartSassBuilder/v17/.futdcache.v1",
+        ".vs/DartSassBuilder/v17/.vs/DartSassBuilder/v17/TestStore/0/000.testlog",
+        ".vs/DartSassBuilder/v17/.vs/DartSassBuilder/v17/TestStore/0/testlog.manifest",
+        ".vs/DartSassBuilder/v17/DartSassBuilder.sln",
+        ".vs/DartSassBuilder/v17/TestStore/0/000.testlog",
+        ".vs/DartSassBuilder/v17/TestStore/0/testlog.manifest",
+        "DartSassBuilder.csproj",
+        "build/DartSassBuilder.props",
+        "build/DartSassBuilder.targets",
+        "build/DesignTime/DartSassBuilder.DesignTime.targets",
+        "build/DesignTime/Rules/ProjectItemsSchema.xaml",
+        "build/DesignTime/Rules/SassFileType.xaml",
+        "dartsassbuilder.1.1.0.nupkg.sha512",
+        "dartsassbuilder.nuspec",
+        "obj/DartSassBuilder.csproj.nuget.dgspec.json",
+        "obj/DartSassBuilder.csproj.nuget.g.props",
+        "obj/DartSassBuilder.csproj.nuget.g.targets",
+        "obj/Debug/netstandard2.0/DartSassBuilder.AssemblyInfo.cs",
+        "obj/Debug/netstandard2.0/DartSassBuilder.AssemblyInfoInputs.cache",
+        "obj/Debug/netstandard2.0/DartSassBuilder.GeneratedMSBuildEditorConfig.editorconfig",
+        "obj/Debug/netstandard2.0/DartSassBuilder.assets.cache",
+        "obj/Debug/netstandard2.0/DartSassBuilder.csproj.AssemblyReference.cache",
+        "obj/Release/netstandard2.0/DartSassBuilder.AssemblyInfo.cs",
+        "obj/Release/netstandard2.0/DartSassBuilder.AssemblyInfoInputs.cache",
+        "obj/Release/netstandard2.0/DartSassBuilder.GeneratedMSBuildEditorConfig.editorconfig",
+        "obj/Release/netstandard2.0/DartSassBuilder.assets.cache",
+        "obj/Release/netstandard2.0/DartSassBuilder.csproj.AssemblyReference.cache",
+        "obj/project.assets.json",
+        "obj/project.nuget.cache",
+        "sass.png",
+        "tool/AdvancedStringBuilder.dll",
+        "tool/ClearScript.Core.dll",
+        "tool/ClearScript.V8.ICUData.dll",
+        "tool/ClearScript.V8.dll",
+        "tool/CommandLine.dll",
+        "tool/DartSassBuilder.deps.json",
+        "tool/DartSassBuilder.dll",
+        "tool/DartSassBuilder.exe",
+        "tool/DartSassBuilder.pdb",
+        "tool/DartSassBuilder.runtimeconfig.json",
+        "tool/DartSassHost.dll",
+        "tool/JavaScriptEngineSwitcher.Core.dll",
+        "tool/JavaScriptEngineSwitcher.V8.dll",
+        "tool/Newtonsoft.Json.dll",
+        "tool/ru-RU/JavaScriptEngineSwitcher.Core.resources.dll",
+        "tool/ru-RU/JavaScriptEngineSwitcher.V8.resources.dll",
+        "tool/runtimes/linux-x64/native/ClearScriptV8.linux-x64.so",
+        "tool/runtimes/osx-arm64/native/ClearScriptV8.osx-arm64.dylib",
+        "tool/runtimes/osx-x64/native/ClearScriptV8.osx-x64.dylib",
+        "tool/runtimes/win-x64/native/ClearScriptV8.win-x64.dll",
+        "tool/runtimes/win-x86/native/ClearScriptV8.win-x86.dll"
+      ]
+    },
     "Newtonsoft.Json/13.0.3": {
       "sha512": "HrC5BXdl00IP9zeV+0Z848QWPAoCr9P3bDEZguI+gkLcBKAOxix/tLEAAHC+UvDNPv4a2d18lOReHMOagPa+zQ==",
       "type": "package",
@@ -51,6 +121,7 @@
   },
   "projectFileDependencyGroups": {
     "net8.0": [
+      "DartSassBuilder >= 1.1.0",
       "Newtonsoft.Json >= 13.0.3"
     ]
   },
@@ -104,6 +175,10 @@
       "net8.0": {
         "targetAlias": "net8.0",
         "dependencies": {
+          "DartSassBuilder": {
+            "target": "Package",
+            "version": "[1.1.0, )"
+          },
           "Newtonsoft.Json": {
             "target": "Package",
             "version": "[13.0.3, )"

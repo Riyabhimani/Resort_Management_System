@@ -14,7 +14,7 @@ namespace Resort_Management_System_MVC.Controllers
         public GuestController(IHttpClientFactory httpClientFactory)
         {
             client = httpClientFactory.CreateClient();
-            client.BaseAddress = new Uri("http://localhost:5159/api/Guest");
+            client.BaseAddress = new Uri("http://localhost:5159/api/");
         }
 
         public async Task<IActionResult> GuestList()
@@ -137,5 +137,34 @@ namespace Resort_Management_System_MVC.Controllers
             }
         }
 
+        //Get Top 10 Guest
+        public async Task<IActionResult> Top10Guests()
+        {
+            var response = await client.GetAsync("Guest/Top10"); 
+            if (!response.IsSuccessStatusCode)
+            {
+                TempData["ErrorMessage"] = "Unable to fetch top 10 guests.";
+                return RedirectToAction("GuestList");
+            }
+            var json = await response.Content.ReadAsStringAsync();
+            var list = JsonConvert.DeserializeObject<List<GuestModel>>(json);
+
+            return View("GuestList", list); // reuse same view
+        }
+
+        //Search Guest
+        public async Task<IActionResult> SearchGuest(string fullName)
+        {
+            var response = await client.GetAsync($"Guest/filter?fullName={fullName}");
+            if (!response.IsSuccessStatusCode)
+            {
+                TempData["ErrorMessage"] = "Guest search failed.";
+                return RedirectToAction("GuestList");
+            }
+
+            var json = await response.Content.ReadAsStringAsync();
+            var list = JsonConvert.DeserializeObject<List<GuestModel>>(json);
+            return View("GuestList", list); // reuse same view
+        }
     }
 }

@@ -8,12 +8,14 @@
     ".NETCoreApp,Version=v8.0": {
       "Resort_Management_System_MVC/1.0.0": {
         "dependencies": {
+          "DartSassBuilder": "1.1.0",
           "Newtonsoft.Json": "13.0.3"
         },
         "runtime": {
           "Resort_Management_System_MVC.dll": {}
         }
       },
+      "DartSassBuilder/1.1.0": {},
       "Newtonsoft.Json/13.0.3": {
         "runtime": {
           "lib/net6.0/Newtonsoft.Json.dll": {
@@ -29,6 +31,13 @@
       "type": "project",
       "serviceable": false,
       "sha512": ""
+    },
+    "DartSassBuilder/1.1.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-3UKGIRom67Ka/49osw4gBoCGSL3kdEjJ6yFL1rBPkQICMe9LqNoF64xpVnVYo4nA4zfpB20fHF0oJYWPKUJbAQ==",
+      "path": "dartsassbuilder/1.1.0",
+      "hashPath": "dartsassbuilder.1.1.0.nupkg.sha512"
     },
     "Newtonsoft.Json/13.0.3": {
       "type": "package",

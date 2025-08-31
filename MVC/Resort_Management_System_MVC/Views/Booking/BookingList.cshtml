@@ -13,15 +13,35 @@
 		<div class="d-flex justify-content-between align-items-center mb-4">
 			<h3 class="m-0" style="color:#cb8670"><b>Booking List</b></h3>
 
-			<div class="text-end mb-3">
+			<div class="d-flex justify-content-between align-items-center mb-4">
+				<!-- Add Booking Button -->
 				<a asp-action="BookingAddEdit" asp-controller="Booking" class="btn resort-btn"
 				   onclick="return confirm('Add Booking?');">
 					<i class="bi bi-person-plus-fill" style="font-size: 20px; color: #cb8670;"></i>
 					<span>Add Booking</span>
 				</a>
+
+				<!-- Search Filters -->
+				<form asp-action="SearchBooking" method="get" class="d-flex gap-2">
+					<input type="text" name="fullName" placeholder="Guest Name" class="form-control form-control-sm" style="width:200px;" />
+
+					<input type="number" name="numberOfRoom" placeholder="Rooms" class="form-control form-control-sm" style="width:120px;" />
+
+					<input type="text" name="roomType" placeholder="Room Type" class="form-control form-control-sm" style="width:150px;" />
+
+					<button type="submit" class="btn btn-primary btn-sm">
+						<i class="bi bi-search"></i> Search
+					</button>
+
+					<a asp-action="Top10Bookings" asp-controller="Booking" class="btn btn-success btn-sm">
+						<i class="bi bi-list-ol me-1"></i> Top 10 Bookings
+					</a>
+
+					<a asp-action="BookingList" asp-controller="Booking" class="btn btn-secondary btn-sm">
+						<i class="bi bi-arrow-clockwise"></i> Full List
+					</a>
+				</form>
 			</div>
-
-
 		</div>
 
 		@if (TempData["SuccessMessage"] != null)

@@ -281,24 +281,8 @@
       "PackagePath": "staticwebassets\\js\\plugins\\plugins.js"
     },
     {
-      "Id": "D:\\Resort_Management_System\\MVC\\Resort_Management_System_MVC\\wwwroot\\scss\\_fonts.scss",
-      "PackagePath": "staticwebassets\\scss\\_fonts.scss"
-    },
-    {
-      "Id": "D:\\Resort_Management_System\\MVC\\Resort_Management_System_MVC\\wwwroot\\scss\\_mixin.scss",
-      "PackagePath": "staticwebassets\\scss\\_mixin.scss"
-    },
-    {
-      "Id": "D:\\Resort_Management_System\\MVC\\Resort_Management_System_MVC\\wwwroot\\scss\\_responsive.scss",
-      "PackagePath": "staticwebassets\\scss\\_responsive.scss"
-    },
-    {
-      "Id": "D:\\Resort_Management_System\\MVC\\Resort_Management_System_MVC\\wwwroot\\scss\\_theme_color.scss",
-      "PackagePath": "staticwebassets\\scss\\_theme_color.scss"
-    },
-    {
-      "Id": "D:\\Resort_Management_System\\MVC\\Resort_Management_System_MVC\\wwwroot\\scss\\style.scss",
-      "PackagePath": "staticwebassets\\scss\\style.scss"
+      "Id": "D:\\Resort_Management_System\\MVC\\Resort_Management_System_MVC\\wwwroot\\scss\\style.css",
+      "PackagePath": "staticwebassets\\scss\\style.css"
     },
     {
       "Id": "D:\\Resort_Management_System\\MVC\\Resort_Management_System_MVC\\wwwroot\\style.css",

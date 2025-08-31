@@ -1075,6 +1075,15 @@
         "tags": [
           "GuestServices"
         ],
+        "parameters": [
+          {
+            "name": "status",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
         "responses": {
           "200": {
             "description": "OK",
@@ -1414,11 +1423,10 @@
             }
           },
           {
-            "name": "guestId",
+            "name": "fullName",
             "in": "query",
             "schema": {
-              "type": "integer",
-              "format": "int32"
+              "type": "string"
             }
           },
           {
@@ -3429,7 +3437,8 @@
           },
           "serviceId": {
             "type": "integer",
-            "format": "int32"
+            "format": "int32",
+            "nullable": true
           },
           "quantity": {
             "type": "integer",
@@ -3441,7 +3450,8 @@
           },
           "guestId": {
             "type": "integer",
-            "format": "int32"
+            "format": "int32",
+            "nullable": true
           },
           "created": {
             "type": "string",

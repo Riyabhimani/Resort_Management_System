@@ -10,11 +10,11 @@ namespace Resort_Management_System_MVC.ValidationClass
             RuleFor(gs => gs.ReservationId)
                 .GreaterThan(0).WithMessage("Reservation is required.");
 
-            RuleFor(gs => gs.ServiceId)
-                .GreaterThan(0).WithMessage("Service is required.");
-
-            RuleFor(gs => gs.GuestId)
+            RuleFor(p => p.GuestId)
                 .GreaterThan(0).WithMessage("Guest is required.");
+
+            RuleFor(p => p.ServiceId)
+                .GreaterThan(0).WithMessage("Reservation is required.");
 
             RuleFor(gs => gs.Quantity)
                 .GreaterThan(0).WithMessage("Quantity must be greater than 0.");

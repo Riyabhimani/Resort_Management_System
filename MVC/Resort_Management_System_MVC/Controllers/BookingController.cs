@@ -1,6 +1,7 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using Newtonsoft.Json;
 using Resort_Management_System_MVC.Models;
+using System.Net.Http;
 using System.Text;
 
 namespace Resort_Management_System_MVC.Controllers
@@ -104,6 +105,34 @@ namespace Resort_Management_System_MVC.Controllers
                 TempData["Error"] = $"Unable to save booking detail: {ex.Message}";
                 return View(booking);
             }
+        }
+
+        //Get Top 10 Booking Details
+        public async Task<IActionResult> Top10Bookings()
+        {
+            var response = await client.GetAsync("Booking/Top10");
+            if (!response.IsSuccessStatusCode)
+            {
+                TempData["ErrorMessage"] = "Unable to fetch top 10 booking details.";
+                return RedirectToAction("BookingList");
+            }
+            var json = await response.Content.ReadAsStringAsync();
+            var list = JsonConvert.DeserializeObject<List<BookingModel>>(json);
+
+            return View("BookingList", list); // reuse same view
+        }
+
+        //Search Booking Details
+        public async Task<IActionResult> SearchBooking(string? fullName, int? numberOfRoom, string? roomType)
+        {
+            var url = $"Booking/filter?fullName={fullName}&numberOfRoom={numberOfRoom}&roomType={roomType}";
+            var bookings = await client.GetFromJsonAsync<List<BookingModel>>(url);
+            if (bookings == null || !bookings.Any())
+            {
+                TempData["ErrorMessage"] = "No bookings found matching your search criteria.";
+                return View("BookingList", new List<BookingModel>());
+            }
+            return View("BookingList", bookings);
         }
 
     }

@@ -228,7 +228,7 @@ namespace Resort_Management_System_API.Controllers
             var query = context.Guests.AsQueryable();
 
             if (!string.IsNullOrEmpty(fullName))
-                query = query.Where(f => f.FullName == fullName);
+                query = query.Where(f => f.FullName.Contains(fullName));
 
             return await query.ToListAsync();
         }

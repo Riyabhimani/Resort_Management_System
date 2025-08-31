@@ -97,5 +97,35 @@ namespace Resort_Management_System_MVC.Controllers
                 return View("ServiceList");
             }
         }
+
+        //Get Top 10 Service
+        public async Task<IActionResult> Top10Services()
+        {
+            var response = await client.GetAsync("Service/Top10");
+            if (!response.IsSuccessStatusCode)
+            {
+                TempData["ErrorMessage"] = "Unable to fetch top 10 service details.";
+                return RedirectToAction("ServiceList");
+            }
+            var json = await response.Content.ReadAsStringAsync();
+            var list = JsonConvert.DeserializeObject<List<ServiceModel>>(json);
+
+            return View("ServiceList", list); // reuse same view
+        }
+
+        //Search Service
+        public async Task<IActionResult> SearchService(string ServiceName)
+        {
+            var response = await client.GetAsync($"Service/filter?ServiceName={ServiceName}");
+            if (!response.IsSuccessStatusCode)
+            {
+                TempData["ErrorMessage"] = "Service search failed.";
+                return RedirectToAction("ServiceList");
+            }
+
+            var json = await response.Content.ReadAsStringAsync();
+            var list = JsonConvert.DeserializeObject<List<ServiceModel>>(json);
+            return View("ServiceList", list); // reuse same view
+        }
     }
 }
