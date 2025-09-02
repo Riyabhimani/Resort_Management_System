@@ -72,7 +72,7 @@ namespace Resort_Management_System_MVC.Controllers
         public async Task<IActionResult> ServiceAddEdit(ServiceModel service)
         {
             if (!ModelState.IsValid)
-                return View("ServiceList");
+                return View(service);
 
             try
             {
@@ -94,7 +94,7 @@ namespace Resort_Management_System_MVC.Controllers
             catch (Exception ex)
             {
                 TempData["Error"] = "Unable to save service.";
-                return View("ServiceList");
+                return View(service);
             }
         }
 

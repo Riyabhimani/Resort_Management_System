@@ -179,8 +179,9 @@ namespace Resort_Management_System_MVC.Controllers
         // ✅ Helper to check if user is logged in
         private bool IsLoggedIn()
         {
-            return !string.IsNullOrEmpty(_httpContextAccessor.HttpContext.Session.GetString("JWTToken"));
+            return string.IsNullOrEmpty(_httpContextAccessor.HttpContext.Session.GetString("JWTToken"));
         }
+
 
         // ✅ User List (only for logged-in users)
         public async Task<IActionResult> UserList()
@@ -193,8 +194,8 @@ namespace Resort_Management_System_MVC.Controllers
                 AddJwtToken();
                 var response = await client.GetAsync("User");
 
-                if (response.StatusCode == System.Net.HttpStatusCode.Unauthorized)
-                    return RedirectToAction("Login", "Login");
+                //if (response.StatusCode == System.Net.HttpStatusCode.Unauthorized)
+                //    return RedirectToAction("Login", "Login");
 
                 response.EnsureSuccessStatusCode();
                 var json = await response.Content.ReadAsStringAsync();
@@ -261,7 +262,7 @@ namespace Resort_Management_System_MVC.Controllers
                     response.EnsureSuccessStatusCode();
                 }
                 else
-                {
+                { 
                     var response = await client.PutAsync($"User/{user.UserId}", content);
                     response.EnsureSuccessStatusCode();
                 }
@@ -271,7 +272,7 @@ namespace Resort_Management_System_MVC.Controllers
             catch
             {
                 TempData["ErrorMessage"] = "Unable to save user.";
-                return View("UserList");
+                return View(user);
             }
         }
 
@@ -343,7 +344,7 @@ namespace Resort_Management_System_MVC.Controllers
         //Search User
         public async Task<IActionResult> SearchUser(string userName)
         {
-            var response = await client.GetAsync($"Guest/filter?userName={userName}");
+            var response = await client.GetAsync($"User/filter?userName={userName}");
             if (!response.IsSuccessStatusCode)
             {
                 TempData["ErrorMessage"] = "User search failed.";

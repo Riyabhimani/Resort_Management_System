@@ -1,4 +1,4 @@
-using Resort_Management_System_MVC.Service;
+﻿using Resort_Management_System_MVC.Service;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -37,3 +37,6 @@ app.MapControllerRoute(
     pattern: "{controller=Login}/{action=Login}/{id?}");
 
 app.Run();
+
+
+    

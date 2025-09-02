@@ -225,7 +225,7 @@ namespace Resort_Management_System_API.Controllers
 
         #region SearchGuestService
         [HttpGet("filter")]
-        public async Task<ActionResult<IEnumerable<GuestService>>> SearchGuestService([FromQuery] int? guestServiceId , int? reservationId, int? guestId, int? serviceId)
+        public async Task<ActionResult<IEnumerable<GuestService>>> SearchGuestService([FromQuery] int? guestServiceId, int? reservationId, int? guestId, int? serviceId)
         {
             var query = context.GuestServices.AsQueryable();
 
@@ -273,8 +273,56 @@ namespace Resort_Management_System_API.Controllers
 
             return Ok(result);
         }
+        #endregion
 
+        #region ReservationDropdown
+        // ✅ GET: All reservations for dropdown
+        [HttpGet("dropdown/reservations")]
+        public async Task<ActionResult> ReservationsDropdown()
+        {
+            var reservations = await context.Reservations
+                .Where(r => r.ReservationStatus == "Confirmed")
+                .Select(r => new
+                {
+                    r.ReservationId,
+                    r.GuestId,
+                    r.ReservationStatus
+                })
+                .ToListAsync();
 
+            return Ok(reservations);
+        }
+        #endregion
+
+        #region GET: Guests by ReservationStatus (Cascade Dropdown)
+        [HttpGet("dropdown/guests/by-status/")]
+        public async Task<IActionResult> GetGuestsByReservationStatus([FromQuery] string status)
+        {
+            if (string.IsNullOrWhiteSpace(status))
+            {
+                return BadRequest("Reservation status is required (Confirmed or Pending).");
+            }
+
+            if (status != "Confirmed")
+            {
+                return BadRequest("Only 'Confirmed' status is allowed.");
+            }
+
+            var guests = await (from g in context.Guests
+                                join r in context.Reservations
+                                on g.GuestId equals r.GuestId
+                                where r.ReservationStatus == status
+                                select new
+                                {
+                                    g.GuestId,
+                                    g.FullName,
+                                    r.ReservationStatus
+                                })
+                                .Distinct()
+                                .ToListAsync();
+
+            return Ok(guests);
+        }
         #endregion
 
     }

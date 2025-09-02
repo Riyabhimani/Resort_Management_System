@@ -546,6 +546,22 @@
   },
   {
     "ContainingType": "Resort_Management_System_API.Controllers.GuestServicesController",
+    "Method": "GetGuestsByReservationStatus",
+    "RelativePath": "api/GuestServices/dropdown/guests/by-status",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "status",
+        "Type": "System.String",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Resort_Management_System_API.Controllers.GuestServicesController",
     "Method": "GuestServicesDropdown",
     "RelativePath": "api/GuestServices/dropdown/guestServices",
     "HttpMethod": "GET",
@@ -569,6 +585,16 @@
         "StatusCode": 200
       }
     ]
+  },
+  {
+    "ContainingType": "Resort_Management_System_API.Controllers.GuestServicesController",
+    "Method": "ReservationsDropdown",
+    "RelativePath": "api/GuestServices/dropdown/reservations",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
   },
   {
     "ContainingType": "Resort_Management_System_API.Controllers.GuestServicesController",

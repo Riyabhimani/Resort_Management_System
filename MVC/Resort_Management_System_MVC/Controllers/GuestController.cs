@@ -103,7 +103,7 @@ namespace Resort_Management_System_MVC.Controllers
         public async Task<IActionResult> GuestAddEdit(GuestModel guest)
         {
             if (!ModelState.IsValid)
-                return View("GuestList");
+                return View(guest);
 
             try
             {
@@ -133,7 +133,7 @@ namespace Resort_Management_System_MVC.Controllers
             catch (Exception ex)
             {
                 TempData["ErrorMessage"] = "Unable to save guest.";
-                return View("GuestList");
+                return View(guest);
             }
         }
 

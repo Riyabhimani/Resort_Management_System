@@ -209,81 +209,93 @@ namespace Resort_Management_System_MVC.Controllers
             ViewBag.Services = new SelectList(services, "ServiceId", "ServiceName", selectedServiceId);
         }
 
-
-        public async Task<JsonResult> GetGuestsByReservation(int reservationId)
-        {
-            var response = await client.GetStringAsync($"GuestServices/dropdown/guestServices/{reservationId}");
-            var guests = JsonConvert.DeserializeObject<List<GuestModel>>(response);
-            return Json(guests);
-        }
-
-
         [HttpGet]
         public async Task<IActionResult> GuestServiceAddEdit(int? id)
         {
-            GuestServiceModel guestService = new GuestServiceModel();
-
-            if (id != null)
+            try
             {
-                var response = await client.GetAsync($"GuestServices/{id}");
-                if (!response.IsSuccessStatusCode)
+                GuestServiceModel guestService = new GuestServiceModel();
+
+                if (id != null)
                 {
-                    TempData["ErrorMessage"] = "GuestService not found.";
-                    return RedirectToAction("GuestServiceList");
+                    var response = await client.GetAsync($"GuestServices/{id}");
+                    if (!response.IsSuccessStatusCode)
+                    {
+                        TempData["ErrorMessage"] = "GuestService not found.";
+                        return RedirectToAction("GuestServiceList");
+                    }
+
+                    var json = await response.Content.ReadAsStringAsync();
+                    guestService = JsonConvert.DeserializeObject<GuestServiceModel>(json);
                 }
 
-                var json = await response.Content.ReadAsStringAsync();
-                guestService = JsonConvert.DeserializeObject<GuestServiceModel>(json);
+                await LoadGuests(guestService.GuestId);
+                await LoadServices(guestService.ServiceId);
+                return View(guestService);
             }
-
-            await LoadReservations(guestService.ReservationId);
-            await LoadGuests(guestService.ReservationId, guestService.GuestId);
-            await LoadServices(guestService.ServiceId);
-
-            return View(guestService);
+            catch (Exception ex)
+            {
+                TempData["ErrorMessage"] = $"Unable to load GuestService form: {ex.Message}";
+                return RedirectToAction("GuestServiceList");
+            }
         }
 
         [HttpPost]
-        [ValidateAntiForgeryToken]
         public async Task<IActionResult> GuestServiceAddEdit(GuestServiceModel model)
         {
-            if (!ModelState.IsValid)
+            try
             {
-                // reload dropdowns if validation fails
-                await LoadReservations(model.ReservationId);
-                await LoadGuests(model.ReservationId, model.GuestId);
-                await LoadServices(model.ServiceId);
-                return View(model);
-            }
+                // ✅ Get confirmed reservation for Guest
+                var resResponse = await client.GetAsync("GuestServices/dropdown/reservations");
+                if (resResponse.IsSuccessStatusCode)
+                {
+                    var reservations = JsonConvert.DeserializeObject<List<ReservationModel>>(
+                        await resResponse.Content.ReadAsStringAsync()
+                    );
 
-            StringContent content = new StringContent(JsonConvert.SerializeObject(model), Encoding.UTF8, "application/json");
+                    model.ReservationId = reservations
+                        .FirstOrDefault(r => r.GuestId == model.GuestId && r.ReservationStatus == "Confirmed")
+                        ?.ReservationId ?? 0;
 
-            HttpResponseMessage response;
+                    if (model.ReservationId == 0)
+                        ModelState.AddModelError("GuestId", "Selected guest does not have a confirmed reservation.");
+                }
 
-            if (model.GuestServiceId == 0) // Add new
-            {
-                response = await client.PostAsync("GuestServices", content);
-            }
-            else // Update existing
-            {
-                response = await client.PutAsync($"GuestServices/{model.GuestServiceId}", content);
-            }
+                if (!ModelState.IsValid)
+                {
+                    await LoadGuests(model.GuestId);
+                    await LoadServices(model.ServiceId);
+                    return View(model);
+                }
 
-            if (response.IsSuccessStatusCode)
-            {
-                TempData["SuccessMessage"] = "Guest Service saved successfully.";
+                model.Created = model.GuestServiceId == 0 ? DateTime.UtcNow : model.Created;
+                model.Modified = DateTime.UtcNow;
+
+                var content = new StringContent(JsonConvert.SerializeObject(model), Encoding.UTF8, "application/json");
+                var response = model.GuestServiceId == 0
+                    ? await client.PostAsync("GuestServices", content)
+                    : await client.PutAsync($"GuestServices/{model.GuestServiceId}", content);
+
+                if (!response.IsSuccessStatusCode)
+                {
+                    TempData["ErrorMessage"] = $"API failed: {response.StatusCode}";
+                    await LoadGuests(model.GuestId);
+                    await LoadServices(model.ServiceId);
+                    return View(model);
+                }
+
+                TempData["SuccessMessage"] = model.GuestServiceId == 0 ? "GuestService added." : "GuestService updated.";
                 return RedirectToAction("GuestServiceList");
             }
-            else
+            catch (Exception ex)
             {
-                TempData["ErrorMessage"] = "Error while saving Guest Service.";
-                // reload dropdowns again in case of error
-                await LoadReservations(model.ReservationId);
-                await LoadGuests(model.ReservationId, model.GuestId);
+                TempData["ErrorMessage"] = ex.Message;
+                await LoadGuests(model.GuestId);
                 await LoadServices(model.ServiceId);
                 return View(model);
             }
         }
+
 
 
         private async Task LoadReservations(int? selectedReservationId = null)
@@ -301,15 +313,11 @@ namespace Resort_Management_System_MVC.Controllers
             ViewBag.Reservations = new SelectList(reservations, "ReservationId", "ReservationStatus", selectedReservationId);
         }
 
-        private async Task LoadGuests(int? reservationId = null, int? selectedGuestId = null)
+        private async Task LoadGuests(int? selectedGuestId = null)
         {
-            if (reservationId == null)
-            {
-                ViewBag.Guests = new SelectList(new List<GuestModel>(), "GuestId", "FullName");
-                return;
-            }
+            // ✅ Call API that returns only Confirmed guests
+            var response = await client.GetAsync("GuestServices/dropdown/guests/by-status?status=Confirmed");
 
-            var response = await client.GetAsync($"GuestServices/dropdown/guests/{reservationId}");
             if (!response.IsSuccessStatusCode)
             {
                 ViewBag.Guests = new SelectList(new List<GuestModel>(), "GuestId", "FullName");
@@ -322,7 +330,12 @@ namespace Resort_Management_System_MVC.Controllers
             ViewBag.Guests = new SelectList(guests, "GuestId", "FullName", selectedGuestId);
         }
 
-
+        public async Task<JsonResult> GetGuestsByReservation(int reservationId)
+        {
+            var response = await client.GetStringAsync($"GuestServices/dropdown/guest/{reservationId}");
+            var guests = JsonConvert.DeserializeObject<List<GuestModel>>(response);
+            return Json(guests);
+        }
 
 
 

@@ -20,6 +20,7 @@
 
 
         <div class="mb-3">
+            <span style="color:red;">*</span>
             <label asp-for="GuestId" class="form-label"></label>
             <select asp-for="GuestId" class="form-control" asp-items="ViewBag.Guests">
                 <option value="">-- Select Guest --</option>
@@ -29,27 +30,32 @@
 
 
         <div class="mb-3">
+            <span style="color:red;">*</span>
             <label asp-for="PaymentDate" class="form-label"></label>
             <input asp-for="PaymentDate" class="form-control" type="date" />
             <span asp-validation-for="PaymentDate" class="text-danger"></span>
         </div>
 
         <div class="mb-3">
+            <span style="color:red;">*</span>
             <label asp-for="AmountPaid" class="form-label"></label>
             <input asp-for="AmountPaid" class="form-control" placeholder="Enter amount (e.g. 500.00)" />
             <span asp-validation-for="AmountPaid" class="text-danger"></span>
         </div>
 
         <div class="mb-3">
+            <span style="color:red;">*</span>
             <label asp-for="PaymentMethod" class="form-label"></label>
             <input asp-for="PaymentMethod" class="form-control" placeholder="e.g. Cash, Card, UPI" />
             <span asp-validation-for="PaymentMethod" class="text-danger"></span>
         </div>
 
         <div class="mb-3">
+            <span style="color:red;">*</span>
             <label asp-for="PaymentStatus" class="form-label"></label>
             <select asp-for="PaymentStatus" class="form-select">
                 <option value="">-- Select Status --</option>
+                <option value="Partially Completed" selected="@("Partially Completed" == Model.PaymentStatus)">Partially Completed</option>
                 <option value="Pending" selected="@("Pending" == Model.PaymentStatus)">Pending</option>
                 <option value="Completed" selected="@("Completed" == Model.PaymentStatus)">Completed</option>
                 <option value="Failed" selected="@("Failed" == Model.PaymentStatus)">Failed</option>

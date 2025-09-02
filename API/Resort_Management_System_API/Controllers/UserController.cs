@@ -10,7 +10,7 @@ namespace Resort_Management_System_API.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
-    [Authorize(Roles = "Admin,Guest")]
+    //[Authorize(Roles = "Admin,Guest")]
     public class UserController : ControllerBase
     {
 
@@ -26,7 +26,7 @@ namespace Resort_Management_System_API.Controllers
         #endregion
 
         #region GetAllUsers
-        [Authorize(Roles = "Admin")]
+        //[Authorize(Roles = "Admin")]
         [HttpGet]
         public IActionResult GetAllUsers()
         {
@@ -202,7 +202,7 @@ namespace Resort_Management_System_API.Controllers
             var query = context.Users.AsQueryable();
 
             if (!string.IsNullOrEmpty(userName))
-                query = query.Where(u => u.UserName == userName);
+                query = query.Where(u => u.UserName.Contains(userName));
 
             return await query.ToListAsync();
         }

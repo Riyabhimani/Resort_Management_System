@@ -1111,6 +1111,39 @@
         }
       }
     },
+    "/api/GuestServices/dropdown/reservations": {
+      "get": {
+        "tags": [
+          "GuestServices"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/GuestServices/dropdown/guests/by-status": {
+      "get": {
+        "tags": [
+          "GuestServices"
+        ],
+        "parameters": [
+          {
+            "name": "status",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
     "/api/Login/login": {
       "post": {
         "tags": [

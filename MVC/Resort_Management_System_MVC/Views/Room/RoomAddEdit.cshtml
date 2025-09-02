@@ -18,30 +18,35 @@
         <input type="hidden" asp-for="Created" />
 
         <div class="mb-3">
+            <span style="color:red;">*</span>
             <label asp-for="RoomNumber" class="form-label"></label>
             <input asp-for="RoomNumber" class="form-control" />
             <span asp-validation-for="RoomNumber" class="text-danger"></span>
         </div>
 
         <div class="mb-3">
+            <span style="color:red;">*</span>
             <label asp-for="RoomType" class="form-label"></label>
             <input asp-for="RoomType" class="form-control" />
             <span asp-validation-for="RoomType" class="text-danger"></span>
         </div>
 
         <div class="mb-3">
+            <span style="color:red;">*</span>
             <label asp-for="Description" class="form-label"></label>
             <textarea asp-for="Description" class="form-control"></textarea>
             <span asp-validation-for="Description" class="text-danger"></span>
         </div>
 
         <div class="mb-3">
+            <span style="color:red;">*</span>
             <label asp-for="PricePerDay" class="form-label"></label>
             <input asp-for="PricePerDay" class="form-control" />
             <span asp-validation-for="PricePerDay" class="text-danger"></span>
         </div>
 
         <div class="mb-3">
+            <span style="color:red;">*</span>
             <label asp-for="RoomStatus" class="form-label"></label>
             <input asp-for="RoomStatus" class="form-control" />
             <span asp-validation-for="RoomStatus" class="text-danger"></span>
