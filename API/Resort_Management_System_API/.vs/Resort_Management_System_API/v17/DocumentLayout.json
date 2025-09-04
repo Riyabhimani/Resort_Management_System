@@ -3,12 +3,56 @@
   "WorkspaceRootPath": "D:\\Resort_Management_System\\API\\Resort_Management_System_API\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{F990A049-7BD6-4CB1-8DF0-49E3FDED5D9D}|Resort_Management_System_API.csproj|d:\\resort_management_system\\api\\resort_management_system_api\\controllers\\usercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{F990A049-7BD6-4CB1-8DF0-49E3FDED5D9D}|Resort_Management_System_API.csproj|solutionrelative:controllers\\usercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{F990A049-7BD6-4CB1-8DF0-49E3FDED5D9D}|Resort_Management_System_API.csproj|d:\\resort_management_system\\api\\resort_management_system_api\\validationclass\\staffvalidator.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F990A049-7BD6-4CB1-8DF0-49E3FDED5D9D}|Resort_Management_System_API.csproj|solutionrelative:validationclass\\staffvalidator.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F990A049-7BD6-4CB1-8DF0-49E3FDED5D9D}|Resort_Management_System_API.csproj|d:\\resort_management_system\\api\\resort_management_system_api\\models\\staff.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F990A049-7BD6-4CB1-8DF0-49E3FDED5D9D}|Resort_Management_System_API.csproj|solutionrelative:models\\staff.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F990A049-7BD6-4CB1-8DF0-49E3FDED5D9D}|Resort_Management_System_API.csproj|d:\\resort_management_system\\api\\resort_management_system_api\\models\\user.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F990A049-7BD6-4CB1-8DF0-49E3FDED5D9D}|Resort_Management_System_API.csproj|solutionrelative:models\\user.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F990A049-7BD6-4CB1-8DF0-49E3FDED5D9D}|Resort_Management_System_API.csproj|d:\\resort_management_system\\api\\resort_management_system_api\\controllers\\paymentcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F990A049-7BD6-4CB1-8DF0-49E3FDED5D9D}|Resort_Management_System_API.csproj|solutionrelative:controllers\\paymentcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F990A049-7BD6-4CB1-8DF0-49E3FDED5D9D}|Resort_Management_System_API.csproj|d:\\resort_management_system\\api\\resort_management_system_api\\controllers\\staffcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F990A049-7BD6-4CB1-8DF0-49E3FDED5D9D}|Resort_Management_System_API.csproj|solutionrelative:controllers\\staffcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F990A049-7BD6-4CB1-8DF0-49E3FDED5D9D}|Resort_Management_System_API.csproj|d:\\resort_management_system\\api\\resort_management_system_api\\models\\guestservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F990A049-7BD6-4CB1-8DF0-49E3FDED5D9D}|Resort_Management_System_API.csproj|solutionrelative:models\\guestservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{F990A049-7BD6-4CB1-8DF0-49E3FDED5D9D}|Resort_Management_System_API.csproj|d:\\resort_management_system\\api\\resort_management_system_api\\controllers\\guestservicescontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{F990A049-7BD6-4CB1-8DF0-49E3FDED5D9D}|Resort_Management_System_API.csproj|solutionrelative:controllers\\guestservicescontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F990A049-7BD6-4CB1-8DF0-49E3FDED5D9D}|Resort_Management_System_API.csproj|d:\\resort_management_system\\api\\resort_management_system_api\\models\\payment.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F990A049-7BD6-4CB1-8DF0-49E3FDED5D9D}|Resort_Management_System_API.csproj|solutionrelative:models\\payment.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F990A049-7BD6-4CB1-8DF0-49E3FDED5D9D}|Resort_Management_System_API.csproj|d:\\resort_management_system\\api\\resort_management_system_api\\controllers\\reservationcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F990A049-7BD6-4CB1-8DF0-49E3FDED5D9D}|Resort_Management_System_API.csproj|solutionrelative:controllers\\reservationcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F990A049-7BD6-4CB1-8DF0-49E3FDED5D9D}|Resort_Management_System_API.csproj|d:\\resort_management_system\\api\\resort_management_system_api\\models\\room.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F990A049-7BD6-4CB1-8DF0-49E3FDED5D9D}|Resort_Management_System_API.csproj|solutionrelative:models\\room.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F990A049-7BD6-4CB1-8DF0-49E3FDED5D9D}|Resort_Management_System_API.csproj|d:\\resort_management_system\\api\\resort_management_system_api\\models\\guest.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F990A049-7BD6-4CB1-8DF0-49E3FDED5D9D}|Resort_Management_System_API.csproj|solutionrelative:models\\guest.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F990A049-7BD6-4CB1-8DF0-49E3FDED5D9D}|Resort_Management_System_API.csproj|d:\\resort_management_system\\api\\resort_management_system_api\\controllers\\servicecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F990A049-7BD6-4CB1-8DF0-49E3FDED5D9D}|Resort_Management_System_API.csproj|solutionrelative:controllers\\servicecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F990A049-7BD6-4CB1-8DF0-49E3FDED5D9D}|Resort_Management_System_API.csproj|d:\\resort_management_system\\api\\resort_management_system_api\\controllers\\usercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F990A049-7BD6-4CB1-8DF0-49E3FDED5D9D}|Resort_Management_System_API.csproj|solutionrelative:controllers\\usercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{F990A049-7BD6-4CB1-8DF0-49E3FDED5D9D}|Resort_Management_System_API.csproj|d:\\resort_management_system\\api\\resort_management_system_api\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
@@ -23,10 +67,6 @@
       "RelativeMoniker": "D:0:0:{F990A049-7BD6-4CB1-8DF0-49E3FDED5D9D}|Resort_Management_System_API.csproj|solutionrelative:controllers\\logincontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{F990A049-7BD6-4CB1-8DF0-49E3FDED5D9D}|Resort_Management_System_API.csproj|d:\\resort_management_system\\api\\resort_management_system_api\\models\\user.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{F990A049-7BD6-4CB1-8DF0-49E3FDED5D9D}|Resort_Management_System_API.csproj|solutionrelative:models\\user.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{F990A049-7BD6-4CB1-8DF0-49E3FDED5D9D}|Resort_Management_System_API.csproj|d:\\resort_management_system\\api\\resort_management_system_api\\validationclass\\uservalidator.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{F990A049-7BD6-4CB1-8DF0-49E3FDED5D9D}|Resort_Management_System_API.csproj|solutionrelative:validationclass\\uservalidator.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
@@ -39,36 +79,12 @@
       "RelativeMoniker": "D:0:0:{F990A049-7BD6-4CB1-8DF0-49E3FDED5D9D}|Resort_Management_System_API.csproj|solutionrelative:controllers\\roomcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{F990A049-7BD6-4CB1-8DF0-49E3FDED5D9D}|Resort_Management_System_API.csproj|d:\\resort_management_system\\api\\resort_management_system_api\\controllers\\staffcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{F990A049-7BD6-4CB1-8DF0-49E3FDED5D9D}|Resort_Management_System_API.csproj|solutionrelative:controllers\\staffcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{F990A049-7BD6-4CB1-8DF0-49E3FDED5D9D}|Resort_Management_System_API.csproj|d:\\resort_management_system\\api\\resort_management_system_api\\models\\staff.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{F990A049-7BD6-4CB1-8DF0-49E3FDED5D9D}|Resort_Management_System_API.csproj|solutionrelative:models\\staff.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{F990A049-7BD6-4CB1-8DF0-49E3FDED5D9D}|Resort_Management_System_API.csproj|d:\\resort_management_system\\api\\resort_management_system_api\\controllers\\servicecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{F990A049-7BD6-4CB1-8DF0-49E3FDED5D9D}|Resort_Management_System_API.csproj|solutionrelative:controllers\\servicecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{F990A049-7BD6-4CB1-8DF0-49E3FDED5D9D}|Resort_Management_System_API.csproj|d:\\resort_management_system\\api\\resort_management_system_api\\models\\service.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{F990A049-7BD6-4CB1-8DF0-49E3FDED5D9D}|Resort_Management_System_API.csproj|solutionrelative:models\\service.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{F990A049-7BD6-4CB1-8DF0-49E3FDED5D9D}|Resort_Management_System_API.csproj|d:\\resort_management_system\\api\\resort_management_system_api\\controllers\\paymentcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{F990A049-7BD6-4CB1-8DF0-49E3FDED5D9D}|Resort_Management_System_API.csproj|solutionrelative:controllers\\paymentcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{F990A049-7BD6-4CB1-8DF0-49E3FDED5D9D}|Resort_Management_System_API.csproj|d:\\resort_management_system\\api\\resort_management_system_api\\models\\payment.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{F990A049-7BD6-4CB1-8DF0-49E3FDED5D9D}|Resort_Management_System_API.csproj|solutionrelative:models\\payment.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{F990A049-7BD6-4CB1-8DF0-49E3FDED5D9D}|Resort_Management_System_API.csproj|d:\\resort_management_system\\api\\resort_management_system_api\\models\\booking.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{F990A049-7BD6-4CB1-8DF0-49E3FDED5D9D}|Resort_Management_System_API.csproj|solutionrelative:models\\booking.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{F990A049-7BD6-4CB1-8DF0-49E3FDED5D9D}|Resort_Management_System_API.csproj|d:\\resort_management_system\\api\\resort_management_system_api\\models\\guest.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{F990A049-7BD6-4CB1-8DF0-49E3FDED5D9D}|Resort_Management_System_API.csproj|solutionrelative:models\\guest.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{F990A049-7BD6-4CB1-8DF0-49E3FDED5D9D}|Resort_Management_System_API.csproj|d:\\resort_management_system\\api\\resort_management_system_api\\controllers\\bookingcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -77,10 +93,6 @@
     {
       "AbsoluteMoniker": "D:0:0:{F990A049-7BD6-4CB1-8DF0-49E3FDED5D9D}|Resort_Management_System_API.csproj|d:\\resort_management_system\\api\\resort_management_system_api\\controllers\\guestcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{F990A049-7BD6-4CB1-8DF0-49E3FDED5D9D}|Resort_Management_System_API.csproj|solutionrelative:controllers\\guestcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{F990A049-7BD6-4CB1-8DF0-49E3FDED5D9D}|Resort_Management_System_API.csproj|d:\\resort_management_system\\api\\resort_management_system_api\\models\\guestservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{F990A049-7BD6-4CB1-8DF0-49E3FDED5D9D}|Resort_Management_System_API.csproj|solutionrelative:models\\guestservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{F990A049-7BD6-4CB1-8DF0-49E3FDED5D9D}|Resort_Management_System_API.csproj|d:\\resort_management_system\\api\\resort_management_system_api\\validationclass\\guestservicesvalidator.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -109,10 +121,6 @@
     {
       "AbsoluteMoniker": "D:0:0:{F990A049-7BD6-4CB1-8DF0-49E3FDED5D9D}|Resort_Management_System_API.csproj|d:\\resort_management_system\\api\\resort_management_system_api\\models\\login.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{F990A049-7BD6-4CB1-8DF0-49E3FDED5D9D}|Resort_Management_System_API.csproj|solutionrelative:models\\login.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{F990A049-7BD6-4CB1-8DF0-49E3FDED5D9D}|Resort_Management_System_API.csproj|d:\\resort_management_system\\api\\resort_management_system_api\\controllers\\reservationcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{F990A049-7BD6-4CB1-8DF0-49E3FDED5D9D}|Resort_Management_System_API.csproj|solutionrelative:controllers\\reservationcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -122,7 +130,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 1339,
-          "SelectedChildIndex": 2,
+          "SelectedChildIndex": 1,
           "Children": [
             {
               "$type": "Bookmark",
@@ -130,69 +138,106 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 8,
-              "Title": "RoomController.cs",
-              "DocumentMoniker": "D:\\Resort_Management_System\\API\\Resort_Management_System_API\\Controllers\\RoomController.cs",
-              "RelativeDocumentMoniker": "Controllers\\RoomController.cs",
-              "ToolTip": "D:\\Resort_Management_System\\API\\Resort_Management_System_API\\Controllers\\RoomController.cs",
-              "RelativeToolTip": "Controllers\\RoomController.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAANYAAAASAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-08-31T11:46:38.138Z"
-            },
-            {
-              "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "UserController.cs",
-              "DocumentMoniker": "D:\\Resort_Management_System\\API\\Resort_Management_System_API\\Controllers\\UserController.cs",
-              "RelativeDocumentMoniker": "Controllers\\UserController.cs",
-              "ToolTip": "D:\\Resort_Management_System\\API\\Resort_Management_System_API\\Controllers\\UserController.cs",
-              "RelativeToolTip": "Controllers\\UserController.cs",
-              "ViewState": "AgIAALwAAAAAAAAAAAAgwMwAAABGAAAAAAAAAA==",
+              "Title": "StaffValidator.cs",
+              "DocumentMoniker": "D:\\Resort_Management_System\\API\\Resort_Management_System_API\\ValidationClass\\StaffValidator.cs",
+              "RelativeDocumentMoniker": "ValidationClass\\StaffValidator.cs",
+              "ToolTip": "D:\\Resort_Management_System\\API\\Resort_Management_System_API\\ValidationClass\\StaffValidator.cs",
+              "RelativeToolTip": "ValidationClass\\StaffValidator.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-08-04T03:10:44.465Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "LoginController.cs",
-              "DocumentMoniker": "D:\\Resort_Management_System\\API\\Resort_Management_System_API\\Controllers\\LoginController.cs",
-              "RelativeDocumentMoniker": "Controllers\\LoginController.cs",
-              "ToolTip": "D:\\Resort_Management_System\\API\\Resort_Management_System_API\\Controllers\\LoginController.cs",
-              "RelativeToolTip": "Controllers\\LoginController.cs",
-              "ViewState": "AgIAADMAAAAAAAAAAAA1wE0AAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-08-04T03:11:21.24Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "appsettings.json",
-              "DocumentMoniker": "D:\\Resort_Management_System\\API\\Resort_Management_System_API\\appsettings.json",
-              "RelativeDocumentMoniker": "appsettings.json",
-              "ToolTip": "D:\\Resort_Management_System\\API\\Resort_Management_System_API\\appsettings.json",
-              "RelativeToolTip": "appsettings.json",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABgAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
-              "WhenOpened": "2025-08-13T02:36:48.373Z",
+              "WhenOpened": "2025-09-04T08:00:05.575Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 6,
-              "Title": "UserValidator.cs",
-              "DocumentMoniker": "D:\\Resort_Management_System\\API\\Resort_Management_System_API\\ValidationClass\\UserValidator.cs",
-              "RelativeDocumentMoniker": "ValidationClass\\UserValidator.cs",
-              "ToolTip": "D:\\Resort_Management_System\\API\\Resort_Management_System_API\\ValidationClass\\UserValidator.cs",
-              "RelativeToolTip": "ValidationClass\\UserValidator.cs",
-              "ViewState": "AgIAAAgAAAAAAAAAAAAmwBMAAAAAAAAAAAAAAA==",
+              "Title": "GuestServicesController.cs",
+              "DocumentMoniker": "D:\\Resort_Management_System\\API\\Resort_Management_System_API\\Controllers\\GuestServicesController.cs",
+              "RelativeDocumentMoniker": "Controllers\\GuestServicesController.cs",
+              "ToolTip": "D:\\Resort_Management_System\\API\\Resort_Management_System_API\\Controllers\\GuestServicesController.cs",
+              "RelativeToolTip": "Controllers\\GuestServicesController.cs",
+              "ViewState": "AgIAAB0BAAAAAAAAAAAQwBMBAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-08-13T02:45:32.75Z"
+              "WhenOpened": "2025-08-04T02:58:04.633Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "ReservationController.cs",
+              "DocumentMoniker": "D:\\Resort_Management_System\\API\\Resort_Management_System_API\\Controllers\\ReservationController.cs",
+              "RelativeDocumentMoniker": "Controllers\\ReservationController.cs",
+              "ToolTip": "D:\\Resort_Management_System\\API\\Resort_Management_System_API\\Controllers\\ReservationController.cs",
+              "RelativeToolTip": "Controllers\\ReservationController.cs",
+              "ViewState": "AgIAAOIAAAAAAAAAAAAAAOIAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-08-12T13:53:33.64Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
+              "Title": "ServiceController.cs",
+              "DocumentMoniker": "D:\\Resort_Management_System\\API\\Resort_Management_System_API\\Controllers\\ServiceController.cs",
+              "RelativeDocumentMoniker": "Controllers\\ServiceController.cs",
+              "ToolTip": "D:\\Resort_Management_System\\API\\Resort_Management_System_API\\Controllers\\ServiceController.cs",
+              "RelativeToolTip": "Controllers\\ServiceController.cs",
+              "ViewState": "AgIAAMEAAAAAAAAAAAAQwAcAAAAyAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-08-06T03:39:23.176Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "StaffController.cs",
+              "DocumentMoniker": "D:\\Resort_Management_System\\API\\Resort_Management_System_API\\Controllers\\StaffController.cs",
+              "RelativeDocumentMoniker": "Controllers\\StaffController.cs",
+              "ToolTip": "D:\\Resort_Management_System\\API\\Resort_Management_System_API\\Controllers\\StaffController.cs",
+              "RelativeToolTip": "Controllers\\StaffController.cs",
+              "ViewState": "AgIAACoAAAAAAAAAAAAYwD8AAAASAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-07-30T14:59:01.914Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "PaymentController.cs",
+              "DocumentMoniker": "D:\\Resort_Management_System\\API\\Resort_Management_System_API\\Controllers\\PaymentController.cs",
+              "RelativeDocumentMoniker": "Controllers\\PaymentController.cs",
+              "ToolTip": "D:\\Resort_Management_System\\API\\Resort_Management_System_API\\Controllers\\PaymentController.cs",
+              "RelativeToolTip": "Controllers\\PaymentController.cs",
+              "ViewState": "AgIAAN0AAAAAAAAAAAAiwO8AAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-08-03T10:29:07.65Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "Payment.cs",
+              "DocumentMoniker": "D:\\Resort_Management_System\\API\\Resort_Management_System_API\\Models\\Payment.cs",
+              "RelativeDocumentMoniker": "Models\\Payment.cs",
+              "ToolTip": "D:\\Resort_Management_System\\API\\Resort_Management_System_API\\Models\\Payment.cs",
+              "RelativeToolTip": "Models\\Payment.cs",
+              "ViewState": "AgIAAAgAAAAAAAAAAAAUwAsAAAAkAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-08-03T10:32:18.123Z"
             },
             {
               "$type": "Document",
               "DocumentIndex": 5,
+              "Title": "GuestService.cs",
+              "DocumentMoniker": "D:\\Resort_Management_System\\API\\Resort_Management_System_API\\Models\\GuestService.cs",
+              "RelativeDocumentMoniker": "Models\\GuestService.cs",
+              "ToolTip": "D:\\Resort_Management_System\\API\\Resort_Management_System_API\\Models\\GuestService.cs",
+              "RelativeToolTip": "Models\\GuestService.cs",
+              "ViewState": "AgIAABkAAAAAAAAAAADwvxEAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-08-25T07:29:08.396Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
               "Title": "User.cs",
               "DocumentMoniker": "D:\\Resort_Management_System\\API\\Resort_Management_System_API\\Models\\User.cs",
               "RelativeDocumentMoniker": "Models\\User.cs",
@@ -200,11 +245,49 @@
               "RelativeToolTip": "Models\\User.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAAAtAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-08-04T03:15:30.044Z"
+              "WhenOpened": "2025-08-04T03:15:30.044Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 1,
+              "Title": "Staff.cs",
+              "DocumentMoniker": "D:\\Resort_Management_System\\API\\Resort_Management_System_API\\Models\\Staff.cs",
+              "RelativeDocumentMoniker": "Models\\Staff.cs",
+              "ToolTip": "D:\\Resort_Management_System\\API\\Resort_Management_System_API\\Models\\Staff.cs",
+              "RelativeToolTip": "Models\\Staff.cs",
+              "ViewState": "AgIAAAoAAAAAAAAAAAAQwAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-08-23T16:03:34.869Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "Room.cs",
+              "DocumentMoniker": "D:\\Resort_Management_System\\API\\Resort_Management_System_API\\Models\\Room.cs",
+              "RelativeDocumentMoniker": "Models\\Room.cs",
+              "ToolTip": "D:\\Resort_Management_System\\API\\Resort_Management_System_API\\Models\\Room.cs",
+              "RelativeToolTip": "Models\\Room.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-09-03T02:43:29.918Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 12,
+              "Title": "UserController.cs",
+              "DocumentMoniker": "D:\\Resort_Management_System\\API\\Resort_Management_System_API\\Controllers\\UserController.cs",
+              "RelativeDocumentMoniker": "Controllers\\UserController.cs",
+              "ToolTip": "D:\\Resort_Management_System\\API\\Resort_Management_System_API\\Controllers\\UserController.cs",
+              "RelativeToolTip": "Controllers\\UserController.cs",
+              "ViewState": "AgIAAL0AAAAAAAAAAAAiwMwAAABIAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-08-04T03:10:44.465Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 14,
               "Title": "Program.cs",
               "DocumentMoniker": "D:\\Resort_Management_System\\API\\Resort_Management_System_API\\Program.cs",
               "RelativeDocumentMoniker": "Program.cs",
@@ -216,164 +299,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "GuestServicesController.cs",
-              "DocumentMoniker": "D:\\Resort_Management_System\\API\\Resort_Management_System_API\\Controllers\\GuestServicesController.cs",
-              "RelativeDocumentMoniker": "Controllers\\GuestServicesController.cs",
-              "ToolTip": "D:\\Resort_Management_System\\API\\Resort_Management_System_API\\Controllers\\GuestServicesController.cs",
-              "RelativeToolTip": "Controllers\\GuestServicesController.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-08-04T02:58:04.633Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 7,
-              "Title": "Resort_Management_System_API.http",
-              "DocumentMoniker": "D:\\Resort_Management_System\\API\\Resort_Management_System_API\\Resort_Management_System_API.http",
-              "RelativeDocumentMoniker": "Resort_Management_System_API.http",
-              "ToolTip": "D:\\Resort_Management_System\\API\\Resort_Management_System_API\\Resort_Management_System_API.http",
-              "RelativeToolTip": "Resort_Management_System_API.http",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003502|",
-              "WhenOpened": "2025-09-01T03:40:39.265Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 9,
-              "Title": "StaffController.cs",
-              "DocumentMoniker": "D:\\Resort_Management_System\\API\\Resort_Management_System_API\\Controllers\\StaffController.cs",
-              "RelativeDocumentMoniker": "Controllers\\StaffController.cs",
-              "ToolTip": "D:\\Resort_Management_System\\API\\Resort_Management_System_API\\Controllers\\StaffController.cs",
-              "RelativeToolTip": "Controllers\\StaffController.cs",
-              "ViewState": "AgIAAHUAAAAAAAAAAAAAwEEAAAAIAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-07-30T14:59:01.914Z"
-            },
-            {
-              "$type": "Document",
               "DocumentIndex": 10,
-              "Title": "Staff.cs",
-              "DocumentMoniker": "D:\\Resort_Management_System\\API\\Resort_Management_System_API\\Models\\Staff.cs",
-              "RelativeDocumentMoniker": "Models\\Staff.cs",
-              "ToolTip": "D:\\Resort_Management_System\\API\\Resort_Management_System_API\\Models\\Staff.cs",
-              "RelativeToolTip": "Models\\Staff.cs",
-              "ViewState": "AgIAAAkAAAAAAAAAAAA1wAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-08-23T16:03:34.869Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 12,
-              "Title": "Service.cs",
-              "DocumentMoniker": "D:\\Resort_Management_System\\API\\Resort_Management_System_API\\Models\\Service.cs",
-              "RelativeDocumentMoniker": "Models\\Service.cs",
-              "ToolTip": "D:\\Resort_Management_System\\API\\Resort_Management_System_API\\Models\\Service.cs",
-              "RelativeToolTip": "Models\\Service.cs",
-              "ViewState": "AgIAAAYAAAAAAAAAAAAAAAkAAAAmAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-08-10T13:40:29.352Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 11,
-              "Title": "ServiceController.cs",
-              "DocumentMoniker": "D:\\Resort_Management_System\\API\\Resort_Management_System_API\\Controllers\\ServiceController.cs",
-              "RelativeDocumentMoniker": "Controllers\\ServiceController.cs",
-              "ToolTip": "D:\\Resort_Management_System\\API\\Resort_Management_System_API\\Controllers\\ServiceController.cs",
-              "RelativeToolTip": "Controllers\\ServiceController.cs",
-              "ViewState": "AgIAAKYAAAAAAAAAAAAAwAcAAAAyAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-08-06T03:39:23.176Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 13,
-              "Title": "PaymentController.cs",
-              "DocumentMoniker": "D:\\Resort_Management_System\\API\\Resort_Management_System_API\\Controllers\\PaymentController.cs",
-              "RelativeDocumentMoniker": "Controllers\\PaymentController.cs",
-              "ToolTip": "D:\\Resort_Management_System\\API\\Resort_Management_System_API\\Controllers\\PaymentController.cs",
-              "RelativeToolTip": "Controllers\\PaymentController.cs",
-              "ViewState": "AgIAAN0AAAAAAAAAAAAQwOkAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-08-03T10:29:07.65Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 14,
-              "Title": "Payment.cs",
-              "DocumentMoniker": "D:\\Resort_Management_System\\API\\Resort_Management_System_API\\Models\\Payment.cs",
-              "RelativeDocumentMoniker": "Models\\Payment.cs",
-              "ToolTip": "D:\\Resort_Management_System\\API\\Resort_Management_System_API\\Models\\Payment.cs",
-              "RelativeToolTip": "Models\\Payment.cs",
-              "ViewState": "AgIAAAoAAAAAAAAAAAAcwAsAAAAkAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-08-03T10:32:18.123Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 15,
-              "Title": "Booking.cs",
-              "DocumentMoniker": "D:\\Resort_Management_System\\API\\Resort_Management_System_API\\Models\\Booking.cs",
-              "RelativeDocumentMoniker": "Models\\Booking.cs",
-              "ToolTip": "D:\\Resort_Management_System\\API\\Resort_Management_System_API\\Models\\Booking.cs",
-              "RelativeToolTip": "Models\\Booking.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-08-31T11:28:05.929Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 17,
-              "Title": "BookingController.cs",
-              "DocumentMoniker": "D:\\Resort_Management_System\\API\\Resort_Management_System_API\\Controllers\\BookingController.cs",
-              "RelativeDocumentMoniker": "Controllers\\BookingController.cs",
-              "ToolTip": "D:\\Resort_Management_System\\API\\Resort_Management_System_API\\Controllers\\BookingController.cs",
-              "RelativeToolTip": "Controllers\\BookingController.cs",
-              "ViewState": "AgIAAMEAAAAAAAAAAAAgwMwAAAA3AAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-07-30T15:46:37.553Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 18,
-              "Title": "GuestController.cs",
-              "DocumentMoniker": "D:\\Resort_Management_System\\API\\Resort_Management_System_API\\Controllers\\GuestController.cs",
-              "RelativeDocumentMoniker": "Controllers\\GuestController.cs",
-              "ToolTip": "D:\\Resort_Management_System\\API\\Resort_Management_System_API\\Controllers\\GuestController.cs",
-              "RelativeToolTip": "Controllers\\GuestController.cs",
-              "ViewState": "AgIAANoAAAAAAAAAAAAgwOsAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-07-30T14:46:12.008Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 19,
-              "Title": "GuestService.cs",
-              "DocumentMoniker": "D:\\Resort_Management_System\\API\\Resort_Management_System_API\\Models\\GuestService.cs",
-              "RelativeDocumentMoniker": "Models\\GuestService.cs",
-              "ToolTip": "D:\\Resort_Management_System\\API\\Resort_Management_System_API\\Models\\GuestService.cs",
-              "RelativeToolTip": "Models\\GuestService.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABEAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-08-25T07:29:08.396Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 21,
-              "Title": "PaymentValidator.cs",
-              "DocumentMoniker": "D:\\Resort_Management_System\\API\\Resort_Management_System_API\\ValidationClass\\PaymentValidator.cs",
-              "RelativeDocumentMoniker": "ValidationClass\\PaymentValidator.cs",
-              "ToolTip": "D:\\Resort_Management_System\\API\\Resort_Management_System_API\\ValidationClass\\PaymentValidator.cs",
-              "RelativeToolTip": "ValidationClass\\PaymentValidator.cs",
-              "ViewState": "AgIAAAUAAAAAAAAAAAAxwAwAAAApAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-08-03T10:32:31.48Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 16,
               "Title": "Guest.cs",
               "DocumentMoniker": "D:\\Resort_Management_System\\API\\Resort_Management_System_API\\Models\\Guest.cs",
               "RelativeDocumentMoniker": "Models\\Guest.cs",
@@ -385,7 +311,127 @@
             },
             {
               "$type": "Document",
+              "DocumentIndex": 16,
+              "Title": "UserValidator.cs",
+              "DocumentMoniker": "D:\\Resort_Management_System\\API\\Resort_Management_System_API\\ValidationClass\\UserValidator.cs",
+              "RelativeDocumentMoniker": "ValidationClass\\UserValidator.cs",
+              "ToolTip": "D:\\Resort_Management_System\\API\\Resort_Management_System_API\\ValidationClass\\UserValidator.cs",
+              "RelativeToolTip": "ValidationClass\\UserValidator.cs",
+              "ViewState": "AgIAAAgAAAAAAAAAAAAmwBMAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-08-13T02:45:32.75Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 13,
+              "Title": "appsettings.json",
+              "DocumentMoniker": "D:\\Resort_Management_System\\API\\Resort_Management_System_API\\appsettings.json",
+              "RelativeDocumentMoniker": "appsettings.json",
+              "ToolTip": "D:\\Resort_Management_System\\API\\Resort_Management_System_API\\appsettings.json",
+              "RelativeToolTip": "appsettings.json",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABgAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2025-08-13T02:36:48.373Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 15,
+              "Title": "LoginController.cs",
+              "DocumentMoniker": "D:\\Resort_Management_System\\API\\Resort_Management_System_API\\Controllers\\LoginController.cs",
+              "RelativeDocumentMoniker": "Controllers\\LoginController.cs",
+              "ToolTip": "D:\\Resort_Management_System\\API\\Resort_Management_System_API\\Controllers\\LoginController.cs",
+              "RelativeToolTip": "Controllers\\LoginController.cs",
+              "ViewState": "AgIAADMAAAAAAAAAAAA1wE0AAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-08-04T03:11:21.24Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 18,
+              "Title": "RoomController.cs",
+              "DocumentMoniker": "D:\\Resort_Management_System\\API\\Resort_Management_System_API\\Controllers\\RoomController.cs",
+              "RelativeDocumentMoniker": "Controllers\\RoomController.cs",
+              "ToolTip": "D:\\Resort_Management_System\\API\\Resort_Management_System_API\\Controllers\\RoomController.cs",
+              "RelativeToolTip": "Controllers\\RoomController.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAANYAAAASAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-08-31T11:46:38.138Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 17,
+              "Title": "Resort_Management_System_API.http",
+              "DocumentMoniker": "D:\\Resort_Management_System\\API\\Resort_Management_System_API\\Resort_Management_System_API.http",
+              "RelativeDocumentMoniker": "Resort_Management_System_API.http",
+              "ToolTip": "D:\\Resort_Management_System\\API\\Resort_Management_System_API\\Resort_Management_System_API.http",
+              "RelativeToolTip": "Resort_Management_System_API.http",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003502|",
+              "WhenOpened": "2025-09-01T03:40:39.265Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 19,
+              "Title": "Service.cs",
+              "DocumentMoniker": "D:\\Resort_Management_System\\API\\Resort_Management_System_API\\Models\\Service.cs",
+              "RelativeDocumentMoniker": "Models\\Service.cs",
+              "ToolTip": "D:\\Resort_Management_System\\API\\Resort_Management_System_API\\Models\\Service.cs",
+              "RelativeToolTip": "Models\\Service.cs",
+              "ViewState": "AgIAAAYAAAAAAAAAAAAAAAkAAAAmAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-08-10T13:40:29.352Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 20,
+              "Title": "Booking.cs",
+              "DocumentMoniker": "D:\\Resort_Management_System\\API\\Resort_Management_System_API\\Models\\Booking.cs",
+              "RelativeDocumentMoniker": "Models\\Booking.cs",
+              "ToolTip": "D:\\Resort_Management_System\\API\\Resort_Management_System_API\\Models\\Booking.cs",
+              "RelativeToolTip": "Models\\Booking.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-08-31T11:28:05.929Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 21,
+              "Title": "BookingController.cs",
+              "DocumentMoniker": "D:\\Resort_Management_System\\API\\Resort_Management_System_API\\Controllers\\BookingController.cs",
+              "RelativeDocumentMoniker": "Controllers\\BookingController.cs",
+              "ToolTip": "D:\\Resort_Management_System\\API\\Resort_Management_System_API\\Controllers\\BookingController.cs",
+              "RelativeToolTip": "Controllers\\BookingController.cs",
+              "ViewState": "AgIAAMEAAAAAAAAAAAAgwMwAAAA3AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-07-30T15:46:37.553Z"
+            },
+            {
+              "$type": "Document",
               "DocumentIndex": 22,
+              "Title": "GuestController.cs",
+              "DocumentMoniker": "D:\\Resort_Management_System\\API\\Resort_Management_System_API\\Controllers\\GuestController.cs",
+              "RelativeDocumentMoniker": "Controllers\\GuestController.cs",
+              "ToolTip": "D:\\Resort_Management_System\\API\\Resort_Management_System_API\\Controllers\\GuestController.cs",
+              "RelativeToolTip": "Controllers\\GuestController.cs",
+              "ViewState": "AgIAANoAAAAAAAAAAAAgwOsAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-07-30T14:46:12.008Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 24,
+              "Title": "PaymentValidator.cs",
+              "DocumentMoniker": "D:\\Resort_Management_System\\API\\Resort_Management_System_API\\ValidationClass\\PaymentValidator.cs",
+              "RelativeDocumentMoniker": "ValidationClass\\PaymentValidator.cs",
+              "ToolTip": "D:\\Resort_Management_System\\API\\Resort_Management_System_API\\ValidationClass\\PaymentValidator.cs",
+              "RelativeToolTip": "ValidationClass\\PaymentValidator.cs",
+              "ViewState": "AgIAAAUAAAAAAAAAAAAxwAwAAAApAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-08-03T10:32:31.48Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 25,
               "Title": "ResortManagementContext.cs",
               "DocumentMoniker": "D:\\Resort_Management_System\\API\\Resort_Management_System_API\\Models\\ResortManagementContext.cs",
               "RelativeDocumentMoniker": "Models\\ResortManagementContext.cs",
@@ -397,7 +443,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 20,
+              "DocumentIndex": 23,
               "Title": "GuestServicesValidator.cs",
               "DocumentMoniker": "D:\\Resort_Management_System\\API\\Resort_Management_System_API\\ValidationClass\\GuestServicesValidator.cs",
               "RelativeDocumentMoniker": "ValidationClass\\GuestServicesValidator.cs",
@@ -409,7 +455,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 25,
+              "DocumentIndex": 28,
               "Title": "BookingValidator.cs",
               "DocumentMoniker": "D:\\Resort_Management_System\\API\\Resort_Management_System_API\\ValidationClass\\BookingValidator.cs",
               "RelativeDocumentMoniker": "ValidationClass\\BookingValidator.cs",
@@ -421,7 +467,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 24,
+              "DocumentIndex": 27,
               "Title": "ReservationValidator.cs",
               "DocumentMoniker": "D:\\Resort_Management_System\\API\\Resort_Management_System_API\\ValidationClass\\ReservationValidator.cs",
               "RelativeDocumentMoniker": "ValidationClass\\ReservationValidator.cs",
@@ -433,7 +479,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 23,
+              "DocumentIndex": 26,
               "Title": "ServiceValidator.cs",
               "DocumentMoniker": "D:\\Resort_Management_System\\API\\Resort_Management_System_API\\ValidationClass\\ServiceValidator.cs",
               "RelativeDocumentMoniker": "ValidationClass\\ServiceValidator.cs",
@@ -445,7 +491,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 26,
+              "DocumentIndex": 29,
               "Title": "Login.cs",
               "DocumentMoniker": "D:\\Resort_Management_System\\API\\Resort_Management_System_API\\Models\\Login.cs",
               "RelativeDocumentMoniker": "Models\\Login.cs",
@@ -454,18 +500,6 @@
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAA4AAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-08-23T03:23:59.673Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 27,
-              "Title": "ReservationController.cs",
-              "DocumentMoniker": "D:\\Resort_Management_System\\API\\Resort_Management_System_API\\Controllers\\ReservationController.cs",
-              "RelativeDocumentMoniker": "Controllers\\ReservationController.cs",
-              "ToolTip": "D:\\Resort_Management_System\\API\\Resort_Management_System_API\\Controllers\\ReservationController.cs",
-              "RelativeToolTip": "Controllers\\ReservationController.cs",
-              "ViewState": "AgIAACgAAAAAAAAAAAAmwDMAAAAsAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-08-12T13:53:33.64Z"
             }
           ]
         }

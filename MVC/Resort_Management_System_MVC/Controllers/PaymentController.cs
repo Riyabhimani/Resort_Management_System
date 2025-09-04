@@ -213,9 +213,9 @@ namespace Resort_Management_System_MVC.Controllers
             var response = await client.DeleteAsync($"Payment/{id}");
 
             if (response.IsSuccessStatusCode)
-                TempData["SuccessMessage"] = "Payment deleted successfully.";
+                TempData["SuccessMessage"] = "Payment details deleted successfully.";
             else
-                TempData["ErrorMessage"] = $"Failed to delete payment. Status: {response.StatusCode}";
+                TempData["ErrorMessage"] = $"Failed to delete payment details. Status: {response.StatusCode}";
 
             return RedirectToAction("PaymentList");
         }
@@ -237,7 +237,7 @@ namespace Resort_Management_System_MVC.Controllers
 
                 if (payments == null || !payments.Any())
                 {
-                    TempData["ErrorMessage"] = "No payments found.";
+                    TempData["ErrorMessage"] = "No payment detail found.";
                     return View("PaymentList", new List<PaymentModel>());
                 }
 
@@ -273,7 +273,7 @@ namespace Resort_Management_System_MVC.Controllers
 
             if (payments == null || !payments.Any())
             {
-                TempData["ErrorMessage"] = "⚠ No payments found.";
+                TempData["ErrorMessage"] = "⚠ No payment detail found.";
                 return View("PaymentList", new List<PaymentModel>());
             }
 

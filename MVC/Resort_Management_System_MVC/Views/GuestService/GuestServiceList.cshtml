@@ -11,19 +11,36 @@
 <div class="resort-page-container">
 	<div class="guest-card shadow">
 		<div class="d-flex justify-content-between align-items-center mb-4">
-			<h3 class="m-0" style="color:#cb8670"><b>GuestService List</b></h3>
+			<h3 class="m-0" style="color:#cb8670"><b>GuestService</b></h3>
 
-			<div class="text-end mb-3">
-				<a asp-action="GuestServiceAddEdit" asp-controller="GuestService" class="btn btn-sm"
-				   onclick="return confirm('Add Guest Service?');">
+			<div class="d-flex justify-content-between align-items-center mb-4">
+
+				<a asp-action="GuestServiceAddEdit" asp-controller="GuestService" class="btn btn-sm">
 					<button type="button"
 							style="border:1px solid #cb8670; color:#cb8670; background:transparent; font-weight:500; padding:4px 10px; border-radius:4px; font-size:0.875rem; line-height:1.5; display:inline-flex; align-items:center; gap:6px; cursor:pointer;"
 							onmouseover="this.style.backgroundColor='#cb8670'; this.style.color='#fff';"
 							onmouseout="this.style.backgroundColor='transparent'; this.style.color='#cb8670';">
 						<i class="bi bi-person-plus-fill" style="font-size:16px;"></i>
-						<span>Add GuestService</span>
+						<span>Add Reservation</span>
 					</button>
 				</a>
+
+				<!-- ✅ Search / Filters -->
+				<form asp-action="SearchGuestService" asp-controller="GuestService" method="get" class="d-flex align-items-center gap-2">
+					<input type="number" name="guestServiceId" placeholder="GuestService ID" class="form-control form-control-sm" />
+					<input type="text" name="reservationStatus" placeholder="Reservation Status" class="form-control form-control-sm" />
+					<input type="text" name="fullName" placeholder="Guest Name" class="form-control form-control-sm" />
+					<input type="text" name="service" placeholder="Service Name" class="form-control form-control-sm" />
+					<button type="submit" class="btn btn-primary btn-sm"><i class="bi bi-search me-1"></i>Search</button>
+
+					<a asp-action="Top10GuestServices" asp-controller="GuestService" class="btn btn-success btn-sm">
+						<i class="bi bi-list-ol me-1"></i> Top 10 GuestService
+					</a>
+
+					<a asp-action="GuestServiceList" asp-controller="GuestService" class="btn btn-secondary btn-sm">
+						<i class="bi bi-arrow-clockwise me-1"></i>Full List
+					</a>
+				</form>
 			</div>
 
 
@@ -43,7 +60,7 @@
 				<thead class="text-center bg-secondary text-warning">
 					<tr>
 						<th>ID</th>
-						<th>ReservationId</th>
+						<th>ReservationStatus</th>
 						<th>ServiceName</th>
 						<th>GuestName</th>
 						<th>Quantity</th>
@@ -60,7 +77,7 @@
 						{
 							<tr>
 								<td>@item.GuestServiceId</td>
-								<td>@item.ReservationId</td>
+								<td>@item.ReservationStatus</td>
 								<td>@item.ServiceName</td>
 								<td>@item.FullName</td>
 								<td>@item.Quantity</td>

@@ -12,7 +12,8 @@
 		<div class="d-flex justify-content-between align-items-center mb-4">
 			<h3 class="m-0" style="color:#cb8670"><b>Reservation List</b></h3>
 
-			<div class="text-end mb-3">
+			<div class="d-flex justify-content-between align-items-center mb-4">
+
 				<a asp-action="ReservationAddEdit" asp-controller="Reservation" class="btn btn-sm">
 					<button type="button"
 							style="border:1px solid #cb8670; color:#cb8670; background:transparent; font-weight:500; padding:4px 10px; border-radius:4px; font-size:0.875rem; line-height:1.5; display:inline-flex; align-items:center; gap:6px; cursor:pointer;"
@@ -22,6 +23,22 @@
 						<span>Add Reservation</span>
 					</button>
 				</a>
+
+				<!-- ✅ Search / Filters -->
+				<form asp-action="SearchReservation" asp-controller="Reservation" method="get" class="d-flex align-items-center gap-2">
+					<input type="number" name="reservationId" placeholder="Reservation ID" class="form-control form-control-sm" />
+					<input type="text" name="fullName" placeholder="Guest Name" class="form-control form-control-sm" />
+					<input type="text" name="roomType" placeholder="Type Of Room" class="form-control form-control-sm" />
+					<button type="submit" class="btn btn-primary btn-sm"><i class="bi bi-search me-1"></i>Search</button>
+
+					<a asp-action="Top10Reservations" asp-controller="Reservation" class="btn btn-success btn-sm">
+						<i class="bi bi-list-ol me-1"></i> Top 10 Reservation
+					</a>
+
+					<a asp-action="ReservationList" asp-controller="Reservation" class="btn btn-secondary btn-sm">
+						<i class="bi bi-arrow-clockwise me-1"></i>Full List
+					</a>
+				</form>
 			</div>
 		</div>
 
@@ -110,7 +127,7 @@
 
 					Swal.fire({
 						title: "Are you sure?",
-						text: "This reservation will be deleted permanently.",
+						text: "This guest will be deleted permanently.",
 						icon: "warning",
 						showCancelButton: true,
 						confirmButtonColor: "#d33",
@@ -128,12 +145,25 @@
 		@if (TempData["SuccessMessage"] != null)
 		{
 			<text>
-					Swal.fire({
-						icon: 'success',
-						title: 'Deleted!',
-						text: '@TempData["SuccessMessage"]',
-						confirmButtonColor: '#28a745'
-					});
+							Swal.fire({
+								icon: 'success',
+								title: 'Deleted!',
+								text: '@TempData["SuccessMessage"]',
+								confirmButtonColor: '#28a745'
+							});
+			</text>
+		}
+
+			// ✅ Show success alert for Add / Edit / Delete
+		@if (TempData["SuccessMessage"] != null)
+		{
+			<text>
+							Swal.fire({
+								icon: 'success',
+								title: '🎉Success!',
+								text: '@TempData["SuccessMessage"]',
+									confirmButtonColor: '#28a745'
+							});
 			</text>
 		}
 		});
@@ -209,7 +239,7 @@
 
 		.table thead {
 			background-color: #6c757d !important; /* Bootstrap's gray
-									color: #ffcc99 !important; /* light orange text */
+							color: #ffcc99 !important; /* light orange text */
 		}
 
 		.table tbody tr:hover {

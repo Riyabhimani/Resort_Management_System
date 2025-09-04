@@ -6,6 +6,8 @@
 
         public int ReservationId { get; set; }
 
+        public string ReservationStatus { get; set; }
+
         public int ServiceId { get; set; }
 
         public int GuestId { get; set; }

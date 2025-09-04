@@ -97,7 +97,6 @@ namespace Resort_Management_System_MVC.Controllers
                 return View(staff);
             }
         }
-
     }
 }
 

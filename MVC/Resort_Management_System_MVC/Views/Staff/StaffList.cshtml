@@ -11,8 +11,8 @@
 	<div class="guest-card shadow">
 		<div class="d-flex justify-content-between align-items-center mb-4">
 			<h3 class="m-0" style="color:#cb8670"><b>Staff List</b></h3>
+			<div class="d-flex justify-content-between align-items-center mb-4">
 
-			<div class="text-end mb-3">
 				<a asp-action="StaffAddEdit" asp-controller="Staff" class="btn btn-sm">
 					<button type="button"
 							style="border:1px solid #cb8670; color:#cb8670; background:transparent; font-weight:500; padding:4px 10px; border-radius:4px; font-size:0.875rem; line-height:1.5; display:inline-flex; align-items:center; gap:6px; cursor:pointer;"
@@ -22,6 +22,27 @@
 						<span>Add Staff</span>
 					</button>
 				</a>
+
+				<!-- ✅ Search / Filters -->
+				<form onsubmit="event.preventDefault(); searchStaff();" class="d-flex align-items-center gap-2">
+					<input type="number" id="staffId" placeholder="Staff Id" class="form-control form-control-sm" />
+					<input type="text" id="searchFullName" placeholder="Full Name" class="form-control form-control-sm" />
+					<input type="text" id="searchRole" placeholder="Role" class="form-control form-control-sm" />
+					<button class="btn btn-primary btn-sm" onclick="searchStaff()"><i class="bi bi-search me-1"></i>Search Staff</button>
+					<button class="btn btn-success btn-sm" onclick="loadTop10()"><i class="bi bi-list-ol me-1"></i> Top 10 Staff</button>
+
+					@* <button type="submit" class="btn btn-primary btn-sm"> *@
+					@* 	<i class="bi bi-search me-1"></i> Search Staff *@
+					@* </button> *@
+
+					@* <a asp-action="Top10Staffs" asp-controller="Staff" class="btn btn-success btn-sm"> *@
+					@* 	<i class="bi bi-list-ol me-1"></i> Top 10 Staff *@
+					@* </a> *@
+
+					<a asp-action="StaffList" asp-controller="Staff" class="btn btn-secondary btn-sm">
+						<i class="bi bi-arrow-clockwise me-1"></i>Back to Full List
+					</a>
+				</form>
 			</div>
 		</div>
 
@@ -109,7 +130,7 @@
 
 					Swal.fire({
 						title: "Are you sure?",
-						text: "This staff will be deleted permanently.",
+						text: "This guest will be deleted permanently.",
 						icon: "warning",
 						showCancelButton: true,
 						confirmButtonColor: "#d33",
@@ -127,15 +148,85 @@
 		@if (TempData["SuccessMessage"] != null)
 		{
 			<text>
-								Swal.fire({
-									icon: 'success',
-									title: 'Deleted!',
-									text: '@TempData["SuccessMessage"]',
+							Swal.fire({
+								icon: 'success',
+								title: 'Deleted!',
+								text: '@TempData["SuccessMessage"]',
+								confirmButtonColor: '#28a745'
+							});
+			</text>
+		}
+
+			// ✅ Show success alert for Add / Edit / Delete
+		@if (TempData["SuccessMessage"] != null)
+		{
+			<text>
+							Swal.fire({
+								icon: 'success',
+								title: '🎉Success!',
+								text: '@TempData["SuccessMessage"]',
 									confirmButtonColor: '#28a745'
-								});
+							});
 			</text>
 		}
 		});
+		
+
+
+
+		// Load Top 10 Staff
+		function loadTop10() {
+			$.ajax({
+				url: "/api/Staff/Top10",
+				type: "GET",
+				success: function (data) {
+					renderStaffTable(data);
+				},
+				error: function () {
+					alert("Failed to fetch Top 10 staff.");
+				}
+			});
+		}
+
+		// Search Staff
+		function searchStaff() {
+			var fullName = $("#searchFullName").val();
+			var role = $("#searchRole").val();
+
+			$.ajax({
+				url: "/api/Staff/filter",
+				type: "GET",
+				data: { fullName: fullName, role: role },
+				success: function (data) {
+					renderStaffTable(data);
+				},
+				error: function () {
+					alert("Staff search failed.");
+				}
+			});
+		}
+
+		// Render table rows dynamically
+		function renderStaffTable(data) {
+			var tbody = $("#staffTable tbody");
+			tbody.empty();
+
+			if (data.length === 0) {
+				tbody.append("<tr><td colspan='3'>No records found</td></tr>");
+			} else {
+				$.each(data, function (i, staff) {
+					tbody.append(
+						"<tr>" +
+							"<td>" + staff.staffId + "</td>" +
+							"<td>" + staff.fullName + "</td>" +
+							"<td>" + staff.role + "</td>" +
+						"</tr>"
+					);
+				});
+			}
+		}
+
+
 	</script>
 }
 
@@ -208,7 +299,7 @@
 
 		.table thead {
 			background-color: #6c757d !important; /* Bootstrap's gray
-									color: #ffcc99 !important; /* light orange text */
+							color: #ffcc99 !important; /* light orange text */
 		}
 
 		.table tbody tr:hover {

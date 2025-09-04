@@ -227,18 +227,18 @@ namespace Resort_Management_System_API.Controllers
 
         #region SearchReservation
         [HttpGet("filter")]
-        public async Task<ActionResult<IEnumerable<Reservation>>> SearchReservation([FromQuery] int? reservationId, int? guestId , int? roomId)
+        public async Task<ActionResult<IEnumerable<Reservation>>> SearchReservation([FromQuery] string? reservationStatus, string? fullName , string? roomType)
         {
             var query = context.Reservations.AsQueryable();
 
-            if (reservationId.HasValue)
-                query = query.Where(r => r.ReservationId == reservationId);
+            if (!string.IsNullOrEmpty(reservationStatus))
+                query = query.Where(u => u.ReservationStatus.Contains(reservationStatus));
 
-            if (guestId.HasValue)
-                query = query.Where(r => r.GuestId == guestId);
+            if (!string.IsNullOrEmpty(fullName))
+                query = query.Where(u => u.Guest.FullName.Contains(fullName));
 
-            if (roomId.HasValue)
-                query = query.Where(r => r.RoomId == roomId);
+            if (!string.IsNullOrEmpty(roomType))
+                query = query.Where(r => r.Room.RoomType.Contains(roomType));
 
             return await query.ToListAsync();
         }

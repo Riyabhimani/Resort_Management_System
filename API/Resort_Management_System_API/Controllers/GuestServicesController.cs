@@ -44,7 +44,7 @@ namespace Resort_Management_System_API.Controllers
                     .Select(g => new
                     {
                         g.GuestServiceId,
-                        ReservationId = g.Reservation.ReservationId,
+                        ReservationStatus = g.Reservation.ReservationStatus,
                         ServiceName = g.Service.ServiceName,
                         FullName = g.Guest.FullName,
                         g.Quantity,
@@ -214,39 +214,69 @@ namespace Resort_Management_System_API.Controllers
         }
         #endregion
 
-        #region GetTop10GuestServices
-        // Get top 10 services
-        [HttpGet("Top10")]
-        public async Task<ActionResult<IEnumerable<GuestService>>> GetTop10GuestServices()
-        {
-            return await context.GuestServices.Take(10).ToListAsync();
-        }
-        #endregion
 
-        #region SearchGuestService
-        [HttpGet("filter")]
-        public async Task<ActionResult<IEnumerable<GuestService>>> SearchGuestService([FromQuery] int? guestServiceId, int? reservationId, int? guestId, int? serviceId)
+        [HttpGet("Top10")]
+        public async Task<ActionResult> GetTop10GuestServices()
         {
-            var query = context.GuestServices.AsQueryable();
+            var guestservices = await context.GuestServices
+                .Include(g => g.Guest)
+                .Include(g => g.Reservation)
+                .Include(g => g.Service)
+                .Select(g => new
+                {
+                    g.GuestServiceId,
+                    ReservationStatus = g.Reservation.ReservationStatus,
+                    ServiceName = g.Service.ServiceName,
+                    FullName = g.Guest.FullName,
+                    g.Quantity,
+                    g.DateRequested,
+                    g.Created,
+                    g.Modified
+                })
+                .Take(10)
+                .ToListAsync();
+
+            return Ok(guestservices);
+        }
+
+        [HttpGet("filter")]
+        public async Task<ActionResult> SearchGuestService([FromQuery] int? guestServiceId, string? reservationStatus, string? fullName, string? service)
+        {
+            var query = context.GuestServices
+                .Include(g => g.Guest)
+                .Include(g => g.Reservation)
+                .Include(g => g.Service)
+                .AsQueryable();
 
             if (guestServiceId.HasValue)
                 query = query.Where(g => g.GuestServiceId == guestServiceId);
+            if (!string.IsNullOrEmpty(reservationStatus))
+                query = query.Where(u => u.Reservation.ReservationStatus.Contains(reservationStatus));
+            if (!string.IsNullOrEmpty(fullName))
+                query = query.Where(u => u.Guest.FullName.Contains(fullName));
+            if (!string.IsNullOrEmpty(service))
+                query = query.Where(u => u.Service.ServiceName.Contains(service));
 
-            if (reservationId.HasValue)
-                query = query.Where(g => g.ReservationId == reservationId);
+            var guestservices = await query
+                .Select(g => new
+                {
+                    g.GuestServiceId,
+                    ReservationStatus = g.Reservation.ReservationStatus,
+                    ServiceName = g.Service.ServiceName,
+                    FullName = g.Guest.FullName,
+                    g.Quantity,
+                    g.DateRequested,
+                    g.Created,
+                    g.Modified
+                })
+                .ToListAsync();
 
-            if (guestId.HasValue)
-                query = query.Where(g => g.GuestId == guestId);
-
-            if (serviceId.HasValue)
-                query = query.Where(g => g.ServiceId == serviceId);
-
-            return await query.ToListAsync();
+            return Ok(guestservices);
         }
-        #endregion
+
 
         #region GuestServicesDropdown
-        // Get all GuestSerbices (for dropdown)
+        // Get all GuestServices (for dropdown)
         //[HttpGet("dropdown/guestServices")]
         //public async Task<ActionResult<IEnumerable<object>>> GuestServicesDropdown()
         //{

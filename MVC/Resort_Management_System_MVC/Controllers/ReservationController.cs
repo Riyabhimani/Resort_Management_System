@@ -135,5 +135,38 @@ namespace Resort_Management_System_MVC.Controllers
             var rooms = JsonConvert.DeserializeObject<List<RoomDropdownModel>>(response);
             ViewBag.RoomList = new SelectList(rooms, "RoomId", "RoomType", selectedRoomId);
         }
+
+        // Top 10 reservations
+        public async Task<IActionResult> Top10Reservations()
+        {
+            var response = await client.GetAsync("Reservation/Top10");
+            if (!response.IsSuccessStatusCode)
+            {
+                TempData["ErrorMessage"] = "Unable to fetch top 10 reservations.";
+                return RedirectToAction("ReservationList");
+            }
+
+            var json = await response.Content.ReadAsStringAsync();
+            var list = JsonConvert.DeserializeObject<List<ReservationModel>>(json);
+            return View("ReservationList", list); // reuse ReservationList view
+        }
+
+        // Search reservations
+        public async Task<IActionResult> SearchReservation(int? reservationId, string? fullName, string? roomType)
+        {
+            var query = $"Reservation/filter?reservationId={reservationId}&fullName={fullName}&roomType={roomType}";
+
+            var response = await client.GetAsync(query);
+            if (!response.IsSuccessStatusCode)
+            {
+                TempData["ErrorMessage"] = "Reservation search failed.";
+                return RedirectToAction("ReservationList");
+            }
+
+            var json = await response.Content.ReadAsStringAsync();
+            var list = JsonConvert.DeserializeObject<List<ReservationModel>>(json);
+            return View("ReservationList", list); 
+        }
     }
 }
+

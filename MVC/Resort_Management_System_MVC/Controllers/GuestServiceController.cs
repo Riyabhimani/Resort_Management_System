@@ -294,6 +294,7 @@ namespace Resort_Management_System_MVC.Controllers
                 await LoadServices(model.ServiceId);
                 return View(model);
             }
+
         }
 
 
@@ -338,6 +339,56 @@ namespace Resort_Management_System_MVC.Controllers
         }
 
 
+        // Top 10 guest services
+        public async Task<IActionResult> Top10GuestServices()
+        {
+            var response = await client.GetAsync("GuestServices/Top10");
+            if (!response.IsSuccessStatusCode)
+            {
+                TempData["ErrorMessage"] = "Unable to fetch top 10 guest services.";
+                return RedirectToAction("GuestServiceList");
+            }
 
+            var json = await response.Content.ReadAsStringAsync();
+            var list = JsonConvert.DeserializeObject<List<GuestServiceModel>>(json);
+            return View("GuestServiceList", list); // ✅ reuse GuestServiceList view
+        }
+
+        // Search guest services
+        public async Task<IActionResult> SearchGuestService(int? guestServiceId, string? reservationStatus, string? fullName, string? service)
+        {
+            var queryParams = new List<string>();
+
+            if (guestServiceId.HasValue)
+                queryParams.Add($"guestServiceId={guestServiceId.Value}");
+
+            if (!string.IsNullOrWhiteSpace(reservationStatus))
+                queryParams.Add($"reservationStatus={Uri.EscapeDataString(reservationStatus)}");
+
+            if (!string.IsNullOrWhiteSpace(fullName))
+                queryParams.Add($"fullName={Uri.EscapeDataString(fullName)}");
+
+            if (!string.IsNullOrWhiteSpace(service))
+                queryParams.Add($"service={Uri.EscapeDataString(service)}");
+
+            string query = "GuestServices/filter";
+            if (queryParams.Any())
+                query += "?" + string.Join("&", queryParams);
+
+            var response = await client.GetAsync(query);
+
+            if (!response.IsSuccessStatusCode)
+            {
+                TempData["ErrorMessage"] = "Guest Service search failed.";
+                return RedirectToAction("GuestServiceList");
+            }
+
+            var json = await response.Content.ReadAsStringAsync();
+            var list = JsonConvert.DeserializeObject<List<GuestServiceModel>>(json);
+
+            return View("GuestServiceList", list);
+        }
     }
-}
+    }
+
+
