@@ -18,7 +18,7 @@ namespace Resort_Management_System_MVC.Service
             {
                 UserName = username,
                 Password = password,
-                Role = role 
+                Role = role
             };
 
             var content = new StringContent(JsonConvert.SerializeObject(requestData), Encoding.UTF8, "application/json");
@@ -31,5 +31,25 @@ namespace Resort_Management_System_MVC.Service
             var jsonData = await response.Content.ReadAsStringAsync();
             return jsonData;
         }
+
+        //public async Task<string?> AuthenticateUserAsync(string username, string password)
+        //{
+        //    var requestData = new
+        //    {
+        //        UserName = username,
+        //        Password = password
+        //    };
+
+        //    var content = new StringContent(JsonConvert.SerializeObject(requestData), Encoding.UTF8, "application/json");
+
+        //    var response = await _httpClient.PostAsync("http://localhost:5159/api/Login/login", content);
+
+        //    if (response.IsSuccessStatusCode)
+        //        return await response.Content.ReadAsStringAsync();
+
+        //    return null;
+        //}
+
+
     }
 }

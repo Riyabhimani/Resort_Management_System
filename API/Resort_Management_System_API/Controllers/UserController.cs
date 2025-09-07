@@ -234,5 +234,26 @@ namespace Resort_Management_System_API.Controllers
             return Ok(new { message = "Welcome Authenticated User!" });
         }
 
+        //[HttpGet]
+        //public IActionResult Pagenation(int page = 1, int pageSize = 10)
+        //{
+        //    var users = context.Users.OrderBy(u => u.UserId);
+
+        //    var totalUsers = users.Count();
+
+        //    var pagedUsers = users.Skip((page - 1) * pageSize)
+        //                          .Take(pageSize)
+        //                          .ToList();
+
+        //    return Ok(new
+        //    {
+        //        TotalUsers = totalUsers,
+        //        PageSize = pageSize,
+        //        CurrentPage = page,
+        //        Users = pagedUsers
+        //    });
+        //}
+
+
     }
 }

@@ -66,12 +66,6 @@
             <span asp-validation-for="IsActive" class="text-danger"></span>
         </div>
 
-        <div class="mb-3">
-            <label asp-for="Modified" class="form-label"></label>
-            <input asp-for="Modified" type="datetime-local" class="form-control" />
-            <span asp-validation-for="Modified" class="text-danger"></span>
-        </div>
-
         <button type="submit" class="btn btn-primary" asp-controller="Staff" asp-action="StaffAddEdit"> <i class="bi bi-check-circle-fill me-2"></i>@((Model.StaffId == 0) ? "Add" : "Update")</button>
         <a class="btn btn-secondary" asp-controller="Staff" asp-action="StaffList"><i class="bi bi-arrow-left me-2"></i>Back</a>
     </form>

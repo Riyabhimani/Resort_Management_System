@@ -15,9 +15,14 @@
 
 			<div class="d-flex justify-content-between align-items-center mb-4">
 				<!-- Add Booking Button -->
-				<a asp-action="BookingAddEdit" asp-controller="Booking" class="btn resort-btn">
-					<i class="bi bi-person-plus-fill" style="font-size: 20px; color: #cb8670;"></i>
-					<span>Add Booking</span>
+				<a asp-action="BookingAddEdit" asp-controller="Booking" class="btn btn-sm">
+					<button type="button"
+							style="border:1px solid #cb8670; color:#cb8670; background:transparent; font-weight:500; padding:4px 10px; border-radius:4px; font-size:0.875rem; line-height:1.5; display:inline-flex; align-items:center; gap:6px; cursor:pointer;"
+							onmouseover="this.style.backgroundColor='#cb8670'; this.style.color='#fff';"
+							onmouseout="this.style.backgroundColor='transparent'; this.style.color='#cb8670';">
+						<i class="bi bi-person-plus-fill" style="font-size:16px;"></i>
+						<span>Add Booking</span>
+					</button>
 				</a>
 
 				<!-- Search Filters -->

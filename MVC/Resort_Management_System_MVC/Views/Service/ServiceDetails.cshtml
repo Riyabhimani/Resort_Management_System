@@ -1,0 +1,149 @@
+﻿@model List<ServiceModel>
+@{
+    ViewData["Title"] = "Service Details";
+}
+
+@{
+    Layout = "~/Views/Shared/UserLayout.cshtml";
+}
+
+<div class="resort-page-container">
+    <div class="guest-card shadow">
+        <div class="d-flex justify-content-between align-items-center mb-4">
+            <h3 class="m-0" style="color:#cb8670"><b>Available Services</b></h3>
+        </div>
+
+        @if (TempData["ErrorMessage"] != null)
+        {
+            <div class="alert alert-danger">@TempData["ErrorMessage"]</div>
+        }
+
+        <div class="scroll-box">
+            <table class="table table-bordered align-middle mb-0 bg-white">
+                <thead class="text-center bg-secondary text-warning">
+                    <tr>
+                        <th>Service Name</th>
+                        <th>Description</th>
+                        <th>Cost</th>
+                        <th>Start Time</th>
+                        <th>End Time</th>
+                    </tr>
+                </thead>
+                <tbody class="text-center">
+                    @if (Model != null && Model.Any())
+                    {
+                        foreach (var item in Model)
+                        {
+                            <tr>
+                                <td>@item.ServiceName</td>
+                                <td>@item.Description</td>
+                                <td>@item.ServiceCost</td>
+                                <td>@item.ServiceStartTime</td>
+                                <td>@item.ServiceEndTime</td>
+                            </tr>
+                        }
+                    }
+                    else
+                    {
+                        <tr><td colspan="5" class="text-muted">No Services Found</td></tr>
+                    }
+                </tbody>
+            </table>
+
+            <div class="d-flex justify-content-between align-items-center mt-3" style="color:#cb8670; font-weight:500;">
+                <div>
+                    Showing page @ViewBag.CurrentPage of @(Math.Ceiling((double)(ViewBag.TotalServices ?? 0) / (ViewBag.PageSize ?? 1)))
+                </div>
+
+                <nav>
+                    <ul class="pagination pagination-sm mb-0">
+                        @* Previous Button *@
+                        @if (ViewBag.CurrentPage > 1)
+                        {
+                            <li class="page-item">
+                                <a class="page-link" asp-action="ServiceDetails" asp-route-page="@(ViewBag.CurrentPage - 1)">
+                                    &lt;
+                                </a>
+                            </li>
+                        }
+
+                        @* Page Numbers *@
+                        @for (int i = 1; i <= Math.Ceiling((double)(ViewBag.TotalServices ?? 0) / (ViewBag.PageSize ?? 1)); i++)
+                        {
+                            <li class="page-item @(i == ViewBag.CurrentPage ? "active" : "")">
+                                <a class="page-link" asp-action="ServiceDetails" asp-route-page="@i">@i</a>
+                            </li>
+                        }
+
+                        @* Next Button *@
+                        @if (ViewBag.CurrentPage < Math.Ceiling((double)(ViewBag.TotalServices ?? 0) / (ViewBag.PageSize ?? 1)))
+                        {
+                            <li class="page-item">
+                                <a class="page-link" asp-action="ServiceDetails" asp-route-page="@(ViewBag.CurrentPage + 1)">
+                                    &gt;
+                                </a>
+                            </li>
+                        }
+                    </ul>
+                </nav>
+            </div>
+
+        </div>
+    </div>
+</div>
+
+@section Styles {
+    <style>
+        :root {
+            --pri-color: #cb8670;
+        }
+
+        .resort-page-container {
+            padding-top: 40px;
+            padding-bottom: 60px;
+            background-color: #ffffff;
+            min-height: calc(100vh - 160px);
+            display: flex;
+            justify-content: center;
+        }
+
+        .guest-card {
+            width: 100%;
+            max-width: 1200px;
+            background: #fffaf5;
+            color: black;
+            padding: 35px;
+            border-radius: 18px;
+            box-shadow: 0 0 25px rgba(0, 0, 0, 0.08);
+        }
+
+        .scroll-box {
+            max-height: 500px;
+            overflow-y: auto;
+            border-radius: 10px;
+        }
+
+            .scroll-box thead th {
+                position: sticky;
+                top: 0;
+                background-color: #6c757d;
+                color: #ffcc99;
+                z-index: 1;
+            }
+
+        .table tbody tr:hover {
+            background-color: #fff3e6;
+        }
+
+        .pagination .page-item.active .page-link {
+            background-color: #cb8670;
+            border-color: #cb8670;
+            color: #fff;
+        }
+
+        .pagination .page-link {
+            color: #cb8670;
+        }
+
+    </style>
+}

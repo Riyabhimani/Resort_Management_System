@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("Resort_Management_System_API")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+046443f19c09ad265dcda3f9b66d4b9c1e55f297")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+b41122810798f077951647e3cfa639813f15b6b1")]
 [assembly: System.Reflection.AssemblyProductAttribute("Resort_Management_System_API")]
 [assembly: System.Reflection.AssemblyTitleAttribute("Resort_Management_System_API")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

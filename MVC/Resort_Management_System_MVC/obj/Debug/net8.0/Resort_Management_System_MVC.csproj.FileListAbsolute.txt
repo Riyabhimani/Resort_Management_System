@@ -111,3 +111,13 @@ E:\SEMESTER-5\Advanced .Net\Resort_Management_System_GitDesktop\Resort_Managemen
 E:\SEMESTER-5\Advanced .Net\Resort_Management_System_GitDesktop\Resort_Management_System\MVC\Resort_Management_System_MVC\obj\Debug\net8.0\Resort_Management_System_MVC.pdb
 E:\SEMESTER-5\Advanced .Net\Resort_Management_System_GitDesktop\Resort_Management_System\MVC\Resort_Management_System_MVC\obj\Debug\net8.0\Resort_Management_System_MVC.genruntimeconfig.cache
 E:\SEMESTER-5\Advanced .Net\Resort_Management_System_GitDesktop\Resort_Management_System\MVC\Resort_Management_System_MVC\obj\Debug\net8.0\ref\Resort_Management_System_MVC.dll
+E:\SEMESTER-5\Advanced .Net\Resort_Management_System_GitDesktop\Resort_Management_System\MVC\Resort_Management_System_MVC\bin\Debug\net8.0\Microsoft.OpenApi.dll
+E:\SEMESTER-5\Advanced .Net\Resort_Management_System_GitDesktop\Resort_Management_System\MVC\Resort_Management_System_MVC\bin\Debug\net8.0\Swashbuckle.AspNetCore.Swagger.dll
+E:\SEMESTER-5\Advanced .Net\Resort_Management_System_GitDesktop\Resort_Management_System\MVC\Resort_Management_System_MVC\bin\Debug\net8.0\Swashbuckle.AspNetCore.SwaggerGen.dll
+E:\SEMESTER-5\Advanced .Net\Resort_Management_System_GitDesktop\Resort_Management_System\MVC\Resort_Management_System_MVC\bin\Debug\net8.0\Swashbuckle.AspNetCore.SwaggerUI.dll
+E:\SEMESTER-5\Advanced .Net\Resort_Management_System_GitDesktop\Resort_Management_System\MVC\Resort_Management_System_MVC\obj\Debug\net8.0\Resort_Management_System_MVC.MvcApplicationPartsAssemblyInfo.cs
+E:\SEMESTER-5\Advanced .Net\Resort_Management_System_GitDesktop\Resort_Management_System\MVC\Resort_Management_System_MVC\bin\Debug\net8.0\Microsoft.IdentityModel.Abstractions.dll
+E:\SEMESTER-5\Advanced .Net\Resort_Management_System_GitDesktop\Resort_Management_System\MVC\Resort_Management_System_MVC\bin\Debug\net8.0\Microsoft.IdentityModel.JsonWebTokens.dll
+E:\SEMESTER-5\Advanced .Net\Resort_Management_System_GitDesktop\Resort_Management_System\MVC\Resort_Management_System_MVC\bin\Debug\net8.0\Microsoft.IdentityModel.Logging.dll
+E:\SEMESTER-5\Advanced .Net\Resort_Management_System_GitDesktop\Resort_Management_System\MVC\Resort_Management_System_MVC\bin\Debug\net8.0\Microsoft.IdentityModel.Tokens.dll
+E:\SEMESTER-5\Advanced .Net\Resort_Management_System_GitDesktop\Resort_Management_System\MVC\Resort_Management_System_MVC\bin\Debug\net8.0\System.IdentityModel.Tokens.Jwt.dll

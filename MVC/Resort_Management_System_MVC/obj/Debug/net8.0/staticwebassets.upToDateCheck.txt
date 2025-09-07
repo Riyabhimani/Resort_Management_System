@@ -55,6 +55,9 @@ wwwroot\img\bg-img\bg-7.jpg
 wwwroot\img\bg-img\bg-8.jpg
 wwwroot\img\bg-img\bg-9.jpg
 wwwroot\img\bg-img\footer-map.png
+wwwroot\img\bg-img\New.jpg
+wwwroot\img\bg-img\New1.jpg
+wwwroot\img\bg-img\NewPool1.jpg
 wwwroot\img\blog-img\1.jpg
 wwwroot\img\blog-img\2.jpg
 wwwroot\img\blog-img\3.jpg

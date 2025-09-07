@@ -455,3 +455,4 @@ D:\Resort_Management_System\API\Resort_Management_System_API\bin\Debug\net8.0\Mi
 D:\Resort_Management_System\API\Resort_Management_System_API\bin\Debug\net8.0\FluentValidation.AspNetCore.dll
 E:\SEMESTER-5\Advanced .Net\Resort_Management_System_GitDesktop\Resort_Management_System\API\Resort_Management_System_API\bin\Debug\net8.0\FluentValidation.AspNetCore.dll
 E:\SEMESTER-5\Advanced .Net\Resort_Management_System_GitDesktop\Resort_Management_System\API\Resort_Management_System_API\bin\Debug\net8.0\Microsoft.AspNetCore.Authentication.JwtBearer.dll
+E:\SEMESTER-5\Advanced .Net\Resort_Management_System_GitDesktop\Resort_Management_System\API\Resort_Management_System_API\bin\Debug\net8.0\Resort_Management_System_API.staticwebassets.runtime.json

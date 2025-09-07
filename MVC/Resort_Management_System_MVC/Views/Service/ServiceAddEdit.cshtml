@@ -1,4 +1,4 @@
-﻿@model ServiceModel
+﻿@*@model ServiceModel
 
 @{
     ViewData["Title"] = Model.ServiceId == 0 ? "Add Service" : "Edit Service";
@@ -15,7 +15,7 @@
         @Html.ValidationSummary(true, "", new { @class = "text-danger" })
 
         <input type="hidden" asp-for="ServiceId" />
-        <input type="hidden" asp-for="Created" />
+        <input type="hidden" asp-for="Created" />*@
 
         @*<div class="mb-3">
             <label asp-for="GuestId" class="form-label"></label>
@@ -25,7 +25,7 @@
             <span asp-validation-for="GuestId" class="text-danger"></span>
         </div>*@
 
-        <div class="mb-3">
+        @*<div class="mb-3">
             <span style="color:red;">*</span>
             <label asp-for="ServiceName" class="form-label"></label>
             <input asp-for="ServiceName" class="form-control" />
@@ -69,7 +69,64 @@
         <button type="submit" class="btn btn-primary" asp-controller="Service" asp-action="ServiceAddEdit"> <i class="bi bi-check-circle-fill me-2"></i>@((Model.ServiceId == 0) ? "Add" : "Update")</button>
         <a class="btn btn-secondary" asp-controller="Service" asp-action="ServiceList"><i class="bi bi-arrow-left me-2"></i>Back</a>
     </form>
+</div>*@
+
+@model ServiceModel
+
+<div class="service-form-container mt-4">
+    <h2>@(Model.ServiceId == 0 ? "Add Service" : "Edit Service")</h2>
+
+    <form asp-action="ServiceAddEdit" method="post">
+        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+
+        <input type="hidden" asp-for="ServiceId" />
+        <input type="hidden" asp-for="Created" />
+
+        <div class="mb-3">
+            <label asp-for="ServiceName" class="form-label"></label>
+            <input asp-for="ServiceName" class="form-control" />
+            <span asp-validation-for="ServiceName" class="text-danger"></span>
+        </div>
+
+        <div class="mb-3">
+            <label asp-for="Description" class="form-label"></label>
+            <textarea asp-for="Description" class="form-control"></textarea>
+            <span asp-validation-for="Description" class="text-danger"></span>
+        </div>
+
+        <div class="mb-3">
+            <label asp-for="ServiceCost" class="form-label"></label>
+            <input asp-for="ServiceCost" type="number" step="0.01" class="form-control" />
+            <span asp-validation-for="ServiceCost" class="text-danger"></span>
+        </div>
+
+        <div class="mb-3">
+            <label asp-for="ServiceStartTime" class="form-label"></label>
+            <input asp-for="ServiceStartTime" type="time" class="form-control" />
+            <span asp-validation-for="ServiceStartTime" class="text-danger"></span>
+        </div>
+
+        <div class="mb-3">
+            <label asp-for="ServiceEndTime" class="form-label"></label>
+            <input asp-for="ServiceEndTime" type="time" class="form-control" />
+            <span asp-validation-for="ServiceEndTime" class="text-danger"></span>
+        </div>
+
+        <div class="form-check mb-3">
+            <input asp-for="IsActive" class="form-check-input" />
+            <label asp-for="IsActive" class="form-check-label"></label>
+        </div>
+
+        <button type="submit" class="btn btn-primary">
+            <i class="bi bi-check-circle-fill me-2"></i>
+            @(Model.ServiceId == 0 ? "Add" : "Update")
+        </button>
+        <a class="btn btn-secondary" asp-action="ServiceList">
+            <i class="bi bi-arrow-left me-2"></i>Back
+        </a>
+    </form>
 </div>
+
 
 
 @section Scripts {

@@ -1,4 +1,292 @@
-﻿@model RoomModel
+﻿@*@model RoomModel
+
+@{
+    ViewData["Title"] = Model.RoomId == 0 ? "Add Room" : "Edit Room";
+}
+
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="room-form-container mt-4">
+    <h2>@ViewData["Title"]</h2>*@
+
+    @*<form asp-action="RoomAddEdit" method="post" enctype="multipart/form-data">
+        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+
+        <input type="hidden" asp-for="RoomId" />
+        <input type="hidden" asp-for="Created" /> *@
+
+       @* <form asp-action="RoomAddEdit" method="post" enctype="multipart/form-data">
+            @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+            <input type="hidden" asp-for="RoomId" />
+            <input type="hidden" asp-for="Created" value="@DateTime.Now" />
+
+
+        <div class="mb-3">
+            <span style="color:red;">*</span>
+            <label asp-for="RoomNumber" class="form-label"></label>
+            <input asp-for="RoomNumber" class="form-control" />
+            <span asp-validation-for="RoomNumber" class="text-danger"></span>
+        </div>
+
+        <div class="mb-3">
+            <span style="color:red;">*</span>
+            <label asp-for="RoomType" class="form-label"></label>
+            <input asp-for="RoomType" class="form-control" />
+            <span asp-validation-for="RoomType" class="text-danger"></span>
+        </div>
+
+        <div class="mb-3">
+            <span style="color:red;">*</span>
+            <label asp-for="Description" class="form-label"></label>
+            <textarea asp-for="Description" class="form-control"></textarea>
+            <span asp-validation-for="Description" class="text-danger"></span>
+        </div>
+
+        <div class="mb-3">
+            <span style="color:red;">*</span>
+            <label asp-for="PricePerDay" class="form-label"></label>
+            <input asp-for="PricePerDay" class="form-control" />
+            <span asp-validation-for="PricePerDay" class="text-danger"></span>
+        </div>
+
+        <div class="mb-3">
+            <span style="color:red;">*</span>
+            <label asp-for="RoomStatus" class="form-label"></label>
+            <input asp-for="RoomStatus" class="form-control" />
+            <span asp-validation-for="RoomStatus" class="text-danger"></span>
+        </div>
+
+        <div class="mb-3">
+            <label asp-for="RoomImageFile" class="form-label">Upload Room Picture</label>
+            <input type="file" asp-for="RoomImageFile" class="form-control" accept="image/*" />
+        </div>
+
+        @if (!string.IsNullOrEmpty(Model.RoomPicture))
+        {
+            <div class="mb-3">
+                <p>Current Image:</p>
+                <img src="@Url.Content("~/" + Model.RoomPicture)" alt="Room Picture" style="max-width:200px; height:auto;" />
+            </div>
+        }
+
+
+        <div class="mb-3 form-check">
+            <input asp-for="IsActive" class="form-check-input" />
+            <label asp-for="IsActive" class="form-check-label"></label>
+            <span asp-validation-for="IsActive" class="text-danger"></span>
+        </div>
+
+        <button type="submit" class="btn btn-primary" asp-controller="Room" asp-action="RoomAddEdit"> <i class="bi bi-check-circle-fill me-2"></i>@((Model.RoomId == 0) ? "Add" : "Update")</button>
+        <a class="btn btn-secondary" asp-controller="Room" asp-action="RoomList"><i class="bi bi-arrow-left me-2"></i>Back</a>
+    </form>
+</div>*@
+
+@model RoomModel
+
+@{
+    ViewData["Title"] = Model.RoomId == 0 ? "Add Room" : "Edit Room";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="room-form-container mt-4">
+    <h2>@ViewData["Title"]</h2>
+
+    <!-- Show TempData messages -->
+    @if (TempData["ErrorMessage"] != null)
+    {
+        <div class="alert alert-danger">@TempData["ErrorMessage"]</div>
+    }
+    @if (TempData["SuccessMessage"] != null)
+    {
+        <div class="alert alert-success">@TempData["SuccessMessage"]</div>
+    }
+
+    <form asp-action="RoomAddEdit" method="post" enctype="multipart/form-data">
+        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+
+        <input type="hidden" asp-for="RoomId" />
+        <input type="hidden" asp-for="Created" value="@DateTime.Now" />
+
+        <div class="mb-3">
+            <span style="color:red;">*</span>
+            <label asp-for="RoomNumber" class="form-label"></label>
+            <input asp-for="RoomNumber" class="form-control" />
+            <span asp-validation-for="RoomNumber" class="text-danger"></span>
+        </div>
+
+        <div class="mb-3">
+            <span style="color:red;">*</span>
+            <label asp-for="RoomType" class="form-label"></label>
+            <input asp-for="RoomType" class="form-control" />
+            <span asp-validation-for="RoomType" class="text-danger"></span>
+        </div>
+
+        <div class="mb-3">
+            <span style="color:red;">*</span>
+            <label asp-for="Description" class="form-label"></label>
+            <textarea asp-for="Description" class="form-control"></textarea>
+            <span asp-validation-for="Description" class="text-danger"></span>
+        </div>
+
+        <div class="mb-3">
+            <span style="color:red;">*</span>
+            <label asp-for="PricePerDay" class="form-label"></label>
+            <input asp-for="PricePerDay" class="form-control" />
+            <span asp-validation-for="PricePerDay" class="text-danger"></span>
+        </div>
+
+        <div class="form-group">
+            <label asp-for="RoomStatus" class="control-label"></label>
+            <select asp-for="RoomStatus" class="form-control">
+                <option value="">-- Select Status --</option>
+                <option value="Available">Available</option>
+                <option value="Occupied">Occupied</option>
+                <option value="Maintenance">Maintenance</option>
+            </select>
+            <span asp-validation-for="RoomStatus" class="text-danger"></span>
+        </div>
+
+
+        <div class="mb-3">
+            <label asp-for="RoomImageFile" class="form-label">Upload Room Picture</label>
+            <input type="file" asp-for="RoomImageFile" class="form-control" accept="image/*" />
+        </div>
+
+        @if (!string.IsNullOrEmpty(Model.RoomPicture))
+        {
+            <div class="mb-3">
+                <p>Current Image:</p>
+                <img src="@Url.Content("~/" + Model.RoomPicture)" alt="Room Picture" style="max-width:200px; height:auto;" />
+            </div>
+        }
+
+        <div class="mb-3 form-check">
+            <input asp-for="IsActive" class="form-check-input" />
+            <label asp-for="IsActive" class="form-check-label"></label>
+            <span asp-validation-for="IsActive" class="text-danger"></span>
+        </div>
+
+        <button type="submit" class="btn btn-primary">
+            <i class="bi bi-check-circle-fill me-2"></i>@((Model.RoomId == 0) ? "Add" : "Update")
+        </button>
+        <a class="btn btn-secondary" asp-controller="Room" asp-action="RoomList">
+            <i class="bi bi-arrow-left me-2"></i>Back
+        </a>
+    </form>
+</div>
+
+
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+}
+<style>
+    :root {
+        --pri-color: #cb8670;
+        --form-bg: #fffaf5;
+        --border-radius: 16px;
+    }
+
+    .room-form-container {
+        max-width: 800px;
+        margin: 100px auto 60px auto; /* top margin adjusted to 100px */
+        background-color: var(--form-bg);
+        padding: 40px;
+        border-radius: var(--border-radius);
+        box-shadow: 0 0 25px rgba(0, 0, 0, 0.08);
+    }
+
+    h2 {
+        color: #cb8670;
+        margin-bottom: 30px;
+        font-weight: 600;
+    }
+
+    label {
+        font-weight: 500;
+        color: #444;
+    }
+
+    .form-control {
+        border-radius: 10px;
+        padding: 10px 15px;
+        border: 1px solid #ccc;
+        transition: border-color 0.3s ease, box-shadow 0.3s ease;
+    }
+
+        .form-control:focus {
+            border-color: var(--pri-color);
+            box-shadow: 0 0 0 0.2rem rgba(255, 128, 0, 0.25);
+        }
+
+    .text-danger {
+        font-size: 0.875rem;
+    }
+
+    button[type="submit"],
+    .btn-secondary {
+        padding: 12px 28px;
+        border-radius: 12px;
+        font-weight: 600;
+        font-size: 16px;
+        border: none;
+        letter-spacing: 0.5px;
+        position: relative;
+        overflow: hidden;
+        backdrop-filter: blur(10px);
+        transition: all 0.3s ease;
+    }
+
+    button[type="submit"] {
+        background: #cb8670;
+        color: white;
+        box-shadow: 0 6px 20px #cb8670;
+    }
+
+        button[type="submit"]:hover {
+            transform: translateY(-2px);
+            background: #cb8670;
+            box-shadow: 0 8px 20px #cb8670;
+        }
+
+    .btn-secondary {
+        background: rgba(200, 200, 200, 0.4);
+        color: black;
+        box-shadow: 0 6px 18px rgba(0, 0, 0, 0.08);
+    }
+
+        .btn-secondary:hover {
+            background: rgba(180, 180, 180, 0.6);
+            transform: translateY(-2px);
+            color: black;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+        }
+
+        button[type="submit"]::before,
+        .btn-secondary::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: -75%;
+            width: 200%;
+            height: 100%;
+            background: linear-gradient(120deg, rgba(255,255,255,0.2) 0%, rgba(255,255,255,0) 60%);
+            transform: skewX(-25deg);
+            transition: all 0.5s ease;
+        }
+
+        button[type="submit"]:hover::before,
+        .btn-secondary:hover::before {
+            left: 100%;
+        }
+</style>
+
+
+
+
+
+@*@model RoomModel
 
 @{
     ViewData["Title"] = Model.RoomId == 0 ? "Add Room" : "Edit Room";
@@ -165,4 +453,4 @@
         .btn-secondary:hover::before {
             left: 100%;
         }
-</style>
+</style>*@

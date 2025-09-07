@@ -1,0 +1,33 @@
+{
+  "Files": [
+    {
+      "Id": "E:\\SEMESTER-5\\Advanced .Net\\Resort_Management_System_GitDesktop\\Resort_Management_System\\API\\Resort_Management_System_API\\wwwroot\\images\\rooms\\7f31672b-c6b8-46ae-9bce-c912f7e48a54.png",
+      "PackagePath": "staticwebassets\\images\\rooms\\7f31672b-c6b8-46ae-9bce-c912f7e48a54.png"
+    },
+    {
+      "Id": "E:\\SEMESTER-5\\Advanced .Net\\Resort_Management_System_GitDesktop\\Resort_Management_System\\API\\Resort_Management_System_API\\wwwroot\\images\\rooms\\fa5d9e18-bfed-4a29-b026-e0704d66dd19.png",
+      "PackagePath": "staticwebassets\\images\\rooms\\fa5d9e18-bfed-4a29-b026-e0704d66dd19.png"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.Resort_Management_System_API.Microsoft.AspNetCore.StaticWebAssetEndpoints.props",
+      "PackagePath": "build\\Microsoft.AspNetCore.StaticWebAssetEndpoints.props"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.Resort_Management_System_API.Microsoft.AspNetCore.StaticWebAssets.props",
+      "PackagePath": "build\\Microsoft.AspNetCore.StaticWebAssets.props"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.build.Resort_Management_System_API.props",
+      "PackagePath": "build\\Resort_Management_System_API.props"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.buildMultiTargeting.Resort_Management_System_API.props",
+      "PackagePath": "buildMultiTargeting\\Resort_Management_System_API.props"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.buildTransitive.Resort_Management_System_API.props",
+      "PackagePath": "buildTransitive\\Resort_Management_System_API.props"
+    }
+  ],
+  "ElementsToRemove": []
+}
