@@ -36,6 +36,14 @@
 						<i class="bi bi-search me-1"></i> Search Guest
 					</button>
 
+
+					<button type="button" id="bulkDeleteBtn" class="btn btn-danger btn-sm">
+						<i class="bi bi-trash-fill me-1"></i> Delete Selected
+					</button>
+
+
+
+
 					<a asp-action="Top10Guests" asp-controller="Guest" class="btn btn-success btn-sm">
 						<i class="bi bi-list-ol me-1"></i> Top 10 Guests
 					</a>
@@ -59,7 +67,7 @@
 
 		<div class="scroll-box">
 			<table class="table table-bordered align-middle mb-0 bg-white">
-				<thead class="text-center bg-secondary text-warning">
+				@*<thead class="text-center bg-secondary text-warning">
 					<tr>
 						<th>ID</th>
 						<th>Name</th>
@@ -71,8 +79,8 @@
 						<th>Modified</th>
 						<th>Action</th>
 					</tr>
-				</thead>
-				<tbody class="text-center">
+				</thead>*@
+				@*<tbody class="text-center">
 					@if (Model != null && Model.Any())
 					{
 						foreach (var item in Model)
@@ -107,7 +115,65 @@
 					{
 						<tr><td colspan="9" class="text-muted">No Guest Found</td></tr>
 					}
+				</tbody>*@
+
+				<thead class="text-center bg-secondary text-warning">
+					<tr>
+						<th>
+							<input type="checkbox" id="selectAll" />
+						</th>
+						<th>ID</th>
+						<th>Name</th>
+						<th>Email</th>
+						<th>Contact</th>
+						<th>Address</th>
+						<th>ID Proof</th>
+						<th>Created</th>
+						<th>Modified</th>
+						<th>Action</th>
+					</tr>
+				</thead>
+				<tbody class="text-center">
+					@if (Model != null && Model.Any())
+					{
+						foreach (var item in Model)
+						{
+							<tr>
+								<td>
+									<input type="checkbox" name="selectedGuests" value="@item.GuestId" class="selectItem" />
+								</td>
+								<td>@item.GuestId</td>
+								<td>@item.FullName</td>
+								<td>@item.Email</td>
+								<td>@item.ContactNumber</td>
+								<td>@item.Address</td>
+								<td>@item.Idproof</td>
+								<td>@item.Created.ToString("yyyy-MM-dd")</td>
+								<td>@item.Modified?.ToString("yyyy-MM-dd")</td>
+								<td>
+									<div class="d-flex justify-content-center gap-2">
+										<a asp-action="GuestAddEdit" asp-controller="Guest" asp-route-id="@item.GuestId"
+										   class="btn btn-sm btn-outline-success d-flex align-items-center justify-content-center">
+											<i class="bi bi-pencil-square text-success" style="font-size: 18px;"></i>
+										</a>
+										<a asp-action="GuestDelete" asp-controller="Guest" asp-route-id="@item.GuestId"
+										   class="btn btn-sm btn-outline-danger d-flex align-items-center justify-content-center sweet-delete">
+											<i class="bi bi-trash-fill text-danger" style="font-size: 18px;"></i>
+										</a>
+									</div>
+								</td>
+							</tr>
+						}
+					}
+					else
+					{
+						<tr><td colspan="10" class="text-muted">No Guest Found</td></tr>
+					}
 				</tbody>
+
+				</tbody>
+
+
 			</table>
 		</div>
 	</div>
@@ -167,6 +233,64 @@
 			</text>
 		}
 		});
+
+
+
+					document.addEventListener("DOMContentLoaded", function () {
+			// Select All checkbox
+			const selectAll = document.getElementById("selectAll");
+			const checkboxes = document.querySelectorAll(".selectItem");
+
+			selectAll.addEventListener("change", function () {
+				checkboxes.forEach(cb => cb.checked = this.checked);
+			});
+
+			// Bulk delete
+			document.getElementById("bulkDeleteBtn").addEventListener("click", function () {
+				const selected = [...document.querySelectorAll(".selectItem:checked")].map(cb => cb.value);
+
+				if (selected.length === 0) {
+					Swal.fire("No Guests Selected", "Please select at least one guest.", "warning");
+					return;
+				}
+
+				Swal.fire({
+					title: "Are you sure?",
+					text: `Delete ${selected.length} selected guests?`,
+					icon: "warning",
+					showCancelButton: true,
+					confirmButtonColor: "#d33",
+					cancelButtonColor: "#6c757d",
+					confirmButtonText: "Yes, delete them!"
+				}).then((result) => {
+					if (result.isConfirmed) {
+						// ✅ Send selected IDs to controller
+						fetch('/Guest/BulkDelete', {
+							method: 'POST',
+							headers: {
+								'Content-Type': 'application/json'
+							},
+							body: JSON.stringify(selected)
+						})
+						.then(res => res.json())
+						.then(data => {
+							if (data.success) {
+								Swal.fire("Deleted!", data.message, "success").then(() => {
+									location.reload();
+								});
+							} else {
+								Swal.fire("Error", data.message, "error");
+							}
+						});
+					}
+				});
+			});
+		});
+
+
+
+
+
 	</script>
 }
 

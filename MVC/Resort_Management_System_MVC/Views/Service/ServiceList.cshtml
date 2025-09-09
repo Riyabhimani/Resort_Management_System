@@ -94,8 +94,8 @@
 								<td>@item.ServiceStartTime</td>
 								<td>@item.ServiceEndTime</td>
 								<td>@item.IsActive</td>
-								<td>@item.Created.ToString("yyyy-mm-dd")</td>
-								<td>@item.Modified?.ToString("yyyy-mm-dd")</td>
+								<td>@item.Created.ToString("yyyy-MM-dd")</td>
+								<td>@item.Modified?.ToString("yyyy-MM-dd")</td>
 
 								<td>
 									<div class="d-flex justify-content-center gap-2">
@@ -138,7 +138,7 @@
 
 					Swal.fire({
 						title: "Are you sure?",
-						text: "This guest will be deleted permanently.",
+						text: "This service will be deleted permanently.",
 						icon: "warning",
 						showCancelButton: true,
 						confirmButtonColor: "#d33",

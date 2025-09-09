@@ -4,6 +4,7 @@ using Resort_Management_System_API.Models;
 using Newtonsoft.Json;
 using Microsoft.EntityFrameworkCore;
 using FluentValidation;
+using static Microsoft.EntityFrameworkCore.DbLoggerCategory;
 
 namespace Resort_Management_System_API.Controllers
 {
@@ -219,15 +220,38 @@ namespace Resort_Management_System_API.Controllers
         [HttpGet("Top10")]
         public async Task<ActionResult<IEnumerable<Payment>>> GetTop10Payments()
         {
-            return await context.Payments.Take(10).ToListAsync();
+            var topPayments = await context.Payments
+                .Include(p => p.Guest)
+                .Include(p => p.Reservation)
+                .Take(10)
+                .Select(p => new
+                {
+                    p.PaymentId,
+                    FullName = p.Guest.FullName,
+                    ReservationId = p.Reservation.ReservationId,
+                    ReservationStatus = p.Reservation.ReservationStatus,
+                    p.PaymentDate,
+                    p.AmountPaid,
+                    p.PaymentMethod,
+                    p.PaymentStatus,
+                    p.Created,
+                    p.Modified,
+                })
+                .ToListAsync();
+
+            return Ok(topPayments);
         }
+       
         #endregion
 
         #region SearchPayment
         [HttpGet("filter")]
         public async Task<ActionResult<IEnumerable<Payment>>> SearchPayment([FromQuery] int? paymentId, string? fullName, string? reservationStatus)
         {
-            var query = context.Payments.AsQueryable();
+            var query = context.Payments.
+                Include(p=>p.Guest)
+                .Include(p=>p.Reservation)
+                .AsQueryable();
 
             if (paymentId.HasValue)
                 query = query.Where(p => p.PaymentId == paymentId);
@@ -238,7 +262,23 @@ namespace Resort_Management_System_API.Controllers
             if (!string.IsNullOrEmpty(reservationStatus))
                 query = query.Where(p => p.Reservation.ReservationStatus.Contains(reservationStatus));
 
-            return await query.ToListAsync();
+            var result = await query
+                .Select(p => new
+                {
+                    p.PaymentId,
+                    FullName = p.Guest.FullName,
+                    ReservationId = p.Reservation.ReservationId,
+                    ReservationStatus = p.Reservation.ReservationStatus,
+                    p.PaymentDate,
+                    p.AmountPaid,
+                    p.PaymentMethod,
+                    p.PaymentStatus,
+                    p.Created,
+                    p.Modified,
+                })
+                .ToListAsync();
+
+            return Ok(result);
         }
         #endregion
 

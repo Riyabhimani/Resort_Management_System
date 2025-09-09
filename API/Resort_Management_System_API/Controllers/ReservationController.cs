@@ -221,7 +221,26 @@ namespace Resort_Management_System_API.Controllers
         [HttpGet("Top10")]
         public async Task<ActionResult<IEnumerable<Reservation>>> GetTop10Reservations()
         {
-            return await context.Reservations.Take(10).ToListAsync();
+            var topReservations = await context.Reservations
+                .Include(r => r.Guest)
+                .Include(r => r.Room)
+                .Take(10)
+                .Select(r => new
+                {
+                    r.ReservationId,
+                    FullName = r.Guest.FullName,
+                    RoomNumber = r.Room.RoomNumber,
+                    r.CheckInDate,
+                    r.CheckOutDate,
+                    r.BookingDate,
+                    r.TotalAmount,
+                    r.ReservationStatus,
+                    r.Created,
+                    r.Modified,
+                })
+                .ToListAsync();
+
+            return Ok(topReservations);
         }
         #endregion
 
@@ -229,7 +248,10 @@ namespace Resort_Management_System_API.Controllers
         [HttpGet("filter")]
         public async Task<ActionResult<IEnumerable<Reservation>>> SearchReservation([FromQuery] string? reservationStatus, string? fullName , string? roomType)
         {
-            var query = context.Reservations.AsQueryable();
+            var query = context.Reservations
+                .Include(r => r.Guest)
+                .Include(r => r.Room)
+                .AsQueryable();
 
             if (!string.IsNullOrEmpty(reservationStatus))
                 query = query.Where(u => u.ReservationStatus.Contains(reservationStatus));
@@ -240,7 +262,23 @@ namespace Resort_Management_System_API.Controllers
             if (!string.IsNullOrEmpty(roomType))
                 query = query.Where(r => r.Room.RoomType.Contains(roomType));
 
-            return await query.ToListAsync();
+            var result = await query
+                .Select(r => new
+                {
+                    r.ReservationId,
+                    FullName = r.Guest.FullName,
+                    RoomNumber = r.Room.RoomNumber,
+                    r.CheckInDate,
+                    r.CheckOutDate,
+                    r.BookingDate,
+                    r.TotalAmount,
+                    r.ReservationStatus,
+                    r.Created,
+                    r.Modified,
+                })
+                .ToListAsync();
+
+            return Ok(result);
         }
         #endregion
 

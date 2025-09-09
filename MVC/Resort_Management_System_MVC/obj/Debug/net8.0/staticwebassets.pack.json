@@ -257,6 +257,10 @@
       "PackagePath": "staticwebassets\\img\\blog-img\\3.jpg"
     },
     {
+      "Id": "E:\\SEMESTER-5\\Advanced .Net\\Resort_Management_System_GitDesktop\\Resort_Management_System\\MVC\\Resort_Management_System_MVC\\wwwroot\\img\\core-img\\Logo.jpg",
+      "PackagePath": "staticwebassets\\img\\core-img\\Logo.jpg"
+    },
+    {
       "Id": "E:\\SEMESTER-5\\Advanced .Net\\Resort_Management_System_GitDesktop\\Resort_Management_System\\MVC\\Resort_Management_System_MVC\\wwwroot\\img\\core-img\\favicon.ico",
       "PackagePath": "staticwebassets\\img\\core-img\\favicon.ico"
     },

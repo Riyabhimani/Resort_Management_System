@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "m2KPt4Et3i5do2dnwBFXQ9AYRCKjPPWn84D1k+crkMs=",
+  "Hash": "C4bblLNfookKplsfaG+iXS86Flg3ilo4VD2OxsTQjgA=",
   "Source": "Resort_Management_System_MVC",
   "BasePath": "_content/Resort_Management_System_MVC",
   "Mode": "Default",
@@ -1401,6 +1401,27 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\img\\core-img\\favicon.ico"
+    },
+    {
+      "Identity": "E:\\SEMESTER-5\\Advanced .Net\\Resort_Management_System_GitDesktop\\Resort_Management_System\\MVC\\Resort_Management_System_MVC\\wwwroot\\img\\core-img\\Logo.jpg",
+      "SourceId": "Resort_Management_System_MVC",
+      "SourceType": "Discovered",
+      "ContentRoot": "E:\\SEMESTER-5\\Advanced .Net\\Resort_Management_System_GitDesktop\\Resort_Management_System\\MVC\\Resort_Management_System_MVC\\wwwroot\\",
+      "BasePath": "_content/Resort_Management_System_MVC",
+      "RelativePath": "img/core-img/Logo#[.{fingerprint}]?.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "f4m7dbebv6",
+      "Integrity": "v0TONTANH4pfNU+7FvGLRl3zWfQNvSODq/dWeq6s21E=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\img\\core-img\\Logo.jpg"
     },
     {
       "Identity": "E:\\SEMESTER-5\\Advanced .Net\\Resort_Management_System_GitDesktop\\Resort_Management_System\\MVC\\Resort_Management_System_MVC\\wwwroot\\img\\core-img\\logo.png",
@@ -6880,6 +6901,88 @@
         {
           "Name": "integrity",
           "Value": "sha256-zAX/yOx68EEQSv9B30Av+SmTMVhAUAzyZcg9/hFdwPk="
+        }
+      ]
+    },
+    {
+      "Route": "img/core-img/Logo.f4m7dbebv6.jpg",
+      "AssetFile": "E:\\SEMESTER-5\\Advanced .Net\\Resort_Management_System_GitDesktop\\Resort_Management_System\\MVC\\Resort_Management_System_MVC\\wwwroot\\img\\core-img\\Logo.jpg",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "174386"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/jpeg"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"v0TONTANH4pfNU+7FvGLRl3zWfQNvSODq/dWeq6s21E=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Sun, 07 Sep 2025 09:21:12 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "f4m7dbebv6"
+        },
+        {
+          "Name": "label",
+          "Value": "img/core-img/Logo.jpg"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-v0TONTANH4pfNU+7FvGLRl3zWfQNvSODq/dWeq6s21E="
+        }
+      ]
+    },
+    {
+      "Route": "img/core-img/Logo.jpg",
+      "AssetFile": "E:\\SEMESTER-5\\Advanced .Net\\Resort_Management_System_GitDesktop\\Resort_Management_System\\MVC\\Resort_Management_System_MVC\\wwwroot\\img\\core-img\\Logo.jpg",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "174386"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/jpeg"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"v0TONTANH4pfNU+7FvGLRl3zWfQNvSODq/dWeq6s21E=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Sun, 07 Sep 2025 09:21:12 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=3600, must-revalidate"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-v0TONTANH4pfNU+7FvGLRl3zWfQNvSODq/dWeq6s21E="
         }
       ]
     },

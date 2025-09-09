@@ -80,12 +80,12 @@
 								<td>@item.PaymentId</td>
 								<td>@item.FullName</td>
 								<td>@item.ReservationId</td>
-								<td>@item.PaymentDate.ToString("yyyy-mm-dd")</td>
+								<td>@item.PaymentDate.ToString("yyyy-MM-dd")</td>
 								<td>@item.AmountPaid</td>
 								<td>@item.PaymentMethod</td>
 								<td>@item.PaymentStatus</td>
-								<td>@item.Created.ToString("yyyy-mm-dd")</td>
-								<td>@item.Modified?.ToString("yyyy-mm-dd")</td>
+								<td>@item.Created.ToString("yyyy-MM-dd")</td>
+								<td>@item.Modified?.ToString("yyyy-MM-dd")</td>
 								<td>
 									<div class="d-flex justify-content-center gap-2">
 										<a asp-action="PaymentAddEdit" asp-controller="Payment" asp-route-id="@item.PaymentId"

@@ -62,6 +62,7 @@ wwwroot\img\blog-img\1.jpg
 wwwroot\img\blog-img\2.jpg
 wwwroot\img\blog-img\3.jpg
 wwwroot\img\core-img\favicon.ico
+wwwroot\img\core-img\Logo.jpg
 wwwroot\img\core-img\logo.png
 wwwroot\img\core-img\pattern.png
 wwwroot\img\core-img\trip.png

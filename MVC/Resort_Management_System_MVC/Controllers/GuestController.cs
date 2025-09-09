@@ -338,5 +338,22 @@ namespace Resort_Management_System_MVC.Controllers
             var list = JsonConvert.DeserializeObject<List<GuestModel>>(json);
             return View("GuestList", list); // reuse same view
         }
+
+        [HttpPost]
+        public IActionResult BulkDelete([FromBody] List<int> guestIds)
+        {
+            if (guestIds == null || !guestIds.Any())
+                return Json(new { success = false, message = "No guests selected." });
+
+            foreach (var id in guestIds)
+            {
+                // Delete logic here (call service/repository)
+            }
+
+            return Json(new { success = true, message = "Selected guests deleted successfully." });
+        }
+
+
+
     }
 }

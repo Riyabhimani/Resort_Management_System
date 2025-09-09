@@ -81,9 +81,9 @@
 								<td>@item.ServiceName</td>
 								<td>@item.FullName</td>
 								<td>@item.Quantity</td>
-								<td>@item.Created.ToString("yyyy-mm-dd")</td>
-								<td>@item.Created.ToString("yyyy-mm-dd")</td>
-								<td>@item.Modified?.ToString("yyyy-mm-dd")</td>
+								<td>@item.Created.ToString("yyyy-MM-dd")</td>
+								<td>@item.Created.ToString("yyyy-MM-dd")</td>
+								<td>@item.Modified?.ToString("yyyy-MM-dd")</td>
 								<td>
 									<div class="d-flex justify-content-center gap-2">
 										<a asp-action="GuestServiceAddEdit" asp-controller="GuestService" asp-route-id="@item.GuestServiceId"
