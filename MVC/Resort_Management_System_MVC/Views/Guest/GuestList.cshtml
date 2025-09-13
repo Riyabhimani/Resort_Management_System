@@ -236,56 +236,63 @@
 
 
 
-					document.addEventListener("DOMContentLoaded", function () {
-			// Select All checkbox
-			const selectAll = document.getElementById("selectAll");
-			const checkboxes = document.querySelectorAll(".selectItem");
+		// AJAX
 
-			selectAll.addEventListener("change", function () {
-				checkboxes.forEach(cb => cb.checked = this.checked);
-			});
+		// 		$.ajax({
+		// 	url: '/api/Guest/BulkDelete',
+		// 	type: 'POST',
+		// 	contentType: 'application/json',
+		// 	data: JSON.stringify([1, 2, 3]), List of guestIds
+		// 	success: function (response) {
+		// 		alert(response.message);
+		// 	},
+		// 	error: function (xhr) {
+		// 		alert("Error deleting guests");
+		// 	}
+		// });
 
-			// Bulk delete
-			document.getElementById("bulkDeleteBtn").addEventListener("click", function () {
-				const selected = [...document.querySelectorAll(".selectItem:checked")].map(cb => cb.value);
 
-				if (selected.length === 0) {
-					Swal.fire("No Guests Selected", "Please select at least one guest.", "warning");
-					return;
+
+
+				document.getElementById("bulkDeleteBtn").addEventListener("click", function () {
+			const selected = [...document.querySelectorAll(".selectItem:checked")].map(cb => parseInt(cb.value));
+
+			if (selected.length === 0) {
+				Swal.fire("No Guests Selected", "Please select at least one guest.", "warning");
+				return;
+			}	
+
+			Swal.fire({
+				title: "Are you sure?",
+				text: `Delete ${selected.length} selected guests?`,
+				icon: "warning",
+				showCancelButton: true,
+				confirmButtonColor: "#d33",
+				cancelButtonColor: "#6c757d",
+				confirmButtonText: "Yes, delete them!"
+			}).then((result) => {
+				if (result.isConfirmed) {
+					fetch('/Guest/BulkDeleteGuests', {   // ✅ MVC route
+						method: 'POST',
+						headers: {
+							'Content-Type': 'application/json'
+						},
+						body: JSON.stringify(selected)
+					})
+					.then(res => res.json())
+					.then(data => {
+						if (data.success) {
+							Swal.fire("Deleted!", data.message, "success").then(() => {
+								location.reload();
+							});
+						} else {
+							Swal.fire("Error", data.message, "error");
+						}
+					});
 				}
-
-				Swal.fire({
-					title: "Are you sure?",
-					text: `Delete ${selected.length} selected guests?`,
-					icon: "warning",
-					showCancelButton: true,
-					confirmButtonColor: "#d33",
-					cancelButtonColor: "#6c757d",
-					confirmButtonText: "Yes, delete them!"
-				}).then((result) => {
-					if (result.isConfirmed) {
-						// ✅ Send selected IDs to controller
-						fetch('/Guest/BulkDelete', {
-							method: 'POST',
-							headers: {
-								'Content-Type': 'application/json'
-							},
-							body: JSON.stringify(selected)
-						})
-						.then(res => res.json())
-						.then(data => {
-							if (data.success) {
-								Swal.fire("Deleted!", data.message, "success").then(() => {
-									location.reload();
-								});
-							} else {
-								Swal.fire("Error", data.message, "error");
-							}
-						});
-					}
-				});
 			});
 		});
+
 
 
 

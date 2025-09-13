@@ -340,18 +340,20 @@ namespace Resort_Management_System_MVC.Controllers
         }
 
         [HttpPost]
-        public IActionResult BulkDelete([FromBody] List<int> guestIds)
+        public async Task<IActionResult> BulkDeleteGuests([FromBody] List<int> guestIds)
         {
             if (guestIds == null || !guestIds.Any())
                 return Json(new { success = false, message = "No guests selected." });
 
-            foreach (var id in guestIds)
-            {
-                // Delete logic here (call service/repository)
-            }
+            var content = new StringContent(JsonConvert.SerializeObject(guestIds), Encoding.UTF8, "application/json");
+            var response = await client.PostAsync("Guest/BulkDelete", content);
+
+            if (!response.IsSuccessStatusCode)
+                return Json(new { success = false, message = "Failed to delete guests." });
 
             return Json(new { success = true, message = "Selected guests deleted successfully." });
         }
+
 
 
 

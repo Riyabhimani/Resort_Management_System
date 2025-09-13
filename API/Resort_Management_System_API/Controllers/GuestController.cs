@@ -260,6 +260,24 @@ namespace Resort_Management_System_API.Controllers
             return Ok(guests);
         }
 
+        [HttpPost("BulkDelete")]
+        public IActionResult BulkDelete([FromBody] List<int> guestIds)
+        {
+            if (guestIds == null || !guestIds.Any())
+                return BadRequest(new { success = false, message = "No guests selected." });
+
+            var guestsToDelete = context.Guests.Where(g => guestIds.Contains(g.GuestId)).ToList();
+
+            if (!guestsToDelete.Any())
+                return NotFound(new { success = false, message = "Guests not found." });
+
+            context.Guests.RemoveRange(guestsToDelete);
+            context.SaveChanges();
+
+            return Ok(new { success = true, message = "Selected guests deleted successfully." });
+        }
+
+
     }
 }
 
