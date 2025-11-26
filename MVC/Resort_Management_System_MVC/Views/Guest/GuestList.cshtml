@@ -153,12 +153,16 @@
 								<td>
 									<div class="d-flex justify-content-center gap-2">
 										<a asp-action="GuestAddEdit" asp-controller="Guest" asp-route-id="@item.GuestId"
-										   class="btn btn-sm btn-outline-success d-flex align-items-center justify-content-center">
-											<i class="bi bi-pencil-square text-success" style="font-size: 18px;"></i>
+										   style="border:1px solid #198754; color:#198754; background:transparent; font-weight:500; padding:4px 10px; border-radius:4px; font-size:0.875rem; line-height:1.5; display:inline-flex; align-items:center; gap:6px; cursor:pointer; text-decoration:none;"
+										   onmouseover="this.style.backgroundColor='#198754'; this.style.color='#fff';"
+										   onmouseout="this.style.backgroundColor='transparent'; this.style.color='#198754';">
+											<i class="bi bi-pencil-square" style="font-size:16px;"></i>
 										</a>
 										<a asp-action="GuestDelete" asp-controller="Guest" asp-route-id="@item.GuestId"
-										   class="btn btn-sm btn-outline-danger d-flex align-items-center justify-content-center sweet-delete">
-											<i class="bi bi-trash-fill text-danger" style="font-size: 18px;"></i>
+										   style="border:1px solid #dc3545; color:#dc3545; background:transparent; font-weight:500; padding:4px 10px; border-radius:4px; font-size:0.875rem; line-height:1.5; display:inline-flex; align-items:center; gap:6px; cursor:pointer; text-decoration:none;"
+										   onmouseover="this.style.backgroundColor='#dc3545'; this.style.color='#fff';"
+										   onmouseout="this.style.backgroundColor='transparent'; this.style.color='#dc3545';">
+											<i class="bi bi-trash-fill" style="font-size:16px;"></i>
 										</a>
 									</div>
 								</td>
@@ -253,8 +257,8 @@
 
 
 
-
-				document.getElementById("bulkDeleteBtn").addEventListener("click", function () {
+			
+			document.getElementById("bulkDeleteBtn").addEventListener("click", function () {
 			const selected = [...document.querySelectorAll(".selectItem:checked")].map(cb => parseInt(cb.value));
 
 			if (selected.length === 0) {

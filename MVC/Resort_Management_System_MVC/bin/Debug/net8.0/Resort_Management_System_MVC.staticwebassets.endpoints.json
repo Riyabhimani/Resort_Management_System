@@ -3492,6 +3492,43 @@
       ]
     },
     {
+      "Route": "img/bg-img/4.jpg",
+      "AssetFile": "img/bg-img/4.jpg",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=3600, must-revalidate"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "384135"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/jpeg"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"mn7fEczuMF07CW6KtXdI0LMKc8e3batwHM3QR961lwM=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Sun, 07 Sep 2025 08:31:46 GMT"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-mn7fEczuMF07CW6KtXdI0LMKc8e3batwHM3QR961lwM="
+        }
+      ]
+    },
+    {
       "Route": "img/bg-img/4.png",
       "AssetFile": "img/bg-img/4.png",
       "Selectors": [],
@@ -3525,6 +3562,51 @@
         {
           "Name": "integrity",
           "Value": "sha256-IMgo0bPZMJVXZNWMKUnCnG4wNoaH7XyjiDYI6OgdctA="
+        }
+      ]
+    },
+    {
+      "Route": "img/bg-img/4.y2zs62lijn.jpg",
+      "AssetFile": "img/bg-img/4.jpg",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "384135"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/jpeg"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"mn7fEczuMF07CW6KtXdI0LMKc8e3batwHM3QR961lwM=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Sun, 07 Sep 2025 08:31:46 GMT"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "y2zs62lijn"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-mn7fEczuMF07CW6KtXdI0LMKc8e3batwHM3QR961lwM="
+        },
+        {
+          "Name": "label",
+          "Value": "img/bg-img/4.jpg"
         }
       ]
     },

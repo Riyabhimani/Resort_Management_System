@@ -1,309 +1,398 @@
 ﻿@model List<StaffModel>
 @{
-	ViewData["Title"] = "Staff List";
-}
-
-@{
-	Layout = "~/Views/Shared/_Layout.cshtml";
+    ViewData["Title"] = "Staff List";
+    Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
 <div class="resort-page-container">
-	<div class="guest-card shadow">
-		<div class="d-flex justify-content-between align-items-center mb-4">
-			<h3 class="m-0" style="color:#cb8670"><b>Staff List</b></h3>
-			<div class="d-flex justify-content-between align-items-center mb-4">
+    <div class="guest-card shadow">
+        <div class="d-flex justify-content-between align-items-center mb-4">
+            <h3 class="m-0" style="color:#a55e4b"><b>Staff List</b></h3>
 
-				<a asp-action="StaffAddEdit" asp-controller="Staff" class="btn btn-sm">
-					<button type="button"
-							style="border:1px solid #cb8670; color:#cb8670; background:transparent; font-weight:500; padding:4px 10px; border-radius:4px; font-size:0.875rem; line-height:1.5; display:inline-flex; align-items:center; gap:6px; cursor:pointer;"
-							onmouseover="this.style.backgroundColor='#cb8670'; this.style.color='#fff';"
-							onmouseout="this.style.backgroundColor='transparent'; this.style.color='#cb8670';">
-						<i class="bi bi-person-plus-fill" style="font-size:16px;"></i>
-						<span>Add Staff</span>
-					</button>
-				</a>
+            <!-- Add Staff Button -->
+            <a asp-action="StaffAddEdit" asp-controller="Staff"
+               style="border:1px solid #a55e4b; color:#a55e4b; background:transparent; font-weight:500; padding:4px 10px; border-radius:4px; font-size:0.875rem; line-height:1.5; display:inline-flex; align-items:center; gap:6px; cursor:pointer; text-decoration:none;"
+               onmouseover="this.style.backgroundColor='#a55e4b'; this.style.color='#fff';"
+               onmouseout="this.style.backgroundColor='transparent'; this.style.color='#a55e4b';">
+                <i class="bi bi-person-plus-fill" style="font-size:16px;"></i>
+                <span>Add Staff</span>
+            </a>
+        </div>
 
-				<!-- ✅ Search / Filters -->
-				<form onsubmit="event.preventDefault(); searchStaff();" class="d-flex align-items-center gap-2">
-					<input type="number" id="staffId" placeholder="Staff Id" class="form-control form-control-sm" />
-					<input type="text" id="searchFullName" placeholder="Full Name" class="form-control form-control-sm" />
-					<input type="text" id="searchRole" placeholder="Role" class="form-control form-control-sm" />
-					<button class="btn btn-primary btn-sm" onclick="searchStaff()"><i class="bi bi-search me-1"></i>Search Staff</button>
-					<button class="btn btn-success btn-sm" onclick="loadTop10()"><i class="bi bi-list-ol me-1"></i> Top 10 Staff</button>
+        <!-- 🔍 Search & Filter Section -->
+        <div class="filter-section mb-4">
+            <form asp-action="SearchStaff" method="get" class="row g-2 align-items-center">
+                <div class="col-md-2">
+                    <input type="number" name="staffId" class="form-control form-control-sm" placeholder="Staff ID" />
+                </div>
+                <div class="col-md-3">
+                    <input type="text" name="fullName" class="form-control form-control-sm" placeholder="Full Name" />
+                </div>
+                <div class="col-md-3">
+                    <input type="text" name="role" class="form-control form-control-sm" placeholder="Role" />
+                </div>
+                <div class="col-md-4 d-flex justify-content-end gap-2">
+                    <button type="submit" class="btn btn-primary btn-sm">
+                        <i class="bi bi-search me-1"></i>Search
+                    </button>
+                    <a asp-action="Top10Staff" asp-controller="Staff" class="btn btn-success btn-sm">
+                        <i class="bi bi-list-ol me-1"></i>Top 10
+                    </a>
+                    <a asp-action="StaffList" asp-controller="Staff" class="btn btn-secondary btn-sm">
+                        <i class="bi bi-arrow-clockwise me-1"></i>Full List
+                    </a>
+                </div>
+            </form>
+        </div>
 
-					@* <button type="submit" class="btn btn-primary btn-sm"> *@
-					@* 	<i class="bi bi-search me-1"></i> Search Staff *@
-					@* </button> *@
+        <!-- ✅ Alerts -->
+        @if (TempData["SuccessMessage"] != null)
+        {
+            <div class="alert alert-success">@TempData["SuccessMessage"]</div>
+        }
+        @if (TempData["ErrorMessage"] != null)
+        {
+            <div class="alert alert-danger">@TempData["ErrorMessage"]</div>
+        }
 
-					@* <a asp-action="Top10Staffs" asp-controller="Staff" class="btn btn-success btn-sm"> *@
-					@* 	<i class="bi bi-list-ol me-1"></i> Top 10 Staff *@
-					@* </a> *@
+        <!-- 🌿 Table -->
+        <div class="scroll-box">
+            <table class="table table-bordered align-middle mb-0 bg-white">
+                <thead class="text-center bg-secondary text-warning">
+                    <tr>
+                        <th>Staff ID</th>
+                        <th>Full Name</th>
+                        <th>Role</th>
+                        <th>Email</th>
+                        <th>Contact</th>
+                        <th>Joining Date</th>
+                        <th>Salary</th>
+                        <th>Active</th>
+                        <th>Created</th>
+                        <th>Modified</th>
+                        <th>Action</th>
+                    </tr>
+                </thead>
+                <tbody class="text-center">
+                    @if (Model != null && Model.Any())
+                    {
+                        foreach (var item in Model)
+                        {
+                            <tr>
+                                <td>@item.StaffId</td>
+                                <td>@item.FullName</td>
+                                <td>@item.Role</td>
+                                <td>@item.Email</td>
+                                <td>@item.ContactNumber</td>
+                                <td>@item.JoiningDate.ToString("yyyy-MM-dd")</td>
+                                <td>@item.Salary</td>
+                                <td>
+                                    <span class="badge @(item.IsActive ? "bg-success" : "bg-danger")">
+                                        @(item.IsActive ? "Yes" : "No")
+                                    </span>
+                                </td>
+                                <td>@item.Created.ToString("yyyy-MM-dd")</td>
+                                <td>@item.Modified?.ToString("yyyy-MM-dd")</td>
+                                <td>
+                                    <div class="d-flex justify-content-center gap-2">
+                                        <a asp-action="StaffAddEdit" asp-controller="Staff" asp-route-id="@item.StaffId"
+                                           style="border:1px solid #198754; color:#198754; background:transparent; font-weight:500; padding:4px 10px; border-radius:4px; font-size:0.875rem; line-height:1.5; display:inline-flex; align-items:center; gap:6px; cursor:pointer; text-decoration:none;"
+                                           onmouseover="this.style.backgroundColor='#198754'; this.style.color='#fff';"
+                                           onmouseout="this.style.backgroundColor='transparent'; this.style.color='#198754';">
+                                            <i class="bi bi-pencil-square" style="font-size:16px;"></i>
+                                        </a>
 
-					<a asp-action="StaffList" asp-controller="Staff" class="btn btn-secondary btn-sm">
-						<i class="bi bi-arrow-clockwise me-1"></i>Back to Full List
-					</a>
-				</form>
-			</div>
-		</div>
-
-		@if (TempData["SuccessMessage"] != null)
-		{
-			<div class="alert alert-success">@TempData["SuccessMessage"]</div>
-		}
-		@if (TempData["ErrorMessage"] != null)
-		{
-			<div class="alert alert-danger">@TempData["ErrorMessage"]</div>
-		}
-
-		<div class="scroll-box">
-			<table class="table table-bordered align-middle mb-0 bg-white">
-				<thead class="text-center bg-secondary text-warning">
-					<tr>
-						<th>StaffId</th>
-						<th>FullName</th>
-						<th>Role</th>
-						<th>Email</th>
-						<th>ContactNumber</th>
-						<th>JoiningDate</th>
-						<th>Salary</th>
-						<th>IsActive</th>
-						<th>Created</th>
-						<th>Modified</th>
-						<th>Action</th>
-					</tr>
-
-				</thead>
-				<tbody class="text-center">
-					@if (Model != null && Model.Any())
-					{
-						foreach (var item in Model)
-						{
-							<tr>
-								<td>@item.StaffId</td>
-								<td>@item.FullName</td>
-								<td>@item.Role</td>
-								<td>@item.Email</td>
-								<td>@item.ContactNumber</td>
-								<td>@item.JoiningDate.ToString("yyyy-MM-dd")</td>
-								<td>@item.Salary</td>
-								<td>@item.IsActive</td>
-								<td>@item.Created.ToString("yyyy-MM-dd")</td>
-								<td>@item.Modified?.ToString("yyyy-MM-dd")</td>
-								<td>
-									<div class="d-flex justify-content-center gap-2">
-										<a asp-action="StaffAddEdit" asp-controller="Staff" asp-route-id="@item.StaffId"
-										   class="btn btn-sm btn-outline-success d-flex align-items-center justify-content-center">
-											<i class="bi bi-pencil-square text-success" style="font-size: 18px;"></i>
-										</a>
-										<a asp-action="StaffDelete"
-										   asp-controller="Staff"
-										   asp-route-id="@item.StaffId"
-										   class="btn btn-sm btn-outline-danger d-flex align-items-center justify-content-center sweet-delete">
-											<i class="bi bi-trash-fill text-danger" style="font-size: 18px;"></i>
-										</a>
-									</div>
-								</td>
-							</tr>
-						}
-					}
-					else
-					{
-						<tr><td colspan="9" class="text-muted">No Staff Found</td></tr>
-					}
-				</tbody>
-			</table>
-		</div>
-	</div>
+                                        <a asp-action="StaffDelete" asp-controller="Staff" asp-route-id="@item.StaffId"
+                                           style="border:1px solid #dc3545; color:#dc3545; background:transparent; font-weight:500; padding:4px 10px; border-radius:4px; font-size:0.875rem; line-height:1.5; display:inline-flex; align-items:center; gap:6px; cursor:pointer; text-decoration:none;"
+                                           onmouseover="this.style.backgroundColor='#dc3545'; this.style.color='#fff';"
+                                           onmouseout="this.style.backgroundColor='transparent'; this.style.color='#dc3545';">
+                                            <i class="bi bi-trash-fill" style="font-size:16px;"></i>
+                                        </a>
+                                    </div>
+                                </td>
+                            </tr>
+                        }
+                    }
+                    else
+                    {
+                        <tr><td colspan="11" class="text-muted">No Staff Found</td></tr>
+                    }
+                </tbody>
+            </table>
+        </div>
+    </div>
 </div>
 
 @section Scripts {
-	<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
-	<script>
-		document.addEventListener("DOMContentLoaded", function () {
-			// Handle delete confirmation
-			const deleteLinks = document.querySelectorAll(".sweet-delete");
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const deleteLinks = document.querySelectorAll(".sweet-delete");
+            deleteLinks.forEach(link => {
+                link.addEventListener("click", function (e) {
+                    e.preventDefault();
+                    const url = this.getAttribute("href");
 
-			deleteLinks.forEach(link => {
-				link.addEventListener("click", function (e) {
-					e.preventDefault(); // prevent default redirect
-					const url = this.getAttribute("href");
-
-					Swal.fire({
-						title: "Are you sure?",
-						text: "This guest will be deleted permanently.",
-						icon: "warning",
-						showCancelButton: true,
-						confirmButtonColor: "#d33",
-						cancelButtonColor: "#6c757d",
-						confirmButtonText: "Yes, delete it!"
-					}).then((result) => {
-						if (result.isConfirmed) {
-							window.location.href = url;
-						}
-					});
-				});
-			});
-
-			// ✅ Show success alert if TempData is present
-		@if (TempData["SuccessMessage"] != null)
-		{
-			<text>
-							Swal.fire({
-								icon: 'success',
-								title: 'Deleted!',
-								text: '@TempData["SuccessMessage"]',
-								confirmButtonColor: '#28a745'
-							});
-			</text>
-		}
-
-			// ✅ Show success alert for Add / Edit / Delete
-		@if (TempData["SuccessMessage"] != null)
-		{
-			<text>
-							Swal.fire({
-								icon: 'success',
-								title: '🎉Success!',
-								text: '@TempData["SuccessMessage"]',
-									confirmButtonColor: '#28a745'
-							});
-			</text>
-		}
-		});
-		
-
-
-
-		// Load Top 10 Staff
-		function loadTop10() {
-			$.ajax({
-				url: "/api/Staff/Top10",
-				type: "GET",
-				success: function (data) {
-					renderStaffTable(data);
-				},
-				error: function () {
-					alert("Failed to fetch Top 10 staff.");
-				}
-			});
-		}
-
-		// Search Staff
-		function searchStaff() {
-			var fullName = $("#searchFullName").val();
-			var role = $("#searchRole").val();
-
-			$.ajax({
-				url: "/api/Staff/filter",
-				type: "GET",
-				data: { fullName: fullName, role: role },
-				success: function (data) {
-					renderStaffTable(data);
-				},
-				error: function () {
-					alert("Staff search failed.");
-				}
-			});
-		}
-
-		// Render table rows dynamically
-		function renderStaffTable(data) {
-			var tbody = $("#staffTable tbody");
-			tbody.empty();
-
-			if (data.length === 0) {
-				tbody.append("<tr><td colspan='3'>No records found</td></tr>");
-			} else {
-				$.each(data, function (i, staff) {
-					tbody.append(
-						"<tr>" +
-							"<td>" + staff.staffId + "</td>" +
-							"<td>" + staff.fullName + "</td>" +
-							"<td>" + staff.role + "</td>" +
-						"</tr>"
-					);
-				});
-			}
-		}
-
-
-	</script>
+                    Swal.fire({
+                        title: "Are you sure?",
+                        text: "This staff record will be deleted permanently.",
+                        icon: "warning",
+                        showCancelButton: true,
+                        confirmButtonColor: "#d33",
+                        cancelButtonColor: "#6c757d",
+                        confirmButtonText: "Yes, delete it!"
+                    }).then((result) => {
+                        if (result.isConfirmed) {
+                            window.location.href = url;
+                        }
+                    });
+                });
+            });
+        });
+    </script>
 }
+
+@*@section Styles {
+    <style>
+        .resort-page-container {
+            padding-top: 40px;
+            padding-bottom: 60px;
+            background-color: #ffffff;
+            min-height: calc(100vh - 160px);
+            display: flex;
+            justify-content: center;
+        }
+
+        .guest-card {
+            width: 100%;
+            max-width: 1400px;
+            background: #fffaf5;
+            color: black;
+            padding: 35px;
+            border-radius: 18px;
+            box-shadow: 0 0 25px rgba(0, 0, 0, 0.08);
+        }
+
+        .scroll-box {
+            max-height: 500px;
+            overflow-y: auto;
+            border-radius: 10px;
+        }
+
+            .scroll-box thead th {
+                position: sticky;
+                top: 0;
+                background-color: #6c757d;
+                color: #ffcc99;
+                z-index: 1;
+            }
+
+        .table tbody tr:hover {
+            background-color: #fff3e6;
+        }
+
+        .badge {
+            padding: 5px 8px;
+            border-radius: 6px;
+        }
+
+        /* 🎯 Action Buttons */
+        .action-btn {
+            padding: 6px 10px;
+            border-radius: 6px;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 15px;
+            transition: 0.3s;
+            border: 1px solid transparent;
+        }
+
+        .edit-btn {
+            color: #198754;
+            border-color: #198754;
+            background: rgba(25, 135, 84, 0.1);
+        }
+
+            .edit-btn:hover {
+                background: #198754;
+                color: #fff;
+            }
+
+        .delete-btn {
+            color: #dc3545;
+            border-color: #dc3545;
+            background: rgba(220, 53, 69, 0.1);
+        }
+
+            .delete-btn:hover {
+                background: #dc3545;
+                color: #fff;
+            }
+
+        /* ✨ Badge style */
+        .badge {
+            padding: 6px 10px;
+            border-radius: 6px;
+            font-size: 0.8rem;
+            font-weight: 600;
+        }
+
+    </style>
+}
+*@
 
 
 @section Styles {
-	<style>
-		:root {
-			--pri-color: #cb8670;
-		}
+    <style>
+        :root {
+            --rose: #cb8670;
+            --rose-dark: #a55e4b;
+            --light-bg: #fff9f6;
+        }
 
-		.resort-page-container {
-			padding-top: 40px; /* Try 80px–120px depending on nav height */
-			padding-bottom: 60px;
-			background-color: #ffffff;
-			min-height: calc(100vh - 160px);
-			display: flex;
-			justify-content: center;
-		}
+        .resort-page-container {
+            padding: 40px 0;
+            background: linear-gradient(to bottom right, #fff9f6, #fcefe9);
+            min-height: calc(100vh - 160px);
+            display: flex;
+            justify-content: center;
+        }
 
-		.btn-success i.bi-pencil-square {
-			color: white; /* or #28a745 for bright green */
-		}
+        .resort-card {
+            width: 100%;
+            max-width: 1400px;
+            background: white;
+            padding: 30px 40px;
+            border-radius: 20px;
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.08);
+        }
 
-		.btn-danger i.bi-trash-fill {
-			color: white; /* or #dc3545 for red */
-		}
+        .page-title {
+            color: var(--rose-dark);
+            font-weight: 700;
+            font-size: 1.6rem;
+            display: flex;
+            align-items: center;
+        }
 
-		.guest-card {
-			width: 100%;
-			max-width: 1400px; /* wider box */
-			background: #fffaf5;
-			color: black;
-			padding: 35px;
-			border-radius: 18px;
-			box-shadow: 0 0 25px rgba(0, 0, 0, 0.08);
-		}
+        .filter-section {
+            background: var(--light-bg);
+            padding: 15px 20px;
+            border-radius: 14px;
+            border: 1px solid #f1d3c7;
+            box-shadow: 0 3px 10px rgba(203, 134, 112, 0.1);
+        }
 
-		.scroll-box {
-			max-height: 500px;
-			overflow-y: auto;
-			border-radius: 10px;
-		}
+        .btn-search {
+            background: var(--rose);
+            border: none;
+            color: white;
+            padding: 6px 14px;
+            border-radius: 6px;
+            font-weight: 500;
+        }
 
-			.scroll-box table {
-				width: 100%;
-			}
+            .btn-search:hover {
+                background: var(--rose-dark);
+                color: #fff;
+            }
 
-			.scroll-box thead th {
-				position: sticky;
-				top: 0;
-				background-color: #6c757d;
-				color: #ffcc99;
-				z-index: 1;
-			}
+        .btn-outline-rose {
+            border: 1px solid var(--rose);
+            color: var(--rose);
+            background: transparent;
+            border-radius: 6px;
+            padding: 6px 14px;
+            font-weight: 500;
+        }
 
-		.resort-btn {
-			background-color: var(--pri-color);
-			color: white;
-			padding: 10px 20px;
-			border: none;
-			border-radius: 30px;
-			font-weight: 500;
-			transition: 0.3s;
-		}
+            .btn-outline-rose:hover {
+                background: var(--rose);
+                color: white;
+            }
 
-			.resort-btn:hover {
-				background-color: #cb8670;
-				color: black;
-			}
+        .btn-outline-gray {
+            border: 1px solid #6c757d;
+            color: #6c757d;
+            background: transparent;
+            border-radius: 6px;
+            padding: 6px 14px;
+            font-weight: 500;
+        }
 
-		.table thead {
-			background-color: #6c757d !important; /* Bootstrap's gray
-							color: #ffcc99 !important; /* light orange text */
-		}
+            .btn-outline-gray:hover {
+                background: #6c757d;
+                color: white;
+            }
 
-		.table tbody tr:hover {
-			background-color: #fff3e6;
-		}
-	</style>
+        /* 🌿 TABLE STYLE — updated same as Booking List */
+        .table {
+            width: 100%;
+            background: #fff;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 3px 10px rgba(0, 0, 0, 0.05);
+        }
+
+            .table thead {
+                position: sticky;
+                top: 0;
+                background-color: #6c757d !important;
+                color: #ffcc99 !important;
+                text-align: center;
+                font-weight: 600;
+                font-size: 0.9rem;
+                z-index: 1;
+            }
+
+            .table th,
+            .table td {
+                padding: 10px 12px;
+                vertical-align: middle;
+                border-color: #dee2e6;
+            }
+
+            .table tbody tr:hover {
+                background-color: #fff3e6 !important;
+            }
+
+        .table-bordered {
+            border: 1px solid #dee2e6;
+        }
+
+        /* 🧭 Action Buttons */
+        .action-btn {
+            padding: 6px 10px;
+            border-radius: 6px;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 16px;
+            transition: 0.3s;
+            border: 1px solid transparent;
+        }
+
+        .edit-btn {
+            border: 1px solid #198754;
+            color: #198754;
+            background: transparent;
+        }
+
+            .edit-btn:hover {
+                background-color: #198754;
+                color: #fff;
+            }
+
+        .delete-btn {
+            border: 1px solid #dc3545;
+            color: #dc3545;
+            background: transparent;
+        }
+
+            .delete-btn:hover {
+                background-color: #dc3545;
+                color: #fff;
+            }
+    </style>
 }

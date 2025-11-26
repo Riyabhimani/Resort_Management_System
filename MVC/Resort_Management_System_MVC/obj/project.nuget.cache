@@ -1,10 +1,11 @@
 {
   "version": 2,
-  "dgSpecHash": "1a7mXdDq6vE=",
+  "dgSpecHash": "tv3F2bMSoUw=",
   "success": true,
   "projectFilePath": "E:\\SEMESTER-5\\Advanced .Net\\Resort_Management_System_GitDesktop\\Resort_Management_System\\MVC\\Resort_Management_System_MVC\\Resort_Management_System_MVC.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\darsh\\.nuget\\packages\\dartsassbuilder\\1.1.0\\dartsassbuilder.1.1.0.nupkg.sha512",
+    "C:\\Users\\darsh\\.nuget\\packages\\fluentvalidation\\8.6.3\\fluentvalidation.8.6.3.nupkg.sha512",
     "C:\\Users\\darsh\\.nuget\\packages\\microsoft.extensions.apidescription.server\\6.0.5\\microsoft.extensions.apidescription.server.6.0.5.nupkg.sha512",
     "C:\\Users\\darsh\\.nuget\\packages\\microsoft.extensions.dependencyinjection.abstractions\\8.0.0\\microsoft.extensions.dependencyinjection.abstractions.8.0.0.nupkg.sha512",
     "C:\\Users\\darsh\\.nuget\\packages\\microsoft.extensions.logging.abstractions\\8.0.0\\microsoft.extensions.logging.abstractions.8.0.0.nupkg.sha512",
@@ -18,6 +19,7 @@
     "C:\\Users\\darsh\\.nuget\\packages\\swashbuckle.aspnetcore.swagger\\6.5.0\\swashbuckle.aspnetcore.swagger.6.5.0.nupkg.sha512",
     "C:\\Users\\darsh\\.nuget\\packages\\swashbuckle.aspnetcore.swaggergen\\6.5.0\\swashbuckle.aspnetcore.swaggergen.6.5.0.nupkg.sha512",
     "C:\\Users\\darsh\\.nuget\\packages\\swashbuckle.aspnetcore.swaggerui\\6.5.0\\swashbuckle.aspnetcore.swaggerui.6.5.0.nupkg.sha512",
+    "C:\\Users\\darsh\\.nuget\\packages\\system.componentmodel.annotations\\4.4.1\\system.componentmodel.annotations.4.4.1.nupkg.sha512",
     "C:\\Users\\darsh\\.nuget\\packages\\system.identitymodel.tokens.jwt\\8.14.0\\system.identitymodel.tokens.jwt.8.14.0.nupkg.sha512"
   ],
   "logs": []

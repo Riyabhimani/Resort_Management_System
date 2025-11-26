@@ -1,0 +1,158 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Resort Dashboard</title>
+    <!-- Palatin Theme CSS -->
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <!-- Chart.js -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <style>
+        .card {
+            border-radius: 15px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+        }
+
+        .dashboard-title {
+            font-size: 24px;
+            font-weight: bold;
+            margin-bottom: 20px;
+        }
+
+        .table th {
+            background-color: #cb8670;
+            color: #fff;
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header class="header-area">
+        <div class="container">
+            <h2 class="text-center py-3">📊 Resort Management Dashboard</h2>
+        </div>
+    </header>
+
+    <main class="container my-4">
+        <!-- Cards Row -->
+        <div class="row" id="stats-cards"></div>
+
+        <!-- Charts Row -->
+        <div class="row mt-4">
+            <div class="col-md-6">
+                <div class="card p-3">
+                    <h5>Monthly Revenue</h5>
+                    <canvas id="revenueChart"></canvas>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="card p-3">
+                    <h5>Room Occupancy</h5>
+                    <canvas id="occupancyChart"></canvas>
+                </div>
+            </div>
+        </div>
+
+        <!-- Weekly Bookings Chart -->
+        <div class="row mt-4">
+            <div class="col-12">
+                <div class="card p-3">
+                    <h5>Weekly Bookings & Reservations</h5>
+                    <canvas id="weeklyChart"></canvas>
+                </div>
+            </div>
+        </div>
+
+        <!-- Tables Row -->
+        <div class="row mt-4">
+            <div class="col-md-6">
+                <div class="card p-3">
+                    <h5>Recent Reservations</h5>
+                    <table class="table table-striped">
+                        <thead>
+                            <tr><th>Guest</th><th>Room</th><th>Status</th><th>Amount</th></tr>
+                        </thead>
+                        <tbody id="reservations-table"></tbody>
+                    </table>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="card p-3">
+                    <h5>Today's Payments</h5>
+                    <table class="table table-striped">
+                        <thead>
+                            <tr><th>Guest</th><th>Amount</th><th>Method</th><th>Status</th></tr>
+                        </thead>
+                        <tbody id="payments-table"></tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <script>
+        const apiBase = '/api/dashboard';
+
+        // Load Stats Cards
+        fetch(`${apiBase}/stats`).then(r=>r.json()).then(stats => {
+          const cards = [
+            {title:'Total Users', value: stats.totalUsers},
+            {title:'Total Guests', value: stats.totalGuests},
+            {title:'Today Revenue', value: '₹'+stats.todayRevenue},
+            {title:'Available Rooms', value: stats.availableRooms}
+          ];
+          document.getElementById('stats-cards').innerHTML = cards.map(c=>`
+            <div class="col-md-3 mb-3">
+              <div class="card text-center p-3">
+                <h6>${c.title}</h6>
+                <h4>${c.value}</h4>
+              </div>
+            </div>`).join('');
+        });
+
+        // Monthly Revenue Chart
+        fetch(`${apiBase}/revenue-chart`).then(r=>r.json()).then(data => {
+          new Chart(document.getElementById('revenueChart'), {
+            type: 'bar',
+            data: { labels: data.map(d=>d.month), datasets:[{label:'Revenue', data:data.map(d=>d.revenue)}] }
+          });
+        });
+
+        // Occupancy Pie Chart
+        fetch(`${apiBase}/occupancy`).then(r=>r.json()).then(data => {
+          new Chart(document.getElementById('occupancyChart'), {
+            type: 'doughnut',
+            data: { labels:data.labels, datasets:[{ data:data.data, backgroundColor:['#cb8670','#4CAF50','#FFC107'] }] }
+          });
+        });
+
+        // Weekly Bookings Chart
+        fetch(`${apiBase}/weekly-bookings`).then(r=>r.json()).then(data => {
+          new Chart(document.getElementById('weeklyChart'), {
+            type: 'line',
+            data: {
+              labels: data.map(d=>d.day),
+              datasets: [
+                {label:'Bookings', data:data.map(d=>d.bookingsCount), borderColor:'#cb8670', fill:false},
+                {label:'Reservations', data:data.map(d=>d.reservationsCount), borderColor:'#4CAF50', fill:false}
+              ]
+            }
+          });
+        });
+
+        // Recent Reservations Table
+        fetch(`${apiBase}/recent-reservations`).then(r=>r.json()).then(data => {
+          document.getElementById('reservations-table').innerHTML = data.map(r=>`
+            <tr><td>${r.guestName}</td><td>${r.roomNumber}</td><td>${r.status}</td><td>₹${r.amount}</td></tr>`).join('');
+        });
+
+        // Today Payments Table
+        fetch(`${apiBase}/today-payments`).then(r=>r.json()).then(data => {
+          document.getElementById('payments-table').innerHTML = data.map(p=>`
+            <tr><td>${p.guestName}</td><td>₹${p.amount}</td><td>${p.paymentMethod}</td><td>${p.status}</td></tr>`).join('');
+        });
+    </script>
+</body>
+</html>

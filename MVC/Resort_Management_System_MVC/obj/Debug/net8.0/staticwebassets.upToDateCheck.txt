@@ -39,6 +39,7 @@ wwwroot\img\bg-img\19.jpg
 wwwroot\img\bg-img\2.jpg
 wwwroot\img\bg-img\20.jpg
 wwwroot\img\bg-img\3.jpg
+wwwroot\img\bg-img\4.jpg
 wwwroot\img\bg-img\4.png
 wwwroot\img\bg-img\5.jpg
 wwwroot\img\bg-img\6.jpg

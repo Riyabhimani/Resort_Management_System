@@ -467,6 +467,22 @@
   },
   {
     "ContainingType": "Resort_Management_System_API.Controllers.GuestController",
+    "Method": "BulkDelete",
+    "RelativePath": "api/Guest/BulkDelete",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "guestIds",
+        "Type": "System.Collections.Generic.List\u00601[[System.Int32, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Resort_Management_System_API.Controllers.GuestController",
     "Method": "GetGuestsByReservationStatus",
     "RelativePath": "api/Guest/by-reservation-status/{status}",
     "HttpMethod": "GET",

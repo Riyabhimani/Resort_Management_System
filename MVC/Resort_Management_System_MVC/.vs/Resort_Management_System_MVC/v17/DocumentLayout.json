@@ -3,8 +3,52 @@
   "WorkspaceRootPath": "E:\\SEMESTER-5\\Advanced .Net\\Resort_Management_System_GitDesktop\\Resort_Management_System\\MVC\\Resort_Management_System_MVC\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{059F405C-2857-4673-8678-CF39A686003A}|Resort_Management_System_MVC.csproj|e:\\semester-5\\advanced .net\\resort_management_system_gitdesktop\\resort_management_system\\mvc\\resort_management_system_mvc\\views\\staff\\stafflist.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{059F405C-2857-4673-8678-CF39A686003A}|Resort_Management_System_MVC.csproj|solutionrelative:views\\staff\\stafflist.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{059F405C-2857-4673-8678-CF39A686003A}|Resort_Management_System_MVC.csproj|e:\\semester-5\\advanced .net\\resort_management_system_gitdesktop\\resort_management_system\\mvc\\resort_management_system_mvc\\views\\booking\\bookinglist.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{059F405C-2857-4673-8678-CF39A686003A}|Resort_Management_System_MVC.csproj|solutionrelative:views\\booking\\bookinglist.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{059F405C-2857-4673-8678-CF39A686003A}|Resort_Management_System_MVC.csproj|e:\\semester-5\\advanced .net\\resort_management_system_gitdesktop\\resort_management_system\\mvc\\resort_management_system_mvc\\views\\user\\userlist.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{059F405C-2857-4673-8678-CF39A686003A}|Resort_Management_System_MVC.csproj|solutionrelative:views\\user\\userlist.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{059F405C-2857-4673-8678-CF39A686003A}|Resort_Management_System_MVC.csproj|e:\\semester-5\\advanced .net\\resort_management_system_gitdesktop\\resort_management_system\\mvc\\resort_management_system_mvc\\views\\room\\roomlist.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{059F405C-2857-4673-8678-CF39A686003A}|Resort_Management_System_MVC.csproj|solutionrelative:views\\room\\roomlist.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{059F405C-2857-4673-8678-CF39A686003A}|Resort_Management_System_MVC.csproj|e:\\semester-5\\advanced .net\\resort_management_system_gitdesktop\\resort_management_system\\mvc\\resort_management_system_mvc\\views\\reservation\\reservationlist.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{059F405C-2857-4673-8678-CF39A686003A}|Resort_Management_System_MVC.csproj|solutionrelative:views\\reservation\\reservationlist.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{059F405C-2857-4673-8678-CF39A686003A}|Resort_Management_System_MVC.csproj|e:\\semester-5\\advanced .net\\resort_management_system_gitdesktop\\resort_management_system\\mvc\\resort_management_system_mvc\\views\\payment\\paymentlist.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{059F405C-2857-4673-8678-CF39A686003A}|Resort_Management_System_MVC.csproj|solutionrelative:views\\payment\\paymentlist.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{059F405C-2857-4673-8678-CF39A686003A}|Resort_Management_System_MVC.csproj|e:\\semester-5\\advanced .net\\resort_management_system_gitdesktop\\resort_management_system\\mvc\\resort_management_system_mvc\\views\\guestservice\\guestservicelist.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{059F405C-2857-4673-8678-CF39A686003A}|Resort_Management_System_MVC.csproj|solutionrelative:views\\guestservice\\guestservicelist.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{059F405C-2857-4673-8678-CF39A686003A}|Resort_Management_System_MVC.csproj|e:\\semester-5\\advanced .net\\resort_management_system_gitdesktop\\resort_management_system\\mvc\\resort_management_system_mvc\\views\\guest\\guestlist.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
       "RelativeMoniker": "D:0:0:{059F405C-2857-4673-8678-CF39A686003A}|Resort_Management_System_MVC.csproj|solutionrelative:views\\guest\\guestlist.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{059F405C-2857-4673-8678-CF39A686003A}|Resort_Management_System_MVC.csproj|e:\\semester-5\\advanced .net\\resort_management_system_gitdesktop\\resort_management_system\\mvc\\resort_management_system_mvc\\views\\guest\\guestaddedit.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{059F405C-2857-4673-8678-CF39A686003A}|Resort_Management_System_MVC.csproj|solutionrelative:views\\guest\\guestaddedit.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{059F405C-2857-4673-8678-CF39A686003A}|Resort_Management_System_MVC.csproj|e:\\semester-5\\advanced .net\\resort_management_system_gitdesktop\\resort_management_system\\mvc\\resort_management_system_mvc\\views\\service\\servicelist.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{059F405C-2857-4673-8678-CF39A686003A}|Resort_Management_System_MVC.csproj|solutionrelative:views\\service\\servicelist.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{059F405C-2857-4673-8678-CF39A686003A}|Resort_Management_System_MVC.csproj|e:\\semester-5\\advanced .net\\resort_management_system_gitdesktop\\resort_management_system\\mvc\\resort_management_system_mvc\\views\\service\\serviceaddedit.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{059F405C-2857-4673-8678-CF39A686003A}|Resort_Management_System_MVC.csproj|solutionrelative:views\\service\\serviceaddedit.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{059F405C-2857-4673-8678-CF39A686003A}|Resort_Management_System_MVC.csproj|e:\\semester-5\\advanced .net\\resort_management_system_gitdesktop\\resort_management_system\\mvc\\resort_management_system_mvc\\validationclass\\guestvalidator.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{059F405C-2857-4673-8678-CF39A686003A}|Resort_Management_System_MVC.csproj|solutionrelative:validationclass\\guestvalidator.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{059F405C-2857-4673-8678-CF39A686003A}|Resort_Management_System_MVC.csproj|e:\\semester-5\\advanced .net\\resort_management_system_gitdesktop\\resort_management_system\\mvc\\resort_management_system_mvc\\controllers\\guestcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -13,14 +57,6 @@
     {
       "AbsoluteMoniker": "D:0:0:{059F405C-2857-4673-8678-CF39A686003A}|Resort_Management_System_MVC.csproj|e:\\semester-5\\advanced .net\\resort_management_system_gitdesktop\\resort_management_system\\mvc\\resort_management_system_mvc\\views\\shared\\userlayout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
       "RelativeMoniker": "D:0:0:{059F405C-2857-4673-8678-CF39A686003A}|Resort_Management_System_MVC.csproj|solutionrelative:views\\shared\\userlayout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{059F405C-2857-4673-8678-CF39A686003A}|Resort_Management_System_MVC.csproj|e:\\semester-5\\advanced .net\\resort_management_system_gitdesktop\\resort_management_system\\mvc\\resort_management_system_mvc\\views\\guestservice\\guestservicelist.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{059F405C-2857-4673-8678-CF39A686003A}|Resort_Management_System_MVC.csproj|solutionrelative:views\\guestservice\\guestservicelist.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{059F405C-2857-4673-8678-CF39A686003A}|Resort_Management_System_MVC.csproj|e:\\semester-5\\advanced .net\\resort_management_system_gitdesktop\\resort_management_system\\mvc\\resort_management_system_mvc\\views\\room\\roomlist.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{059F405C-2857-4673-8678-CF39A686003A}|Resort_Management_System_MVC.csproj|solutionrelative:views\\room\\roomlist.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{059F405C-2857-4673-8678-CF39A686003A}|Resort_Management_System_MVC.csproj|e:\\semester-5\\advanced .net\\resort_management_system_gitdesktop\\resort_management_system\\mvc\\resort_management_system_mvc\\views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
@@ -33,14 +69,6 @@
     {
       "AbsoluteMoniker": "D:0:0:{059F405C-2857-4673-8678-CF39A686003A}|Resort_Management_System_MVC.csproj|e:\\semester-5\\advanced .net\\resort_management_system_gitdesktop\\resort_management_system\\mvc\\resort_management_system_mvc\\authservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{059F405C-2857-4673-8678-CF39A686003A}|Resort_Management_System_MVC.csproj|solutionrelative:authservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{059F405C-2857-4673-8678-CF39A686003A}|Resort_Management_System_MVC.csproj|e:\\semester-5\\advanced .net\\resort_management_system_gitdesktop\\resort_management_system\\mvc\\resort_management_system_mvc\\views\\service\\servicelist.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{059F405C-2857-4673-8678-CF39A686003A}|Resort_Management_System_MVC.csproj|solutionrelative:views\\service\\servicelist.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{059F405C-2857-4673-8678-CF39A686003A}|Resort_Management_System_MVC.csproj|e:\\semester-5\\advanced .net\\resort_management_system_gitdesktop\\resort_management_system\\mvc\\resort_management_system_mvc\\views\\payment\\paymentlist.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{059F405C-2857-4673-8678-CF39A686003A}|Resort_Management_System_MVC.csproj|solutionrelative:views\\payment\\paymentlist.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{059F405C-2857-4673-8678-CF39A686003A}|Resort_Management_System_MVC.csproj|e:\\semester-5\\advanced .net\\resort_management_system_gitdesktop\\resort_management_system\\mvc\\resort_management_system_mvc\\controllers\\guestservicecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -63,10 +91,6 @@
       "RelativeMoniker": "D:0:0:{059F405C-2857-4673-8678-CF39A686003A}|Resort_Management_System_MVC.csproj|solutionrelative:views\\login\\login.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{059F405C-2857-4673-8678-CF39A686003A}|Resort_Management_System_MVC.csproj|e:\\semester-5\\advanced .net\\resort_management_system_gitdesktop\\resort_management_system\\mvc\\resort_management_system_mvc\\views\\guest\\guestaddedit.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{059F405C-2857-4673-8678-CF39A686003A}|Resort_Management_System_MVC.csproj|solutionrelative:views\\guest\\guestaddedit.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{059F405C-2857-4673-8678-CF39A686003A}|Resort_Management_System_MVC.csproj|e:\\semester-5\\advanced .net\\resort_management_system_gitdesktop\\resort_management_system\\mvc\\resort_management_system_mvc\\models\\guestmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{059F405C-2857-4673-8678-CF39A686003A}|Resort_Management_System_MVC.csproj|solutionrelative:models\\guestmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
@@ -85,10 +109,6 @@
     {
       "AbsoluteMoniker": "D:0:0:{059F405C-2857-4673-8678-CF39A686003A}|Resort_Management_System_MVC.csproj|e:\\semester-5\\advanced .net\\resort_management_system_gitdesktop\\resort_management_system\\mvc\\resort_management_system_mvc\\models\\usermodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{059F405C-2857-4673-8678-CF39A686003A}|Resort_Management_System_MVC.csproj|solutionrelative:models\\usermodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{059F405C-2857-4673-8678-CF39A686003A}|Resort_Management_System_MVC.csproj|e:\\semester-5\\advanced .net\\resort_management_system_gitdesktop\\resort_management_system\\mvc\\resort_management_system_mvc\\views\\user\\userlist.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{059F405C-2857-4673-8678-CF39A686003A}|Resort_Management_System_MVC.csproj|solutionrelative:views\\user\\userlist.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{059F405C-2857-4673-8678-CF39A686003A}|Resort_Management_System_MVC.csproj|e:\\semester-5\\advanced .net\\resort_management_system_gitdesktop\\resort_management_system\\mvc\\resort_management_system_mvc\\views\\userdashboard\\userindex.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
@@ -131,10 +151,6 @@
       "RelativeMoniker": "D:0:0:{059F405C-2857-4673-8678-CF39A686003A}|Resort_Management_System_MVC.csproj|solutionrelative:controllers\\bookingcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{059F405C-2857-4673-8678-CF39A686003A}|Resort_Management_System_MVC.csproj|e:\\semester-5\\advanced .net\\resort_management_system_gitdesktop\\resort_management_system\\mvc\\resort_management_system_mvc\\views\\service\\serviceaddedit.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{059F405C-2857-4673-8678-CF39A686003A}|Resort_Management_System_MVC.csproj|solutionrelative:views\\service\\serviceaddedit.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{059F405C-2857-4673-8678-CF39A686003A}|Resort_Management_System_MVC.csproj|e:\\semester-5\\advanced .net\\resort_management_system_gitdesktop\\resort_management_system\\mvc\\resort_management_system_mvc\\models\\servicemodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{059F405C-2857-4673-8678-CF39A686003A}|Resort_Management_System_MVC.csproj|solutionrelative:models\\servicemodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
@@ -163,10 +179,6 @@
       "RelativeMoniker": "D:0:0:{059F405C-2857-4673-8678-CF39A686003A}|Resort_Management_System_MVC.csproj|solutionrelative:models\\bookingmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{059F405C-2857-4673-8678-CF39A686003A}|Resort_Management_System_MVC.csproj|e:\\semester-5\\advanced .net\\resort_management_system_gitdesktop\\resort_management_system\\mvc\\resort_management_system_mvc\\views\\booking\\bookinglist.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{059F405C-2857-4673-8678-CF39A686003A}|Resort_Management_System_MVC.csproj|solutionrelative:views\\booking\\bookinglist.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{059F405C-2857-4673-8678-CF39A686003A}|Resort_Management_System_MVC.csproj|e:\\semester-5\\advanced .net\\resort_management_system_gitdesktop\\resort_management_system\\mvc\\resort_management_system_mvc\\controllers\\reservationcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{059F405C-2857-4673-8678-CF39A686003A}|Resort_Management_System_MVC.csproj|solutionrelative:controllers\\reservationcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
@@ -183,20 +195,12 @@
       "RelativeMoniker": "D:0:0:{059F405C-2857-4673-8678-CF39A686003A}|Resort_Management_System_MVC.csproj|solutionrelative:appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{059F405C-2857-4673-8678-CF39A686003A}|Resort_Management_System_MVC.csproj|e:\\semester-5\\advanced .net\\resort_management_system_gitdesktop\\resort_management_system\\mvc\\resort_management_system_mvc\\views\\staff\\stafflist.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{059F405C-2857-4673-8678-CF39A686003A}|Resort_Management_System_MVC.csproj|solutionrelative:views\\staff\\stafflist.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{059F405C-2857-4673-8678-CF39A686003A}|Resort_Management_System_MVC.csproj|e:\\semester-5\\advanced .net\\resort_management_system_gitdesktop\\resort_management_system\\mvc\\resort_management_system_mvc\\controllers\\staffcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{059F405C-2857-4673-8678-CF39A686003A}|Resort_Management_System_MVC.csproj|solutionrelative:controllers\\staffcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{059F405C-2857-4673-8678-CF39A686003A}|Resort_Management_System_MVC.csproj|e:\\semester-5\\advanced .net\\resort_management_system_gitdesktop\\resort_management_system\\mvc\\resort_management_system_mvc\\models\\paymentmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{059F405C-2857-4673-8678-CF39A686003A}|Resort_Management_System_MVC.csproj|solutionrelative:models\\paymentmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{059F405C-2857-4673-8678-CF39A686003A}|Resort_Management_System_MVC.csproj|e:\\semester-5\\advanced .net\\resort_management_system_gitdesktop\\resort_management_system\\mvc\\resort_management_system_mvc\\views\\reservation\\reservationlist.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{059F405C-2857-4673-8678-CF39A686003A}|Resort_Management_System_MVC.csproj|solutionrelative:views\\reservation\\reservationlist.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{059F405C-2857-4673-8678-CF39A686003A}|Resort_Management_System_MVC.csproj|e:\\semester-5\\advanced .net\\resort_management_system_gitdesktop\\resort_management_system\\mvc\\resort_management_system_mvc\\controllers\\userdashboardcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -285,7 +289,7 @@
       "DocumentGroups": [
         {
           "DockedHeight": 819,
-          "SelectedChildIndex": 5,
+          "SelectedChildIndex": 4,
           "Children": [
             {
               "$type": "Bookmark",
@@ -294,189 +298,103 @@
             {
               "$type": "Document",
               "DocumentIndex": 5,
-              "Title": "_Layout.cshtml",
-              "DocumentMoniker": "E:\\SEMESTER-5\\Advanced .Net\\Resort_Management_System_GitDesktop\\Resort_Management_System\\MVC\\Resort_Management_System_MVC\\Views\\Shared\\_Layout.cshtml",
-              "RelativeDocumentMoniker": "Views\\Shared\\_Layout.cshtml",
-              "ToolTip": "E:\\SEMESTER-5\\Advanced .Net\\Resort_Management_System_GitDesktop\\Resort_Management_System\\MVC\\Resort_Management_System_MVC\\Views\\Shared\\_Layout.cshtml",
-              "RelativeToolTip": "Views\\Shared\\_Layout.cshtml",
-              "ViewState": "AgIAACMAAAAAAAAAAAAvwCoAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-08-06T02:52:23.072Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "RoomList.cshtml",
-              "DocumentMoniker": "E:\\SEMESTER-5\\Advanced .Net\\Resort_Management_System_GitDesktop\\Resort_Management_System\\MVC\\Resort_Management_System_MVC\\Views\\Room\\RoomList.cshtml",
-              "RelativeDocumentMoniker": "Views\\Room\\RoomList.cshtml",
-              "ToolTip": "E:\\SEMESTER-5\\Advanced .Net\\Resort_Management_System_GitDesktop\\Resort_Management_System\\MVC\\Resort_Management_System_MVC\\Views\\Room\\RoomList.cshtml",
-              "RelativeToolTip": "Views\\Room\\RoomList.cshtml",
-              "ViewState": "AgIAAF0AAAAAAAAAAAAAAGoAAAA1AAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-08-07T15:29:51.177Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "GuestServiceList.cshtml",
-              "DocumentMoniker": "E:\\SEMESTER-5\\Advanced .Net\\Resort_Management_System_GitDesktop\\Resort_Management_System\\MVC\\Resort_Management_System_MVC\\Views\\GuestService\\GuestServiceList.cshtml",
-              "RelativeDocumentMoniker": "Views\\GuestService\\GuestServiceList.cshtml",
-              "ToolTip": "E:\\SEMESTER-5\\Advanced .Net\\Resort_Management_System_GitDesktop\\Resort_Management_System\\MVC\\Resort_Management_System_MVC\\Views\\GuestService\\GuestServiceList.cshtml",
-              "RelativeToolTip": "Views\\GuestService\\GuestServiceList.cshtml",
-              "ViewState": "AgIAAEgAAAAAAAAAAAAAAFIAAAAfAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-08-11T03:45:50.619Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "UserLayout.cshtml",
-              "DocumentMoniker": "E:\\SEMESTER-5\\Advanced .Net\\Resort_Management_System_GitDesktop\\Resort_Management_System\\MVC\\Resort_Management_System_MVC\\Views\\Shared\\UserLayout.cshtml",
-              "RelativeDocumentMoniker": "Views\\Shared\\UserLayout.cshtml",
-              "ToolTip": "E:\\SEMESTER-5\\Advanced .Net\\Resort_Management_System_GitDesktop\\Resort_Management_System\\MVC\\Resort_Management_System_MVC\\Views\\Shared\\UserLayout.cshtml",
-              "RelativeToolTip": "Views\\Shared\\UserLayout.cshtml",
-              "ViewState": "AgIAAAYAAAAAAAAAAAAAABgAAABDAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-08-20T07:20:00.26Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "GuestList.cshtml",
-              "DocumentMoniker": "E:\\SEMESTER-5\\Advanced .Net\\Resort_Management_System_GitDesktop\\Resort_Management_System\\MVC\\Resort_Management_System_MVC\\Views\\Guest\\GuestList.cshtml",
-              "RelativeDocumentMoniker": "Views\\Guest\\GuestList.cshtml",
-              "ToolTip": "E:\\SEMESTER-5\\Advanced .Net\\Resort_Management_System_GitDesktop\\Resort_Management_System\\MVC\\Resort_Management_System_MVC\\Views\\Guest\\GuestList.cshtml",
-              "RelativeToolTip": "Views\\Guest\\GuestList.cshtml",
-              "ViewState": "AgIAAPcAAAAAAAAAAAAswAYBAAAFAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-08-21T17:55:42.643Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "GuestController.cs",
-              "DocumentMoniker": "E:\\SEMESTER-5\\Advanced .Net\\Resort_Management_System_GitDesktop\\Resort_Management_System\\MVC\\Resort_Management_System_MVC\\Controllers\\GuestController.cs",
-              "RelativeDocumentMoniker": "Controllers\\GuestController.cs",
-              "ToolTip": "E:\\SEMESTER-5\\Advanced .Net\\Resort_Management_System_GitDesktop\\Resort_Management_System\\MVC\\Resort_Management_System_MVC\\Controllers\\GuestController.cs",
-              "RelativeToolTip": "Controllers\\GuestController.cs",
-              "ViewState": "AgIAAEUBAAAAAAAAAAAqwE8BAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-08-21T17:57:50.057Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 6,
-              "Title": "LoginController.cs",
-              "DocumentMoniker": "E:\\SEMESTER-5\\Advanced .Net\\Resort_Management_System_GitDesktop\\Resort_Management_System\\MVC\\Resort_Management_System_MVC\\Controllers\\LoginController.cs",
-              "RelativeDocumentMoniker": "Controllers\\LoginController.cs",
-              "ToolTip": "E:\\SEMESTER-5\\Advanced .Net\\Resort_Management_System_GitDesktop\\Resort_Management_System\\MVC\\Resort_Management_System_MVC\\Controllers\\LoginController.cs",
-              "RelativeToolTip": "Controllers\\LoginController.cs",
-              "ViewState": "AgIAADgAAAAAAAAAAAAAAEkAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-08-20T07:55:06.579Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 8,
-              "Title": "ServiceList.cshtml",
-              "DocumentMoniker": "E:\\SEMESTER-5\\Advanced .Net\\Resort_Management_System_GitDesktop\\Resort_Management_System\\MVC\\Resort_Management_System_MVC\\Views\\Service\\ServiceList.cshtml",
-              "RelativeDocumentMoniker": "Views\\Service\\ServiceList.cshtml",
-              "ToolTip": "E:\\SEMESTER-5\\Advanced .Net\\Resort_Management_System_GitDesktop\\Resort_Management_System\\MVC\\Resort_Management_System_MVC\\Views\\Service\\ServiceList.cshtml",
-              "RelativeToolTip": "Views\\Service\\ServiceList.cshtml",
-              "ViewState": "AgIAACcAAAAAAAAAAAAAAAsAAAAFAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-08-20T07:26:42.207Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 9,
               "Title": "PaymentList.cshtml",
               "DocumentMoniker": "E:\\SEMESTER-5\\Advanced .Net\\Resort_Management_System_GitDesktop\\Resort_Management_System\\MVC\\Resort_Management_System_MVC\\Views\\Payment\\PaymentList.cshtml",
               "RelativeDocumentMoniker": "Views\\Payment\\PaymentList.cshtml",
               "ToolTip": "E:\\SEMESTER-5\\Advanced .Net\\Resort_Management_System_GitDesktop\\Resort_Management_System\\MVC\\Resort_Management_System_MVC\\Views\\Payment\\PaymentList.cshtml",
               "RelativeToolTip": "Views\\Payment\\PaymentList.cshtml",
-              "ViewState": "AgIAABoAAAAAAAAAAAAgwEsAAAAGAAAAAAAAAA==",
+              "ViewState": "AgIAAFEAAAAAAAAAAAAAAGIAAAABAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
               "WhenOpened": "2025-08-11T02:55:07.234Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 12,
-              "Title": "GuestServiceModel.cs",
-              "DocumentMoniker": "E:\\SEMESTER-5\\Advanced .Net\\Resort_Management_System_GitDesktop\\Resort_Management_System\\MVC\\Resort_Management_System_MVC\\Models\\GuestServiceModel.cs",
-              "RelativeDocumentMoniker": "Models\\GuestServiceModel.cs",
-              "ToolTip": "E:\\SEMESTER-5\\Advanced .Net\\Resort_Management_System_GitDesktop\\Resort_Management_System\\MVC\\Resort_Management_System_MVC\\Models\\GuestServiceModel.cs",
-              "RelativeToolTip": "Models\\GuestServiceModel.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA4AAABDAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-09-01T07:45:50.698Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 11,
-              "Title": "GuestServiceAddEdit.cshtml",
-              "DocumentMoniker": "E:\\SEMESTER-5\\Advanced .Net\\Resort_Management_System_GitDesktop\\Resort_Management_System\\MVC\\Resort_Management_System_MVC\\Views\\GuestService\\GuestServiceAddEdit.cshtml",
-              "RelativeDocumentMoniker": "Views\\GuestService\\GuestServiceAddEdit.cshtml",
-              "ToolTip": "E:\\SEMESTER-5\\Advanced .Net\\Resort_Management_System_GitDesktop\\Resort_Management_System\\MVC\\Resort_Management_System_MVC\\Views\\GuestService\\GuestServiceAddEdit.cshtml",
-              "RelativeToolTip": "Views\\GuestService\\GuestServiceAddEdit.cshtml",
-              "ViewState": "AgIAAD0AAAAAAAAAAAAQwJMAAAATAAAAAAAAAA==",
+              "DocumentIndex": 4,
+              "Title": "ReservationList.cshtml",
+              "DocumentMoniker": "E:\\SEMESTER-5\\Advanced .Net\\Resort_Management_System_GitDesktop\\Resort_Management_System\\MVC\\Resort_Management_System_MVC\\Views\\Reservation\\ReservationList.cshtml",
+              "RelativeDocumentMoniker": "Views\\Reservation\\ReservationList.cshtml",
+              "ToolTip": "E:\\SEMESTER-5\\Advanced .Net\\Resort_Management_System_GitDesktop\\Resort_Management_System\\MVC\\Resort_Management_System_MVC\\Views\\Reservation\\ReservationList.cshtml",
+              "RelativeToolTip": "Views\\Reservation\\ReservationList.cshtml",
+              "ViewState": "AgIAAAgAAAAAAAAAAAAgwBcAAAAOAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-08-23T14:10:07.55Z"
+              "WhenOpened": "2025-08-12T13:58:47.002Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 10,
-              "Title": "GuestServiceController.cs",
-              "DocumentMoniker": "E:\\SEMESTER-5\\Advanced .Net\\Resort_Management_System_GitDesktop\\Resort_Management_System\\MVC\\Resort_Management_System_MVC\\Controllers\\GuestServiceController.cs",
-              "RelativeDocumentMoniker": "Controllers\\GuestServiceController.cs",
-              "ToolTip": "E:\\SEMESTER-5\\Advanced .Net\\Resort_Management_System_GitDesktop\\Resort_Management_System\\MVC\\Resort_Management_System_MVC\\Controllers\\GuestServiceController.cs",
-              "RelativeToolTip": "Controllers\\GuestServiceController.cs",
-              "ViewState": "AgIAADsCAAAAAAAAAAAiwEwCAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-08-11T03:49:45.658Z"
+              "DocumentIndex": 3,
+              "Title": "RoomList.cshtml",
+              "DocumentMoniker": "E:\\SEMESTER-5\\Advanced .Net\\Resort_Management_System_GitDesktop\\Resort_Management_System\\MVC\\Resort_Management_System_MVC\\Views\\Room\\RoomList.cshtml",
+              "RelativeDocumentMoniker": "Views\\Room\\RoomList.cshtml",
+              "ToolTip": "E:\\SEMESTER-5\\Advanced .Net\\Resort_Management_System_GitDesktop\\Resort_Management_System\\MVC\\Resort_Management_System_MVC\\Views\\Room\\RoomList.cshtml",
+              "RelativeToolTip": "Views\\Room\\RoomList.cshtml",
+              "ViewState": "AgIAAPQCAAAAAAAAAAAUwPsCAAAXAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-08-07T15:29:51.177Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "StaffList.cshtml",
+              "DocumentMoniker": "E:\\SEMESTER-5\\Advanced .Net\\Resort_Management_System_GitDesktop\\Resort_Management_System\\MVC\\Resort_Management_System_MVC\\Views\\Staff\\StaffList.cshtml",
+              "RelativeDocumentMoniker": "Views\\Staff\\StaffList.cshtml",
+              "ToolTip": "E:\\SEMESTER-5\\Advanced .Net\\Resort_Management_System_GitDesktop\\Resort_Management_System\\MVC\\Resort_Management_System_MVC\\Views\\Staff\\StaffList.cshtml",
+              "RelativeToolTip": "Views\\Staff\\StaffList.cshtml",
+              "ViewState": "AgIAABIAAAAAAAAAAAAAAAsAAAAlAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-09-01T07:56:08.06Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "UserList.cshtml",
+              "DocumentMoniker": "E:\\SEMESTER-5\\Advanced .Net\\Resort_Management_System_GitDesktop\\Resort_Management_System\\MVC\\Resort_Management_System_MVC\\Views\\User\\UserList.cshtml",
+              "RelativeDocumentMoniker": "Views\\User\\UserList.cshtml",
+              "ToolTip": "E:\\SEMESTER-5\\Advanced .Net\\Resort_Management_System_GitDesktop\\Resort_Management_System\\MVC\\Resort_Management_System_MVC\\Views\\User\\UserList.cshtml",
+              "RelativeToolTip": "Views\\User\\UserList.cshtml",
+              "ViewState": "AgIAAB4CAAAAAAAAAAAUwC4CAAARAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-08-10T17:24:08.053Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "BookingList.cshtml",
+              "DocumentMoniker": "E:\\SEMESTER-5\\Advanced .Net\\Resort_Management_System_GitDesktop\\Resort_Management_System\\MVC\\Resort_Management_System_MVC\\Views\\Booking\\BookingList.cshtml",
+              "RelativeDocumentMoniker": "Views\\Booking\\BookingList.cshtml",
+              "ToolTip": "E:\\SEMESTER-5\\Advanced .Net\\Resort_Management_System_GitDesktop\\Resort_Management_System\\MVC\\Resort_Management_System_MVC\\Views\\Booking\\BookingList.cshtml",
+              "RelativeToolTip": "Views\\Booking\\BookingList.cshtml",
+              "ViewState": "AgIAAO0AAAAAAAAAAAAUwAABAAANAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-08-23T03:00:58.348Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "GuestServiceList.cshtml",
+              "DocumentMoniker": "E:\\SEMESTER-5\\Advanced .Net\\Resort_Management_System_GitDesktop\\Resort_Management_System\\MVC\\Resort_Management_System_MVC\\Views\\GuestService\\GuestServiceList.cshtml",
+              "RelativeDocumentMoniker": "Views\\GuestService\\GuestServiceList.cshtml",
+              "ToolTip": "E:\\SEMESTER-5\\Advanced .Net\\Resort_Management_System_GitDesktop\\Resort_Management_System\\MVC\\Resort_Management_System_MVC\\Views\\GuestService\\GuestServiceList.cshtml",
+              "RelativeToolTip": "Views\\GuestService\\GuestServiceList.cshtml",
+              "ViewState": "AgIAAE4AAAAAAAAAAAAAAGUAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-08-11T03:45:50.619Z"
             },
             {
               "$type": "Document",
               "DocumentIndex": 7,
-              "Title": "AuthService.cs",
-              "DocumentMoniker": "E:\\SEMESTER-5\\Advanced .Net\\Resort_Management_System_GitDesktop\\Resort_Management_System\\MVC\\Resort_Management_System_MVC\\AuthService.cs",
-              "RelativeDocumentMoniker": "AuthService.cs",
-              "ToolTip": "E:\\SEMESTER-5\\Advanced .Net\\Resort_Management_System_GitDesktop\\Resort_Management_System\\MVC\\Resort_Management_System_MVC\\AuthService.cs",
-              "RelativeToolTip": "AuthService.cs",
-              "ViewState": "AgIAAA4AAAAAAAAAAAAuwCAAAAAIAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-08-20T08:01:47.532Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 13,
-              "Title": "_LoginLayout.cshtml",
-              "DocumentMoniker": "E:\\SEMESTER-5\\Advanced .Net\\Resort_Management_System_GitDesktop\\Resort_Management_System\\MVC\\Resort_Management_System_MVC\\Views\\Shared\\_LoginLayout.cshtml",
-              "RelativeDocumentMoniker": "Views\\Shared\\_LoginLayout.cshtml",
-              "ToolTip": "E:\\SEMESTER-5\\Advanced .Net\\Resort_Management_System_GitDesktop\\Resort_Management_System\\MVC\\Resort_Management_System_MVC\\Views\\Shared\\_LoginLayout.cshtml",
-              "RelativeToolTip": "Views\\Shared\\_LoginLayout.cshtml",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABAAAAAAAAAAAAAAAA==",
+              "Title": "GuestList.cshtml",
+              "DocumentMoniker": "E:\\SEMESTER-5\\Advanced .Net\\Resort_Management_System_GitDesktop\\Resort_Management_System\\MVC\\Resort_Management_System_MVC\\Views\\Guest\\GuestList.cshtml",
+              "RelativeDocumentMoniker": "Views\\Guest\\GuestList.cshtml",
+              "ToolTip": "E:\\SEMESTER-5\\Advanced .Net\\Resort_Management_System_GitDesktop\\Resort_Management_System\\MVC\\Resort_Management_System_MVC\\Views\\Guest\\GuestList.cshtml",
+              "RelativeToolTip": "Views\\Guest\\GuestList.cshtml",
+              "ViewState": "AgIAAJQAAAAAAAAAAAAswKkAAAAHAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-09-01T03:03:44.411Z"
+              "WhenOpened": "2025-08-21T17:55:42.643Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 14,
-              "Title": "Login.cshtml",
-              "DocumentMoniker": "E:\\SEMESTER-5\\Advanced .Net\\Resort_Management_System_GitDesktop\\Resort_Management_System\\MVC\\Resort_Management_System_MVC\\Views\\Login\\Login.cshtml",
-              "RelativeDocumentMoniker": "Views\\Login\\Login.cshtml",
-              "ToolTip": "E:\\SEMESTER-5\\Advanced .Net\\Resort_Management_System_GitDesktop\\Resort_Management_System\\MVC\\Resort_Management_System_MVC\\Views\\Login\\Login.cshtml",
-              "RelativeToolTip": "Views\\Login\\Login.cshtml",
-              "ViewState": "AgIAAK0BAAAAAAAAAAAQwLoBAAASAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-08-20T07:55:24.007Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 15,
+              "DocumentIndex": 8,
               "Title": "GuestAddEdit.cshtml",
               "DocumentMoniker": "E:\\SEMESTER-5\\Advanced .Net\\Resort_Management_System_GitDesktop\\Resort_Management_System\\MVC\\Resort_Management_System_MVC\\Views\\Guest\\GuestAddEdit.cshtml",
               "RelativeDocumentMoniker": "Views\\Guest\\GuestAddEdit.cshtml",
@@ -488,199 +406,19 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 16,
-              "Title": "GuestModel.cs",
-              "DocumentMoniker": "E:\\SEMESTER-5\\Advanced .Net\\Resort_Management_System_GitDesktop\\Resort_Management_System\\MVC\\Resort_Management_System_MVC\\Models\\GuestModel.cs",
-              "RelativeDocumentMoniker": "Models\\GuestModel.cs",
-              "ToolTip": "E:\\SEMESTER-5\\Advanced .Net\\Resort_Management_System_GitDesktop\\Resort_Management_System\\MVC\\Resort_Management_System_MVC\\Models\\GuestModel.cs",
-              "RelativeToolTip": "Models\\GuestModel.cs",
-              "ViewState": "AgIAAAIAAAAAAAAAAAAuwBAAAAA2AAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-09-01T07:23:17.225Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 17,
-              "Title": "RoomModel.cs",
-              "DocumentMoniker": "E:\\SEMESTER-5\\Advanced .Net\\Resort_Management_System_GitDesktop\\Resort_Management_System\\MVC\\Resort_Management_System_MVC\\Models\\RoomModel.cs",
-              "RelativeDocumentMoniker": "Models\\RoomModel.cs",
-              "ToolTip": "E:\\SEMESTER-5\\Advanced .Net\\Resort_Management_System_GitDesktop\\Resort_Management_System\\MVC\\Resort_Management_System_MVC\\Models\\RoomModel.cs",
-              "RelativeToolTip": "Models\\RoomModel.cs",
-              "ViewState": "AgIAAB0AAAAAAAAAAAAAwCQAAABKAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-09-01T07:22:23.915Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 18,
-              "Title": "UserAddEdit.cshtml",
-              "DocumentMoniker": "E:\\SEMESTER-5\\Advanced .Net\\Resort_Management_System_GitDesktop\\Resort_Management_System\\MVC\\Resort_Management_System_MVC\\Views\\User\\UserAddEdit.cshtml",
-              "RelativeDocumentMoniker": "Views\\User\\UserAddEdit.cshtml",
-              "ToolTip": "E:\\SEMESTER-5\\Advanced .Net\\Resort_Management_System_GitDesktop\\Resort_Management_System\\MVC\\Resort_Management_System_MVC\\Views\\User\\UserAddEdit.cshtml",
-              "RelativeToolTip": "Views\\User\\UserAddEdit.cshtml",
-              "ViewState": "AgIAABIAAAAAAAAAAAAAABcAAAAAAAAAAAAAAA==",
+              "DocumentIndex": 9,
+              "Title": "ServiceList.cshtml",
+              "DocumentMoniker": "E:\\SEMESTER-5\\Advanced .Net\\Resort_Management_System_GitDesktop\\Resort_Management_System\\MVC\\Resort_Management_System_MVC\\Views\\Service\\ServiceList.cshtml",
+              "RelativeDocumentMoniker": "Views\\Service\\ServiceList.cshtml",
+              "ToolTip": "E:\\SEMESTER-5\\Advanced .Net\\Resort_Management_System_GitDesktop\\Resort_Management_System\\MVC\\Resort_Management_System_MVC\\Views\\Service\\ServiceList.cshtml",
+              "RelativeToolTip": "Views\\Service\\ServiceList.cshtml",
+              "ViewState": "AgIAAJwAAAAAAAAAAAAAAGQAAAAmAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-08-10T17:24:07.442Z"
+              "WhenOpened": "2025-08-20T07:26:42.207Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 20,
-              "Title": "UserModel.cs",
-              "DocumentMoniker": "E:\\SEMESTER-5\\Advanced .Net\\Resort_Management_System_GitDesktop\\Resort_Management_System\\MVC\\Resort_Management_System_MVC\\Models\\UserModel.cs",
-              "RelativeDocumentMoniker": "Models\\UserModel.cs",
-              "ToolTip": "E:\\SEMESTER-5\\Advanced .Net\\Resort_Management_System_GitDesktop\\Resort_Management_System\\MVC\\Resort_Management_System_MVC\\Models\\UserModel.cs",
-              "RelativeToolTip": "Models\\UserModel.cs",
-              "ViewState": "AgIAAAkAAAAAAAAAAAAiwBcAAAArAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-08-23T03:21:13.538Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 21,
-              "Title": "UserList.cshtml",
-              "DocumentMoniker": "E:\\SEMESTER-5\\Advanced .Net\\Resort_Management_System_GitDesktop\\Resort_Management_System\\MVC\\Resort_Management_System_MVC\\Views\\User\\UserList.cshtml",
-              "RelativeDocumentMoniker": "Views\\User\\UserList.cshtml",
-              "ToolTip": "E:\\SEMESTER-5\\Advanced .Net\\Resort_Management_System_GitDesktop\\Resort_Management_System\\MVC\\Resort_Management_System_MVC\\Views\\User\\UserList.cshtml",
-              "RelativeToolTip": "Views\\User\\UserList.cshtml",
-              "ViewState": "AgIAAPcAAAAAAAAAAAAAAA4BAABTAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-08-10T17:24:08.053Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 19,
-              "Title": "UserController.cs",
-              "DocumentMoniker": "E:\\SEMESTER-5\\Advanced .Net\\Resort_Management_System_GitDesktop\\Resort_Management_System\\MVC\\Resort_Management_System_MVC\\Controllers\\UserController.cs",
-              "RelativeDocumentMoniker": "Controllers\\UserController.cs",
-              "ToolTip": "E:\\SEMESTER-5\\Advanced .Net\\Resort_Management_System_GitDesktop\\Resort_Management_System\\MVC\\Resort_Management_System_MVC\\Controllers\\UserController.cs",
-              "RelativeToolTip": "Controllers\\UserController.cs",
-              "ViewState": "AgIAACQCAAAAAAAAAAA6wC0CAAA6AAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-08-12T14:39:39.326Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 22,
-              "Title": "UserIndex.cshtml",
-              "DocumentMoniker": "E:\\SEMESTER-5\\Advanced .Net\\Resort_Management_System_GitDesktop\\Resort_Management_System\\MVC\\Resort_Management_System_MVC\\Views\\UserDashboard\\UserIndex.cshtml",
-              "RelativeDocumentMoniker": "Views\\UserDashboard\\UserIndex.cshtml",
-              "ToolTip": "E:\\SEMESTER-5\\Advanced .Net\\Resort_Management_System_GitDesktop\\Resort_Management_System\\MVC\\Resort_Management_System_MVC\\Views\\UserDashboard\\UserIndex.cshtml",
-              "RelativeToolTip": "Views\\UserDashboard\\UserIndex.cshtml",
-              "ViewState": "AgIAAKoAAAAAAAAAAADwv7kAAAAxAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-08-23T16:00:10.9Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 23,
-              "Title": "Program.cs",
-              "DocumentMoniker": "E:\\SEMESTER-5\\Advanced .Net\\Resort_Management_System_GitDesktop\\Resort_Management_System\\MVC\\Resort_Management_System_MVC\\Program.cs",
-              "RelativeDocumentMoniker": "Program.cs",
-              "ToolTip": "E:\\SEMESTER-5\\Advanced .Net\\Resort_Management_System_GitDesktop\\Resort_Management_System\\MVC\\Resort_Management_System_MVC\\Program.cs",
-              "RelativeToolTip": "Program.cs",
-              "ViewState": "AgIAAEsAAAAAAAAAAAAkwGMAAAA6AAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-08-20T02:46:26.353Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 24,
-              "Title": "AboutUs.cshtml",
-              "DocumentMoniker": "E:\\SEMESTER-5\\Advanced .Net\\Resort_Management_System_GitDesktop\\Resort_Management_System\\MVC\\Resort_Management_System_MVC\\Views\\AboutUs\\AboutUs.cshtml",
-              "RelativeDocumentMoniker": "Views\\AboutUs\\AboutUs.cshtml",
-              "ToolTip": "E:\\SEMESTER-5\\Advanced .Net\\Resort_Management_System_GitDesktop\\Resort_Management_System\\MVC\\Resort_Management_System_MVC\\Views\\AboutUs\\AboutUs.cshtml",
-              "RelativeToolTip": "Views\\AboutUs\\AboutUs.cshtml",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA8AAAA0AAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-08-11T07:15:49.853Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 25,
-              "Title": "Index.cshtml",
-              "DocumentMoniker": "E:\\SEMESTER-5\\Advanced .Net\\Resort_Management_System_GitDesktop\\Resort_Management_System\\MVC\\Resort_Management_System_MVC\\Views\\Home\\Index.cshtml",
-              "RelativeDocumentMoniker": "Views\\Home\\Index.cshtml",
-              "ToolTip": "E:\\SEMESTER-5\\Advanced .Net\\Resort_Management_System_GitDesktop\\Resort_Management_System\\MVC\\Resort_Management_System_MVC\\Views\\Home\\Index.cshtml",
-              "RelativeToolTip": "Views\\Home\\Index.cshtml",
-              "ViewState": "AgIAAEMFAAAAAAAAAAAAwF8FAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-08-11T06:54:07.388Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 26,
-              "Title": "AdminPanelDashboard.cshtml",
-              "DocumentMoniker": "E:\\SEMESTER-5\\Advanced .Net\\Resort_Management_System_GitDesktop\\Resort_Management_System\\MVC\\Resort_Management_System_MVC\\Views\\AdminPanelDashboard\\AdminPanelDashboard.cshtml",
-              "RelativeDocumentMoniker": "Views\\AdminPanelDashboard\\AdminPanelDashboard.cshtml",
-              "ToolTip": "E:\\SEMESTER-5\\Advanced .Net\\Resort_Management_System_GitDesktop\\Resort_Management_System\\MVC\\Resort_Management_System_MVC\\Views\\AdminPanelDashboard\\AdminPanelDashboard.cshtml",
-              "RelativeToolTip": "Views\\AdminPanelDashboard\\AdminPanelDashboard.cshtml",
-              "ViewState": "AgIAAP8DAAAAAAAAAAAAwA0EAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-09-05T11:34:34.556Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 27,
-              "Title": "ServiceController.cs",
-              "DocumentMoniker": "E:\\SEMESTER-5\\Advanced .Net\\Resort_Management_System_GitDesktop\\Resort_Management_System\\MVC\\Resort_Management_System_MVC\\Controllers\\ServiceController.cs",
-              "RelativeDocumentMoniker": "Controllers\\ServiceController.cs",
-              "ToolTip": "E:\\SEMESTER-5\\Advanced .Net\\Resort_Management_System_GitDesktop\\Resort_Management_System\\MVC\\Resort_Management_System_MVC\\Controllers\\ServiceController.cs",
-              "RelativeToolTip": "Controllers\\ServiceController.cs",
-              "ViewState": "AgIAAHwAAAAAAAAAAAAkwIEAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-08-31T11:54:25.331Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 28,
-              "Title": "RoomDetails.cshtml",
-              "DocumentMoniker": "E:\\SEMESTER-5\\Advanced .Net\\Resort_Management_System_GitDesktop\\Resort_Management_System\\MVC\\Resort_Management_System_MVC\\Views\\Room\\RoomDetails.cshtml",
-              "RelativeDocumentMoniker": "Views\\Room\\RoomDetails.cshtml",
-              "ToolTip": "E:\\SEMESTER-5\\Advanced .Net\\Resort_Management_System_GitDesktop\\Resort_Management_System\\MVC\\Resort_Management_System_MVC\\Views\\Room\\RoomDetails.cshtml",
-              "RelativeToolTip": "Views\\Room\\RoomDetails.cshtml",
-              "ViewState": "AgIAAIAAAAAAAAAAAAAAwIIAAAAbAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-09-06T18:08:13.095Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 29,
-              "Title": "ServiceDetails.cshtml",
-              "DocumentMoniker": "E:\\SEMESTER-5\\Advanced .Net\\Resort_Management_System_GitDesktop\\Resort_Management_System\\MVC\\Resort_Management_System_MVC\\Views\\Service\\ServiceDetails.cshtml",
-              "RelativeDocumentMoniker": "Views\\Service\\ServiceDetails.cshtml",
-              "ToolTip": "E:\\SEMESTER-5\\Advanced .Net\\Resort_Management_System_GitDesktop\\Resort_Management_System\\MVC\\Resort_Management_System_MVC\\Views\\Service\\ServiceDetails.cshtml",
-              "RelativeToolTip": "Views\\Service\\ServiceDetails.cshtml",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-09-06T18:07:27.818Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 30,
-              "Title": "style.css",
-              "DocumentMoniker": "E:\\SEMESTER-5\\Advanced .Net\\Resort_Management_System_GitDesktop\\Resort_Management_System\\MVC\\Resort_Management_System_MVC\\wwwroot\\style.css",
-              "RelativeDocumentMoniker": "wwwroot\\style.css",
-              "ToolTip": "E:\\SEMESTER-5\\Advanced .Net\\Resort_Management_System_GitDesktop\\Resort_Management_System\\MVC\\Resort_Management_System_MVC\\wwwroot\\style.css",
-              "RelativeToolTip": "wwwroot\\style.css",
-              "ViewState": "AgIAAIoIAAAAAAAAAAAIwJoIAAAeAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003000|",
-              "WhenOpened": "2025-08-20T07:33:01.068Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 31,
-              "Title": "BookingController.cs",
-              "DocumentMoniker": "E:\\SEMESTER-5\\Advanced .Net\\Resort_Management_System_GitDesktop\\Resort_Management_System\\MVC\\Resort_Management_System_MVC\\Controllers\\BookingController.cs",
-              "RelativeDocumentMoniker": "Controllers\\BookingController.cs",
-              "ToolTip": "E:\\SEMESTER-5\\Advanced .Net\\Resort_Management_System_GitDesktop\\Resort_Management_System\\MVC\\Resort_Management_System_MVC\\Controllers\\BookingController.cs",
-              "RelativeToolTip": "Controllers\\BookingController.cs",
-              "ViewState": "AgIAAEMAAAAAAAAAAAAkwFMAAAA0AAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-08-23T02:54:42.652Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 32,
+              "DocumentIndex": 10,
               "Title": "ServiceAddEdit.cshtml",
               "DocumentMoniker": "E:\\SEMESTER-5\\Advanced .Net\\Resort_Management_System_GitDesktop\\Resort_Management_System\\MVC\\Resort_Management_System_MVC\\Views\\Service\\ServiceAddEdit.cshtml",
               "RelativeDocumentMoniker": "Views\\Service\\ServiceAddEdit.cshtml",
@@ -692,7 +430,319 @@
             },
             {
               "$type": "Document",
+              "DocumentIndex": 11,
+              "Title": "GuestValidator.cs",
+              "DocumentMoniker": "E:\\SEMESTER-5\\Advanced .Net\\Resort_Management_System_GitDesktop\\Resort_Management_System\\MVC\\Resort_Management_System_MVC\\ValidationClass\\GuestValidator.cs",
+              "RelativeDocumentMoniker": "ValidationClass\\GuestValidator.cs",
+              "ToolTip": "E:\\SEMESTER-5\\Advanced .Net\\Resort_Management_System_GitDesktop\\Resort_Management_System\\MVC\\Resort_Management_System_MVC\\ValidationClass\\GuestValidator.cs",
+              "RelativeToolTip": "ValidationClass\\GuestValidator.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAACcAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-10T04:39:36.046Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 13,
+              "Title": "UserLayout.cshtml",
+              "DocumentMoniker": "E:\\SEMESTER-5\\Advanced .Net\\Resort_Management_System_GitDesktop\\Resort_Management_System\\MVC\\Resort_Management_System_MVC\\Views\\Shared\\UserLayout.cshtml",
+              "RelativeDocumentMoniker": "Views\\Shared\\UserLayout.cshtml",
+              "ToolTip": "E:\\SEMESTER-5\\Advanced .Net\\Resort_Management_System_GitDesktop\\Resort_Management_System\\MVC\\Resort_Management_System_MVC\\Views\\Shared\\UserLayout.cshtml",
+              "RelativeToolTip": "Views\\Shared\\UserLayout.cshtml",
+              "ViewState": "AgIAAAMAAAAAAAAAAIBJwBgAAABDAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-08-20T07:20:00.26Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 14,
+              "Title": "_Layout.cshtml",
+              "DocumentMoniker": "E:\\SEMESTER-5\\Advanced .Net\\Resort_Management_System_GitDesktop\\Resort_Management_System\\MVC\\Resort_Management_System_MVC\\Views\\Shared\\_Layout.cshtml",
+              "RelativeDocumentMoniker": "Views\\Shared\\_Layout.cshtml",
+              "ToolTip": "E:\\SEMESTER-5\\Advanced .Net\\Resort_Management_System_GitDesktop\\Resort_Management_System\\MVC\\Resort_Management_System_MVC\\Views\\Shared\\_Layout.cshtml",
+              "RelativeToolTip": "Views\\Shared\\_Layout.cshtml",
+              "ViewState": "AgIAACMAAAAAAAAAAAAvwCoAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-08-06T02:52:23.072Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 12,
+              "Title": "GuestController.cs",
+              "DocumentMoniker": "E:\\SEMESTER-5\\Advanced .Net\\Resort_Management_System_GitDesktop\\Resort_Management_System\\MVC\\Resort_Management_System_MVC\\Controllers\\GuestController.cs",
+              "RelativeDocumentMoniker": "Controllers\\GuestController.cs",
+              "ToolTip": "E:\\SEMESTER-5\\Advanced .Net\\Resort_Management_System_GitDesktop\\Resort_Management_System\\MVC\\Resort_Management_System_MVC\\Controllers\\GuestController.cs",
+              "RelativeToolTip": "Controllers\\GuestController.cs",
+              "ViewState": "AgIAAEUBAAAAAAAAAAAqwE8BAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-08-21T17:57:50.057Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 15,
+              "Title": "LoginController.cs",
+              "DocumentMoniker": "E:\\SEMESTER-5\\Advanced .Net\\Resort_Management_System_GitDesktop\\Resort_Management_System\\MVC\\Resort_Management_System_MVC\\Controllers\\LoginController.cs",
+              "RelativeDocumentMoniker": "Controllers\\LoginController.cs",
+              "ToolTip": "E:\\SEMESTER-5\\Advanced .Net\\Resort_Management_System_GitDesktop\\Resort_Management_System\\MVC\\Resort_Management_System_MVC\\Controllers\\LoginController.cs",
+              "RelativeToolTip": "Controllers\\LoginController.cs",
+              "ViewState": "AgIAADUAAAAAAAAAAIBJwEkAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-08-20T07:55:06.579Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 19,
+              "Title": "GuestServiceModel.cs",
+              "DocumentMoniker": "E:\\SEMESTER-5\\Advanced .Net\\Resort_Management_System_GitDesktop\\Resort_Management_System\\MVC\\Resort_Management_System_MVC\\Models\\GuestServiceModel.cs",
+              "RelativeDocumentMoniker": "Models\\GuestServiceModel.cs",
+              "ToolTip": "E:\\SEMESTER-5\\Advanced .Net\\Resort_Management_System_GitDesktop\\Resort_Management_System\\MVC\\Resort_Management_System_MVC\\Models\\GuestServiceModel.cs",
+              "RelativeToolTip": "Models\\GuestServiceModel.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA4AAABDAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-09-01T07:45:50.698Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 18,
+              "Title": "GuestServiceAddEdit.cshtml",
+              "DocumentMoniker": "E:\\SEMESTER-5\\Advanced .Net\\Resort_Management_System_GitDesktop\\Resort_Management_System\\MVC\\Resort_Management_System_MVC\\Views\\GuestService\\GuestServiceAddEdit.cshtml",
+              "RelativeDocumentMoniker": "Views\\GuestService\\GuestServiceAddEdit.cshtml",
+              "ToolTip": "E:\\SEMESTER-5\\Advanced .Net\\Resort_Management_System_GitDesktop\\Resort_Management_System\\MVC\\Resort_Management_System_MVC\\Views\\GuestService\\GuestServiceAddEdit.cshtml",
+              "RelativeToolTip": "Views\\GuestService\\GuestServiceAddEdit.cshtml",
+              "ViewState": "AgIAAD0AAAAAAAAAAAAQwJMAAAATAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-08-23T14:10:07.55Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 17,
+              "Title": "GuestServiceController.cs",
+              "DocumentMoniker": "E:\\SEMESTER-5\\Advanced .Net\\Resort_Management_System_GitDesktop\\Resort_Management_System\\MVC\\Resort_Management_System_MVC\\Controllers\\GuestServiceController.cs",
+              "RelativeDocumentMoniker": "Controllers\\GuestServiceController.cs",
+              "ToolTip": "E:\\SEMESTER-5\\Advanced .Net\\Resort_Management_System_GitDesktop\\Resort_Management_System\\MVC\\Resort_Management_System_MVC\\Controllers\\GuestServiceController.cs",
+              "RelativeToolTip": "Controllers\\GuestServiceController.cs",
+              "ViewState": "AgIAADsCAAAAAAAAAAAiwEwCAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-08-11T03:49:45.658Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 16,
+              "Title": "AuthService.cs",
+              "DocumentMoniker": "E:\\SEMESTER-5\\Advanced .Net\\Resort_Management_System_GitDesktop\\Resort_Management_System\\MVC\\Resort_Management_System_MVC\\AuthService.cs",
+              "RelativeDocumentMoniker": "AuthService.cs",
+              "ToolTip": "E:\\SEMESTER-5\\Advanced .Net\\Resort_Management_System_GitDesktop\\Resort_Management_System\\MVC\\Resort_Management_System_MVC\\AuthService.cs",
+              "RelativeToolTip": "AuthService.cs",
+              "ViewState": "AgIAAA4AAAAAAAAAAAA+wCAAAAAIAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-08-20T08:01:47.532Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 20,
+              "Title": "_LoginLayout.cshtml",
+              "DocumentMoniker": "E:\\SEMESTER-5\\Advanced .Net\\Resort_Management_System_GitDesktop\\Resort_Management_System\\MVC\\Resort_Management_System_MVC\\Views\\Shared\\_LoginLayout.cshtml",
+              "RelativeDocumentMoniker": "Views\\Shared\\_LoginLayout.cshtml",
+              "ToolTip": "E:\\SEMESTER-5\\Advanced .Net\\Resort_Management_System_GitDesktop\\Resort_Management_System\\MVC\\Resort_Management_System_MVC\\Views\\Shared\\_LoginLayout.cshtml",
+              "RelativeToolTip": "Views\\Shared\\_LoginLayout.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-09-01T03:03:44.411Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 21,
+              "Title": "Login.cshtml",
+              "DocumentMoniker": "E:\\SEMESTER-5\\Advanced .Net\\Resort_Management_System_GitDesktop\\Resort_Management_System\\MVC\\Resort_Management_System_MVC\\Views\\Login\\Login.cshtml",
+              "RelativeDocumentMoniker": "Views\\Login\\Login.cshtml",
+              "ToolTip": "E:\\SEMESTER-5\\Advanced .Net\\Resort_Management_System_GitDesktop\\Resort_Management_System\\MVC\\Resort_Management_System_MVC\\Views\\Login\\Login.cshtml",
+              "RelativeToolTip": "Views\\Login\\Login.cshtml",
+              "ViewState": "AgIAAK0BAAAAAAAAAAAQwLoBAAASAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-08-20T07:55:24.007Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 22,
+              "Title": "GuestModel.cs",
+              "DocumentMoniker": "E:\\SEMESTER-5\\Advanced .Net\\Resort_Management_System_GitDesktop\\Resort_Management_System\\MVC\\Resort_Management_System_MVC\\Models\\GuestModel.cs",
+              "RelativeDocumentMoniker": "Models\\GuestModel.cs",
+              "ToolTip": "E:\\SEMESTER-5\\Advanced .Net\\Resort_Management_System_GitDesktop\\Resort_Management_System\\MVC\\Resort_Management_System_MVC\\Models\\GuestModel.cs",
+              "RelativeToolTip": "Models\\GuestModel.cs",
+              "ViewState": "AgIAAAIAAAAAAAAAAAAuwBAAAAA2AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-09-01T07:23:17.225Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 23,
+              "Title": "RoomModel.cs",
+              "DocumentMoniker": "E:\\SEMESTER-5\\Advanced .Net\\Resort_Management_System_GitDesktop\\Resort_Management_System\\MVC\\Resort_Management_System_MVC\\Models\\RoomModel.cs",
+              "RelativeDocumentMoniker": "Models\\RoomModel.cs",
+              "ToolTip": "E:\\SEMESTER-5\\Advanced .Net\\Resort_Management_System_GitDesktop\\Resort_Management_System\\MVC\\Resort_Management_System_MVC\\Models\\RoomModel.cs",
+              "RelativeToolTip": "Models\\RoomModel.cs",
+              "ViewState": "AgIAAB0AAAAAAAAAAAAAwCQAAABKAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-09-01T07:22:23.915Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 24,
+              "Title": "UserAddEdit.cshtml",
+              "DocumentMoniker": "E:\\SEMESTER-5\\Advanced .Net\\Resort_Management_System_GitDesktop\\Resort_Management_System\\MVC\\Resort_Management_System_MVC\\Views\\User\\UserAddEdit.cshtml",
+              "RelativeDocumentMoniker": "Views\\User\\UserAddEdit.cshtml",
+              "ToolTip": "E:\\SEMESTER-5\\Advanced .Net\\Resort_Management_System_GitDesktop\\Resort_Management_System\\MVC\\Resort_Management_System_MVC\\Views\\User\\UserAddEdit.cshtml",
+              "RelativeToolTip": "Views\\User\\UserAddEdit.cshtml",
+              "ViewState": "AgIAAA8AAAAAAAAAAIBJwBcAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-08-10T17:24:07.442Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 26,
+              "Title": "UserModel.cs",
+              "DocumentMoniker": "E:\\SEMESTER-5\\Advanced .Net\\Resort_Management_System_GitDesktop\\Resort_Management_System\\MVC\\Resort_Management_System_MVC\\Models\\UserModel.cs",
+              "RelativeDocumentMoniker": "Models\\UserModel.cs",
+              "ToolTip": "E:\\SEMESTER-5\\Advanced .Net\\Resort_Management_System_GitDesktop\\Resort_Management_System\\MVC\\Resort_Management_System_MVC\\Models\\UserModel.cs",
+              "RelativeToolTip": "Models\\UserModel.cs",
+              "ViewState": "AgIAAAkAAAAAAAAAAAAiwBcAAAArAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-08-23T03:21:13.538Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 25,
+              "Title": "UserController.cs",
+              "DocumentMoniker": "E:\\SEMESTER-5\\Advanced .Net\\Resort_Management_System_GitDesktop\\Resort_Management_System\\MVC\\Resort_Management_System_MVC\\Controllers\\UserController.cs",
+              "RelativeDocumentMoniker": "Controllers\\UserController.cs",
+              "ToolTip": "E:\\SEMESTER-5\\Advanced .Net\\Resort_Management_System_GitDesktop\\Resort_Management_System\\MVC\\Resort_Management_System_MVC\\Controllers\\UserController.cs",
+              "RelativeToolTip": "Controllers\\UserController.cs",
+              "ViewState": "AgIAACUCAAAAAAAAAAAiwC0CAAA6AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-08-12T14:39:39.326Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 27,
+              "Title": "UserIndex.cshtml",
+              "DocumentMoniker": "E:\\SEMESTER-5\\Advanced .Net\\Resort_Management_System_GitDesktop\\Resort_Management_System\\MVC\\Resort_Management_System_MVC\\Views\\UserDashboard\\UserIndex.cshtml",
+              "RelativeDocumentMoniker": "Views\\UserDashboard\\UserIndex.cshtml",
+              "ToolTip": "E:\\SEMESTER-5\\Advanced .Net\\Resort_Management_System_GitDesktop\\Resort_Management_System\\MVC\\Resort_Management_System_MVC\\Views\\UserDashboard\\UserIndex.cshtml",
+              "RelativeToolTip": "Views\\UserDashboard\\UserIndex.cshtml",
+              "ViewState": "AgIAAKoAAAAAAAAAAADwv7kAAAAxAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-08-23T16:00:10.9Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 28,
+              "Title": "Program.cs",
+              "DocumentMoniker": "E:\\SEMESTER-5\\Advanced .Net\\Resort_Management_System_GitDesktop\\Resort_Management_System\\MVC\\Resort_Management_System_MVC\\Program.cs",
+              "RelativeDocumentMoniker": "Program.cs",
+              "ToolTip": "E:\\SEMESTER-5\\Advanced .Net\\Resort_Management_System_GitDesktop\\Resort_Management_System\\MVC\\Resort_Management_System_MVC\\Program.cs",
+              "RelativeToolTip": "Program.cs",
+              "ViewState": "AgIAAEsAAAAAAAAAAAAkwGMAAAA6AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-08-20T02:46:26.353Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 29,
+              "Title": "AboutUs.cshtml",
+              "DocumentMoniker": "E:\\SEMESTER-5\\Advanced .Net\\Resort_Management_System_GitDesktop\\Resort_Management_System\\MVC\\Resort_Management_System_MVC\\Views\\AboutUs\\AboutUs.cshtml",
+              "RelativeDocumentMoniker": "Views\\AboutUs\\AboutUs.cshtml",
+              "ToolTip": "E:\\SEMESTER-5\\Advanced .Net\\Resort_Management_System_GitDesktop\\Resort_Management_System\\MVC\\Resort_Management_System_MVC\\Views\\AboutUs\\AboutUs.cshtml",
+              "RelativeToolTip": "Views\\AboutUs\\AboutUs.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA8AAAA0AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-08-11T07:15:49.853Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 30,
+              "Title": "Index.cshtml",
+              "DocumentMoniker": "E:\\SEMESTER-5\\Advanced .Net\\Resort_Management_System_GitDesktop\\Resort_Management_System\\MVC\\Resort_Management_System_MVC\\Views\\Home\\Index.cshtml",
+              "RelativeDocumentMoniker": "Views\\Home\\Index.cshtml",
+              "ToolTip": "E:\\SEMESTER-5\\Advanced .Net\\Resort_Management_System_GitDesktop\\Resort_Management_System\\MVC\\Resort_Management_System_MVC\\Views\\Home\\Index.cshtml",
+              "RelativeToolTip": "Views\\Home\\Index.cshtml",
+              "ViewState": "AgIAAEMFAAAAAAAAAAAAwF8FAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-08-11T06:54:07.388Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 31,
+              "Title": "AdminPanelDashboard.cshtml",
+              "DocumentMoniker": "E:\\SEMESTER-5\\Advanced .Net\\Resort_Management_System_GitDesktop\\Resort_Management_System\\MVC\\Resort_Management_System_MVC\\Views\\AdminPanelDashboard\\AdminPanelDashboard.cshtml",
+              "RelativeDocumentMoniker": "Views\\AdminPanelDashboard\\AdminPanelDashboard.cshtml",
+              "ToolTip": "E:\\SEMESTER-5\\Advanced .Net\\Resort_Management_System_GitDesktop\\Resort_Management_System\\MVC\\Resort_Management_System_MVC\\Views\\AdminPanelDashboard\\AdminPanelDashboard.cshtml",
+              "RelativeToolTip": "Views\\AdminPanelDashboard\\AdminPanelDashboard.cshtml",
+              "ViewState": "AgIAAP8DAAAAAAAAAAAAwA0EAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-09-05T11:34:34.556Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 32,
+              "Title": "ServiceController.cs",
+              "DocumentMoniker": "E:\\SEMESTER-5\\Advanced .Net\\Resort_Management_System_GitDesktop\\Resort_Management_System\\MVC\\Resort_Management_System_MVC\\Controllers\\ServiceController.cs",
+              "RelativeDocumentMoniker": "Controllers\\ServiceController.cs",
+              "ToolTip": "E:\\SEMESTER-5\\Advanced .Net\\Resort_Management_System_GitDesktop\\Resort_Management_System\\MVC\\Resort_Management_System_MVC\\Controllers\\ServiceController.cs",
+              "RelativeToolTip": "Controllers\\ServiceController.cs",
+              "ViewState": "AgIAAHwAAAAAAAAAAAAkwIEAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-08-31T11:54:25.331Z"
+            },
+            {
+              "$type": "Document",
               "DocumentIndex": 33,
+              "Title": "RoomDetails.cshtml",
+              "DocumentMoniker": "E:\\SEMESTER-5\\Advanced .Net\\Resort_Management_System_GitDesktop\\Resort_Management_System\\MVC\\Resort_Management_System_MVC\\Views\\Room\\RoomDetails.cshtml",
+              "RelativeDocumentMoniker": "Views\\Room\\RoomDetails.cshtml",
+              "ToolTip": "E:\\SEMESTER-5\\Advanced .Net\\Resort_Management_System_GitDesktop\\Resort_Management_System\\MVC\\Resort_Management_System_MVC\\Views\\Room\\RoomDetails.cshtml",
+              "RelativeToolTip": "Views\\Room\\RoomDetails.cshtml",
+              "ViewState": "AgIAAIAAAAAAAAAAAAAAwIIAAAAbAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-09-06T18:08:13.095Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 34,
+              "Title": "ServiceDetails.cshtml",
+              "DocumentMoniker": "E:\\SEMESTER-5\\Advanced .Net\\Resort_Management_System_GitDesktop\\Resort_Management_System\\MVC\\Resort_Management_System_MVC\\Views\\Service\\ServiceDetails.cshtml",
+              "RelativeDocumentMoniker": "Views\\Service\\ServiceDetails.cshtml",
+              "ToolTip": "E:\\SEMESTER-5\\Advanced .Net\\Resort_Management_System_GitDesktop\\Resort_Management_System\\MVC\\Resort_Management_System_MVC\\Views\\Service\\ServiceDetails.cshtml",
+              "RelativeToolTip": "Views\\Service\\ServiceDetails.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-09-06T18:07:27.818Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 35,
+              "Title": "style.css",
+              "DocumentMoniker": "E:\\SEMESTER-5\\Advanced .Net\\Resort_Management_System_GitDesktop\\Resort_Management_System\\MVC\\Resort_Management_System_MVC\\wwwroot\\style.css",
+              "RelativeDocumentMoniker": "wwwroot\\style.css",
+              "ToolTip": "E:\\SEMESTER-5\\Advanced .Net\\Resort_Management_System_GitDesktop\\Resort_Management_System\\MVC\\Resort_Management_System_MVC\\wwwroot\\style.css",
+              "RelativeToolTip": "wwwroot\\style.css",
+              "ViewState": "AgIAAIoIAAAAAAAAAAAIwJoIAAAeAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003000|",
+              "WhenOpened": "2025-08-20T07:33:01.068Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 36,
+              "Title": "BookingController.cs",
+              "DocumentMoniker": "E:\\SEMESTER-5\\Advanced .Net\\Resort_Management_System_GitDesktop\\Resort_Management_System\\MVC\\Resort_Management_System_MVC\\Controllers\\BookingController.cs",
+              "RelativeDocumentMoniker": "Controllers\\BookingController.cs",
+              "ToolTip": "E:\\SEMESTER-5\\Advanced .Net\\Resort_Management_System_GitDesktop\\Resort_Management_System\\MVC\\Resort_Management_System_MVC\\Controllers\\BookingController.cs",
+              "RelativeToolTip": "Controllers\\BookingController.cs",
+              "ViewState": "AgIAAEMAAAAAAAAAAAAkwFMAAAA0AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-08-23T02:54:42.652Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 37,
               "Title": "ServiceModel.cs",
               "DocumentMoniker": "E:\\SEMESTER-5\\Advanced .Net\\Resort_Management_System_GitDesktop\\Resort_Management_System\\MVC\\Resort_Management_System_MVC\\Models\\ServiceModel.cs",
               "RelativeDocumentMoniker": "Models\\ServiceModel.cs",
@@ -704,7 +754,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 34,
+              "DocumentIndex": 38,
               "Title": "PaymentController.cs",
               "DocumentMoniker": "E:\\SEMESTER-5\\Advanced .Net\\Resort_Management_System_GitDesktop\\Resort_Management_System\\MVC\\Resort_Management_System_MVC\\Controllers\\PaymentController.cs",
               "RelativeDocumentMoniker": "Controllers\\PaymentController.cs",
@@ -716,7 +766,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 35,
+              "DocumentIndex": 39,
               "Title": "RoomController.cs",
               "DocumentMoniker": "E:\\SEMESTER-5\\Advanced .Net\\Resort_Management_System_GitDesktop\\Resort_Management_System\\MVC\\Resort_Management_System_MVC\\Controllers\\RoomController.cs",
               "RelativeDocumentMoniker": "Controllers\\RoomController.cs",
@@ -728,19 +778,19 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 36,
+              "DocumentIndex": 40,
               "Title": "RoomAddEdit.cshtml",
               "DocumentMoniker": "E:\\SEMESTER-5\\Advanced .Net\\Resort_Management_System_GitDesktop\\Resort_Management_System\\MVC\\Resort_Management_System_MVC\\Views\\Room\\RoomAddEdit.cshtml",
               "RelativeDocumentMoniker": "Views\\Room\\RoomAddEdit.cshtml",
               "ToolTip": "E:\\SEMESTER-5\\Advanced .Net\\Resort_Management_System_GitDesktop\\Resort_Management_System\\MVC\\Resort_Management_System_MVC\\Views\\Room\\RoomAddEdit.cshtml",
               "RelativeToolTip": "Views\\Room\\RoomAddEdit.cshtml",
-              "ViewState": "AgIAAF0AAAAAAAAAAAAAAI8AAAA8AAAAAAAAAA==",
+              "ViewState": "AgIAAFoAAAAAAAAAAIBJwI8AAAA8AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
               "WhenOpened": "2025-08-10T16:12:47.98Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 37,
+              "DocumentIndex": 41,
               "Title": "StaffAddEdit.cshtml",
               "DocumentMoniker": "E:\\SEMESTER-5\\Advanced .Net\\Resort_Management_System_GitDesktop\\Resort_Management_System\\MVC\\Resort_Management_System_MVC\\Views\\Staff\\StaffAddEdit.cshtml",
               "RelativeDocumentMoniker": "Views\\Staff\\StaffAddEdit.cshtml",
@@ -752,7 +802,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 38,
+              "DocumentIndex": 42,
               "Title": "StaffModel.cs",
               "DocumentMoniker": "E:\\SEMESTER-5\\Advanced .Net\\Resort_Management_System_GitDesktop\\Resort_Management_System\\MVC\\Resort_Management_System_MVC\\Models\\StaffModel.cs",
               "RelativeDocumentMoniker": "Models\\StaffModel.cs",
@@ -764,7 +814,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 39,
+              "DocumentIndex": 43,
               "Title": "BookingModel.cs",
               "DocumentMoniker": "E:\\SEMESTER-5\\Advanced .Net\\Resort_Management_System_GitDesktop\\Resort_Management_System\\MVC\\Resort_Management_System_MVC\\Models\\BookingModel.cs",
               "RelativeDocumentMoniker": "Models\\BookingModel.cs",
@@ -776,19 +826,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 40,
-              "Title": "BookingList.cshtml",
-              "DocumentMoniker": "E:\\SEMESTER-5\\Advanced .Net\\Resort_Management_System_GitDesktop\\Resort_Management_System\\MVC\\Resort_Management_System_MVC\\Views\\Booking\\BookingList.cshtml",
-              "RelativeDocumentMoniker": "Views\\Booking\\BookingList.cshtml",
-              "ToolTip": "E:\\SEMESTER-5\\Advanced .Net\\Resort_Management_System_GitDesktop\\Resort_Management_System\\MVC\\Resort_Management_System_MVC\\Views\\Booking\\BookingList.cshtml",
-              "RelativeToolTip": "Views\\Booking\\BookingList.cshtml",
-              "ViewState": "AgIAAAUAAAAAAAAAAAAAwA4AAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-08-23T03:00:58.348Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 41,
+              "DocumentIndex": 44,
               "Title": "ReservationController.cs",
               "DocumentMoniker": "E:\\SEMESTER-5\\Advanced .Net\\Resort_Management_System_GitDesktop\\Resort_Management_System\\MVC\\Resort_Management_System_MVC\\Controllers\\ReservationController.cs",
               "RelativeDocumentMoniker": "Controllers\\ReservationController.cs",
@@ -800,7 +838,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 42,
+              "DocumentIndex": 45,
               "Title": "AdminPanelDashboardController.cs",
               "DocumentMoniker": "E:\\SEMESTER-5\\Advanced .Net\\Resort_Management_System_GitDesktop\\Resort_Management_System\\MVC\\Resort_Management_System_MVC\\Controllers\\AdminPanelDashboardController.cs",
               "RelativeDocumentMoniker": "Controllers\\AdminPanelDashboardController.cs",
@@ -812,19 +850,19 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 43,
+              "DocumentIndex": 46,
               "Title": "PaymentAddEdit.cshtml",
               "DocumentMoniker": "E:\\SEMESTER-5\\Advanced .Net\\Resort_Management_System_GitDesktop\\Resort_Management_System\\MVC\\Resort_Management_System_MVC\\Views\\Payment\\PaymentAddEdit.cshtml",
               "RelativeDocumentMoniker": "Views\\Payment\\PaymentAddEdit.cshtml",
               "ToolTip": "E:\\SEMESTER-5\\Advanced .Net\\Resort_Management_System_GitDesktop\\Resort_Management_System\\MVC\\Resort_Management_System_MVC\\Views\\Payment\\PaymentAddEdit.cshtml",
               "RelativeToolTip": "Views\\Payment\\PaymentAddEdit.cshtml",
-              "ViewState": "AgIAAF0AAAAAAAAAAIBJwGYAAAAbAAAAAAAAAA==",
+              "ViewState": "AgIAAFoAAAAAAAAAAIBZwGYAAAAbAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
               "WhenOpened": "2025-08-20T07:25:47.766Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 44,
+              "DocumentIndex": 47,
               "Title": "appsettings.json",
               "DocumentMoniker": "E:\\SEMESTER-5\\Advanced .Net\\Resort_Management_System_GitDesktop\\Resort_Management_System\\MVC\\Resort_Management_System_MVC\\appsettings.json",
               "RelativeDocumentMoniker": "appsettings.json",
@@ -836,19 +874,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 45,
-              "Title": "StaffList.cshtml",
-              "DocumentMoniker": "E:\\SEMESTER-5\\Advanced .Net\\Resort_Management_System_GitDesktop\\Resort_Management_System\\MVC\\Resort_Management_System_MVC\\Views\\Staff\\StaffList.cshtml",
-              "RelativeDocumentMoniker": "Views\\Staff\\StaffList.cshtml",
-              "ToolTip": "E:\\SEMESTER-5\\Advanced .Net\\Resort_Management_System_GitDesktop\\Resort_Management_System\\MVC\\Resort_Management_System_MVC\\Views\\Staff\\StaffList.cshtml",
-              "RelativeToolTip": "Views\\Staff\\StaffList.cshtml",
-              "ViewState": "AgIAABoBAAAAAAAAAAAmwCoBAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-09-01T07:56:08.06Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 46,
+              "DocumentIndex": 48,
               "Title": "StaffController.cs",
               "DocumentMoniker": "E:\\SEMESTER-5\\Advanced .Net\\Resort_Management_System_GitDesktop\\Resort_Management_System\\MVC\\Resort_Management_System_MVC\\Controllers\\StaffController.cs",
               "RelativeDocumentMoniker": "Controllers\\StaffController.cs",
@@ -860,7 +886,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 47,
+              "DocumentIndex": 49,
               "Title": "PaymentModel.cs",
               "DocumentMoniker": "E:\\SEMESTER-5\\Advanced .Net\\Resort_Management_System_GitDesktop\\Resort_Management_System\\MVC\\Resort_Management_System_MVC\\Models\\PaymentModel.cs",
               "RelativeDocumentMoniker": "Models\\PaymentModel.cs",
@@ -872,19 +898,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 48,
-              "Title": "ReservationList.cshtml",
-              "DocumentMoniker": "E:\\SEMESTER-5\\Advanced .Net\\Resort_Management_System_GitDesktop\\Resort_Management_System\\MVC\\Resort_Management_System_MVC\\Views\\Reservation\\ReservationList.cshtml",
-              "RelativeDocumentMoniker": "Views\\Reservation\\ReservationList.cshtml",
-              "ToolTip": "E:\\SEMESTER-5\\Advanced .Net\\Resort_Management_System_GitDesktop\\Resort_Management_System\\MVC\\Resort_Management_System_MVC\\Views\\Reservation\\ReservationList.cshtml",
-              "RelativeToolTip": "Views\\Reservation\\ReservationList.cshtml",
-              "ViewState": "AgIAAOkAAAAAAAAAAAAgwPgAAAABAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-08-12T13:58:47.002Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 49,
+              "DocumentIndex": 50,
               "Title": "UserDashboardController.cs",
               "DocumentMoniker": "E:\\SEMESTER-5\\Advanced .Net\\Resort_Management_System_GitDesktop\\Resort_Management_System\\MVC\\Resort_Management_System_MVC\\Controllers\\UserDashboardController.cs",
               "RelativeDocumentMoniker": "Controllers\\UserDashboardController.cs",
@@ -896,7 +910,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 50,
+              "DocumentIndex": 51,
               "Title": "RoomDropdownModel.cs",
               "DocumentMoniker": "E:\\SEMESTER-5\\Advanced .Net\\Resort_Management_System_GitDesktop\\Resort_Management_System\\MVC\\Resort_Management_System_MVC\\Models\\RoomDropdownModel.cs",
               "RelativeDocumentMoniker": "Models\\RoomDropdownModel.cs",
@@ -908,7 +922,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 52,
+              "DocumentIndex": 53,
               "Title": "ReservationDropdownModel.cs",
               "DocumentMoniker": "E:\\SEMESTER-5\\Advanced .Net\\Resort_Management_System_GitDesktop\\Resort_Management_System\\MVC\\Resort_Management_System_MVC\\Models\\ReservationDropdownModel.cs",
               "RelativeDocumentMoniker": "Models\\ReservationDropdownModel.cs",
@@ -920,7 +934,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 53,
+              "DocumentIndex": 54,
               "Title": "GuestDropdownModel.cs",
               "DocumentMoniker": "E:\\SEMESTER-5\\Advanced .Net\\Resort_Management_System_GitDesktop\\Resort_Management_System\\MVC\\Resort_Management_System_MVC\\Models\\GuestDropdownModel.cs",
               "RelativeDocumentMoniker": "Models\\GuestDropdownModel.cs",
@@ -932,7 +946,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 51,
+              "DocumentIndex": 52,
               "Title": "ReservationModel.cs",
               "DocumentMoniker": "E:\\SEMESTER-5\\Advanced .Net\\Resort_Management_System_GitDesktop\\Resort_Management_System\\MVC\\Resort_Management_System_MVC\\Models\\ReservationModel.cs",
               "RelativeDocumentMoniker": "Models\\ReservationModel.cs",
@@ -944,7 +958,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 54,
+              "DocumentIndex": 55,
               "Title": "HomeController.cs",
               "DocumentMoniker": "E:\\SEMESTER-5\\Advanced .Net\\Resort_Management_System_GitDesktop\\Resort_Management_System\\MVC\\Resort_Management_System_MVC\\Controllers\\HomeController.cs",
               "RelativeDocumentMoniker": "Controllers\\HomeController.cs",
@@ -956,7 +970,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 55,
+              "DocumentIndex": 56,
               "Title": "ContactController.cs",
               "DocumentMoniker": "E:\\SEMESTER-5\\Advanced .Net\\Resort_Management_System_GitDesktop\\Resort_Management_System\\MVC\\Resort_Management_System_MVC\\Controllers\\ContactController.cs",
               "RelativeDocumentMoniker": "Controllers\\ContactController.cs",
@@ -968,19 +982,19 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 56,
+              "DocumentIndex": 57,
               "Title": "ReservationAddEdit.cshtml",
               "DocumentMoniker": "E:\\SEMESTER-5\\Advanced .Net\\Resort_Management_System_GitDesktop\\Resort_Management_System\\MVC\\Resort_Management_System_MVC\\Views\\Reservation\\ReservationAddEdit.cshtml",
               "RelativeDocumentMoniker": "Views\\Reservation\\ReservationAddEdit.cshtml",
               "ToolTip": "E:\\SEMESTER-5\\Advanced .Net\\Resort_Management_System_GitDesktop\\Resort_Management_System\\MVC\\Resort_Management_System_MVC\\Views\\Reservation\\ReservationAddEdit.cshtml",
               "RelativeToolTip": "Views\\Reservation\\ReservationAddEdit.cshtml",
-              "ViewState": "AgIAADwAAAAAAAAAAIBZwEIAAAAtAAAAAAAAAA==",
+              "ViewState": "AgIAADkAAAAAAAAAACBjwEIAAAAtAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
               "WhenOpened": "2025-09-01T07:39:00.43Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 57,
+              "DocumentIndex": 58,
               "Title": "_Layout.cshtml.css",
               "DocumentMoniker": "E:\\SEMESTER-5\\Advanced .Net\\Resort_Management_System_GitDesktop\\Resort_Management_System\\MVC\\Resort_Management_System_MVC\\Views\\Shared\\_Layout.cshtml.css",
               "RelativeDocumentMoniker": "Views\\Shared\\_Layout.cshtml.css",
@@ -992,7 +1006,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 58,
+              "DocumentIndex": 59,
               "Title": "BookingAddEdit.cshtml",
               "DocumentMoniker": "E:\\SEMESTER-5\\Advanced .Net\\Resort_Management_System_GitDesktop\\Resort_Management_System\\MVC\\Resort_Management_System_MVC\\Views\\Booking\\BookingAddEdit.cshtml",
               "RelativeDocumentMoniker": "Views\\Booking\\BookingAddEdit.cshtml",
@@ -1004,7 +1018,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 59,
+              "DocumentIndex": 60,
               "Title": "appsettings.Development.json",
               "DocumentMoniker": "E:\\SEMESTER-5\\Advanced .Net\\Resort_Management_System_GitDesktop\\Resort_Management_System\\MVC\\Resort_Management_System_MVC\\appsettings.Development.json",
               "RelativeDocumentMoniker": "appsettings.Development.json",
@@ -1016,19 +1030,19 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 60,
+              "DocumentIndex": 61,
               "Title": "Resort_Management_System_MVC.csproj",
               "DocumentMoniker": "E:\\SEMESTER-5\\Advanced .Net\\Resort_Management_System_GitDesktop\\Resort_Management_System\\MVC\\Resort_Management_System_MVC\\Resort_Management_System_MVC.csproj",
               "RelativeDocumentMoniker": "Resort_Management_System_MVC.csproj",
               "ToolTip": "E:\\SEMESTER-5\\Advanced .Net\\Resort_Management_System_GitDesktop\\Resort_Management_System\\MVC\\Resort_Management_System_MVC\\Resort_Management_System_MVC.csproj",
               "RelativeToolTip": "Resort_Management_System_MVC.csproj",
-              "ViewState": "AgIAAAAAAAAAAAAAAIBJwDEAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAIBJwDIAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
               "WhenOpened": "2025-08-31T10:16:08.43Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 61,
+              "DocumentIndex": 62,
               "Title": "LibSassBuilder.targets",
               "DocumentMoniker": "C:\\Users\\DELL\\.nuget\\packages\\libsassbuilder\\3.0.0\\build\\LibSassBuilder.targets",
               "ToolTip": "C:\\Users\\DELL\\.nuget\\packages\\libsassbuilder\\3.0.0\\build\\LibSassBuilder.targets",
@@ -1037,7 +1051,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 62,
+              "DocumentIndex": 63,
               "Title": "_ValidationScriptsPartial.cshtml",
               "DocumentMoniker": "E:\\SEMESTER-5\\Advanced .Net\\Resort_Management_System_GitDesktop\\Resort_Management_System\\MVC\\Resort_Management_System_MVC\\Views\\Shared\\_ValidationScriptsPartial.cshtml",
               "RelativeDocumentMoniker": "Views\\Shared\\_ValidationScriptsPartial.cshtml",
@@ -1049,7 +1063,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 63,
+              "DocumentIndex": 64,
               "Title": "_ViewStart.cshtml",
               "DocumentMoniker": "E:\\SEMESTER-5\\Advanced .Net\\Resort_Management_System_GitDesktop\\Resort_Management_System\\MVC\\Resort_Management_System_MVC\\Views\\_ViewStart.cshtml",
               "RelativeDocumentMoniker": "Views\\_ViewStart.cshtml",
@@ -1061,19 +1075,19 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 64,
+              "DocumentIndex": 65,
               "Title": "style.scss",
               "DocumentMoniker": "E:\\SEMESTER-5\\Advanced .Net\\Resort_Management_System_GitDesktop\\Resort_Management_System\\MVC\\Resort_Management_System_MVC\\wwwroot\\scss\\style.scss",
               "RelativeDocumentMoniker": "wwwroot\\scss\\style.scss",
               "ToolTip": "E:\\SEMESTER-5\\Advanced .Net\\Resort_Management_System_GitDesktop\\Resort_Management_System\\MVC\\Resort_Management_System_MVC\\wwwroot\\scss\\style.scss",
               "RelativeToolTip": "wwwroot\\scss\\style.scss",
-              "ViewState": "AgIAAPwGAAAAAAAAACBjwJUHAAARAAAAAAAAAA==",
+              "ViewState": "AgIAAPkGAAAAAAAAAIBpwJUHAAARAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.002663|",
               "WhenOpened": "2025-08-13T03:25:14.191Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 65,
+              "DocumentIndex": 66,
               "Title": "NewsController.cs",
               "DocumentMoniker": "E:\\SEMESTER-5\\Advanced .Net\\Resort_Management_System_GitDesktop\\Resort_Management_System\\MVC\\Resort_Management_System_MVC\\Controllers\\NewsController.cs",
               "RelativeDocumentMoniker": "Controllers\\NewsController.cs",
@@ -1085,7 +1099,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 66,
+              "DocumentIndex": 67,
               "Title": "AboutUsController.cs",
               "DocumentMoniker": "E:\\SEMESTER-5\\Advanced .Net\\Resort_Management_System_GitDesktop\\Resort_Management_System\\MVC\\Resort_Management_System_MVC\\Controllers\\AboutUsController.cs",
               "RelativeDocumentMoniker": "Controllers\\AboutUsController.cs",
@@ -1097,7 +1111,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 68,
+              "DocumentIndex": 69,
               "Title": "News.cshtml",
               "DocumentMoniker": "E:\\SEMESTER-5\\Advanced .Net\\Resort_Management_System_GitDesktop\\Resort_Management_System\\MVC\\Resort_Management_System_MVC\\Views\\News\\News.cshtml",
               "RelativeDocumentMoniker": "Views\\News\\News.cshtml",
@@ -1109,7 +1123,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 67,
+              "DocumentIndex": 68,
               "Title": "Contact.cshtml",
               "DocumentMoniker": "E:\\SEMESTER-5\\Advanced .Net\\Resort_Management_System_GitDesktop\\Resort_Management_System\\MVC\\Resort_Management_System_MVC\\Views\\Contact\\Contact.cshtml",
               "RelativeDocumentMoniker": "Views\\Contact\\Contact.cshtml",

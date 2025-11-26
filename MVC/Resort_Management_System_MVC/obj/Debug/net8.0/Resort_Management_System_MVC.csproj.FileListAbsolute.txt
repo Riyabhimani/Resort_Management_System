@@ -121,3 +121,4 @@ E:\SEMESTER-5\Advanced .Net\Resort_Management_System_GitDesktop\Resort_Managemen
 E:\SEMESTER-5\Advanced .Net\Resort_Management_System_GitDesktop\Resort_Management_System\MVC\Resort_Management_System_MVC\bin\Debug\net8.0\Microsoft.IdentityModel.Logging.dll
 E:\SEMESTER-5\Advanced .Net\Resort_Management_System_GitDesktop\Resort_Management_System\MVC\Resort_Management_System_MVC\bin\Debug\net8.0\Microsoft.IdentityModel.Tokens.dll
 E:\SEMESTER-5\Advanced .Net\Resort_Management_System_GitDesktop\Resort_Management_System\MVC\Resort_Management_System_MVC\bin\Debug\net8.0\System.IdentityModel.Tokens.Jwt.dll
+E:\SEMESTER-5\Advanced .Net\Resort_Management_System_GitDesktop\Resort_Management_System\MVC\Resort_Management_System_MVC\bin\Debug\net8.0\FluentValidation.dll
