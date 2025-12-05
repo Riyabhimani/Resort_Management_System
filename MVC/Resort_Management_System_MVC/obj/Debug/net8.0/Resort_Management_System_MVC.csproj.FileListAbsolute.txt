@@ -122,3 +122,14 @@ E:\SEMESTER-5\Advanced .Net\Resort_Management_System_GitDesktop\Resort_Managemen
 E:\SEMESTER-5\Advanced .Net\Resort_Management_System_GitDesktop\Resort_Management_System\MVC\Resort_Management_System_MVC\bin\Debug\net8.0\Microsoft.IdentityModel.Tokens.dll
 E:\SEMESTER-5\Advanced .Net\Resort_Management_System_GitDesktop\Resort_Management_System\MVC\Resort_Management_System_MVC\bin\Debug\net8.0\System.IdentityModel.Tokens.Jwt.dll
 E:\SEMESTER-5\Advanced .Net\Resort_Management_System_GitDesktop\Resort_Management_System\MVC\Resort_Management_System_MVC\bin\Debug\net8.0\FluentValidation.dll
+D:\Resort_Management_System\MVC\Resort_Management_System_MVC\bin\Debug\net8.0\FluentValidation.dll
+D:\Resort_Management_System\MVC\Resort_Management_System_MVC\bin\Debug\net8.0\Microsoft.IdentityModel.Abstractions.dll
+D:\Resort_Management_System\MVC\Resort_Management_System_MVC\bin\Debug\net8.0\Microsoft.IdentityModel.JsonWebTokens.dll
+D:\Resort_Management_System\MVC\Resort_Management_System_MVC\bin\Debug\net8.0\Microsoft.IdentityModel.Logging.dll
+D:\Resort_Management_System\MVC\Resort_Management_System_MVC\bin\Debug\net8.0\Microsoft.IdentityModel.Tokens.dll
+D:\Resort_Management_System\MVC\Resort_Management_System_MVC\bin\Debug\net8.0\Microsoft.OpenApi.dll
+D:\Resort_Management_System\MVC\Resort_Management_System_MVC\bin\Debug\net8.0\Swashbuckle.AspNetCore.Swagger.dll
+D:\Resort_Management_System\MVC\Resort_Management_System_MVC\bin\Debug\net8.0\Swashbuckle.AspNetCore.SwaggerGen.dll
+D:\Resort_Management_System\MVC\Resort_Management_System_MVC\bin\Debug\net8.0\Swashbuckle.AspNetCore.SwaggerUI.dll
+D:\Resort_Management_System\MVC\Resort_Management_System_MVC\bin\Debug\net8.0\System.IdentityModel.Tokens.Jwt.dll
+D:\Resort_Management_System\MVC\Resort_Management_System_MVC\obj\Debug\net8.0\Resort_Management_System_MVC.MvcApplicationPartsAssemblyInfo.cs

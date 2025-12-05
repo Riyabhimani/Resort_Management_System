@@ -70,8 +70,6 @@ namespace Resort_Management_System_MVC.Controllers
             }
         }
 
-
-
         public IActionResult Logout()
         {
             _httpContextAccessor.HttpContext.Session.Clear();
